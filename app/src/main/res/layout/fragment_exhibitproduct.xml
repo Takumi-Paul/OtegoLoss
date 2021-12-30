@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/product_name"
+        android:id="@+id/product_name_exhibit_product"
         android:layout_width="377dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
-        android:id="@+id/product_description"
+        android:id="@+id/product_description_exhibit_product"
         android:layout_width="373dp"
         android:layout_height="147dp"
         android:ems="10"
@@ -29,11 +29,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_name"
+        app:layout_constraintTop_toBottomOf="@+id/product_name_exhibit_product"
         app:layout_constraintVertical_bias="0.036" />
 
     <Spinner
-        android:id="@+id/product_area"
+        android:id="@+id/product_area_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="49dp"
         android:splitMotionEvents="false"
@@ -43,12 +43,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_description"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_exhibit_product"
         app:layout_constraintVertical_bias="0.037" />
 
     <Spinner
-        android:id="@+id/delivery_method"
-        android:layout_width="380dp"
+        android:id="@+id/delivery_method_exhibit_product"
+        android:layout_width="375dp"
         android:layout_height="45dp"
         android:splitMotionEvents="false"
         android:text="配達方法"
@@ -57,11 +57,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_url"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_url_exhibit_product"
         app:layout_constraintVertical_bias="0.114" />
 
     <EditText
-        android:id="@+id/product_weight"
+        android:id="@+id/product_weight_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -71,11 +71,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area"
+        app:layout_constraintTop_toBottomOf="@+id/product_area_exhibit_product"
         app:layout_constraintVertical_bias="0.039" />
 
     <EditText
-        android:id="@+id/recipe_url"
+        android:id="@+id/recipe_url_exhibit_product"
         android:layout_width="374dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -85,43 +85,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight"
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_exhibit_product"
         app:layout_constraintVertical_bias="0.375" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/product_picture_text__exhibit_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="商品画像"
-        app:layout_constraintBottom_toTopOf="@+id/recipe_url"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_exhibit_product"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight"
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_exhibit_product"
         app:layout_constraintVertical_bias="0.211" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#D3B485"
-        android:text="編集に戻る"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_method" />
-
-    <Button
-        android:id="@+id/button2"
+        android:id="@+id/next_butten_exhibit_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#386641"
-        android:text="確認完了"
+        android:text="入力完了"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_method" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delivery_method_exhibit_product"
+        app:layout_constraintVertical_bias="0.403" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
