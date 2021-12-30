@@ -7,11 +7,13 @@
 
     <TableLayout
         android:id="@+id/table_layout_exhibit_info_comtable"
-        android:layout_width="375dp"
-        android:layout_height="540dp"
+        android:layout_width="371dp"
+        android:layout_height="424dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="84dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.332">
 
         <TableRow
             android:id="@+id/product_name_exhibit_info_comtable"
@@ -22,12 +24,14 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="商品名" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
         </TableRow>
 
@@ -40,6 +44,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="76dp"
                 android:layout_height="100dp"
+                android:gravity="center|left"
                 android:text="商品情報" />
 
             <TextView
@@ -58,12 +63,14 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="産地" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
         </TableRow>
 
@@ -76,12 +83,14 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="量" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
 
         </TableRow>
@@ -95,12 +104,14 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="金額" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
         </TableRow>
 
@@ -113,6 +124,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="商品画像" />
 
             <ImageView
@@ -130,13 +142,15 @@
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
-                android:layout_height="35"
+                android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="レシピURL" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
         </TableRow>
 
@@ -149,12 +163,14 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:gravity="center|left"
                 android:text="配達方法" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center|left"
                 android:text="TextView" />
         </TableRow>
     </TableLayout>
@@ -181,8 +197,8 @@
         android:text="確認完了"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table_layout_exhibit_info_comtable"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.619" />
 </androidx.constraintlayout.widget.ConstraintLayout>
