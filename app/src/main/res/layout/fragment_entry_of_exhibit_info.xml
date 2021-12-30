@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/product_name_exhibit_product"
+        android:id="@+id/product_name_entry_exhibit_product"
         android:layout_width="377dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -20,20 +20,20 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
-        android:id="@+id/product_description_exhibit_product"
-        android:layout_width="373dp"
-        android:layout_height="147dp"
+        android:id="@+id/product_description_entry_exhibit_product"
+        android:layout_width="372dp"
+        android:layout_height="113dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="商品説明(管理方法、保存日数など)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_name_exhibit_product"
+        app:layout_constraintTop_toBottomOf="@+id/product_name_entry_exhibit_product"
         app:layout_constraintVertical_bias="0.036" />
 
     <Spinner
-        android:id="@+id/product_area_exhibit_product"
+        android:id="@+id/product_area_entry_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="49dp"
         android:splitMotionEvents="false"
@@ -41,13 +41,13 @@
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_description_exhibit_product"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toBottomOf="@+id/product_description_entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/delivery_method_exhibit_product"
+        android:id="@+id/delivery_method_entry_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="45dp"
         android:splitMotionEvents="false"
@@ -55,13 +55,13 @@
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_url_exhibit_product"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintTop_toBottomOf="@+id/recipe_url_entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/product_weight_exhibit_product"
+        android:id="@+id/product_weight_entry_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -71,11 +71,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area_exhibit_product"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintTop_toBottomOf="@+id/product_area_entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.027" />
 
     <EditText
-        android:id="@+id/recipe_url_exhibit_product"
+        android:id="@+id/amount_entry_exhibit_product2"
+        android:layout_width="375dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="金額(円、数値のみ)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_area_entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.185" />
+
+    <EditText
+        android:id="@+id/recipe_url_entry_exhibit_product"
         android:layout_width="374dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -83,33 +97,33 @@
         android:text="レシピURL(任意)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_exhibit_product"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.637" />
 
     <TextView
-        android:id="@+id/product_picture_text__exhibit_product"
+        android:id="@+id/product_picture_text__entry_exhibit_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="商品画像"
-        app:layout_constraintBottom_toTopOf="@+id/recipe_url_exhibit_product"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_entry_exhibit_product"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_exhibit_product"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_entry_exhibit_product" />
 
     <Button
-        android:id="@+id/next_butten_exhibit_product"
+        android:id="@+id/next_butten_entry_exhibit_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#386641"
         android:text="入力完了"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_method_exhibit_product"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintTop_toBottomOf="@+id/delivery_method_entry_exhibit_product"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
