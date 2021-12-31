@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+マイページ画面を生成するプログラム
+ */
+
 package com.example.otegoloss.ui.mypage;
 
 import android.os.Bundle;

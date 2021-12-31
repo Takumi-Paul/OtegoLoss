@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+ユーザ画面の処理のプログラム
+ */
+
 package com.example.otegoloss.ui.user;
 
 import androidx.lifecycle.LiveData;
