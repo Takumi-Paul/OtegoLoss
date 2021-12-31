@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/back_color_not_sold_out_history"
+        android:layout_width="372dp"
+        android:layout_height="631dp"
+        android:background="#8BF2E8CF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text_view1_not_sold_out_history"
+        android:layout_width="88dp"
+        android:layout_height="31dp"
+        android:background="#6A994E"
+        android:gravity="center"
+        android:text="出品履歴"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <Button
+        android:id="@+id/button_notsoldout_not_sold_out_history"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:background="#6A994E"
+        android:text="未完売"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintEnd_toEndOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintTop_toTopOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <Button
+        android:id="@+id/button_soldout_not_sold_out_history"
+        android:layout_width="97dp"
+        android:layout_height="54dp"
+        android:background="#F2E8CF"
+        android:text="完売済"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintEnd_toEndOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintTop_toTopOf="@+id/text_view2_not_sold_out_history"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <View
+        android:id="@+id/text_view2_not_sold_out_history"
+        android:layout_width="295dp"
+        android:layout_height="86dp"
+        android:background="#386641"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
