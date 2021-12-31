@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+出品者画面を生成するプログラム
+ */
+
 package com.example.otegoloss.ui.shipping;
 
 import android.os.Bundle;

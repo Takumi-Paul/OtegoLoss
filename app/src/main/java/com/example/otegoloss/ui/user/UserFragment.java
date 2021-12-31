@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+ユーザ画面を生成するプログラム
+ */
+
 package com.example.otegoloss.ui.user;
 
 import android.os.Bundle;

@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+ホーム画面を生成するプログラム
+ */
+
 package com.example.otegoloss.ui.home;
 
 import android.os.Bundle;

@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+出品者画面の処理プログラム
+ */
+
 package com.example.otegoloss.ui.shipping;
 
 import androidx.lifecycle.LiveData;

@@ -1,3 +1,9 @@
+/*
+12/29
+Kobayashi
+マイページ画面の処理のプログラム
+ */
+
 package com.example.otegoloss.ui.mypage;
 
 import androidx.lifecycle.LiveData;
