@@ -15,62 +15,91 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="358dp"
+        android:layout_height="560dp"
+        android:background="#92FFFFFF"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="31dp" />
 
     <EditText
         android:id="@+id/kensaku_shouhin_name"
-        android:layout_width="338dp"
-        android:layout_height="42dp"
+        android:layout_width="295dp"
+        android:layout_height="38dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="商品名"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+    <EditText
+        android:id="@+id/kensaku_shuppin_name"
+        android:layout_width="303dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="出品者名"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="443dp" />
 
     <Spinner
-        android:id="@+id/kensaku_category"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
+        android:id="@+id/kensaku_haitatsu"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
         android:background="#FFFFFF"
         android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="95dp" />
-
-    <Spinner
-        android:id="@+id/kensaku_area"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="372dp" />
-
-    <Spinner
-        android:id="@+id/kensaku_shuppin_day"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="262dp" />
-
-    <Spinner
-        android:id="@+id/kensaku_kingaku"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="152dp" />
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="223dp" />
 
     <Spinner
         android:id="@+id/kensaku_omosa"
-        android:layout_width="338dp"
+        android:layout_width="288dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="332dp" />
+
+    <Spinner
+        android:id="@+id/kensaku_kingaku"
+        android:layout_width="291dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <Spinner
+        android:id="@+id/kensaku_shuppin_day"
+        android:layout_width="291dp"
+        android:layout_height="39dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <Spinner
+        android:id="@+id/kensaku_area"
+        android:layout_width="284dp"
+        android:layout_height="39dp"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <Spinner
+        android:id="@+id/kensaku_category"
+        android:layout_width="291dp"
         android:layout_height="38dp"
         android:background="#FFFFFF"
         android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="317dp" />
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="112dp" />
 
     <Button
         android:id="@+id/button"
@@ -78,27 +107,8 @@
         android:layout_height="wrap_content"
         android:text="検索"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="499dp" />
-
-    <Spinner
-        android:id="@+id/kensaku_haitatsu"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="208dp" />
-
-    <EditText
-        android:id="@+id/kensaku_shuppin_name"
-        android:layout_width="338dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="出品者名"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="430dp" />
+        tools:layout_editor_absoluteY="524dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
