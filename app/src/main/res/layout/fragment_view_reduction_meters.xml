@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/back_colour_reduction_meters"
+        android:layout_width="272dp"
+        android:layout_height="437dp"
+        android:background="#70F2E8CF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/view_user_name_eduction_meters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="username"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <TextView
+        android:id="@+id/text_view1_eduction_meters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="は"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintStart_toStartOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <TextView
+        android:id="@+id/view_weight_eduction_meters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:textColor="@color/red_brown"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <TextView
+        android:id="@+id/text_view2_eduction_meters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="食品ロスに貢献しました！"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintStart_toStartOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <TextView
+        android:id="@+id/text_view_kg_eduction_meters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kg"
+        android:textColor="@color/red_brown"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_reduction_meters"
+        app:layout_constraintVertical_bias="0.659" />
+</androidx.constraintlayout.widget.ConstraintLayout>

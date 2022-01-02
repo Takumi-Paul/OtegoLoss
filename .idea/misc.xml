@@ -3,12 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/activity_main.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_home.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_mypage.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_shipping.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_user.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_account_registration.xml" value="0.2907608695652174" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_deletion_agreement.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_completed.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_info_confirmation.xml" value="0.2907608695652174" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_how_to_register.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information2.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_reduction_meters.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_request_to_delete.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_search.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_product.xml" value="0.2907608695652174" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_terms_of_use.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_yet_sold_out_history.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_yet_sold_out_product.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/template.xml" value="0.2907608695652174" />
