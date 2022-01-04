@@ -14,6 +14,8 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_completed.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_info_confirmation.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_how_to_register.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_producer_agreement.xml" value="0.2907608695652174" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_producer_information.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information2.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_reduction_meters.xml" value="0.29846014492753625" />
@@ -22,6 +24,7 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.29846014492753625" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_product.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_terms_of_use.xml" value="0.29846014492753625" />
+        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_user.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_yet_sold_out_history.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_yet_sold_out_product.xml" value="0.2907608695652174" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/template.xml" value="0.2907608695652174" />
