@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2E8CF" >
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="167dp"
+        android:layout_height="55dp"
+        android:text="購入確定"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="511dp" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="321dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="448dp"
+        android:background="#92FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="321dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="204dp"
+        android:background="#92FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="郵便番号"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="クレカ会社"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="クレカ番号"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="住所"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="名義人"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="146dp"
+        android:layout_height="29dp"
+        android:text="配送先情報"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="41dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="146dp"
+        android:layout_height="29dp"
+        android:text="決済情報"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

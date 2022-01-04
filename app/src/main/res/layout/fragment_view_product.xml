@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2E8CF" >
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:text="購入"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:text="コメント"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="516dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="436dp"
+        android:layout_height="687dp"
+        app:srcCompat="@drawable/background"
+        tools:layout_editor_absoluteX="-26dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="359dp"
+        android:layout_height="636dp"
+        android:background="#92FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="生産者名"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="商品名"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="重量"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="出品日"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="385dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="地域"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="123dp"
+        android:layout_height="34dp"
+        android:text="価格"
+        android:textColor="#BC4749"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="112dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:background="#92FFFFFF"
+        app:srcCompat="@android:drawable/ic_dialog_alert"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="587dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

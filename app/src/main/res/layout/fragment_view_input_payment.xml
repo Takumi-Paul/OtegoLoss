@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2E8CF" >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="410dp"
+        android:layout_height="684dp"
+        app:srcCompat="@drawable/background"
+        tools:layout_editor_absoluteX="-15dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="決済情報を追加"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="決済情報を削除"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="474dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="345dp"
+        android:layout_height="120dp"
+        android:background="#92FFFFFF"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="345dp"
+        android:layout_height="120dp"
+        android:background="#92FFFFFF"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="126dp"
+        android:layout_height="26dp"
+        android:text="クレカ会社1"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="126dp"
+        android:layout_height="26dp"
+        android:text="クレカ会社2"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="267dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="123dp"
+        android:layout_height="24dp"
+        android:text="クレカ番号2"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="269dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="124dp"
+        android:layout_height="27dp"
+        android:text="クレカ番号1"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:text="名義人1"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:text="名義人2"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
