@@ -4,7 +4,7 @@ Kobayashi
 ユーザ画面の処理のプログラム
  */
 
-package com.example.otegoloss.ui.user;
+package com.example.otegoloss.user;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

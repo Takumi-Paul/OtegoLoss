@@ -1,21 +1,21 @@
 /*
 12/29
 Kobayashi
-出品者画面の処理プログラム
+ホーム画面の処理のプログラム
  */
 
-package com.example.otegoloss.ui.shipping;
+package com.example.otegoloss.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShippingViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel{
     private MutableLiveData<String> mText;
 
-    public ShippingViewModel() {
+    public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Shipping fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {

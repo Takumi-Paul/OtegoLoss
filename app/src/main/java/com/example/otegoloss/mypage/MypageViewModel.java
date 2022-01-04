@@ -1,21 +1,21 @@
 /*
 12/29
 Kobayashi
-ホーム画面の処理のプログラム
+マイページ画面の処理のプログラム
  */
 
-package com.example.otegoloss.ui.home;
+package com.example.otegoloss.mypage;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel{
+public class MypageViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public MypageViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is Mypage fragment");
     }
 
     public LiveData<String> getText() {

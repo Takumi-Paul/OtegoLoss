@@ -1,10 +1,10 @@
 /*
 12/29
 Kobayashi
-マイページ画面を生成するプログラム
+ユーザ画面を生成するプログラム
  */
 
-package com.example.otegoloss.ui.mypage;
+package com.example.otegoloss.user;
 
 import android.os.Bundle;
 
@@ -19,24 +19,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.otegoloss.R;
-import com.example.otegoloss.databinding.FragmentMypageBinding;
+import com.example.otegoloss.databinding.FragmentUserBinding;
 
-public class MypageFragment extends Fragment {
+public class UserFragment extends Fragment {
 
-    private MypageViewModel mypageViewModel;
-    private FragmentMypageBinding binding;
+    private UserViewModel userViewModel;
+    private FragmentUserBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mypageViewModel =
-                new ViewModelProvider(this).get(MypageViewModel.class);
+        userViewModel =
+                new ViewModelProvider(this).get(UserViewModel.class);
 
-        binding = FragmentMypageBinding.inflate(inflater, container, false);
+        binding = FragmentUserBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textMypage;
-        mypageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textUser;
+        userViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

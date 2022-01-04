@@ -1,10 +1,10 @@
 /*
 12/29
 Kobayashi
-出品者画面を生成するプログラム
+マイページ画面を生成するプログラム
  */
 
-package com.example.otegoloss.ui.shipping;
+package com.example.otegoloss.mypage;
 
 import android.os.Bundle;
 
@@ -19,25 +19,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.otegoloss.R;
-import com.example.otegoloss.databinding.FragmentShippingBinding;
+import com.example.otegoloss.databinding.FragmentMypageBinding;
 
-public class ShippingFragment extends Fragment {
+public class MypageFragment extends Fragment {
 
-
-    private ShippingViewModel shippingViewModel;
-    private FragmentShippingBinding binding;
+    private MypageViewModel mypageViewModel;
+    private FragmentMypageBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shippingViewModel =
-                new ViewModelProvider(this).get(ShippingViewModel.class);
+        mypageViewModel =
+                new ViewModelProvider(this).get(MypageViewModel.class);
 
-        binding = FragmentShippingBinding.inflate(inflater, container, false);
+        binding = FragmentMypageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textShipping;
-        shippingViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textMypage;
+        mypageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

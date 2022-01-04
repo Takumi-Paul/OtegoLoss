@@ -1,10 +1,10 @@
 /*
 12/29
 Kobayashi
-ユーザ画面を生成するプログラム
+出品者画面を生成するプログラム
  */
 
-package com.example.otegoloss.ui.user;
+package com.example.otegoloss.shipping;
 
 import android.os.Bundle;
 
@@ -19,24 +19,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.otegoloss.R;
-import com.example.otegoloss.databinding.FragmentUserBinding;
+import com.example.otegoloss.databinding.FragmentShippingBinding;
 
-public class UserFragment extends Fragment {
+public class ShippingFragment extends Fragment {
 
-    private UserViewModel userViewModel;
-    private FragmentUserBinding binding;
+
+    private ShippingViewModel shippingViewModel;
+    private FragmentShippingBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        userViewModel =
-                new ViewModelProvider(this).get(UserViewModel.class);
+        shippingViewModel =
+                new ViewModelProvider(this).get(ShippingViewModel.class);
 
-        binding = FragmentUserBinding.inflate(inflater, container, false);
+        binding = FragmentShippingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textUser;
-        userViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textShipping;
+        shippingViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

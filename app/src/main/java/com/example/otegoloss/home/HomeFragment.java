@@ -4,7 +4,7 @@ Kobayashi
 ホーム画面を生成するプログラム
  */
 
-package com.example.otegoloss.ui.home;
+package com.example.otegoloss.home;
 
 import android.os.Bundle;
 
@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.otegoloss.R;
 import com.example.otegoloss.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {

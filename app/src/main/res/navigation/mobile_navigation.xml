@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.otegoloss.ui.home.HomeFragment"
+        android:name="com.example.otegoloss.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_mypage"
-        android:name="com.example.otegoloss.ui.mypage.MypageFragment"
+        android:name="com.example.otegoloss.mypage.MypageFragment"
         android:label="@string/title_mypage"
         tools:layout="@layout/fragment_mypage" />
     <fragment
         android:id="@+id/navigation_shipping"
-        android:name="com.example.otegoloss.ui.shipping.ShippingFragment"
+        android:name="com.example.otegoloss.shipping.ShippingFragment"
         android:label="@string/title_shipping"
         tools:layout="@layout/fragment_shipping" />
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.example.otegoloss.ui.user.UserFragment"
+        android:name="com.example.otegoloss.user.UserFragment"
         android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
 </navigation>
