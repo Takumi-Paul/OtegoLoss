@@ -18,7 +18,7 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/comment_editText"
         android:layout_width="311dp"
         android:layout_height="39dp"
         android:ems="10"
@@ -28,7 +28,7 @@
         tools:layout_editor_absoluteY="627dp" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/sendComment_button"
         android:layout_width="72dp"
         android:layout_height="42dp"
         android:text="送信"

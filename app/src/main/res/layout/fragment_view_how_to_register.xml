@@ -7,7 +7,7 @@
     android:background="#F2E8CF">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/newAccount_button"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/relateAccount_button"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"

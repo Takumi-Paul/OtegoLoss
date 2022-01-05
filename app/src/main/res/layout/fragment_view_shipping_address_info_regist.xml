@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button30"
+        android:id="@+id/inputAddress_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="660dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView74"
+        android:id="@+id/houseNumber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="330dp"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/prefecture_spinner"
         android:layout_width="380dp"
         android:layout_height="30dp"
         android:background="#E4E4E4"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.388" />
 
     <TextView
-        android:id="@+id/textView69"
+        android:id="@+id/proPhoneNumber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="580dp"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView70"
+        android:id="@+id/proAddressNumber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="520dp"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView71"
+        android:id="@+id/prefecture_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="460dp"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView73"
+        android:id="@+id/postal_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="390dp"
@@ -103,7 +103,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/proPhoneNumber_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -120,7 +120,7 @@
         app:layout_constraintVertical_bias="0.21" />
 
     <EditText
-        android:id="@+id/editTextNumber5"
+        android:id="@+id/addressNumber_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -137,7 +137,7 @@
         app:layout_constraintVertical_bias="0.296" />
 
     <TextView
-        android:id="@+id/textView67"
+        android:id="@+id/name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="640dp"
@@ -151,7 +151,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/name_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="#000000"
@@ -166,18 +166,18 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
-        android:id="@+id/textView72"
+        android:id="@+id/prefectureChoice_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="270dp"
         android:text="都道府県を選択"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner4"
-        app:layout_constraintEnd_toEndOf="@+id/spinner4"
-        app:layout_constraintStart_toStartOf="@+id/spinner4"
-        app:layout_constraintTop_toTopOf="@+id/spinner4" />
+        app:layout_constraintBottom_toBottomOf="@+id/prefecture_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/prefecture_spinner"
+        app:layout_constraintStart_toStartOf="@+id/prefecture_spinner"
+        app:layout_constraintTop_toTopOf="@+id/prefecture_spinner" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/postalAddress_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="#E4E4E4"
@@ -187,7 +187,7 @@
         tools:layout_editor_absoluteY="342dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress2"
+        android:id="@+id/homeNumber_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="#E4E4E4"

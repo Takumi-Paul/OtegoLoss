@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/inputCredit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="660dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/cardCode_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="360dp"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/year_spinner"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:background="#E4E4E4"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.415" />
 
     <TextView
-        android:id="@+id/textView65"
+        android:id="@+id/deadline_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="440dp"
@@ -65,7 +65,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/cardName_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="#000000"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/company_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="620dp"
@@ -96,7 +96,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/company_spinner"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:background="#E4E4E4"
@@ -109,7 +109,7 @@
         app:layout_constraintVertical_bias="0.158" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/month_spinner"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:background="#E4E4E4"
@@ -122,7 +122,7 @@
         app:layout_constraintVertical_bias="0.415" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/cardNumber_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -140,25 +140,25 @@
         app:layout_constraintVertical_bias="0.288" />
 
     <TextView
-        android:id="@+id/textView66"
+        android:id="@+id/month_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="70dp"
         android:text="月"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner3"
-        app:layout_constraintEnd_toEndOf="@+id/spinner3"
-        app:layout_constraintStart_toStartOf="@+id/spinner3"
-        app:layout_constraintTop_toTopOf="@+id/spinner3" />
+        app:layout_constraintBottom_toBottomOf="@+id/month_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/month_spinner"
+        app:layout_constraintStart_toStartOf="@+id/month_spinner"
+        app:layout_constraintTop_toTopOf="@+id/month_spinner" />
 
     <TextView
-        android:id="@+id/textView68"
+        android:id="@+id/year_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="70dp"
         android:text="年"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner5"
-        app:layout_constraintEnd_toEndOf="@+id/spinner5"
-        app:layout_constraintStart_toStartOf="@+id/spinner5"
-        app:layout_constraintTop_toTopOf="@+id/spinner5" />
+        app:layout_constraintBottom_toBottomOf="@+id/year_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/year_spinner"
+        app:layout_constraintStart_toStartOf="@+id/year_spinner"
+        app:layout_constraintTop_toTopOf="@+id/year_spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

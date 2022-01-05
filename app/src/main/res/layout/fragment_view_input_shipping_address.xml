@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/backGround2_imageView"
         android:layout_width="410dp"
         android:layout_height="684dp"
         app:srcCompat="@drawable/background"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="4dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/addAddress_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="住所を追加"
@@ -25,7 +25,7 @@
         tools:layout_editor_absoluteY="449dp" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/deleteAddress_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="住所を削除"
@@ -46,7 +46,7 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/shippingAddress1_view"
         android:layout_width="338dp"
         android:layout_height="150dp"
         android:background="#92FFFFFF"
@@ -54,7 +54,7 @@
         tools:layout_editor_absoluteY="66dp" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/shippingAddress2_view"
         android:layout_width="338dp"
         android:layout_height="150dp"
         android:background="#92FFFFFF"
@@ -62,21 +62,21 @@
         tools:layout_editor_absoluteY="249dp" />
 
     <RadioButton
-        android:id="@+id/radioButton4"
+        android:id="@+id/choice1_radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="123dp" />
 
     <RadioButton
-        android:id="@+id/radioButton5"
+        android:id="@+id/choice2_radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="303dp" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/addressNumber1_textView"
         android:layout_width="104dp"
         android:layout_height="25dp"
         android:text="郵便番号1"
@@ -85,7 +85,7 @@
         tools:layout_editor_absoluteY="86dp" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/addressNumber2_textView"
         android:layout_width="104dp"
         android:layout_height="25dp"
         android:text="郵便番号2"
@@ -94,7 +94,7 @@
         tools:layout_editor_absoluteY="269dp" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/address1_textView"
         android:layout_width="90dp"
         android:layout_height="27dp"
         android:text="住所1"
@@ -103,7 +103,7 @@
         tools:layout_editor_absoluteY="130dp" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/address2_textView"
         android:layout_width="90dp"
         android:layout_height="27dp"
         android:text="住所2"
@@ -112,7 +112,7 @@
         tools:layout_editor_absoluteY="312dp" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/name1_textView"
         android:layout_width="90dp"
         android:layout_height="27dp"
         android:text="名前1"
@@ -121,7 +121,7 @@
         tools:layout_editor_absoluteY="171dp" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/name2_textView"
         android:layout_width="90dp"
         android:layout_height="27dp"
         android:text="名前2"

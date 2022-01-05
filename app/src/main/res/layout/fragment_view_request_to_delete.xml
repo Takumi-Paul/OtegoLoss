@@ -7,7 +7,7 @@
     android:background="#F2E8CF">
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/deleteAccount_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="削除する"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.887" />
 
     <TextView
-        android:id="@+id/textView49"
+        android:id="@+id/deleteAccountInfo_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="500dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/deleteAccount_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="200dp"
@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/user" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/deleteUserID_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView50"
+        android:id="@+id/attention_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView51"
+        android:id="@+id/accountExplanation_textView"
         android:layout_width="305dp"
         android:layout_height="46dp"
         android:layout_marginTop="50dp"
@@ -85,7 +85,7 @@
         app:layout_constraintVertical_bias="0.645" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/reason_Spinner"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
@@ -97,14 +97,14 @@
         app:layout_constraintVertical_bias="0.466" />
 
     <TextView
-        android:id="@+id/textView64"
+        android:id="@+id/reason_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="削除理由を選択してください(任意)"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="@+id/spinner" />
+        app:layout_constraintBottom_toBottomOf="@+id/reason_Spinner"
+        app:layout_constraintEnd_toEndOf="@+id/reason_Spinner"
+        app:layout_constraintStart_toStartOf="@+id/reason_Spinner"
+        app:layout_constraintTop_toTopOf="@+id/reason_Spinner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

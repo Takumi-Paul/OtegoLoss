@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/Rule_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="400dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/agreeRule_radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="440dp"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.427" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/rejectRule_radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/nextRegisterAccount_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="660dp"

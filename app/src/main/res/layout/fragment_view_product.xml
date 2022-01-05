@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buy_button"
         android:layout_width="150dp"
         android:layout_height="53dp"
         android:text="購入"
@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="447dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/comment_button"
         android:layout_width="150dp"
         android:layout_height="53dp"
         android:text="コメント"
@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="516dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/backGround3_imageView"
         android:layout_width="436dp"
         android:layout_height="687dp"
         app:srcCompat="@drawable/background"
@@ -46,7 +46,7 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/backGround_view"
         android:layout_width="359dp"
         android:layout_height="636dp"
         android:background="#92FFFFFF"
@@ -54,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/backGround3_imageView" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/proName_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="生産者名"
@@ -66,7 +66,7 @@
         tools:layout_editor_absoluteY="39dp" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/productName_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="商品名"
@@ -75,7 +75,7 @@
         tools:layout_editor_absoluteY="78dp" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/showWeight_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="重量"
@@ -84,7 +84,7 @@
         tools:layout_editor_absoluteY="120dp" />
 
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/exhibitDay_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="出品日"
@@ -93,7 +93,7 @@
         tools:layout_editor_absoluteY="385dp" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/region_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="地域"
@@ -102,7 +102,7 @@
         tools:layout_editor_absoluteY="342dp" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/price_textView"
         android:layout_width="123dp"
         android:layout_height="34dp"
         android:text="価格"
@@ -112,7 +112,7 @@
         tools:layout_editor_absoluteY="296dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/productImage_imageView"
         android:layout_width="150dp"
         android:layout_height="112dp"
         app:srcCompat="@mipmap/ic_launcher"
@@ -120,7 +120,7 @@
         tools:layout_editor_absoluteY="170dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/report_imageButton"
         android:layout_width="48dp"
         android:layout_height="43dp"
         android:background="#92FFFFFF"

@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button28"
+        android:id="@+id/deleteShipping_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginBottom="520dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button29"
+        android:id="@+id/registerShipping_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginBottom="600dp"

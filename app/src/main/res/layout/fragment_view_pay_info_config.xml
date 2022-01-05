@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/addCredit_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginBottom="600dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button27"
+        android:id="@+id/deleteCredit_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginBottom="520dp"

@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F2E8CF"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="60dp">
 
         <Button
-            android:id="@+id/button25"
+            android:id="@+id/inputComplete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="660dp"
@@ -27,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/profileMessage_editText"
             android:layout_width="380dp"
             android:layout_height="200dp"
             android:background="#000000"
@@ -42,7 +36,7 @@
             app:layout_constraintVertical_bias="0.666" />
 
         <TextView
-            android:id="@+id/textView63"
+            android:id="@+id/profileMessage_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
@@ -56,7 +50,7 @@
             app:layout_constraintVertical_bias="0.259" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/account_imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="500dp"
@@ -67,7 +61,7 @@
             app:srcCompat="@drawable/user" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/inputAccount_imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="500dp"
@@ -79,7 +73,7 @@
             app:srcCompat="@android:drawable/ic_menu_camera" />
 
         <TextView
-            android:id="@+id/textView61"
+            android:id="@+id/userId_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -93,7 +87,7 @@
             app:layout_constraintVertical_bias="0.256" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/userName_editText"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:background="#000000"
@@ -108,7 +102,7 @@
             app:layout_constraintVertical_bias="0.288" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/userId_editText"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:background="#000000"
@@ -121,33 +115,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.393" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="500dp"
-        android:background="#F2E8CF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <TextView
-        android:id="@+id/textView61"
+        android:id="@+id/userName_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ユーザ名"
@@ -159,19 +129,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.256" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:background="#000000"
-        android:backgroundTint="#E4E4E4"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

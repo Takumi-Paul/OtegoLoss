@@ -7,7 +7,7 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/confirmBuy_button"
         android:layout_width="167dp"
         android:layout_height="55dp"
         android:text="購入確定"
@@ -16,31 +16,29 @@
         tools:layout_editor_absoluteY="511dp" />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/shippingInfo_view"
         android:layout_width="321dp"
         android:layout_height="140dp"
-        android:layout_marginBottom="448dp"
+        android:layout_marginTop="80dp"
         android:background="#92FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view5"
+        android:id="@+id/creditInfo_view"
         android:layout_width="321dp"
         android:layout_height="140dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginTop="100dp"
         android:background="#92FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/shippingInfo_view" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/addressNumber_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="郵便番号"
@@ -49,7 +47,7 @@
         tools:layout_editor_absoluteY="101dp" />
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/creditCompany_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="クレカ会社"
@@ -58,7 +56,7 @@
         tools:layout_editor_absoluteY="351dp" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/creditNumber_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="クレカ番号"
@@ -67,7 +65,7 @@
         tools:layout_editor_absoluteY="351dp" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/address_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="住所"
@@ -76,7 +74,7 @@
         tools:layout_editor_absoluteY="144dp" />
 
     <TextView
-        android:id="@+id/textView46"
+        android:id="@+id/creditName_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="名義人"
@@ -85,7 +83,7 @@
         tools:layout_editor_absoluteY="400dp" />
 
     <TextView
-        android:id="@+id/textView45"
+        android:id="@+id/shippingInfo_textView"
         android:layout_width="146dp"
         android:layout_height="29dp"
         android:text="配送先情報"
@@ -94,7 +92,7 @@
         tools:layout_editor_absoluteY="41dp" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/creditInfo_textView"
         android:layout_width="146dp"
         android:layout_height="29dp"
         android:text="決済情報"
@@ -102,15 +100,6 @@
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="280dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
     android:background="#F2E8CF">
 
     <Button
-        android:id="@+id/button24"
+        android:id="@+id/nextInformation_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/nextDeleteAccount_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/nextProcedureRegister_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/nextSettingAddress_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/nextSettingCredit_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/nextSettingProfile_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="プロフィール設定"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/accountImage_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="500dp"
@@ -84,7 +84,7 @@
         app:srcCompat="@drawable/user" />
 
     <TextView
-        android:id="@+id/textView53"
+        android:id="@+id/profileUserName_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="540dp"
@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView59"
+        android:id="@+id/profileUserID_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="user id"
@@ -110,7 +110,7 @@
         app:layout_constraintVertical_bias="0.268" />
 
     <TextView
-        android:id="@+id/textView60"
+        android:id="@+id/profileUserMessage_textView"
         android:layout_width="380dp"
         android:layout_height="100dp"
         android:text="プロフィールメッセージ"
@@ -123,7 +123,7 @@
         app:layout_constraintVertical_bias="0.354" />
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/nextMeter_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"

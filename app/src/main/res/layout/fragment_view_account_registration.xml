@@ -7,7 +7,7 @@
     android:background="#F2E8CF">
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/mail_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/userID_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/password_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/rePassword_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailAddress_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.199" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/userID_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/Password_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -109,7 +109,7 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/rePassword_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -123,7 +123,7 @@
         app:layout_constraintVertical_bias="0.697" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/AccountRegister_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="アカウント登録"
