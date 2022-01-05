@@ -5,12 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14895833333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2795313796652462" />
         <entry key="app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_shipping.xml" value="0.1328125" />
-        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.37451767543535014" />
         <entry key="app/src/main/res/layout/fragment_view_account_registration.xml" value="0.23428116820182004" />
         <entry key="app/src/main/res/layout/fragment_view_comment.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_creditcard_regist.xml" value="0.27404876174140164" />
@@ -42,6 +42,7 @@
         <entry key="app/src/main/res/layout/template.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/view_shipping_procedure.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
