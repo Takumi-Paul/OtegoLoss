@@ -11,6 +11,8 @@ import com.example.otegoloss.databinding.ActivityMainBinding;
 import android.view.Menu;
 
 import android.os.Bundle;
+import android.view.View;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         //メニューを生成
         getMenuInflater().inflate(R.menu.search_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void viewConfigProfile(View view){
+        setContentView(R.layout.fragment_view_profile_config);
     }
 }
 //test matsu
