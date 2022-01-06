@@ -12,6 +12,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="インフォメーション"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +24,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="アカウント削除"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextInformation_button" />
@@ -31,6 +35,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="生産者登録"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingAddress_button" />
@@ -40,6 +46,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="配送先情報設定"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingCredit_button" />
@@ -49,6 +57,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="決済情報設定"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextMeter_button" />
@@ -59,16 +69,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="プロフィール設定"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/accountImage_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -114,6 +126,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="ロス削減メーター"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingProfile_button" />

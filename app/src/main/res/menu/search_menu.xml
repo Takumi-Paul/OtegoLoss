@@ -5,10 +5,9 @@
 
     <item
         android:id="@+id/app_bar_search"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="@string/search"
-        app:showAsAction="always"
+        android:icon="?android:attr/actionModeWebSearchDrawable"
         android:orderInCategory="100"
+        android:title="@string/search"
         app:actionViewClass="android.widget.SearchView"
-        />
+        app:showAsAction="always" />
 </menu>
