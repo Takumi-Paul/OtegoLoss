@@ -6,4 +6,6 @@
     <string name="title_user">ユーザー</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_search">menu</string>
+    <string name="search">Search</string>
 </resources>
