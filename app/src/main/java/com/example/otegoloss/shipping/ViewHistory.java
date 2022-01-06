@@ -15,11 +15,11 @@ public class ViewHistory extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_view_yet_sold_out_history);
+        setContentView(R.layout.fragment_view_sold_out_history);
     }
 
-    public void viewYetSoldOutHistory(View view) {
-
+    private void viewYetSoldOutHistory(View view) {
+        setContentView(R.layout.fragment_view_yet_sold_out_history);
     }
 
 
