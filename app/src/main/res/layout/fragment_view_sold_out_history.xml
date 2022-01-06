@@ -44,21 +44,9 @@
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="@+id/text_view2_sold_out_history"
         app:layout_constraintTop_toTopOf="@+id/text_view2_sold_out_history"
-        app:layout_constraintVertical_bias="0.481" />
-
-    <Button
-        android:id="@+id/button_soldout_sold_out_history"
-        android:layout_width="97dp"
-        android:layout_height="54dp"
-        android:background="#6A994E"
-        android:text="完売済"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/text_view2_sold_out_history"
-        app:layout_constraintEnd_toEndOf="@+id/text_view2_sold_out_history"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="@+id/text_view2_sold_out_history"
-        app:layout_constraintTop_toTopOf="@+id/text_view2_sold_out_history"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.481"
+        android:onClick="viewYetSoldOutHistory"
+        />
 
     <View
         android:id="@+id/text_view2_sold_out_history"
@@ -70,5 +58,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245" />
+
+    <TextView
+        android:id="@+id/sold_out_text_view_sold_out_history"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text="完売済"
+        android:textColor="@color/blue_black"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view2_sold_out_history"
+        app:layout_constraintEnd_toEndOf="@+id/text_view2_sold_out_history"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/text_view2_sold_out_history"
+        app:layout_constraintTop_toTopOf="@+id/text_view2_sold_out_history" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
