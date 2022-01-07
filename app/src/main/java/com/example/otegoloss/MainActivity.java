@@ -1,7 +1,11 @@
 package com.example.otegoloss;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -51,8 +55,24 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void viewConfigProfile(View view){
-        setContentView(R.layout.fragment_view_profile_config);
+    // Fragmentを表示させるメソッドを定義（表示したいFragmentを引数として渡す）
+    private void addFragment(Fragment fragment) {
+        // フラグメントマネージャーの取得
+        FragmentManager manager = getSupportFragmentManager();
+        // フラグメントトランザクションの開始
+        FragmentTransaction transaction = manager.beginTransaction();
+        // MainFragmentを追加
+        transaction.add(R.id.fragmentUser, fragment);
+        // フラグメントトランザクションのコミット。コミットすることでFragmentの状態が反映される
+        transaction.commit();
+    }
+
+    // 戻るボタン「←」をアクションバー（上部バー）にセットするメソッドを定義
+    public void setupBackButton(boolean enableBackButton) {
+        // アクションバーを取得
+        ActionBar actionBar = getSupportActionBar();
+        // アクションバーに戻るボタン「←」をセット（引数が true: 表示、false: 非表示）
+        actionBar.setDisplayHomeAsUpEnabled(enableBackButton);
     }
 }
 //test matsu
