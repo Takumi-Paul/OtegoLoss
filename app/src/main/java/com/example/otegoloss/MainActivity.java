@@ -19,6 +19,8 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         // アクションバーを取得
         ActionBar actionBar = getSupportActionBar();
         // アクションバーに戻るボタン「←」をセット（引数が true: 表示、false: 非表示）
-        actionBar.setDisplayHomeAsUpEnabled(enableBackButton);
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(enableBackButton);
     }
 }
 //test matsu
