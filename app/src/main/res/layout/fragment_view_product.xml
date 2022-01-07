@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/proName_textView"
+        android:id="@+id/textView_hoge1"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="生産者名"
@@ -55,7 +55,25 @@
         tools:layout_editor_absoluteY="39dp" />
 
     <TextView
+        android:id="@+id/proName_textView"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="生産者名"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <TextView
         android:id="@+id/productName_textView"
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:text="商品名"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:id="@+id/textview_hoge2"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="商品名"
@@ -64,7 +82,7 @@
         tools:layout_editor_absoluteY="78dp" />
 
     <TextView
-        android:id="@+id/showWeight_textView"
+        android:id="@+id/textview_hoge3"
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:text="重量"
@@ -73,31 +91,68 @@
         tools:layout_editor_absoluteY="120dp" />
 
     <TextView
-        android:id="@+id/exhibitDay_textView"
+        android:id="@+id/showWeight_textView"
         android:layout_width="93dp"
         android:layout_height="28dp"
+        android:text="重量"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <TextView
+        android:id="@+id/textview_hoge6"
+        android:layout_width="67dp"
+        android:layout_height="27dp"
         android:text="出品日"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="385dp" />
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/exhibitDay_textView"
+        android:layout_width="67dp"
+        android:layout_height="27dp"
+        android:text="出品日"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="397dp" />
 
     <TextView
         android:id="@+id/region_textView"
-        android:layout_width="93dp"
+        android:layout_width="57dp"
         android:layout_height="28dp"
         android:text="地域"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="342dp" />
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="351dp" />
 
     <TextView
-        android:id="@+id/price_textView"
-        android:layout_width="123dp"
-        android:layout_height="34dp"
+        android:id="@+id/textview_hoge5"
+        android:layout_width="57dp"
+        android:layout_height="28dp"
+        android:text="地域"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <TextView
+        android:id="@+id/textview_hoge4"
+        android:layout_width="72dp"
+        android:layout_height="43dp"
         android:text="価格"
         android:textColor="#BC4749"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <TextView
+        android:id="@+id/price_textView"
+        android:layout_width="72dp"
+        android:layout_height="43dp"
+        android:text="価格"
+        android:textColor="#BC4749"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="296dp" />
 
     <ImageView

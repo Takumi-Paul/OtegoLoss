@@ -9,15 +9,6 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_mypage.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_shipping.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_user.xml" value="0.27219202898550726" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_account_registration.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_comment.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_creditcard_regist.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_deletion_agreement.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_completed.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_info_confirmation.xml" value="0.33" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_how_to_register.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_input_payment.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_input_shipping_address.xml" value="0.20520833333333333" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_producer_information.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_product.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_profile_config.xml" value="0.27219202898550726" />
@@ -27,7 +18,6 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_config.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_regist.xml" value="0.20520833333333333" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.1" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_product.xml" value="0.20520833333333333" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_terms_of_use.xml" value="0.20520833333333333" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_user.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_yet_sold_out_history.xml" value="0.27219202898550726" />
