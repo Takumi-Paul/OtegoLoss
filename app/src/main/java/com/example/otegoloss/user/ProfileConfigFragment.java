@@ -12,6 +12,8 @@ import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.databinding.FragmentUserBinding;
 
+import java.util.Objects;
+
 public class ProfileConfigFragment extends Fragment {
 
     @Override
@@ -22,8 +24,6 @@ public class ProfileConfigFragment extends Fragment {
 
         // 所属親アクティビティを取得
         MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("プロフィール設定");
         // 戻るボタンを表示する
         activity.setupBackButton(true);
 
