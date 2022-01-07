@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
@@ -13,14 +14,6 @@
         app:srcCompat="@drawable/background"
         tools:layout_editor_absoluteX="-15dp"
         tools:layout_editor_absoluteY="4dp" />
-
-    <ImageView
-        android:id="@+id/productImage_imageView_home1"
-        android:layout_width="159dp"
-        android:layout_height="125dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="64dp" />
 
     <ImageView
         android:id="@+id/productImage_imageView_home4"
@@ -162,5 +155,13 @@
         android:text="出品者ID4"
         tools:layout_editor_absoluteX="222dp"
         tools:layout_editor_absoluteY="477dp" />
+
+    <ImageButton
+        android:id="@+id/productImage_imageView_home1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="62dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

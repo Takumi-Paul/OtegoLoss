@@ -15,10 +15,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.user.ProfileConfigFragment;
+import com.google.firebase.inappmessaging.model.Button;
 
 public class HomeFragment extends Fragment {
 
@@ -36,7 +38,7 @@ public class HomeFragment extends Fragment {
         activity.setupBackButton(false);
 
         // ボタン要素を取得
-        Button bt1 = view.findViewById(R.id.nextSettingProfile_button);
+        ImageButton bt1 = view.findViewById(R.id.productImage_imageView_home1); //R.idを修正する必要あり
 
         // ①ボタンをクリックした時の処理
         bt1.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +59,7 @@ public class HomeFragment extends Fragment {
         // フラグメントトランザクションの開始
         FragmentTransaction transaction = manager.beginTransaction();
         // レイアウトをfragmentに置き換え（追加）
-        transaction.replace(R.id.fragmentUser, fragment);
+        transaction.replace(R.id.fragmentHome, fragment);
         // 置き換えのトランザクションをバックスタックに保存する
         transaction.addToBackStack(null);
         // フラグメントトランザクションをコミット
