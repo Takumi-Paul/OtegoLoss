@@ -11,4 +11,6 @@
     <string name="profile_config">プロフィール設定</string>
     <string name="product_name">商品名</string>
     <string name="shipping">出品</string>
+    <string name="purchaseHistory">購入履歴</string>
+    <string name="favoriteUser">お気に入りユーザー</string>
 </resources>

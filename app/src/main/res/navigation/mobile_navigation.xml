@@ -14,7 +14,11 @@
         android:id="@+id/navigation_mypage"
         android:name="com.example.otegoloss.mypage.MypageFragment"
         android:label="@string/title_mypage"
-        tools:layout="@layout/fragment_mypage" />
+        tools:layout="@layout/fragment_mypage" >
+        <action
+            android:id="@+id/action_mypage_to_purchaseHistory"
+            app:destination="@id/purchaseHistory" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_shipping"
         android:name="com.example.otegoloss.shipping.ShippingFragment"
@@ -25,4 +29,8 @@
         android:name="com.example.otegoloss.user.UserFragment"
         android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/purchaseHistory"
+        android:name="com.example.otegoloss.mypage.PurchaseHistory"
+        android:label="PurchaseHistory" />
 </navigation>
