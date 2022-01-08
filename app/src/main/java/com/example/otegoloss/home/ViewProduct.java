@@ -19,15 +19,34 @@ import com.example.otegoloss.R;
 
 public class ViewProduct extends Fragment {
 
+    // 商品名配列
+    private String[] productNames = {
+            "tomato", "carrot", "radish"
+    };
+    // 価格配列
+    private int[] prices = {
+            100, 200, 300
+    };
+
+    //他の情報の配列を作成(配列の中身は3つまで)
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
+
+        // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
+        // 画像ID
         int imageId = bundle.getInt("IMAGEID", 0);
-        System.out.println(imageId);
+        // 商品ID
+        int productID = bundle.getInt("PRODUCT_ID", 0);
+
+        // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.productImage_imageView);
         imageView.setImageResource(imageId);
+
+
         return view;
     }
 

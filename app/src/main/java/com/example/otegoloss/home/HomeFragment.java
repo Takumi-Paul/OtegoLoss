@@ -30,12 +30,17 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    // 商品名配列
     private String[] productNames = {
-            "tomato", "carrot"
+            "tomato", "carrot", "radish"
     };
-
+    // 価格配列
     private int[] prices = {
-            100, 200
+            100, 200, 300
+    };
+    // 商品ID
+    private int[] productID = new int[]{
+            0, 1, 2
     };
 
     private List<Integer> imgList = new ArrayList<>();
@@ -55,7 +60,7 @@ public class HomeFragment extends Fragment {
         GridView gridview = view.findViewById(R.id.product_gridView);
         // BaseAdapter を継承したGridAdapterのインスタンスを生成
         // 子要素のレイアウトファイル grid_items.xml を
-        // activity_main.xml に inflate するためにGridAdapterに引数として渡す
+        // fragment_home.xml に inflate するためにGridAdapterに引数として渡す
         GridAdapter adapter = new GridAdapter(getActivity().getApplicationContext(),
                 R.layout.grid_items,
                 imgList,
@@ -71,12 +76,21 @@ public class HomeFragment extends Fragment {
                 FragmentManager fm = getChildFragmentManager();
                 FragmentTransaction t = fm.beginTransaction();
 
+                // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
+                // 画像ID
                 bundle.putInt("IMAGEID", imgList.get(position));
+                // 商品ID
+                bundle.putInt("PRODUCT_ID", productID[position]);
+                // 次のFragment
                 Fragment secondFragment = new ViewProduct();
+                // bundleを次のfragmentに設定
                 secondFragment.setArguments(bundle);
+                // fragmentManagerに次のfragmentを追加
                 t.add(R.id.fragmentHome, secondFragment);
+                // 画面遷移戻りを設定
                 t.addToBackStack(null);
+                // 画面遷移
                 t.commit();
             }
         });
