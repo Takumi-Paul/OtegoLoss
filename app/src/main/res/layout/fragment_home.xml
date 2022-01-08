@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF"
     tools:context=".home.HomeFragment"
+    android:id="@+id/fragmentHome"
     android:padding="4dp">
 
 
@@ -13,10 +14,12 @@
         android:id="@+id/product_gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
+        android:horizontalSpacing="1dp"
         android:numColumns="2"
         android:stretchMode="columnWidth"
-        />
+        android:verticalSpacing="1dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="4dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

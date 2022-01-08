@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.GridView;
 import com.example.otegoloss.GridAdapter;
+import android.content.Intent;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -32,8 +34,11 @@ public class HomeFragment extends Fragment {
             "tomato", "carrot"
     };
 
-    private List<Integer> imgList = new ArrayList<>();
+    private int[] prices = {
+            100, 200
+    };
 
+    private List<Integer> imgList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -54,10 +59,27 @@ public class HomeFragment extends Fragment {
         GridAdapter adapter = new GridAdapter(getActivity().getApplicationContext(),
                 R.layout.grid_items,
                 imgList,
-                productNames
+                productNames,
+                prices
         );
+        // gridViewにadapterをセット
         gridview.setAdapter(adapter);
+        // item clickのListenerをセット
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FragmentManager fm = getChildFragmentManager();
+                FragmentTransaction t = fm.beginTransaction();
 
+                Bundle bundle = new Bundle();
+                bundle.putInt("IMAGEID", imgList.get(position));
+                Fragment secondFragment = new ViewProduct();
+                secondFragment.setArguments(bundle);
+                t.add(R.id.fragmentHome, secondFragment);
+                t.addToBackStack(null);
+                t.commit();
+            }
+        });
 
         return view;
     }

@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="3dp">
 
+    <View
+        android:id="@+id/product_view"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop" />
+
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/product_name"/>
+        android:layout_height="150dp"
+        android:contentDescription="@string/product_name"
+        android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/text_view"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textColor="#fff"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
-        android:shadowColor="#444"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/productHome_textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view"
+        android:layout_marginTop="11dp"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/priceHome_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/productHome_textView"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:textSize="18sp" />
 
 </RelativeLayout>
