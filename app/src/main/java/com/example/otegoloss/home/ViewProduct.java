@@ -19,16 +19,6 @@ import com.example.otegoloss.R;
 
 public class ViewProduct extends Fragment {
 
-    // 商品名配列
-    private String[] productNames = {
-            "tomato", "carrot", "radish"
-    };
-    // 価格配列
-    private int[] prices = {
-            100, 200, 300
-    };
-
-    //他の情報の配列を作成(配列の中身は3つまで)
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
