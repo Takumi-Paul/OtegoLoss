@@ -9,12 +9,11 @@
     android:id="@+id/fragmentHome"
     android:padding="4dp">
 
-
     <GridView
         android:id="@+id/product_gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:horizontalSpacing="1dp"
         android:numColumns="2"
@@ -22,4 +21,24 @@
         android:verticalSpacing="1dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="4dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_gridView"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/shipping_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/plus"
+            android:backgroundTint="@color/yellow"
+            tools:layout_editor_absoluteY="12dp"
+            android:contentDescription="@string/shipping"/>
+    </RelativeLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

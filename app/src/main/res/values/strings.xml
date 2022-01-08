@@ -10,4 +10,5 @@
     <string name="search">Search</string>
     <string name="profile_config">プロフィール設定</string>
     <string name="product_name">商品名</string>
+    <string name="shipping">出品</string>
 </resources>

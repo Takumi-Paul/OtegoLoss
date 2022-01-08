@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
+import com.example.otegoloss.shipping.EntryOfExhibitInfoFragment;
 import com.example.otegoloss.user.ProfileConfigFragment;
 
 import java.util.ArrayList;
@@ -50,6 +51,26 @@ public class HomeFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // 出品ボタン
+        ImageButton shippingButton = (ImageButton)view.findViewById(R.id.shipping_button);
+        shippingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm_shipping = getChildFragmentManager();
+                FragmentTransaction t_shipping = fm_shipping.beginTransaction();
+                // 次のFragment
+                Fragment secondFragment = new EntryOfExhibitInfoFragment();
+                // fragmentManagerに次のfragmentを追加
+                t_shipping.add(R.id.fragmentHome, secondFragment);
+                // 画面遷移戻りを設定
+                t_shipping.addToBackStack(null);
+                // 画面遷移
+                t_shipping.commit();
+
+            }
+        });
+
+        //商品一覧画面
         // for-each member名をR.drawable.名前としてintに変換してarrayに登録
         for (String productName: productNames){
             int imageId = getResources().getIdentifier(productName,"drawable", getActivity().getPackageName());
@@ -73,8 +94,8 @@ public class HomeFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm = getChildFragmentManager();
-                FragmentTransaction t = fm.beginTransaction();
+                FragmentManager fm_item = getChildFragmentManager();
+                FragmentTransaction t_item = fm_item.beginTransaction();
 
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
@@ -87,11 +108,11 @@ public class HomeFragment extends Fragment {
                 // bundleを次のfragmentに設定
                 secondFragment.setArguments(bundle);
                 // fragmentManagerに次のfragmentを追加
-                t.add(R.id.fragmentHome, secondFragment);
+                t_item.add(R.id.fragmentHome, secondFragment);
                 // 画面遷移戻りを設定
-                t.addToBackStack(null);
+                t_item.addToBackStack(null);
                 // 画面遷移
-                t.commit();
+                t_item.commit();
             }
         });
 
