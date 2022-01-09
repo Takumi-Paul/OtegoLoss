@@ -39,7 +39,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                 FragmentManager fm_completed = getChildFragmentManager();
                 FragmentTransaction t_completed = fm_completed.beginTransaction();
                 // 次のFragment
-                Fragment secondFragment = new ViewExhibitCompleted();
+                Fragment secondFragment = new ViewExhibitCompletedFragment();
                 // fragmentManagerに次のfragmentを追加
                 t_completed.add(R.id.fragmentViewExhibitInfoConfirmation, secondFragment);
                 // 画面遷移戻りを設定

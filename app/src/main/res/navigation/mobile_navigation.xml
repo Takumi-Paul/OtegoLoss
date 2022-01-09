@@ -70,4 +70,35 @@
         android:id="@+id/payinfoconfig"
         android:name="com.example.otegoloss.user.PayInfoConfigFragment"
         android:label="@string/payinfoconfig" />
+    <fragment
+        android:id="@+id/navigation_entry_of_exhibit_info"
+        android:name="com.example.otegoloss.shipping.EntryOfExhibitInfoFragment"
+        android:label="entry_exhibit"
+        tools:layout="@layout/fragment_entry_of_exhibit_info" >
+        <action
+            android:id="@+id/action_entry_to_confirmation"
+            app:destination="@id/navigation_view_exhibit_product_info_confirmation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_view_exhibit_product_info_confirmation"
+        android:name="com.example.otegoloss.shipping.ViewExhibitProductInfoConfirmationFragment"
+        android:label="exhibit_confirmation"
+        tools:layout="@layout/fragment_view_exhibit_info_confirmation" >
+        <action
+            android:id="@+id/action_confirmation_to_completed"
+            app:destination="@+id/navigation_view_exhibit_completed" />
+        <action
+            android:id="@+id/action_confirmation_to_entry"
+            app:destination="@+id/navigation_entry_of_exhibit_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_view_exhibit_completed"
+        android:name="com.example.otegoloss.shipping.ViewExhibitCompletedFragment"
+        android:label="exhibit_completed"
+        tools:layout="@layout/fragment_view_exhibit_completed" >
+    </fragment>
+
+
 </navigation>
