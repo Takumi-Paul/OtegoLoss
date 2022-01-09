@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.otegoloss.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_entry_of_exhibit_info"
+            app:destination="@id/navigation_entry_of_exhibit_info" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_mypage"
         android:name="com.example.otegoloss.mypage.MypageFragment"
@@ -98,6 +102,9 @@
         android:name="com.example.otegoloss.shipping.ViewExhibitCompletedFragment"
         android:label="exhibit_completed"
         tools:layout="@layout/fragment_view_exhibit_completed" >
+        <action
+            android:id="@+id/action_navigation_view_exhibit_completed_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
 
