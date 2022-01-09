@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2E8CF"
     android:id="@+id/fragmentProduct"
     tools:context=".home.ViewProduct">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2E8CF"/>
 
     <Button
         android:id="@+id/buy_button"
@@ -194,6 +198,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="#92FFFFFF"
+        android:contentDescription="@string/report"
         app:layout_constraintBottom_toBottomOf="@+id/backGround_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

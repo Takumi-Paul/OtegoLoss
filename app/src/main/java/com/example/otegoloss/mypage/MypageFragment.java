@@ -36,8 +36,15 @@ public class MypageFragment extends Fragment {
         purchaseHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Navigationを繋げる
                 Navigation.findNavController(view).navigate(R.id.action_mypage_to_purchaseHistory);
+            }
+        });
 
+        favoriteUserViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mypage_to_favoriteUserView);
             }
         });
 

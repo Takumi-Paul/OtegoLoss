@@ -13,4 +13,11 @@
     <string name="shipping">出品</string>
     <string name="purchaseHistory">購入履歴</string>
     <string name="favoriteUser">お気に入りユーザー</string>
+    <string name="category">カテゴリー</string>
+    <string name="haitatsu">配達</string>
+    <string name="price">価格</string>
+    <string name="shuppin_day">出品日</string>
+    <string name="weight">重さ</string>
+    <string name="report">通報</string>
+    <string name="area">地域</string>
 </resources>

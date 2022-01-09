@@ -8,6 +8,5 @@
         android:icon="?android:attr/actionModeWebSearchDrawable"
         android:orderInCategory="100"
         android:title="@string/search"
-        app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
 </menu>

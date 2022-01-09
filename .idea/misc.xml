@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/fragment_view_deletion_agreement.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_exhibit_completed.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_exhibit_info_confirmation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_view_favorite_user.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_how_to_register.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_input_payment.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_input_shipping_address.xml" value="0.23351458258301477" />
@@ -53,7 +54,7 @@
         <entry key="app/src/main/res/layout/fragment_view_purchase_information2.xml" value="0.21368184733497306" />
         <entry key="app/src/main/res/layout/fragment_view_reduction_meters.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_request_to_delete.xml" value="0.23933025497803034" />
-        <entry key="app/src/main/res/layout/fragment_view_search.xml" value="0.7400659868523902" />
+        <entry key="app/src/main/res/layout/fragment_view_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_shipping_address_info_config.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_shipping_address_info_regist.xml" value="0.49221183800623053" />
         <entry key="app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.28915320463740024" />
@@ -66,6 +67,7 @@
         <entry key="app/src/main/res/layout/template.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/view_shipping_procedure.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.1328125" />
       </map>
     </option>
   </component>

@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm_item = getChildFragmentManager();
+                FragmentManager fm_item = getParentFragmentManager();
                 FragmentTransaction t_item = fm_item.beginTransaction();
 
                 // bundleに受け渡したい値を保存
@@ -108,7 +108,7 @@ public class HomeFragment extends Fragment {
                 // bundleを次のfragmentに設定
                 secondFragment.setArguments(bundle);
                 // fragmentManagerに次のfragmentを追加
-                t_item.add(R.id.fragmentHome, secondFragment);
+                t_item.replace(R.id.fragmentHome, secondFragment);
                 // 画面遷移戻りを設定
                 t_item.addToBackStack(null);
                 // 画面遷移
