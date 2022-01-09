@@ -44,7 +44,7 @@ public class ShippingFragment extends Fragment {
                 FragmentManager fm_ViewYetSoldOutHistory = getChildFragmentManager();
                 FragmentTransaction t_ViewYetSoldOutHistory  =  fm_ViewYetSoldOutHistory.beginTransaction();
                 // 次のFragment
-                Fragment secondFragment = new ShippingFragment();
+                Fragment secondFragment = new ViewYetSoldOutHistoryFragment();
                 // fragmentManagerに次のfragmentを追加
                 t_ViewYetSoldOutHistory.add(R.id.fragmentShipping, secondFragment);
                 // 画面遷移戻りを設定
