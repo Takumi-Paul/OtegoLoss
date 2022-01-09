@@ -9,7 +9,8 @@
         android:id="@+id/navigation_home"
         android:name="com.example.otegoloss.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    </fragment>
     <fragment
         android:id="@+id/navigation_mypage"
         android:name="com.example.otegoloss.mypage.MypageFragment"
@@ -48,4 +49,16 @@
         android:id="@+id/payinfoconfig"
         android:name="com.example.otegoloss.user.PayInfoConfigFragment"
         android:label="@string/payinfoconfig" />
+    <fragment
+        android:id="@+id/purchase_information1"
+        android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
+        android:label="@string/purchaseinfo1" />
+    <fragment
+        android:id="@+id/fragmentProduct"
+        android:name="com.example.otegoloss.home.ViewProduct"
+        android:label="@string/purchaseinfo1" >
+        <action
+            android:id="@+id/action_fragmentProduct_to_purchase_information1"
+            app:destination="@id/purchase_information1" />
+    </fragment>
 </navigation>

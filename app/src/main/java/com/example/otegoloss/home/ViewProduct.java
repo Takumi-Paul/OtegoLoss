@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.R;
 
@@ -35,6 +37,15 @@ public class ViewProduct extends Fragment {
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.productImage_imageView);
         imageView.setImageResource(imageId);
+
+        Button buyButton = view.findViewById(R.id.buy_button);
+
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+            }
+        });
 
 
         return view;
