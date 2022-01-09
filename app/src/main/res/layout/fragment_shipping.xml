@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentShipping"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/back_color_not_sold_out_history"
+        android:id="@+id/back_color_sold_out_history"
         android:layout_width="372dp"
         android:layout_height="631dp"
         android:background="#8BF2E8CF"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/text_view1_not_sold_out_history"
+        android:id="@+id/text_view1_sold_out_history"
         android:layout_width="88dp"
         android:layout_height="31dp"
         android:background="#6A994E"
@@ -33,7 +34,7 @@
         app:layout_constraintVertical_bias="0.171" />
 
     <Button
-        android:id="@+id/button_notsoldout_not_sold_out_history"
+        android:id="@+id/button_yetsoldout_sold_out_history"
         android:layout_width="97dp"
         android:layout_height="50dp"
         android:background="#F2E8CF"
@@ -45,7 +46,6 @@
         app:layout_constraintStart_toStartOf="@+id/text_view2_sold_out_history"
         app:layout_constraintTop_toTopOf="@+id/text_view2_sold_out_history"
         app:layout_constraintVertical_bias="0.481"
-        android:onClick="viewYetSoldOutHistory"
         />
 
     <View

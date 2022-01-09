@@ -27,38 +27,29 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
         MainActivity activity = (MainActivity) getActivity();
         // アクションバーにタイトルをセット
         activity.setTitle("出品履歴");
-        // 戻るボタンは非表示にする（MainFragmentでは戻るボタン不要）
-        // ここをfalseにしておかないとサブフラグメントから戻ってきた際に戻るボタンが表示されたままになってしまう
+        // 戻るボタンは表示にする
         activity.setupBackButton(true);
 
         // ボタン要素を取得
-        Button bt1 = view.findViewById(R.id.button_soldout_sold_out_history);
+        Button buttonSoldOutHistory = view.findViewById(R.id.button_soldout_sold_out_history);
 
         // 完売済みボタンをクリックした時の処理
-        bt1.setOnClickListener(new View.OnClickListener() {
+        buttonSoldOutHistory.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // fragment_view_sold_out_historyに遷移させる
-                replaceFragment1(new ShippingFragment());
+            public void onClick(View v) {
+                // fragmentShippingに遷移させる
+                FragmentManager fm_Shipping1 = getChildFragmentManager();
+                FragmentTransaction t_Shipping1= fm_Shipping1.beginTransaction();
+                // 次のFragment
+                Fragment secondFragment = new ShippingFragment();
+                // fragmentManagerに次のfragmentを追加
+                t_Shipping1.add(R.id.fragmentViewYetSoldOutHistory, secondFragment);
+                // 画面遷移戻りを設定
+                t_Shipping1.addToBackStack(null);
+                // 画面遷移
+                t_Shipping1.commit();
             }
         });
-
         return view;
     }
-
-    // 表示させるFragmentを切り替えるメソッドを定義（表示したいFragmentを引数として渡す）
-    //ShippingFragmentへの移動
-    private void replaceFragment1(Fragment fragment) {
-        // フラグメントマネージャーの取得
-        FragmentManager manager = getFragmentManager(); // アクティビティではgetSupportFragmentManager()?
-        // フラグメントトランザクションの開始
-        FragmentTransaction transaction = manager.beginTransaction();
-        // レイアウトをfragmentに置き換え（追加）
-        transaction.replace(R.id.viewYetSoldOutHistory, fragment);
-        // 置き換えのトランザクションをバックスタックに保存する
-        transaction.addToBackStack(null);
-        // フラグメントトランザクションをコミット
-        transaction.commit();
-    }
-
 }
