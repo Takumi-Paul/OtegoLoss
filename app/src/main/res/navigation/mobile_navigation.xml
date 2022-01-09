@@ -32,7 +32,14 @@
         android:id="@+id/navigation_user"
         android:name="com.example.otegoloss.user.UserFragment"
         android:label="@string/title_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_navigation_user_to_profile_config"
+            app:destination="@id/profile_config" />
+        <action
+            android:id="@+id/action_navigation_user_to_payinfoconfig"
+            app:destination="@id/payinfoconfig" />
+    </fragment>
     <fragment
         android:id="@+id/purchaseHistory"
         android:name="com.example.otegoloss.mypage.PurchaseHistory"
@@ -44,13 +51,21 @@
     <fragment
         android:id="@+id/purchase_information1"
         android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
-        android:label="@string/purchaseinfo1" />
+        android:label="" />
     <fragment
         android:id="@+id/fragmentProduct"
         android:name="com.example.otegoloss.home.ViewProduct"
-        android:label="@string/purchaseinfo1" >
+        android:label="" >
         <action
             android:id="@+id/action_fragmentProduct_to_purchase_information1"
             app:destination="@id/purchase_information1" />
     </fragment>
+    <fragment
+        android:id="@+id/profile_config"
+        android:name="com.example.otegoloss.user.ProfileConfigFragment"
+        android:label="@string/profileconfig" />
+    <fragment
+        android:id="@+id/payinfoconfig"
+        android:name="com.example.otegoloss.user.PayInfoConfigFragment"
+        android:label="@string/payinfoconfig" />
 </navigation>

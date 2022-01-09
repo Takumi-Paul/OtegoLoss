@@ -20,4 +20,6 @@
     <string name="weight">重さ</string>
     <string name="report">通報</string>
     <string name="area">地域</string>
+    <string name="profileconfig">プロフィール設定</string>
+    <string name="payinfoconfig">決済情報設定</string>
 </resources>

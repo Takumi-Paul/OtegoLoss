@@ -11,29 +11,25 @@
         android:id="@+id/addCredit_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="600dp"
+        android:layout_marginTop="60dp"
         android:text="決済情報登録"
         android:textAlignment="viewStart"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/deleteCredit_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="520dp"
+        android:layout_marginTop="20dp"
         android:text="決済情報削除"
         android:textAlignment="viewStart"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/addCredit_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
