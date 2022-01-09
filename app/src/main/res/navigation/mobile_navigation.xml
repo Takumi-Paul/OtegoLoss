@@ -28,9 +28,24 @@
         android:id="@+id/navigation_user"
         android:name="com.example.otegoloss.user.UserFragment"
         android:label="@string/title_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_navigation_user_to_profile_config"
+            app:destination="@id/profile_config" />
+        <action
+            android:id="@+id/action_navigation_user_to_payinfoconfig"
+            app:destination="@id/payinfoconfig" />
+    </fragment>
     <fragment
         android:id="@+id/purchaseHistory"
         android:name="com.example.otegoloss.mypage.PurchaseHistory"
         android:label="PurchaseHistory" />
+    <fragment
+        android:id="@+id/profile_config"
+        android:name="com.example.otegoloss.user.ProfileConfigFragment"
+        android:label="@string/profileconfig" />
+    <fragment
+        android:id="@+id/payinfoconfig"
+        android:name="com.example.otegoloss.user.PayInfoConfigFragment"
+        android:label="@string/payinfoconfig" />
 </navigation>
