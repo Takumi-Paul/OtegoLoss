@@ -8,8 +8,8 @@
 
     <View
         android:id="@+id/back_color_sold_out_history"
-        android:layout_width="372dp"
-        android:layout_height="631dp"
+        android:layout_width="360dp"
+        android:layout_height="728dp"
         android:background="#8BF2E8CF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <Button
         android:id="@+id/button_yetsoldout_sold_out_history"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/sold_out_text_view_sold_out_history"
@@ -75,10 +75,10 @@
 
     <GridView
         android:id="@+id/grid_view_sold_out_history"
-        android:layout_width="340dp"
-        android:layout_height="421dp"
-        android:numColumns="1"
+        android:layout_width="337dp"
+        android:layout_height="409dp"
         android:gravity="center"
+        android:numColumns="1"
         android:stretchMode="columnWidth"
         android:verticalSpacing="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/back_color_sold_out_history"

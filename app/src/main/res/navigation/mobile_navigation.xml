@@ -54,24 +54,17 @@
     <fragment
         android:id="@+id/purchase_information1"
         android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
-        android:label=""
-        tools:layout="@layout/fragment_view_purchase_information1">
-        <action
-            android:id="@+id/action_purchase_information1_to_fragmentViewPurchaseCompleted"
-            app:destination="@id/fragmentViewPurchaseCompleted" />
-    </fragment>
+        android:label="" />
     <fragment
         android:id="@+id/fragmentProduct"
         android:name="com.example.otegoloss.home.ViewProduct"
-        android:label=""
-        tools:layout="@layout/fragment_view_product">
+        android:label="" >
         <action
-            android:id="@+id/action_fragmentProduct_to_fragmentViewComment"
-            app:destination="@id/fragmentViewComment" />
+            android:id="@+id/action_fragmentProduct_to_purchase_information1"
+            app:destination="@id/purchase_information1" />
         <action
-            android:id="@+id/action_fragmentProduct_to_fragmentViewInputShippingAddress"
-            app:destination="@id/fragmentViewInputShippingAddress" />
-
+            android:id="@+id/action_fragmentProduct_to_fragmentcomment"
+            app:destination="@id/fragmentcomment" />
     </fragment>
     <fragment
         android:id="@+id/profile_config"
@@ -115,39 +108,6 @@
     </fragment>
 
 
-    <fragment
-        android:id="@+id/fragmentViewInputShippingAddress"
-        android:name="com.example.otegoloss.home.ViewInputShippingAddress"
-        android:label="配送先住所の選択"
-        tools:layout="@layout/fragment_view_input_shipping_address" >
-        <action
-            android:id="@+id/action_fragmentViewInputShippingAddress_to_fragmentViewInputPayment"
-            app:destination="@id/fragmentViewInputPayment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentViewInputPayment"
-        android:name="com.example.otegoloss.home.ViewInputPayment"
-        android:label="支払い方法の選択"
-        tools:layout="@layout/fragment_view_input_payment" >
-        <action
-            android:id="@+id/action_fragmentViewInputPayment_to_purchase_information1"
-            app:destination="@id/purchase_information1" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentViewPurchaseCompleted"
-        android:name="com.example.otegoloss.home.ViewPurchaseCompleted"
-        android:label="購入完了"
-        tools:layout="@layout/fragment_view_purchase_completed" >
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentViewComment"
-        android:name="com.example.otegoloss.home.ViewComment"
-        android:label="コメント"
-        tools:layout="@layout/fragment_view_comment" >
-    </fragment>
 
 </navigation>
 
