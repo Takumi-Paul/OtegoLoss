@@ -14,10 +14,18 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 
+import com.example.otegoloss.GridAdapter;
+import com.example.otegoloss.GridAdapterOfShipping;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
+import com.example.otegoloss.home.ViewProduct;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShippingFragment extends Fragment {
     // 商品名配列
@@ -36,6 +44,7 @@ public class ShippingFragment extends Fragment {
     private String[]  listingDate= new String[]{
             "2022/01/07", "2021/12/24", "2021/11/10"
     };
+    private List<Integer> imgList = new ArrayList<>();
 
     //画面表示
     @Override
@@ -57,16 +66,60 @@ public class ShippingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragment_view_yet_sold_out_historyに遷移させる
-                FragmentManager fm_ViewYetSoldOutHistory = getChildFragmentManager();
+                FragmentManager fm_ViewYetSoldOutHistory = getParentFragmentManager();
                 FragmentTransaction t_ViewYetSoldOutHistory  =  fm_ViewYetSoldOutHistory.beginTransaction();
                 // 次のFragment
                 Fragment secondFragment = new ViewYetSoldOutHistoryFragment();
                 // fragmentManagerに次のfragmentを追加
-                t_ViewYetSoldOutHistory.add(R.id.fragmentShipping, secondFragment);
+                t_ViewYetSoldOutHistory.replace(R.id.fragmentShipping, secondFragment);
                 // 画面遷移戻りを設定
                 t_ViewYetSoldOutHistory.addToBackStack(null);
                 // 画面遷移
                 t_ViewYetSoldOutHistory.commit();
+            }
+        });
+        for (String productName: productNames){
+            int imageId = getResources().getIdentifier(productName,"drawable", getActivity().getPackageName());
+            imgList.add(imageId);
+        }
+
+        // GridViewのインスタンスを生成
+        GridView gridview = view.findViewById(R.id.grid_view_sold_out_history);
+        // BaseAdapter を継承したGridAdapterのインスタンスを生成
+        // 子要素のレイアウトファイル grid_items.xml を
+        // fragment_home.xml に inflate するためにGridAdapterに引数として渡す
+        GridAdapterOfShipping adapter = new GridAdapterOfShipping(getActivity().getApplicationContext(),
+                R.layout.grid_items_of_shipping,
+                imgList,
+                productNames,
+                prices,
+                listingDate
+        );
+        // gridViewにadapterをセット
+        gridview.setAdapter(adapter);
+        // item clickのListenerをセット
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FragmentManager fm_item = getParentFragmentManager();
+                FragmentTransaction t_item = fm_item.beginTransaction();
+
+                // bundleに受け渡したい値を保存
+                Bundle bundle = new Bundle();
+                // 画像ID
+                bundle.putInt("IMAGEID", imgList.get(position));
+                // 商品ID
+                bundle.putInt("PRODUCT_ID", productID[position]);
+                // 次のFragment
+                Fragment secondFragment = new ViewSoldOutProductFragment();
+                // bundleを次のfragmentに設定
+                secondFragment.setArguments(bundle);
+                // fragmentManagerに次のfragmentを追加
+                t_item.replace(R.id.fragmentShipping, secondFragment);
+                // 画面遷移戻りを設定
+                t_item.addToBackStack(null);
+                // 画面遷移
+                t_item.commit();
             }
         });
         return view;

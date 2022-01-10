@@ -62,9 +62,7 @@
         <action
             android:id="@+id/action_fragmentProduct_to_purchase_information1"
             app:destination="@id/purchase_information1" />
-        <action
-            android:id="@+id/action_fragmentProduct_to_fragmentcomment"
-            app:destination="@id/fragmentcomment" />
+        
     </fragment>
     <fragment
         android:id="@+id/profile_config"
