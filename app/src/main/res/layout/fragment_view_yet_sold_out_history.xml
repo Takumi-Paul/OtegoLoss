@@ -72,4 +72,17 @@
         app:layout_constraintStart_toStartOf="@+id/text_view2_sold_out_history"
         app:layout_constraintTop_toTopOf="@+id/text_view2_sold_out_history" />
 
+    <GridView
+        android:id="@+id/grid_view_yet_sold_out_history"
+        android:layout_width="340dp"
+        android:layout_height="421dp"
+        android:numColumns="1"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        app:layout_constraintBottom_toBottomOf="@+id/back_color_yet_sold_out_history"
+        app:layout_constraintEnd_toEndOf="@+id/back_color_yet_sold_out_history"
+        app:layout_constraintStart_toStartOf="@+id/back_color_yet_sold_out_history"
+        app:layout_constraintTop_toBottomOf="@+id/text_view2_sold_out_history"
+        app:layout_constraintVertical_bias="0.253" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

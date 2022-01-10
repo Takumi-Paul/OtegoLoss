@@ -20,6 +20,22 @@ import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 public class ShippingFragment extends Fragment {
+    // 商品名配列
+    private String[] productNames = {
+            "tomato", "carrot", "radish"
+    };
+    // 価格配列
+    private int[] prices = {
+            100, 200, 300
+    };
+    // 商品ID
+    private int[] productID = new int[]{
+            0, 1, 2
+    };
+    //出品日
+    private String[]  listingDate= new String[]{
+            "2022/01/07", "2021/12/24", "2021/11/10"
+    };
 
     //画面表示
     @Override
