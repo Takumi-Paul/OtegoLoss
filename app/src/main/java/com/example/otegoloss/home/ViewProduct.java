@@ -15,9 +15,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.R;
+import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;
 
 public class ViewProduct extends Fragment {
 
@@ -43,7 +46,39 @@ public class ViewProduct extends Fragment {
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+                //Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+
+                FragmentManager fm_ViewInputShippingAddress = getChildFragmentManager();
+                FragmentTransaction t_ViewInputShippingAddress  =  fm_ViewInputShippingAddress.beginTransaction();
+                // 次のFragment
+                Fragment secondFragment = new ViewInputShippingAddress();
+                // fragmentManagerに次のfragmentを追加
+                t_ViewInputShippingAddress.add(R.id.fragmentProduct, secondFragment);
+                // 画面遷移戻りを設定
+                t_ViewInputShippingAddress.addToBackStack(null);
+                // 画面遷移
+                t_ViewInputShippingAddress.commit();
+            }
+        });
+
+
+        Button commentButton = view.findViewById(R.id.comment_button);
+
+        commentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+
+                FragmentManager fm_ViewComment = getChildFragmentManager();
+                FragmentTransaction t_ViewComment  =  fm_ViewComment.beginTransaction();
+                // 次のFragment
+                Fragment secondFragment = new ViewComment();
+                // fragmentManagerに次のfragmentを追加
+                t_ViewComment.add(R.id.fragmentProduct, secondFragment);
+                // 画面遷移戻りを設定
+                t_ViewComment.addToBackStack(null);
+                // 画面遷移
+                t_ViewComment.commit();
             }
         });
 

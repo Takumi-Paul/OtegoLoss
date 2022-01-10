@@ -10,6 +10,7 @@
         android:id="@+id/confirmBuy_button"
         android:layout_width="167dp"
         android:layout_height="55dp"
+        android:background="@color/light_green"
         android:text="購入確定"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
