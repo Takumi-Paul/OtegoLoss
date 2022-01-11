@@ -7,89 +7,220 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
-    <View
-        android:id="@+id/purchase_view"
-        android:layout_width="332dp"
-        android:layout_height="379dp"
-        android:layout_marginTop="32dp"
-        android:background="#92FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImage_imageView" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/productRegion_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="地域"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="457dp" />
 
-    <TextView
-        android:id="@+id/productWeight_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="重さ"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="414dp" />
 
-    <TextView
-        android:id="@+id/productPrice_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="価格"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="371dp" />
 
-    <TextView
-        android:id="@+id/sellerName_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="販売者名"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="328dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/productName_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="商品名"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="285dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/productInformation_textView"
-        android:layout_width="93dp"
-        android:layout_height="28dp"
-        android:text="商品情報"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="229dp" />
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp" />
 
-    <TextView
-        android:id="@+id/proShippingDay_textView"
-        android:layout_width="284dp"
-        android:layout_height="27dp"
-        android:text="※配達には約〇日かかります"
-        android:textColor="#BC4749"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="507dp" />
+                <ImageView
+                    android:id="@+id/productImage_imageView"
+                    android:layout_width="150dp"
+                    android:layout_height="112dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    tools:layout_editor_absoluteX="130dp"
+                    tools:layout_editor_absoluteY="62dp" />
 
-    <ImageView
-        android:id="@+id/productImage_imageView"
-        android:layout_width="150dp"
-        android:layout_height="112dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="62dp" />
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp" />
 
+                <TextView
+                    android:id="@+id/productInformation_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:text="商品情報"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="39dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:id="@+id/productName_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:text="商品名"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="285dp" />
+
+                <TextView
+                    android:id="@+id/sellerName_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:text="販売者名"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="328dp" />
+
+                <TextView
+                    android:id="@+id/productPrice_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:text="価格"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="371dp" />
+
+                <TextView
+                    android:id="@+id/productWeight_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:text="重さ"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="414dp" />
+
+                <TextView
+                    android:id="@+id/productRegion_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:text="地域"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="457dp" />
+
+                <TextView
+                    android:id="@+id/proShippingDay_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:text="※配達には約〇日かかります"
+                    android:layout_gravity="center"
+                    android:textColor="#BC4749"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="63dp"
+                    tools:layout_editor_absoluteY="507dp" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp" />
+
+                <TextView
+                    android:id="@+id/shippingInfo_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="30dp"
+                    android:text="配送先情報"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    tools:layout_editor_absoluteX="39dp"
+                    tools:layout_editor_absoluteY="41dp" />
+
+                <TextView
+                    android:id="@+id/addressNumber_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:text="郵便番号"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="101dp" />
+
+                <TextView
+                    android:id="@+id/address_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:text="住所"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="144dp" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp" />
+
+                <TextView
+                    android:id="@+id/creditInfo_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="30dp"
+                    android:text="決済情報"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="39dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <TextView
+                    android:id="@+id/creditCompany_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:text="クレカ会社"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="351dp" />
+
+                <TextView
+                    android:id="@+id/creditNumber_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:text="クレカ番号"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="171dp"
+                    tools:layout_editor_absoluteY="351dp" />
+
+                <TextView
+                    android:id="@+id/creditName_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:text="名義人"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="400dp" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp" />
+
+                <Button
+                    android:id="@+id/confirmBuy_button"
+                    android:layout_width="167dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:background="@color/light_green"
+                    android:text="購入確定"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="511dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

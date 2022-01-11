@@ -9,6 +9,11 @@
 
 <!--    このImageViewいらないかも(小林)-->
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2E8CF"/>
+
     <ImageView
         android:id="@+id/backGround_imageView"
         android:layout_width="410dp"
