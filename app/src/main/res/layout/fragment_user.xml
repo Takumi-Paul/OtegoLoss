@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentUser"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/beige">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/nextInformation_button"

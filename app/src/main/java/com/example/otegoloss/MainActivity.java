@@ -18,6 +18,7 @@ import android.view.MenuItem;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.otegoloss.home.ViewProduct;
 import com.example.otegoloss.home.ViewSearch;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+        LinearLayout view = findViewById(R.id.background);
+        ChangeBackgraund.changeBackGround(view);
     }
 
     @Override
