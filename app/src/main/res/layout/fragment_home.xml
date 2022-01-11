@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2E8CF"
     tools:context=".home.HomeFragment"
     android:id="@+id/fragmentHome"
     android:padding="4dp">

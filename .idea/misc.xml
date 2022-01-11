@@ -63,8 +63,8 @@
         <entry key="app/src/main/res/layout/fragment_view_product.xml" value="0.10042155503062317" />
         <entry key="app/src/main/res/layout/fragment_view_profile_config.xml" value="0.2036424820628107" />
         <entry key="app/src/main/res/layout/fragment_view_purchase_completed.xml" value="0.1328125" />
-        <entry key="app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.22664171236416283" />
-        <entry key="app/src/main/res/layout/fragment_view_purchase_information2.xml" value="0.21368184733497306" />
+        <entry key="app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.18925350518478606" />
+        <entry key="app/src/main/res/layout/fragment_view_purchase_information2.xml" value="0.14225405287116286" />
         <entry key="app/src/main/res/layout/fragment_view_reduction_meters.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_request_to_delete.xml" value="0.23933025497803034" />
         <entry key="app/src/main/res/layout/fragment_view_search.xml" value="0.1" />

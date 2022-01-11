@@ -13,12 +13,14 @@ import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
+import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
 import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;
 
@@ -29,6 +31,8 @@ public class ViewProduct extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
+        LinearLayout background_view = view.findViewById(R.id.background);
+        ChangeBackgraund.changeBackGround(background_view);
 
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
