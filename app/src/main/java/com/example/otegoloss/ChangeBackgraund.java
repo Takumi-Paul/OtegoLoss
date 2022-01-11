@@ -2,7 +2,7 @@ package com.example.otegoloss;
 
 import android.widget.LinearLayout;
 
-class ChangeBackgraund {
+public class ChangeBackgraund {
     private static int weight = 5;
 
 

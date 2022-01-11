@@ -7,10 +7,11 @@
     android:id="@+id/fragmentProduct"
     tools:context=".home.ViewProduct">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F2E8CF"/>
+        android:id="@+id/background"
+        android:orientation="horizontal" />
 
     <Button
         android:id="@+id/buy_button"
