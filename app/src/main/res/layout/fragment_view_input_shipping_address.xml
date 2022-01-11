@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
+    <Button
+        android:id="@+id/next_button_shipping"
+        android:layout_width="129dp"
+        android:layout_height="50dp"
+        android:background="@color/light_green"
+        android:text="次へ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="584dp" />
+
     <ImageView
         android:id="@+id/backGround2_imageView"
         android:layout_width="410dp"
@@ -17,23 +27,23 @@
 
     <Button
         android:id="@+id/addAddress_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="52dp"
         android:text="住所を追加"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="449dp" />
+        tools:layout_editor_absoluteY="445dp" />
 
     <Button
         android:id="@+id/deleteAddress_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="132dp"
+        android:layout_height="49dp"
         android:text="住所を削除"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="506dp" />
+        tools:layout_editor_absoluteY="514dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
