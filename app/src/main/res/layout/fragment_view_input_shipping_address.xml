@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2E8CF"/>
+
     <Button
         android:id="@+id/next_button_shipping"
         android:layout_width="129dp"
