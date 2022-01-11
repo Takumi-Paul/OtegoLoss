@@ -35,7 +35,7 @@ public class ViewInputPayment extends Fragment {
             public void onClick(View v) {
                 //Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
 
-                FragmentManager fm_ViewPurchaseInformation1 = getChildFragmentManager();
+                FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
                 FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
                 // 次のFragment
                 Fragment secondFragment = new ViewPurchaseInformation1();
