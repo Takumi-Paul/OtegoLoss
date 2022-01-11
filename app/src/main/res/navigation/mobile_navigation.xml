@@ -42,6 +42,12 @@
         <action
             android:id="@+id/action_navigation_user_to_payinfoconfig"
             app:destination="@id/payinfoconfig" />
+        <action
+            android:id="@+id/action_navigation_user_to_shipping_addr_info_config"
+            app:destination="@id/shipping_addr_info_config" />
+        <action
+            android:id="@+id/action_navigation_user_to_producer_agreement"
+            app:destination="@id/producer_agreement" />
     </fragment>
     <fragment
         android:id="@+id/purchaseHistory"
@@ -79,7 +85,77 @@
     <fragment
         android:id="@+id/payinfoconfig"
         android:name="com.example.otegoloss.user.PayInfoConfigFragment"
-        android:label="@string/payinfoconfig" />
+        android:label="@string/payinfoconfig" >
+        <action
+            android:id="@+id/action_payinfoconfig_to_creditcard_regist"
+            app:destination="@id/creditcard_regist" />
+        <action
+            android:id="@+id/action_payinfoconfig_to_pay_info_delete"
+            app:destination="@id/pay_info_delete" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipping_addr_info_config"
+        android:name="com.example.otegoloss.user.ShipingAddrInfoConfigFragment"
+        android:label="@string/shipping_add_info_config" >
+        <action
+            android:id="@+id/action_shipping_addr_info_config_to_shipping_addr_info_regist_config"
+            app:destination="@id/shipping_addr_info_regist_config" />
+        <action
+            android:id="@+id/action_shipping_addr_info_config_to_shipping_addr_info_delete"
+            app:destination="@id/shipping_addr_info_delete" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditcard_regist"
+        android:name="com.example.otegoloss.user.CreditcardRegistFragment"
+        android:label="@string/creditcardregist" >
+        <action
+            android:id="@+id/action_creditcard_regist_to_pay_info_regist_comp"
+            app:destination="@id/pay_info_regist_comp" />
+    </fragment>
+    <fragment
+        android:id="@+id/pay_info_delete"
+        android:name="com.example.otegoloss.user.PayInfoDeleteFragment"
+        android:label="@string/pay_info_delete" />
+    <fragment
+        android:id="@+id/shipping_addr_info_regist_config"
+        android:name="com.example.otegoloss.user.ShippingAddrInfoRegistFragment"
+        android:label="@string/shipping_addr_info_regist_config" >
+        <action
+            android:id="@+id/action_shipping_addr_info_regist_config_to_shipping_addr_info_regist_comp"
+            app:destination="@id/shipping_addr_info_regist_comp" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipping_addr_info_delete"
+        android:name="com.example.otegoloss.user.ShippingAddrInfoDeleteFragment"
+        android:label="@string/shipping_addr_info_delete" />
+    <fragment
+        android:id="@+id/producer_agreement"
+        android:name="com.example.otegoloss.user.ProducerAgreementFragment"
+        android:label="@string/producer_regist_agreement" >
+        <action
+            android:id="@+id/action_producer_agreement_to_producer_info"
+            app:destination="@id/producer_info" />
+    </fragment>
+    <fragment
+        android:id="@+id/producer_info"
+        android:name="com.example.otegoloss.user.ProducerInfoFragment"
+        android:label="@string/producer_info" />
+    <fragment
+        android:id="@+id/pay_info_regist_comp"
+        android:name="com.example.otegoloss.user.PayInfoRegistCompFragment"
+        android:label="@string/pay_info_regist_comp" >
+        <action
+            android:id="@+id/action_pay_info_regist_comp_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipping_addr_info_regist_comp"
+        android:name="com.example.otegoloss.user.ShippingAddrInfoRegistCompFragment"
+        android:label="@string/shipping_addr_info_regist_comp" >
+        <action
+            android:id="@+id/action_shipping_addr_info_regist_comp_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_entry_of_exhibit_info"
         android:name="com.example.otegoloss.shipping.EntryOfExhibitInfoFragment"

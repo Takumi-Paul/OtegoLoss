@@ -18,13 +18,13 @@ import com.example.otegoloss.databinding.FragmentUserBinding;
 
 import java.util.Objects;
 
-public class ProfileConfigFragment extends Fragment {
+public class ShipingAddrInfoConfigFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
-        View view = inflater.inflate(R.layout.fragment_view_profile_config, container, false);
+        View view = inflater.inflate(R.layout.fragment_view_shipping_address_info_config, container, false);
 
         // 所属親アクティビティを取得
         MainActivity activity = (MainActivity) getActivity();
@@ -34,11 +34,20 @@ public class ProfileConfigFragment extends Fragment {
         // この記述でフラグメントでアクションバーメニューが使えるようになる
         setHasOptionsMenu(true);
 
-        Button inputCompleteButton = view.findViewById(R.id.inputComplete_button);
-        inputCompleteButton.setOnClickListener(new View.OnClickListener() {
+        Button registerShippingButton = view.findViewById(R.id.registerShipping_button);
+        Button deleteShippingButton = view.findViewById(R.id.deleteShipping_button);
+
+        registerShippingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ;
+                Navigation.findNavController(view).navigate(R.id.action_shipping_addr_info_config_to_shipping_addr_info_regist_config);
+            }
+        });
+
+        deleteShippingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_shipping_addr_info_config_to_shipping_addr_info_delete);
             }
         });
 

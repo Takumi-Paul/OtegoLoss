@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shipping_addr_info_regist_config"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
@@ -10,14 +11,14 @@
         android:id="@+id/inputAddress_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="660dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="#6A994E"
         android:text="入力完了"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/homeNumber_editText" />
 
     <TextView
         android:id="@+id/houseNumber_textView"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postalAddress_editText"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
@@ -183,8 +184,9 @@
         android:background="#E4E4E4"
         android:ems="10"
         android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="342dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postal_textView" />
 
     <EditText
         android:id="@+id/homeNumber_editText"
@@ -193,7 +195,8 @@
         android:background="#E4E4E4"
         android:ems="10"
         android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="402dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/houseNumber_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

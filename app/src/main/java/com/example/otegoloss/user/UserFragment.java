@@ -54,6 +54,20 @@ public class UserFragment extends Fragment {
             }
         });
 
+        nextSettingAddressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_user_to_shipping_addr_info_config);
+            }
+        });
+
+        nextProcedureRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_user_to_producer_agreement);
+            }
+        });
+
 
         return view;
     }

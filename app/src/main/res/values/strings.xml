@@ -22,4 +22,14 @@
     <string name="area">地域</string>
     <string name="profileconfig">プロフィール設定</string>
     <string name="payinfoconfig">決済情報設定</string>
+    <string name="shipping_add_info_config">配送先情報設定</string>
+    <string name="creditcardregist">クレジットカード登録</string>
+    <string name="pay_info_delete">決済情報削除</string>
+    <string name="shipping_addr_info_regist_config">配送先情報追加</string>
+    <string name="shipping_addr_info_delete">配送先情報削除</string>
+    <string name="producer_agreement">生産者登録</string>
+    <string name="producer_regist_agreement">生産者登録規約</string>
+    <string name="producer_info">生産者登録情報入力</string>
+    <string name="pay_info_regist_comp">決済情報登録完了</string>
+    <string name="shipping_addr_info_regist_comp">配送先情報登録完了</string>
 </resources>

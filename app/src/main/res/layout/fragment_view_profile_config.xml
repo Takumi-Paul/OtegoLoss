@@ -12,7 +12,7 @@
             android:id="@+id/inputComplete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="#6A994E"
             android:text="入力完了"
             android:textSize="20sp"
