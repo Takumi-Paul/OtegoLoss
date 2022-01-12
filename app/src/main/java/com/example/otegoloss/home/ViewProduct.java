@@ -83,8 +83,4 @@ public class ViewProduct extends Fragment {
         return view;
     }
 
-    public void onViewCreated(@NonNull View view, Bundle saveInstanceState) {
-
-    }
-
 }
