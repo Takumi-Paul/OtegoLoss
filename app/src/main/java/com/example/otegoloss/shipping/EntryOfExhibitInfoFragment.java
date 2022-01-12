@@ -12,12 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 
 public class EntryOfExhibitInfoFragment extends Fragment {
+    //入力情報保持用の宣言
+    private EditText pro_name;
+    private EditText pro_description;
+    private EditText weight;
+    private EditText price;
+    private EditText recipe_url;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
@@ -30,12 +38,32 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         // 戻るボタンは表示
         activity.setupBackButton(true);
 
+        //入力情報保持用のインスタンス生成
+        pro_name = (EditText) view.findViewById(R.id.product_name_entry_exhibit_product);
+        pro_description= (EditText) view.findViewById(R.id.product_description_entry_exhibit_product);
+        weight = (EditText) view.findViewById(R.id.product_weight_entry_exhibit_product);
+        price = (EditText) view.findViewById(R.id.amount_entry_exhibit_product2);
+        recipe_url = (EditText) view.findViewById(R.id.recipe_url_entry_exhibit_product);
+
+
         // 入力完了ボタンを取得
         Button buttonNext= view.findViewById(R.id.next_button_entry_exhibit_product);
         // 入力完了ボタンをクリックした時の処理
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //入力情報を格納する
+                String pro_names = pro_name.getText().toString();
+                String pro_descriptions = pro_description.getText().toString();
+                String weights = weight.getText().toString();
+                String prices = price.getText().toString();
+                String recipe_urls = recipe_url.getText().toString();
+
+                //次のフラグメントにBundleを使ってデータを渡す
+                //タイトル
+                Bundle bundle = new Bundle();
+                bundle.putString("pro_names", "bundle");
+
                 // fragmentViewExhibitInfoConfirmationに遷移させる
                 FragmentManager fm_ViewExhibitInfoConfirmation = getChildFragmentManager();
                 FragmentTransaction t_ViewExhibitInfoConfirmation= fm_ViewExhibitInfoConfirmation.beginTransaction();
@@ -49,6 +77,8 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 t_ViewExhibitInfoConfirmation.commit();
             }
         });
+
+
 
         return view;
     }
