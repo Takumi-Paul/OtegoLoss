@@ -15,6 +15,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.R;
 
@@ -33,18 +34,18 @@ public class ViewInputPayment extends Fragment {
         NextButtonPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
 
-                FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
-                FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
+                //FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
+                //FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
                 // 次のFragment
-                Fragment secondFragment = new ViewPurchaseInformation1();
+                //Fragment secondFragment = new ViewInputShippingAddress();
                 // fragmentManagerに次のfragmentを追加
-                t_ViewPurchaseInformation1.replace(R.id.fragmentViewInputPayment, secondFragment);
+                //t_ViewPurchaseInformation1.replace(R.id.fragmentViewInputPayment, secondFragment);
                 // 画面遷移戻りを設定
-                t_ViewPurchaseInformation1.addToBackStack(null);
+                //t_ViewPurchaseInformation1.addToBackStack(null);
                 // 画面遷移
-                t_ViewPurchaseInformation1.commit();
+                //t_ViewPurchaseInformation1.commit();
             }
         });
 

@@ -65,7 +65,6 @@ public class ViewProduct extends Fragment {
             public void onClick(View v) {
 
                 Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewComment2);
-
                 //FragmentManager fm_ViewComment = getParentFragmentManager();
                 //FragmentTransaction t_ViewComment  =  fm_ViewComment.beginTransaction();
                 // 次のFragment

@@ -15,7 +15,9 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
+import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
 
 public class ViewInputShippingAddress extends Fragment {
@@ -34,18 +36,18 @@ public class ViewInputShippingAddress extends Fragment {
         NextButtonShipping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_purchase_information1);
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
 
-                FragmentManager fm_NextButtonShipping = getChildFragmentManager();
-                FragmentTransaction t_NextButtonShipping  =  fm_NextButtonShipping.beginTransaction();
+                //FragmentManager fm_NextButtonShipping = getChildFragmentManager();
+                //FragmentTransaction t_NextButtonShipping  =  fm_NextButtonShipping.beginTransaction();
                 // 次のFragment
-                Fragment secondFragment = new ViewInputPayment();
+                //Fragment secondFragment = new ViewPurchaseInformation1();
                 // fragmentManagerに次のfragmentを追加
-                t_NextButtonShipping.add(R.id.fragmentViewInputShippingAddress, secondFragment);
+                //t_NextButtonShipping.add(R.id.fragmentViewInputShippingAddress, secondFragment);
                 // 画面遷移戻りを設定
-                t_NextButtonShipping.addToBackStack(null);
+                //t_NextButtonShipping.addToBackStack(null);
                 // 画面遷移
-                t_NextButtonShipping.commit();
+                //t_NextButtonShipping.commit();
             }
         });
 
