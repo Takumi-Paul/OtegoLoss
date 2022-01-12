@@ -27,7 +27,7 @@
                 <View
                     android:id="@+id/view6"
                     android:layout_width="match_parent"
-                    android:layout_height="41dp" />
+                    android:layout_height="80dp" />
 
                 <ImageView
                     android:id="@+id/productImage_imageView"
@@ -219,6 +219,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="511dp" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -217,6 +217,9 @@
         android:name="com.example.otegoloss.home.ViewPurchaseCompleted"
         android:label="購入完了"
         tools:layout="@layout/fragment_view_purchase_completed" >
+        <action
+            android:id="@+id/action_fragmentViewPurchaseCompleted_to_fragmentProduct"
+            app:destination="@id/fragmentProduct" />
     </fragment>
 
     <fragment

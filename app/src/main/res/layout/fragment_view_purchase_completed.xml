@@ -7,56 +7,60 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
+
     <Button
         android:id="@+id/backProduct_button"
         android:layout_width="193dp"
         android:layout_height="52dp"
+        android:layout_marginTop="28dp"
         android:text="商品詳細画面へ戻る"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="499dp" />
-
+        app:layout_constraintTop_toBottomOf="@+id/shippingDay_textView" />
 
     <TextView
         android:id="@+id/decide_textView"
         android:layout_width="255dp"
         android:layout_height="46dp"
+        android:layout_marginTop="120dp"
         android:text="購入が確定しました！"
         android:textColor="#BC4749"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/buy_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/box"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="198dp" />
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decide_textView"
+        app:srcCompat="@drawable/box" />
 
     <TextView
         android:id="@+id/thanks_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="毎度ありがとうございます。"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="398dp" />
+        app:layout_constraintTop_toBottomOf="@+id/buy_imageView" />
 
     <TextView
         android:id="@+id/shippingDay_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="お届けするまで約〇日かかります。"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintTop_toBottomOf="@+id/thanks_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
