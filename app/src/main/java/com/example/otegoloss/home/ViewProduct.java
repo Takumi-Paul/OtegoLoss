@@ -15,10 +15,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
@@ -50,9 +53,7 @@ public class ViewProduct extends Fragment {
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-               Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewInputPayment2);
-
+                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewInputPayment2);
             }
         });
 
@@ -80,6 +81,10 @@ public class ViewProduct extends Fragment {
 
 
         return view;
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle saveInstanceState) {
+
     }
 
 }

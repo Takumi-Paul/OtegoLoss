@@ -20,6 +20,7 @@ import android.content.Intent;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
@@ -94,7 +95,7 @@ public class HomeFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm_item = getParentFragmentManager();
+                FragmentManager fm_item = getActivity().getSupportFragmentManager();
                 FragmentTransaction t_item = fm_item.beginTransaction();
 
                 // bundleに受け渡したい値を保存
@@ -103,16 +104,8 @@ public class HomeFragment extends Fragment {
                 bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putInt("PRODUCT_ID", productID[position]);
-                // 次のFragment
-                Fragment secondFragment = new ViewProduct();
-                // bundleを次のfragmentに設定
-                secondFragment.setArguments(bundle);
-                // fragmentManagerに次のfragmentを追加
-                t_item.replace(R.id.fragmentHome, secondFragment);
-                // 画面遷移戻りを設定
-                t_item.addToBackStack(null);
-                // 画面遷移
-                t_item.commit();
+                // Navigation遷移
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_fragmentProduct, bundle);
             }
         });
 
