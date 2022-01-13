@@ -200,6 +200,9 @@
         <action
             android:id="@+id/action_fragmentViewInputShippingAddress_to_purchase_information1"
             app:destination="@id/purchase_information1" />
+        <action
+            android:id="@+id/action_fragmentViewInputShippingAddress_to_shipping_addr_info_regist_config"
+            app:destination="@id/shipping_addr_info_regist_config" />
     </fragment>
 
     <fragment
@@ -210,6 +213,9 @@
         <action
             android:id="@+id/action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress"
             app:destination="@id/fragmentViewInputShippingAddress" />
+        <action
+            android:id="@+id/action_fragmentViewInputPayment_to_creditcard_regist"
+            app:destination="@id/creditcard_regist" />
     </fragment>
 
     <fragment
