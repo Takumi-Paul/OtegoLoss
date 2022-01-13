@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,16 +39,7 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentShippingに遷移させる
-                FragmentManager fm_Shipping1 = getChildFragmentManager();
-                FragmentTransaction t_Shipping1= fm_Shipping1.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new ShippingFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_Shipping1.add(R.id.fragmentViewYetSoldOutHistory, secondFragment);
-                // 画面遷移戻りを設定
-                t_Shipping1.addToBackStack(null);
-                // 画面遷移
-                t_Shipping1.commit();
+                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_shipping);
             }
         });
         return view;
