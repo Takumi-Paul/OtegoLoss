@@ -40,6 +40,15 @@ public class ViewInputPayment extends Fragment {
         });
 
 
+        //「決済情報を削除」ボタンが押された時の処理
+        Button DeleteCreditButton = view.findViewById(R.id.deleteCredit_button);
+
+        DeleteCreditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_pay_info_delete);
+            }
+        });
 
         //「次へ」ボタンが押された時の処理
         Button NextButtonPayment = view.findViewById(R.id.next_button_payment);

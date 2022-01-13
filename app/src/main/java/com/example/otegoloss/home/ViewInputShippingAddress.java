@@ -41,6 +41,15 @@ public class ViewInputShippingAddress extends Fragment {
             }
         });
 
+        //「住所を削除」を押したときの処理
+        Button DeleteAddressButton  = view.findViewById(R.id.deleteAddress_button);
+
+        DeleteAddressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_shipping_addr_info_delete);
+            }
+        });
 
 
 

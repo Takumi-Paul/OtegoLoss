@@ -203,6 +203,9 @@
         <action
             android:id="@+id/action_fragmentViewInputShippingAddress_to_shipping_addr_info_regist_config"
             app:destination="@id/shipping_addr_info_regist_config" />
+        <action
+            android:id="@+id/action_fragmentViewInputShippingAddress_to_shipping_addr_info_delete"
+            app:destination="@id/shipping_addr_info_delete" />
     </fragment>
 
     <fragment
@@ -216,6 +219,9 @@
         <action
             android:id="@+id/action_fragmentViewInputPayment_to_creditcard_regist"
             app:destination="@id/creditcard_regist" />
+        <action
+            android:id="@+id/action_fragmentViewInputPayment_to_pay_info_delete"
+            app:destination="@id/pay_info_delete" />
     </fragment>
 
     <fragment
