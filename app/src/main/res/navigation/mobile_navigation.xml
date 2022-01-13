@@ -59,7 +59,11 @@
     <fragment
         android:id="@+id/favoriteUserView"
         android:name="com.example.otegoloss.mypage.FavoriteUserView"
-        android:label="FavoriteUserView" />
+        android:label="FavoriteUserView" >
+        <action
+            android:id="@+id/action_favoriteUserView_to_exhibitProfile"
+            app:destination="@id/exhibitProfile" />
+    </fragment>
     <fragment
         android:id="@+id/purchase_information1"
         android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
@@ -240,6 +244,10 @@
         android:label="コメント"
         tools:layout="@layout/fragment_view_comment" >
     </fragment>
+    <fragment
+        android:id="@+id/exhibitProfile"
+        android:name="com.example.otegoloss.mypage.ExhibitProfile"
+        android:label="ExhibitProfile" />
 
 
 </navigation>

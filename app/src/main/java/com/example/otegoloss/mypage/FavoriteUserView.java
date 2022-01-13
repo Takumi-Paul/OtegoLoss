@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
 
 import com.example.otegoloss.R;
 
@@ -16,6 +18,7 @@ public class FavoriteUserView extends Fragment {
     private String[] favoriteUserNames = {
             "佐藤", "田中"
     };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,7 +32,8 @@ public class FavoriteUserView extends Fragment {
                 favoriteUserNames);
 
         favoriteUserList.setAdapter(arrayAdapter);
-
         return view;
     }
+
+
 }
