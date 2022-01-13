@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,19 +63,14 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 //次のフラグメントにBundleを使ってデータを渡す
                 //タイトル
                 Bundle bundle = new Bundle();
-                bundle.putString("pro_names", "bundle");
+                bundle.putString("pro_names", pro_names);
+                bundle.putString("pro_descriptions", pro_descriptions);
+                bundle.putString("weights", weights);
+                bundle.putString("prices", prices);
+                bundle.putString("recipe_urls", recipe_urls);
 
                 // fragmentViewExhibitInfoConfirmationに遷移させる
-                FragmentManager fm_ViewExhibitInfoConfirmation = getChildFragmentManager();
-                FragmentTransaction t_ViewExhibitInfoConfirmation= fm_ViewExhibitInfoConfirmation.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new ViewExhibitProductInfoConfirmationFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_ViewExhibitInfoConfirmation.add(R.id.fragmentEntryOfExhibitInfo, secondFragment);
-                // 画面遷移戻りを設定
-                t_ViewExhibitInfoConfirmation.addToBackStack(null);
-                // 画面遷移
-                t_ViewExhibitInfoConfirmation.commit();
+                Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation);
             }
         });
 

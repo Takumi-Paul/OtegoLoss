@@ -8,11 +8,15 @@ package com.example.otegoloss.mypage;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,6 +28,7 @@ import com.example.otegoloss.R;
 import com.example.otegoloss.shipping.EntryOfExhibitInfoFragment;
 
 public class MypageFragment extends Fragment {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,8 +53,16 @@ public class MypageFragment extends Fragment {
             }
         });
 
-
         return view;
     }
+
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()) {
+//            case Android.R.id.home:
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 }

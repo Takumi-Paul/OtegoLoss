@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,16 +37,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentViewExhibitCompletedに遷移させる
-                FragmentManager fm_completed = getChildFragmentManager();
-                FragmentTransaction t_completed = fm_completed.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new ViewExhibitCompletedFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_completed.add(R.id.fragmentViewExhibitInfoConfirmation, secondFragment);
-                // 画面遷移戻りを設定
-                t_completed.addToBackStack(null);
-                // 画面遷移
-                t_completed.commit();
+                Navigation.findNavController(view).navigate(R.id.action_confirmation_to_completed);
             }
         });
         //編集へ戻るボタンを取得
@@ -55,16 +47,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentViewExhibitInfoConfirmationに遷移させる
-                FragmentManager fm_shipping = getChildFragmentManager();
-                FragmentTransaction t_shipping = fm_shipping.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new EntryOfExhibitInfoFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_shipping.add(R.id.fragmentViewExhibitInfoConfirmation, secondFragment);
-                // 画面遷移戻りを設定
-                t_shipping.addToBackStack(null);
-                // 画面遷移
-                t_shipping.commit();
+                Navigation.findNavController(view).navigate(R.id.action_confirmation_to_entry);
             }
         });
 

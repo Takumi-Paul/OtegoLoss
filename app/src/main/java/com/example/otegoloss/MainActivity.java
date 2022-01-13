@@ -1,5 +1,8 @@
 package com.example.otegoloss;
 
+import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavController;
+import static com.example.otegoloss.R.id.fragmentHome;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     Toolbar toolbar;
+    AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +49,18 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+        appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_mypage, R.id.navigation_shipping, R.id.navigation_user)
                 .build();
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment_activity_main);
         NavController navController = navHostFragment.getNavController();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         LinearLayout view = findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(view);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -108,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         // アクションバーに戻るボタン「←」をセット（引数が true: 表示、false: 非表示）
         Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(enableBackButton);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }
 //test matsu

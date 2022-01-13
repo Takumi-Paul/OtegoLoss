@@ -12,4 +12,5 @@ import com.example.otegoloss.R;
 
 
 public class ViewYetSoldOutProduct extends Fragment {
+
 }

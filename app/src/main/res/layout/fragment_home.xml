@@ -36,8 +36,8 @@
             android:layout_height="80dp"
             android:background="@drawable/plus"
             android:backgroundTint="@color/yellow"
-            tools:layout_editor_absoluteY="12dp"
-            android:contentDescription="@string/shipping"/>
+            android:contentDescription="@string/shipping"
+            tools:layout_editor_absoluteY="12dp" />
     </RelativeLayout>
 
 

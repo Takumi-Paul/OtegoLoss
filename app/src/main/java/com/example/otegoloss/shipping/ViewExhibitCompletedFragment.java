@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,16 +37,7 @@ public class ViewExhibitCompletedFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 // HomeFragmentに遷移させる
-                FragmentManager fm_Home = getChildFragmentManager();
-                FragmentTransaction t_Home= fm_Home.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new HomeFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_Home.add(R.id.fragmentViewExhibitCompleted, secondFragment);
-                // 画面遷移戻りを設定
-                t_Home.addToBackStack(null);
-                // 画面遷移
-                t_Home.commit();
+                Navigation.findNavController(view).navigate(R.id.action_navigation_view_exhibit_completed_to_navigation_home);
             }
         });
         return view;

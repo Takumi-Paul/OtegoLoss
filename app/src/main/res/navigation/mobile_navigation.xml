@@ -33,7 +33,28 @@
         android:id="@+id/navigation_shipping"
         android:name="com.example.otegoloss.shipping.ShippingFragment"
         android:label="@string/title_shipping"
-        tools:layout="@layout/fragment_shipping" />
+        tools:layout="@layout/fragment_shipping" >
+        <action
+            android:id="@+id/action_navigation_shipping_to_navigation_yet_sold_out_history"
+            app:destination="@id/navigation_yet_sold_out_history" />
+        <action
+            android:id="@+id/action_navigation_shipping_to_navigation_sold_out_product"
+            app:destination="@id/navigation_sold_out_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_sold_out_product"
+        android:name="com.example.otegoloss.shipping.ViewSoldOutProductFragment"
+        android:label="SoldOutProduct"
+        tools:layout="@layout/fragment_view_sold_out_product" />
+    <fragment
+        android:id="@+id/navigation_yet_sold_out_history"
+        android:name="com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment"
+        android:label="YetSoldOut"
+        tools:layout="@layout/fragment_view_yet_sold_out_history" >
+        <action
+            android:id="@+id/action_navigation_yet_sold_out_history_to_navigation_shipping"
+            app:destination="@id/navigation_shipping" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_user"
         android:name="com.example.otegoloss.user.UserFragment"
@@ -52,6 +73,7 @@
             android:id="@+id/action_navigation_user_to_producer_agreement"
             app:destination="@id/producer_agreement" />
     </fragment>
+
     <fragment
         android:id="@+id/purchaseHistory"
         android:name="com.example.otegoloss.mypage.PurchaseHistory"
@@ -59,7 +81,11 @@
     <fragment
         android:id="@+id/favoriteUserView"
         android:name="com.example.otegoloss.mypage.FavoriteUserView"
-        android:label="FavoriteUserView" />
+        android:label="FavoriteUserView" >
+        <action
+            android:id="@+id/action_favoriteUserView_to_exhibitProfile"
+            app:destination="@id/exhibitProfile" />
+    </fragment>
     <fragment
         android:id="@+id/purchase_information1"
         android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
@@ -240,6 +266,10 @@
         android:label="コメント"
         tools:layout="@layout/fragment_view_comment" >
     </fragment>
+    <fragment
+        android:id="@+id/exhibitProfile"
+        android:name="com.example.otegoloss.mypage.ExhibitProfile"
+        android:label="ExhibitProfile" />
 
 
 </navigation>
