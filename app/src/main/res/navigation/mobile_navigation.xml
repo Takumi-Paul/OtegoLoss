@@ -230,8 +230,8 @@
         android:label="購入完了"
         tools:layout="@layout/fragment_view_purchase_completed" >
         <action
-            android:id="@+id/action_fragmentViewPurchaseCompleted_to_fragmentProduct"
-            app:destination="@id/fragmentProduct" />
+            android:id="@+id/action_fragmentViewPurchaseCompleted_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment

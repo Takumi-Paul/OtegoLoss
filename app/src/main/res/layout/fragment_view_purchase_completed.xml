@@ -13,7 +13,7 @@
         android:layout_width="193dp"
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
-        android:text="商品詳細画面へ戻る"
+        android:text="ホーム画面に戻る"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shippingDay_textView" />

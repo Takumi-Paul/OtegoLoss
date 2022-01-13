@@ -34,7 +34,7 @@ public class ViewPurchaseCompleted extends Fragment {
         BackProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_fragmentViewPurchaseCompleted_to_fragmentProduct);
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewPurchaseCompleted_to_navigation_home);
 
                 //FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
                 //FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
