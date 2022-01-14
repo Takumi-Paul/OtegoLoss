@@ -24,12 +24,6 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_exhibit_info_confirmation, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品情報入力確認");
-        // 戻るボタンは非表示
-        activity.setupBackButton(false);
         // 確認完了ボタンを取得
         Button nextButton = view.findViewById(R.id.next_button_exhibit_info_com);
         // 確認完了ボタンをクリックした時の処理

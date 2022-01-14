@@ -53,13 +53,6 @@ public class ShippingFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_shipping, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品履歴");
-        // 戻るボタンは表示にする
-        activity.setupBackButton(true);
-
         // ボタン要素を取得
         Button buttonYetSoldOutHistory = view.findViewById(R.id.button_yetsoldout_sold_out_history);
         // 完売済みボタンをクリックした時の処理
@@ -100,6 +93,8 @@ public class ShippingFragment extends Fragment {
                 bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putInt("PRODUCT_ID", productID[position]);
+                //商品名
+                bundle.putString("PRODUCT_NAME",productNames[position]);
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_sold_out_product, bundle);
             }

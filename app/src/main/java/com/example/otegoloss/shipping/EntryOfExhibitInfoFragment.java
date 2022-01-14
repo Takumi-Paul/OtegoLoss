@@ -29,12 +29,6 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_entry_of_exhibit_info, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品情報入力");
-        // 戻るボタンは表示
-        activity.setupBackButton(true);
 
         //入力情報保持用のインスタンス生成
         pro_name = (EditText) view.findViewById(R.id.product_name_change_lishting_info);

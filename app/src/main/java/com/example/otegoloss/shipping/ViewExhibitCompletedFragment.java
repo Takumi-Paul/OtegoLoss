@@ -22,12 +22,6 @@ public class ViewExhibitCompletedFragment extends Fragment{
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_exhibit_completed, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品完了");
-        // 戻るボタンは非表示にする
-        activity.setupBackButton(false);
 
         // ボタン要素を取得
         Button nextButton = view.findViewById(R.id.next_button_exhibit_completed);

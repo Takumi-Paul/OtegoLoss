@@ -105,7 +105,6 @@
         android:id="@+id/product_name_text_view_view_sold_out_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="商品名"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
