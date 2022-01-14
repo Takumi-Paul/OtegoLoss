@@ -77,7 +77,7 @@
         tools:layout="@layout/fragment_change_listing_info" />
     <fragment
         android:id="@+id/navigation_yet_sold_out_product"
-        android:name="com.example.otegoloss.shipping.ViewYetSoldOutProduct"
+        android:name="com.example.otegoloss.shipping.ViewYetSoldOutProductFragment"
         android:label="商品詳細"
         tools:layout="@layout/fragment_view_yet_sold_out_product" >
         <action

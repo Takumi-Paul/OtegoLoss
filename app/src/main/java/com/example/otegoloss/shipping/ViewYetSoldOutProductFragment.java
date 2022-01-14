@@ -16,7 +16,7 @@ import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 
-public class ViewYetSoldOutProduct extends Fragment {
+public class ViewYetSoldOutProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
@@ -36,7 +36,7 @@ public class ViewYetSoldOutProduct extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentChangeListingに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_product_to_navigation_change_listing_info);
             }
         });
 
