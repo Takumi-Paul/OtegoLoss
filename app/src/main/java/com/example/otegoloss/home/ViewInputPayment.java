@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.R;
@@ -51,7 +49,7 @@ public class ViewInputPayment extends Fragment {
         });
 
         //「次へ」ボタンが押された時の処理
-        Button NextButtonPayment = view.findViewById(R.id.next_button_payment);
+        Button NextButtonPayment = view.findViewById(R.id.review_finish_button);
 
         NextButtonPayment.setOnClickListener(new View.OnClickListener() {
             @Override
