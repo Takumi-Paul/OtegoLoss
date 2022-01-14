@@ -4,9 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.GridAdapter;
 import com.example.otegoloss.R;
@@ -56,6 +60,24 @@ public class PurchaseHistory extends Fragment {
         );
         // gridViewにadapterをセット
         gridview.setAdapter(adapter);
+
+        // item clickのListenerをセット
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FragmentManager fm_item = getActivity().getSupportFragmentManager();
+                FragmentTransaction t_item = fm_item.beginTransaction();
+
+                // bundleに受け渡したい値を保存
+                Bundle bundle = new Bundle();
+                // 画像ID
+                bundle.putInt("IMAGEID", imgList.get(position));
+                // 商品ID
+                bundle.putInt("PRODUCT_ID", productID[position]);
+                // Navigation遷移
+                Navigation.findNavController(view).navigate(R.id.action_purchaseHistory_to_fragmentProduct, bundle);
+            }
+        });
 
         return view;
     }
