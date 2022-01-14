@@ -9,8 +9,10 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
@@ -29,13 +31,11 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_entry_of_exhibit_info, container, false);
 
-
         //入力情報保持用のインスタンス生成
         pro_name = (EditText) view.findViewById(R.id.product_name_change_lishting_info);
         pro_description= (EditText) view.findViewById(R.id.product_description_change_lishting_info);
         weight = (EditText) view.findViewById(R.id.product_weight_change_lishting_info);
         price = (EditText) view.findViewById(R.id.amount_change_lishting_info);
-        recipe_url = (EditText) view.findViewById(R.id.recipe_url_change_lishting_info);
 
 
         // 入力完了ボタンを取得
