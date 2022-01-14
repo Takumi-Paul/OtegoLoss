@@ -39,6 +39,10 @@
         android:layout_marginTop="4dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
+        android:entries="@array/product_area"
+        android:hint="都道府県を選択"
+        android:splitMotionEvents="false"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,18 +148,6 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_textView" />
-
-    <TextView
-        android:id="@+id/prefectureChoice_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="270dp"
-        android:text="都道府県を選択"
-        app:layout_constraintBottom_toBottomOf="@+id/prefecture_spinner"
-        app:layout_constraintEnd_toEndOf="@+id/prefecture_spinner"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/prefecture_spinner"
-        app:layout_constraintTop_toTopOf="@+id/prefecture_spinner" />
 
     <EditText
         android:id="@+id/postalAddress_editText"

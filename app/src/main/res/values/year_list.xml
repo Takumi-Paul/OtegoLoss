@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(ウルダウン式選択)用の選択肢を入れる配列(クレカ会社の年数)
+    <string-array name="year">
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+
+
+    };
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(ウルダウン式選択)用の選択肢を入れる配列(クレカ会社)
+    <string-array name="cregitcard_company">
+        <item>JCB</item>
+        <item>Mastercard</item>
+        <item>VISA</item>
+    </string-array>
+
+
+    };
+</resources>

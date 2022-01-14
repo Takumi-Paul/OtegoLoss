@@ -10,48 +10,55 @@
         android:id="@+id/Rule_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="400dp"
+        android:layout_marginTop="100dp"
         android:text="おてごロス利用規約"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/agreeRule_radioButton"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
-        android:text="利用規約に同意する"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintTop_toBottomOf="@+id/Rule_textView">
 
-    <RadioButton
-        android:id="@+id/rejectRule_radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:text="利用規約に同意しない"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/agreeRule_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:text="利用規約に同意する"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Rule_textView" />
+
+        <RadioButton
+            android:id="@+id/rejectRule_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="利用規約に同意しない"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agreeRule_radioButton" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/nextRegisterAccount_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="660dp"
+        android:layout_marginTop="40dp"
         android:text="次へ"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

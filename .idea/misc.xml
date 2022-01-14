@@ -15,13 +15,11 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_shipping.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_user.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_deletion_agreement.xml" value="0.36666666666666664" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_info_confirmation.xml" value="0.5" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_producer_information.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_product.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_profile_config.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_request_to_delete.xml" value="0.20520833333333333" />
-        <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_review.xml" value="0.2046875" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_search.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_config.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_regist.xml" value="0.20520833333333333" />
@@ -35,14 +33,37 @@
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/grid_items_of_shipping.xml" value="0.33" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/template.xml" value="0.27219202898550726" />
         <entry key="..\:/OtegoLoss/app/src/main/res/layout/view_shipping_procedure.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/shoya/StudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_input_payment.xml" value="0.3478802992518703" />
-        <entry key="..\:/Users/shoya/StudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_completed.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/shoya/StudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.1453125" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_change_listing_info.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_exhibit_profile.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_user.xml" value="0.4" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_creditcard_regist.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_deletion_agreement.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_exhibit_completed.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_infomation.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_input_shipping_address.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_meter.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_pay_info_config.xml" value="0.39794871794871794" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_producer_agreement.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_producer_information.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_product.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_profile_config.xml" value="0.4" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_purchase_completed.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_reduction_meters.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_request_to_delete.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_addr_info_regist_comp.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_config.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_address_info_regist.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_shipping_procedure.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/fragment_view_terms_of_use.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/grid_items_of_shipping.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/gimmical/AndroidStudioProjects/OtegoLoss/app/src/main/res/layout/grid_items_of_yet_history.xml" value="0.4041666666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.1296875" />
-        <entry key="app/src/main/res/layout/fragment_exhibit_profile.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16068852678774806" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_purchase_history.xml" value="0.1328125" />
@@ -61,7 +82,7 @@
         <entry key="app/src/main/res/layout/fragment_view_pay_info_config.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_producer_agreement.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/fragment_view_producer_information.xml" value="0.3384507636521075" />
-        <entry key="app/src/main/res/layout/fragment_view_product.xml" value="0.14414672793498925" />
+        <entry key="app/src/main/res/layout/fragment_view_product.xml" value="0.10042155503062317" />
         <entry key="app/src/main/res/layout/fragment_view_profile_config.xml" value="0.2036424820628107" />
         <entry key="app/src/main/res/layout/fragment_view_purchase_completed.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_purchase_information1.xml" value="0.22664171236416283" />
@@ -78,7 +99,6 @@
         <entry key="app/src/main/res/layout/fragment_view_yet_sold_out_history.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_yet_sold_out_product.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/grid_items.xml" value="0.231693365767161" />
-        <entry key="app/src/main/res/layout/list.xml" value="0.12563323201621074" />
         <entry key="app/src/main/res/layout/template.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/view_shipping_procedure.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />

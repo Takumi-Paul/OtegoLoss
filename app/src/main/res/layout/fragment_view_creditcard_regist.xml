@@ -42,6 +42,9 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
+        android:entries="@array/year"
+        android:hint="年"
+        android:splitMotionEvents="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +96,10 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
+        android:entries="@array/cregitcard_company"
+        android:hint="クレジットカード会社を選択"
+        android:splitMotionEvents="false"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +111,9 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
+        android:entries="@array/month"
+        android:hint="月"
+        android:splitMotionEvents="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,26 +134,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardName_editText" />
 
-    <TextView
-        android:id="@+id/month_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="70dp"
-        android:text="月"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/month_spinner"
-        app:layout_constraintEnd_toEndOf="@+id/month_spinner"
-        app:layout_constraintStart_toStartOf="@+id/month_spinner"
-        app:layout_constraintTop_toTopOf="@+id/month_spinner" />
-
-    <TextView
-        android:id="@+id/year_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="70dp"
-        android:text="年"
-        app:layout_constraintBottom_toBottomOf="@+id/year_spinner"
-        app:layout_constraintEnd_toEndOf="@+id/year_spinner"
-        app:layout_constraintStart_toStartOf="@+id/year_spinner"
-        app:layout_constraintTop_toTopOf="@+id/year_spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>
