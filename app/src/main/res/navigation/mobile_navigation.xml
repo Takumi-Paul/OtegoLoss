@@ -117,7 +117,7 @@
         android:label="FavoriteUserView" >
         <action
             android:id="@+id/action_favoriteUserView_to_exhibitProfile"
-            app:destination="@id/fragmentExhibitProfile" />
+            app:destination="@id/exhibitProfile" />
     </fragment>
     <fragment
         android:id="@+id/purchase_information1"
@@ -304,21 +304,9 @@
         tools:layout="@layout/fragment_view_comment" >
     </fragment>
     <fragment
-        android:id="@+id/fragmentExhibitProfile"
+        android:id="@+id/exhibitProfile"
         android:name="com.example.otegoloss.mypage.ExhibitProfile"
-        android:label="ExhibitProfile"
-        tools:layout="@layout/fragment_exhibit_profile" >
-        <action
-            android:id="@+id/action_exhibitProfile_to_fragmentViewReview"
-            app:destination="@id/fragmentViewReview" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentViewReview"
-        android:name="com.example.otegoloss.mypage.ReviewUser"
-        android:label="レビュー"
-        tools:layout="@layout/fragment_view_review" >
-    </fragment>
+        android:label="ExhibitProfile" />
 
 
 </navigation>

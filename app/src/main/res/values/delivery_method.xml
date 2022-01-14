@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="delivery_method">
+        <item>冷蔵配達</item>
+        <item>冷凍配達</item>
+        <item>常温配達</item>
+    </string-array>
+</resources>

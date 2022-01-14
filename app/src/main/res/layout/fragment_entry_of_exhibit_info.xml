@@ -9,91 +9,94 @@
 
     <EditText
         android:id="@+id/product_name_change_lishting_info"
-        android:layout_width="377dp"
+        android:layout_width="375dp"
         android:layout_height="56dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="商品名"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
         android:id="@+id/product_description_change_lishting_info"
-        android:layout_width="372dp"
-        android:layout_height="113dp"
+        android:layout_width="375dp"
+        android:layout_height="92dp"
         android:ems="10"
-        android:inputType="textMultiLine"
         android:hint="商品説明(管理方法、保存日数など)"
+        android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_name_change_lishting_info"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/product_area_change_lishting_info"
+        android:id="@+id/product_area_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="49dp"
-        android:splitMotionEvents="false"
+        android:entries="@array/product_area"
         android:hint="産地"
+        android:splitMotionEvents="false"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_description_change_lishting_info"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/product_weight_change_lishting_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="量(kg単位、数値のみ)"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area_change_lishting_info"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintTop_toBottomOf="@+id/product_area_change_listing_info"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/amount_change_lishting_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="金額(円、数値のみ)"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area_change_lishting_info"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintTop_toBottomOf="@+id/product_area_change_listing_info"
+        app:layout_constraintVertical_bias="0.142" />
 
     <EditText
         android:id="@+id/recipe_url_change_lishting_info"
-        android:layout_width="374dp"
-        android:layout_height="54dp"
+        android:layout_width="375dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:hint="レシピURL(任意)"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_lishting_info"
-        app:layout_constraintVertical_bias="0.425" />
+        app:layout_constraintTop_toBottomOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/delivery_method_change_lishting_info"
         android:layout_width="375dp"
-        android:layout_height="45dp"
+        android:layout_height="58dp"
+        android:entries="@array/delivery_method"
         android:hint="配達方法"
         android:splitMotionEvents="false"
         android:textAlignment="viewStart"
@@ -119,15 +122,41 @@
 
     <TextView
         android:id="@+id/product_picture_text__entry_exhibit_product"
+        android:layout_width="375dp"
+        android:layout_height="69dp"
+        android:text="商品画像"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount_change_lishting_info"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="商品画像"
+        android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_lishting_info"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_lishting_info"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintEnd_toEndOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toStartOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintTop_toTopOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_lishting_info"
+        app:layout_constraintEnd_toEndOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintTop_toTopOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

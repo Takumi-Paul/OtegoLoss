@@ -8,11 +8,13 @@ import androidx.navigation.Navigation;
 
 
 import android.text.SpannableStringBuilder;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.otegoloss.MainActivity;
@@ -23,7 +25,9 @@ import java.util.Objects;
 
 public class ProfileConfigFragment extends Fragment {
 
-    private EditText profile_username;
+    private EditText config_username;
+    private EditText config_userid;
+    private EditText config_usermessage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,14 +43,23 @@ public class ProfileConfigFragment extends Fragment {
         // この記述でフラグメントでアクションバーメニューが使えるようになる
         setHasOptionsMenu(true);
 
-        profile_username = (EditText)view.findViewById(R.id.userName_editText) ;
+        config_username = (EditText)view.findViewById(R.id.userName_editText) ;
+        config_userid = (EditText)view.findViewById(R.id.userId_editText) ;
+        config_usermessage = (EditText)view.findViewById(R.id.profileMessage_editText) ;
 
         Button inputCompleteButton = view.findViewById(R.id.inputComplete_button);
         inputCompleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String profile_usernames = profile_username.getText().toString();
-                System.out.println(profile_usernames);
+                String config_usernames = config_username.getText().toString();
+                Toast.makeText(view.getContext(), config_usernames, Toast.LENGTH_LONG).show();
+
+                //String config_userids = config_userid.getText().toString();
+                //Toast.makeText(view.getContext(), config_userids, Toast.LENGTH_LONG);.show();
+
+                //String config_usermessages = config_usermessage.getText().toString();
+                //Toast.makeText(view.getContext(), config_usermessages, Toast.LENGTH_LONG);.show();
+
                 Navigation.findNavController(view).navigate(R.id.action_profile_config_to_navigation_user);
             }
         });
