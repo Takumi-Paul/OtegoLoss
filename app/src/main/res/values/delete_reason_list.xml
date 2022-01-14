@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(ウルダウン式選択)用の選択肢を入れる配列(アカウント削除の理由)
+    <string-array name="delete_reason">
+        <item>本アプリを使う必要がなくなった</item>
+        <item>他に似た用途で良いアプリがあった</item>
+    </string-array>
+
+
+    };
+</resources>

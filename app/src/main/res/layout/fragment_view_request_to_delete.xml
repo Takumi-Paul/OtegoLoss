@@ -7,12 +7,25 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF">
 
+    <View
+        android:id="@+id/view10"
+        android:layout_width="332dp"
+        android:layout_height="171dp"
+        android:background="#E4E4E4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
+
     <TextView
         android:id="@+id/deleteUserID_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginBottom="300dp"
+        android:background="#E4E4E4"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="user id"
@@ -24,17 +37,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.437" />
 
-    <TextView
-        android:id="@+id/reason_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="削除理由を選択してください(任意)"
-        app:layout_constraintBottom_toBottomOf="@+id/reason_Spinner"
-        app:layout_constraintEnd_toEndOf="@+id/reason_Spinner"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="@+id/reason_Spinner"
-        app:layout_constraintTop_toTopOf="@+id/reason_Spinner"
-        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/deleteAccount_button"
@@ -65,15 +67,19 @@
 
     <Spinner
         android:id="@+id/reason_Spinner"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
+        android:background="#E4E4E4"
+        android:entries="@array/delete_reason"
+        android:hint="削除理由を選択"
+        android:spinnerMode="dropdown"
+        android:splitMotionEvents="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429" />
+        app:layout_constraintVertical_bias="0.439" />
 
     <TextView
         android:id="@+id/accountExplanation_textView"
@@ -103,6 +109,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.455" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
