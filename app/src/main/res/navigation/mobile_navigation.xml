@@ -306,6 +306,15 @@
     <fragment
         android:id="@+id/exhibitProfile"
         android:name="com.example.otegoloss.mypage.ExhibitProfile"
+        android:label="ExhibitProfile" >
+        <action
+            android:id="@+id/action_exhibitProfile_to_reviewUser"
+            app:destination="@id/reviewUser" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewUser"
+        android:name="com.example.otegoloss.mypage.ReviewUser"
         android:label="ExhibitProfile" />
 
 

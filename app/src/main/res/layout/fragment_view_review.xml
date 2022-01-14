@@ -9,14 +9,14 @@
 
 <!--    このImageViewいらないかも(小林)-->
 
+
     <ImageView
         android:id="@+id/backGround_imageView"
         android:layout_width="410dp"
         android:layout_height="684dp"
         app:srcCompat="@drawable/background"
-        tools:layout_editor_absoluteX="-15dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp" />
-
 
     <Button
         android:id="@+id/review_finish_button"
