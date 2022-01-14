@@ -40,8 +40,12 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
         //レシピURL
         TextView recipe_url_view= view.findViewById(R.id.recipe_url_confirmation);
         recipe_url_view.setText(getArguments().getString("RECIPE_URL"));
-
-
+        //産地
+        TextView product_area= view.findViewById(R.id.product_area_confirmation);
+        product_area.setText(getArguments().getString("PRODUCT_AREA"));
+        //配達方法
+        TextView delivery_method= view.findViewById(R.id.delivery_confirmation);
+        delivery_method.setText(getArguments().getString("DELIVERY_METHOD"));
 
         // 確認完了ボタンを取得
         Button nextButton = view.findViewById(R.id.next_button_exhibit_info_com);

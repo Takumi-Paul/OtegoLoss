@@ -86,7 +86,7 @@
                 android:text="産地" />
 
             <TextView
-                android:id="@+id/Origin_confirmation"
+                android:id="@+id/product_area_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -216,7 +216,7 @@
                 android:text="配達方法" />
 
             <TextView
-                android:id="@+id/Delivery_confirmation"
+                android:id="@+id/delivery_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"

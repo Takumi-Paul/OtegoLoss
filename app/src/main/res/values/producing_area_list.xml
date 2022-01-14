@@ -12,7 +12,6 @@
 <resources>
     //Spinner(ウルダウン式選択)用の選択肢を入れる配列(産地)
     <string-array name="product_area">
-        <item>高知県</item>
         <item>北海道</item>
         <item>青森県</item>
         <item>岩手県</item>
@@ -51,6 +50,7 @@
         <item>香川県</item>
         <item>愛媛県</item>
         <item>徳島県</item>
+        <item>高知県</item>
         <item>福岡県</item>
         <item>佐賀県</item>
         <item>長崎県</item>
