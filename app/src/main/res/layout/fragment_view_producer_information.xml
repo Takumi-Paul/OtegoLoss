@@ -7,32 +7,25 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
-    <Spinner
-        android:id="@+id/choiceBank_spinner"
+    <EditText
+        android:id="@+id/proEmailAddress_editText"
         android:layout_width="270dp"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bank_textView" />
-
-    <Spinner
-        android:id="@+id/choiceBranch_spinner"
-        android:layout_width="270dp"
-        android:layout_height="25dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/branch_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/proEmailAddress_textView" />
 
     <EditText
         android:id="@+id/accountName_editText"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -43,24 +36,11 @@
         app:layout_constraintTop_toBottomOf="@+id/accountName_textView" />
 
     <TextView
-        android:id="@+id/accountName_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="510dp"
-        android:text="口座の名義（カタカナ）"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/branch_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="380dp"
         android:text="支店名の選択"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,11 +49,75 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/accountName_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="452dp"
+        android:text="口座の名義（カタカナ）"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/phoneNumber_editText"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber_textView" />
+
+    <Spinner
+        android:id="@+id/choiceBranch_spinner"
+        android:layout_width="270dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/branch_textView" />
+
+    <Spinner
+        android:id="@+id/choiceBank_spinner"
+        android:layout_width="270dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_textView" />
+
+    <TextView
+        android:id="@+id/proEmailAddress_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="76dp"
+        android:text="メールアドレス"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/bank_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="304dp"
         android:text="銀行機関名の選択"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,37 +126,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/proEmailAddress_textView"
+        android:id="@+id/identification_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
-        android:text="メールアドレス"
+        android:layout_marginTop="216dp"
+        android:text="身分証明書（顔写真がついたもの）"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/proEmailAddress_editText"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proEmailAddress_textView" />
 
     <TextView
         android:id="@+id/phoneNumber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="144dp"
         android:text="電話番号（ハイフンを除く）"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,47 +155,24 @@
         android:id="@+id/proRegister_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="生産者登録"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountName_editText" />
-
-    <TextView
-        android:id="@+id/identification_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="240dp"
-        android:text="身分証明書（顔写真がついたもの）"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/phoneNumber_editText"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="phone"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber_textView" />
 
     <Button
         android:id="@+id/identification_button"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="提出BOX（ファイルを選択する）"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/identification_textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

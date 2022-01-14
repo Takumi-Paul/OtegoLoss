@@ -96,7 +96,7 @@ public class UserFragment extends Fragment {
         nextDeleteAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_navigation_user_to_accountdelete);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_user_to_deletion_agreement);
             }
         });
 
