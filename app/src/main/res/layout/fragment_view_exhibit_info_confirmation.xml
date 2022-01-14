@@ -35,7 +35,7 @@
 
 
             <TextView
-                android:id="@+id/inputProduct_textView"
+                android:id="@+id/product_name_confirmation"
                 android:layout_width="296dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -61,7 +61,7 @@
                 android:text="商品情報" />
 
             <TextView
-                android:id="@+id/inputProductInfo_textView"
+                android:id="@+id/productInfo_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -86,7 +86,7 @@
                 android:text="産地" />
 
             <TextView
-                android:id="@+id/inputOrigin_textView"
+                android:id="@+id/Origin_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -112,7 +112,7 @@
                 android:text="量" />
 
             <TextView
-                android:id="@+id/inputWeight_textView13"
+                android:id="@+id/weight_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -139,7 +139,7 @@
                 android:text="金額" />
 
             <TextView
-                android:id="@+id/inputAmount_textView"
+                android:id="@+id/price_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -165,7 +165,7 @@
                 android:text="商品画像" />
 
             <ImageView
-                android:id="@+id/product_imageView"
+                android:id="@+id/product_imageView_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1sp"
@@ -190,7 +190,7 @@
                 android:text="レシピURL" />
 
             <TextView
-                android:id="@+id/inputUrl_textView"
+                android:id="@+id/recipe_url_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -216,7 +216,7 @@
                 android:text="配達方法" />
 
             <TextView
-                android:id="@+id/inputDelivery_textView"
+                android:id="@+id/Delivery_confirmation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1sp"
@@ -235,10 +235,10 @@
         android:text="編集に戻る"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.846" />
 
     <Button
         android:id="@+id/next_button_exhibit_info_com"
@@ -251,5 +251,5 @@
         app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.846" />
 </androidx.constraintlayout.widget.ConstraintLayout>

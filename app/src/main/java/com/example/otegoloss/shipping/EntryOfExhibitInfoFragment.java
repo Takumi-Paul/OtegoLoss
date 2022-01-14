@@ -54,14 +54,14 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 //次のフラグメントにBundleを使ってデータを渡す
                 //タイトル
                 Bundle bundle = new Bundle();
-                bundle.putString("pro_names", pro_names);
-                bundle.putString("pro_descriptions", pro_descriptions);
-                bundle.putString("weights", weights);
-                bundle.putString("prices", prices);
-                bundle.putString("recipe_urls", recipe_urls);
+                bundle.putString("PRODUCT_NAME", pro_names);
+                bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
+                bundle.putString("PRODUCT_WEIGHT", weights);
+                bundle.putString("PRODUCT_PRICE", prices);
+                bundle.putString("RECIPE_URL", recipe_urls);
 
                 // fragmentViewExhibitInfoConfirmationに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation);
+                Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation,bundle);
             }
         });
 
