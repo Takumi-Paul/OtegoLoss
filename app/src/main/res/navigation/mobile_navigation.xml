@@ -84,7 +84,11 @@
     <fragment
         android:id="@+id/profile_config"
         android:name="com.example.otegoloss.user.ProfileConfigFragment"
-        android:label="@string/profileconfig" />
+        android:label="@string/profileconfig" >
+        <action
+            android:id="@+id/action_profile_config_to_navigation_user"
+            app:destination="@id/navigation_user" />
+    </fragment>
     <fragment
         android:id="@+id/payinfoconfig"
         android:name="com.example.otegoloss.user.PayInfoConfigFragment"
