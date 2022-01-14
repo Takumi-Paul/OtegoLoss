@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/product_name_change_lishting_info"
-        android:layout_width="377dp"
+        android:layout_width="375dp"
         android:layout_height="56dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/product_description_change_lishting_info"
-        android:layout_width="372dp"
+        android:layout_width="375dp"
         android:layout_height="113dp"
         android:ems="10"
         android:hint="商品説明(管理方法、保存日数など)"
@@ -79,7 +79,7 @@
 
     <EditText
         android:id="@+id/recipe_url_change_lishting_info"
-        android:layout_width="374dp"
+        android:layout_width="375dp"
         android:layout_height="54dp"
         android:ems="10"
         android:hint="レシピURL(任意)"
