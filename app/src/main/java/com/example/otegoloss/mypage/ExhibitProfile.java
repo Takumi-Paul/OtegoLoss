@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -13,15 +15,23 @@ import com.example.otegoloss.R;
 
 public class ExhibitProfile extends Fragment {
 
-    private String[] userName = {
-
-    };
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_exhibit_profile, container, false);
 
+        // BundleでFavoriteUser画面の値を受け取り
+        Bundle bundle = getArguments();
+        // 画像ID
+        int userImage = bundle.getInt("PHOTO", 0);
+        // 商品ID
+        String userName = bundle.getString("USER_NAME", "");
 
+        // imageViewのIDを関連付けて画像を表示
+        ImageView imageView = view.findViewById(R.id.userImage);
+        imageView.setImageResource(userImage);
+
+        TextView nameText = view.findViewById(R.id.userNameTextView);
+        nameText.setText(userName);
 
         return view;
     }
