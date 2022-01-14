@@ -11,7 +11,7 @@
         android:id="@+id/inputCredit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:backgroundTint="#6A994E"
         android:text="入力完了"
         android:textSize="20sp"
@@ -24,19 +24,17 @@
         android:id="@+id/cardCode_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="44dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
         android:ems="10"
         android:inputType="number"
-        android:text="セキュリティコード"
+        android:hint="セキュリティコード"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/year_spinner" />
 
     <Spinner
         android:id="@+id/year_spinner"
@@ -44,57 +42,50 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintTop_toBottomOf="@+id/deadline_textView" />
 
     <TextView
         android:id="@+id/deadline_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="440dp"
+        android:layout_marginTop="32dp"
         android:text="有効期限"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber_editText" />
 
     <EditText
         android:id="@+id/cardName_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:background="#000000"
         android:backgroundTint="#E4E4E4"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="クレジットカード名義人"
+        android:hint="クレジットカード名義人"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/company_spinner" />
 
     <TextView
         android:id="@+id/company_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="620dp"
+        android:layout_marginTop="84dp"
         android:text="クレジットカード会社"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/company_spinner"
@@ -102,12 +93,10 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintTop_toBottomOf="@+id/company_textView" />
 
     <Spinner
         android:id="@+id/month_spinner"
@@ -115,30 +104,25 @@
         android:layout_height="30dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintTop_toBottomOf="@+id/deadline_textView" />
 
     <EditText
         android:id="@+id/cardNumber_editText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:background="#E4E4E4"
         android:backgroundTint="#E4E4E4"
         android:ems="10"
         android:inputType="number"
-        android:text="カード番号"
+        android:hint="カード番号"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintTop_toBottomOf="@+id/cardName_editText" />
 
     <TextView
         android:id="@+id/month_textView"

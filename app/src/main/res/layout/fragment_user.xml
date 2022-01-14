@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/nextInformation_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:backgroundTint="@color/light_green"
         android:text="インフォメーション"
         android:textColor="@color/white"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/nextDeleteAccount_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="アカウント削除"
         android:textColor="@color/white"
         android:backgroundTint="@color/light_green"
@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/nextProcedureRegister_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="生産者登録"
         android:textColor="@color/white"
         android:backgroundTint="@color/light_green"
@@ -44,7 +44,7 @@
     <Button
         android:id="@+id/nextSettingAddress_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="配送先情報設定"
         android:textColor="@color/white"
         android:backgroundTint="@color/light_green"
@@ -55,7 +55,7 @@
     <Button
         android:id="@+id/nextSettingCredit_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="決済情報設定"
         android:textColor="@color/white"
         android:backgroundTint="@color/light_green"
@@ -66,7 +66,7 @@
     <Button
         android:id="@+id/nextSettingProfile_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:text="プロフィール設定"
         android:backgroundTint="@color/light_green"
@@ -113,7 +113,7 @@
     <TextView
         android:id="@+id/profileUserMessage_textView"
         android:layout_width="380dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="8dp"
         android:text="プロフィールメッセージ"
         android:textSize="16sp"
@@ -125,7 +125,7 @@
     <Button
         android:id="@+id/nextMeter_button"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="ロス削減メーター"
         android:textColor="@color/white"
         android:backgroundTint="@color/light_green"
