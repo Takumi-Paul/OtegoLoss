@@ -56,13 +56,5 @@ public class MypageFragment extends Fragment {
         return view;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case Android.R.id.home:
-//
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
 }
