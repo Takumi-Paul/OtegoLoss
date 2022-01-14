@@ -33,4 +33,7 @@
     <string name="pay_info_regist_comp">決済情報登録完了</string>
     <string name="shipping_addr_info_regist_comp">配送先情報登録完了</string>
     <string name="user_photo">ユーザ写真</string>
+    <string name="meter">ロス削減メーター</string>
+    <string name="infomarion">インフォメーション</string>
+    <string name="accouuntdelete">アカウント削除</string>
 </resources>

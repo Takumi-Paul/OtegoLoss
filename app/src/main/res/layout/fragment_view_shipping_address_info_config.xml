@@ -8,32 +8,28 @@
     android:background="#F2E8CF" >
 
     <Button
-        android:id="@+id/deleteShipping_button"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="520dp"
-        android:text="配送先情報削除"
-        android:textAlignment="viewStart"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
         android:id="@+id/registerShipping_button"
         android:layout_width="380dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="600dp"
+        android:layout_marginTop="80dp"
         android:text="配送先情報登録"
         android:textAlignment="viewStart"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteShipping_button"
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:text="配送先情報削除"
+        android:textAlignment="viewStart"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerShipping_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

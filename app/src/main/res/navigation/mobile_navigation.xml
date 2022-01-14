@@ -101,6 +101,15 @@
         <action
             android:id="@+id/action_navigation_user_to_producer_agreement"
             app:destination="@id/producer_agreement" />
+        <action
+            android:id="@+id/action_navigation_user_to_meter"
+            app:destination="@id/meter" />
+        <action
+            android:id="@+id/action_navigation_user_to_information"
+            app:destination="@id/information" />
+        <action
+            android:id="@+id/action_navigation_user_to_accountdelete"
+            app:destination="@id/accountdelete" />
     </fragment>
 
     <fragment
@@ -307,6 +316,18 @@
         android:id="@+id/exhibitProfile"
         android:name="com.example.otegoloss.mypage.ExhibitProfile"
         android:label="ExhibitProfile" />
+    <fragment
+        android:id="@+id/meter"
+        android:name="com.example.otegoloss.user.MeterFragment"
+        android:label="@string/meter" />
+    <fragment
+        android:id="@+id/information"
+        android:name="com.example.otegoloss.user.InfomarionFragment"
+        android:label="@string/infomarion" />
+    <fragment
+        android:id="@+id/accountdelete"
+        android:name="com.example.otegoloss.user.AccountDeleteFragment"
+        android:label="@string/accouuntdelete" />
 
 
 </navigation>
