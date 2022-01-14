@@ -78,6 +78,7 @@
         android:layout_height="421dp"
         android:numColumns="1"
         android:gravity="center"
+        android:verticalSpacing="5dp"
         android:stretchMode="columnWidth"
         app:layout_constraintBottom_toBottomOf="@+id/back_color_yet_sold_out_history"
         app:layout_constraintEnd_toEndOf="@+id/back_color_yet_sold_out_history"

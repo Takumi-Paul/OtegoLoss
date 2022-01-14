@@ -13,7 +13,7 @@ import java.util.List;
 import android.view.LayoutInflater;
 import android.content.Context;
 
-public class GridAdapterOfShipping extends BaseAdapter {
+public class GridAdapterOfYetSoldOut extends BaseAdapter {
     class ViewHolder {
         ImageView imageView;
         TextView pro_textView;
@@ -29,7 +29,7 @@ public class GridAdapterOfShipping extends BaseAdapter {
     private int layoutId;
 
     // 引数を出品者画面と合わせる
-    public GridAdapterOfShipping(Context context,
+    public GridAdapterOfYetSoldOut(Context context,
                                  int layoutId,
                                  List<Integer> imgList,
                                  String[] productNames,
@@ -65,23 +65,23 @@ public class GridAdapterOfShipping extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        GridAdapterOfShipping.ViewHolder holder;
+        GridAdapterOfYetSoldOut.ViewHolder holder;
         if (convertView == null) {
             // fragment_shipping.xml の <GridView .../> に grid_items_of_shipping.xml を inflate して convertView とする
             convertView = inflater.inflate(layoutId, parent, false);
             // ViewHolder を生成
-            holder = new GridAdapterOfShipping.ViewHolder();
+            holder = new GridAdapterOfYetSoldOut.ViewHolder();
 
-            holder.imageView = convertView.findViewById(R.id.shipping_imageView);
-            holder.pro_textView = convertView.findViewById(R.id.shipping_product_name);
-            holder.pri_textView = convertView.findViewById(R.id.shipping_price);
-            holder.dat_textView = convertView.findViewById(R.id.shipping_listing_date);
-            holder.view = convertView.findViewById(R.id.shipping_view);
+            holder.imageView = convertView.findViewById(R.id.yet_sold_out_imageView);
+            holder.pro_textView = convertView.findViewById(R.id.yet_sold_out_product_name);
+            holder.pri_textView = convertView.findViewById(R.id.yet_sold_out_price);
+            holder.dat_textView = convertView.findViewById(R.id.yet_sold_out_listing_date);
+            holder.view = convertView.findViewById(R.id.yet_sold_out_view);
 
             convertView.setTag(holder);
         }
         else {
-            holder = (GridAdapterOfShipping.ViewHolder) convertView.getTag();
+            holder = (GridAdapterOfYetSoldOut.ViewHolder) convertView.getTag();
         }
 
         holder.imageView.setImageResource(imageList.get(position));

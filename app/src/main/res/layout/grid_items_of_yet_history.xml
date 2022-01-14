@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/yet_sold_out_view"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/green"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <ImageView
+        android:id="@+id/yet_sold_out_imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/yet_sold_out_view"
+        app:layout_constraintEnd_toEndOf="@+id/yet_sold_out_view"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="@id/yet_sold_out_view"
+        app:layout_constraintTop_toTopOf="@+id/yet_sold_out_view"
+        app:layout_constraintVertical_bias="0.451"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/yet_sold_out_price"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yet_sold_out_view"
+        app:layout_constraintEnd_toEndOf="@+id/yet_sold_out_view"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="@+id/yet_sold_out_view"
+        app:layout_constraintTop_toTopOf="@+id/yet_sold_out_view"
+        app:layout_constraintVertical_bias="0.482" />
+    <TextView
+        android:id="@+id/yet_sold_out_product_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yet_sold_out_view"
+        app:layout_constraintEnd_toEndOf="@+id/yet_sold_out_view"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="@+id/yet_sold_out_view"
+        app:layout_constraintTop_toTopOf="@+id/yet_sold_out_view"
+        app:layout_constraintVertical_bias="0.181" />
+    <TextView
+        android:id="@+id/yet_sold_out_listing_date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/blue_black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yet_sold_out_view"
+        app:layout_constraintEnd_toEndOf="@+id/yet_sold_out_view"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="@+id/yet_sold_out_view"
+        app:layout_constraintTop_toTopOf="@+id/yet_sold_out_view"
+        app:layout_constraintVertical_bias="0.776" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

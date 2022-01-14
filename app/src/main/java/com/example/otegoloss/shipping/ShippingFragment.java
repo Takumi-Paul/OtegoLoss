@@ -70,6 +70,7 @@ public class ShippingFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history);
             }
         });
+        //以下Grid表示についての記述
         for (String productName: productNames){
             int imageId = getResources().getIdentifier(productName,"drawable", getActivity().getPackageName());
             imgList.add(imageId);
@@ -93,9 +94,6 @@ public class ShippingFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm_item = getParentFragmentManager();
-                FragmentTransaction t_item = fm_item.beginTransaction();
-
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
                 // 画像ID
