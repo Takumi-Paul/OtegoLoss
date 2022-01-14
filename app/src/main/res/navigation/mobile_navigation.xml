@@ -128,7 +128,11 @@
     <fragment
         android:id="@+id/profile_config"
         android:name="com.example.otegoloss.user.ProfileConfigFragment"
-        android:label="@string/profileconfig" />
+        android:label="@string/profileconfig" >
+        <action
+            android:id="@+id/action_profile_config_to_navigation_user"
+            app:destination="@id/navigation_user" />
+    </fragment>
     <fragment
         android:id="@+id/payinfoconfig"
         android:name="com.example.otegoloss.user.PayInfoConfigFragment"
@@ -274,8 +278,8 @@
         android:label="購入完了"
         tools:layout="@layout/fragment_view_purchase_completed" >
         <action
-            android:id="@+id/action_fragmentViewPurchaseCompleted_to_fragmentProduct"
-            app:destination="@id/fragmentProduct" />
+            android:id="@+id/action_fragmentViewPurchaseCompleted_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment

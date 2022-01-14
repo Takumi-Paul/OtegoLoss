@@ -22,6 +22,7 @@ import android.widget.Button;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.databinding.FragmentUserBinding;
+import com.example.otegoloss.shipping.EntryOfExhibitInfoFragment;
 
 import java.util.Objects;
 
