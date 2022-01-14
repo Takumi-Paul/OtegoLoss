@@ -7,104 +7,88 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F2E8CF"/>
-
     <Button
         android:id="@+id/next_button_shipping"
-        android:layout_width="129dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@color/light_green"
         android:text="次へ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteAddress_button" />
 
-    <ImageView
-        android:id="@+id/backGround2_imageView"
-        android:layout_width="410dp"
-        android:layout_height="684dp"
-        app:srcCompat="@drawable/background"
-        tools:layout_editor_absoluteX="-15dp"
-        tools:layout_editor_absoluteY="4dp" />
-
     <Button
         android:id="@+id/addAddress_button"
-        android:layout_width="141dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:text="住所を追加"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shippingAddress2_view" />
 
     <Button
         android:id="@+id/deleteAddress_button"
-        android:layout_width="132dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:text="住所を削除"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addAddress_button" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/shippingAddress2_view" />
 
     <View
         android:id="@+id/shippingAddress1_view"
         android:layout_width="338dp"
         android:layout_height="150dp"
-        android:layout_marginTop="60dp"
         android:background="#92FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backGround2_imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
 
     <View
         android:id="@+id/shippingAddress2_view"
         android:layout_width="338dp"
         android:layout_height="150dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:background="#92FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/backGround2_imageView"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shippingAddress1_view" />
 
-    <RadioButton
-        android:id="@+id/choice1_radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="102dp"
+        android:layout_height="336dp"
+        app:layout_constraintBottom_toBottomOf="@+id/shippingAddress2_view"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
-        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress1_view"
-        app:layout_constraintTop_toTopOf="@+id/shippingAddress1_view" />
+        app:layout_constraintTop_toTopOf="@+id/shippingAddress1_view"
+        app:layout_constraintVertical_bias="0.0">
 
-    <RadioButton
-        android:id="@+id/choice2_radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="@+id/shippingAddress2_view"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="@+id/shippingAddress2_view"
-        app:layout_constraintTop_toTopOf="@+id/shippingAddress2_view" />
+        <RadioButton
+            android:id="@+id/choice1_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:buttonTint="@color/blue_black" />
+
+        <RadioButton
+            android:id="@+id/choice2_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:buttonTint="@color/blue_black" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/addressNumber1_textView"
