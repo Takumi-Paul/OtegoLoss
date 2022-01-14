@@ -4,8 +4,6 @@ package com.example.otegoloss.shipping;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -13,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
@@ -40,11 +37,11 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         activity.setupBackButton(true);
 
         //入力情報保持用のインスタンス生成
-        pro_name = (EditText) view.findViewById(R.id.product_name_entry_exhibit_product);
-        pro_description= (EditText) view.findViewById(R.id.product_description_entry_exhibit_product);
-        weight = (EditText) view.findViewById(R.id.product_weight_entry_exhibit_product);
-        price = (EditText) view.findViewById(R.id.amount_entry_exhibit_product2);
-        recipe_url = (EditText) view.findViewById(R.id.recipe_url_entry_exhibit_product);
+        pro_name = (EditText) view.findViewById(R.id.product_name_change_lishting_info);
+        pro_description= (EditText) view.findViewById(R.id.product_description_change_lishting_info);
+        weight = (EditText) view.findViewById(R.id.product_weight_change_lishting_info);
+        price = (EditText) view.findViewById(R.id.amount_change_lishting_info);
+        recipe_url = (EditText) view.findViewById(R.id.recipe_url_change_lishting_info);
 
 
         // 入力完了ボタンを取得

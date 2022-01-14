@@ -30,9 +30,9 @@ public class ViewSoldOutProductFragment extends Fragment{
         activity.setupBackButton(true);
 
         // ボタンを取得
-        Button buttonNext = view.findViewById(R.id.delivery_procedure_button_view_sold_out_product);
-        // 入力完了ボタンをクリックした時の処理
-        buttonNext.setOnClickListener(new View.OnClickListener() {
+        Button nextButton = view.findViewById(R.id.delivery_procedure_button_view_sold_out_product);
+        // 配達ボタンをクリックした時の処理
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // fragmentDeriveryに遷移させる
