@@ -46,7 +46,18 @@
         android:id="@+id/navigation_sold_out_product"
         android:name="com.example.otegoloss.shipping.ViewSoldOutProductFragment"
         android:label="SoldOutProduct"
-        tools:layout="@layout/fragment_view_sold_out_product" />
+        tools:layout="@layout/fragment_view_sold_out_product" >
+        <action
+            android:id="@+id/action_navigation_sold_out_product_to_navigation_shipping_procedure"
+            app:destination="@id/navigation_shipping_procedure" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_shipping_procedure"
+        android:name="com.example.otegoloss.shipping.ShippingProcedureFragment"
+        android:label="配送手続き"
+        tools:layout="@layout/fragment_view_shipping_procedure" />
+
     <fragment
         android:id="@+id/navigation_yet_sold_out_history"
         android:name="com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment"

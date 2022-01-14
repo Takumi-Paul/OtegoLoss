@@ -69,8 +69,12 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="173dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toEndOf="@+id/text2_view_shipping_product"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
 
     <TextView
         android:id="@+id/text6_view_shipping_product"
@@ -91,8 +95,12 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toEndOf="@+id/text3_view_shipping_product"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.305" />
 
     <TextView
         android:id="@+id/text8_view_shipping_product"
