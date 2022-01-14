@@ -48,13 +48,6 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_yet_sold_out_history, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品履歴");
-        // 戻るボタンは表示にする
-        activity.setupBackButton(true);
-
         //以下Grid表示についての記述
         for (String productName: productNames){
             int imageId = getResources().getIdentifier(productName,"drawable", getActivity().getPackageName());
@@ -86,6 +79,8 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
                 bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putInt("PRODUCT_ID", productID[position]);
+                //商品名
+                bundle.putString("PRODUCT_NAME",productNames[position]);
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product, bundle);
             }

@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
@@ -22,12 +24,20 @@ public class ViewYetSoldOutProductFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_yet_sold_out_product, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("出品情報詳細");
-        // 戻るボタンは表示
-        activity.setupBackButton(true);
+        // BundleでHome画面の値を受け取り
+        Bundle bundle = getArguments();
+        // 画像ID
+        int imageId = bundle.getInt("IMAGEID", 0);
+        // 商品ID
+        int productID = bundle.getInt("PRODUCT_ID", 0);
+
+        // imageViewのIDを関連付けて画像を表示
+        ImageView imageView = view.findViewById(R.id.product_image_view_sold_out_product);
+        imageView.setImageResource(imageId);
+
+        //商品名を表示
+        TextView product_name_view = view.findViewById(R.id.product_name_text_view_view_sold_out_product);
+        product_name_view.setText(getArguments().getString("PRODUCT_NAME"));
 
         // ボタンを取得
         Button changeButton = view.findViewById(R.id.content_change_button_view_yet_sold_out_product);

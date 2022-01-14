@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/navigation_shipping"
         android:name="com.example.otegoloss.shipping.ShippingFragment"
-        android:label="@string/title_shipping"
+        android:label="出品履歴"
         tools:layout="@layout/fragment_shipping" >
         <action
             android:id="@+id/action_navigation_shipping_to_navigation_yet_sold_out_history"
@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/navigation_sold_out_product"
         android:name="com.example.otegoloss.shipping.ViewSoldOutProductFragment"
-        android:label="SoldOutProduct"
+        android:label="出品情報詳細"
         tools:layout="@layout/fragment_view_sold_out_product" >
         <action
             android:id="@+id/action_navigation_sold_out_product_to_navigation_shipping_procedure"
@@ -61,7 +61,7 @@
     <fragment
         android:id="@+id/navigation_yet_sold_out_history"
         android:name="com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment"
-        android:label="出品履歴（未完売）"
+        android:label="出品履歴"
         tools:layout="@layout/fragment_view_yet_sold_out_history" >
         <action
             android:id="@+id/action_navigation_yet_sold_out_history_to_navigation_shipping"
@@ -73,12 +73,12 @@
     <fragment
         android:id="@+id/navigation_change_listing_info"
         android:name="com.example.otegoloss.shipping.ChangeListingInfoFragment"
-        android:label="情報変更"
+        android:label="出品情報変更"
         tools:layout="@layout/fragment_change_listing_info" />
     <fragment
         android:id="@+id/navigation_yet_sold_out_product"
         android:name="com.example.otegoloss.shipping.ViewYetSoldOutProductFragment"
-        android:label="商品詳細"
+        android:label="出品情報詳細"
         tools:layout="@layout/fragment_view_yet_sold_out_product" >
         <action
             android:id="@+id/action_navigation_yet_sold_out_product_to_navigation_change_listing_info"
@@ -221,7 +221,7 @@
     <fragment
         android:id="@+id/navigation_entry_of_exhibit_info"
         android:name="com.example.otegoloss.shipping.EntryOfExhibitInfoFragment"
-        android:label="entry_exhibit"
+        android:label="出品情報入力"
         tools:layout="@layout/fragment_entry_of_exhibit_info" >
         <action
             android:id="@+id/action_entry_to_confirmation"
@@ -231,7 +231,7 @@
     <fragment
         android:id="@+id/navigation_view_exhibit_product_info_confirmation"
         android:name="com.example.otegoloss.shipping.ViewExhibitProductInfoConfirmationFragment"
-        android:label="exhibit_confirmation"
+        android:label="出品情報確認"
         tools:layout="@layout/fragment_view_exhibit_info_confirmation" >
         <action
             android:id="@+id/action_confirmation_to_completed"
@@ -244,7 +244,7 @@
     <fragment
         android:id="@+id/navigation_view_exhibit_completed"
         android:name="com.example.otegoloss.shipping.ViewExhibitCompletedFragment"
-        android:label="exhibit_completed"
+        android:label="出品完了"
         tools:layout="@layout/fragment_view_exhibit_completed" >
         <action
             android:id="@+id/action_navigation_view_exhibit_completed_to_navigation_home"

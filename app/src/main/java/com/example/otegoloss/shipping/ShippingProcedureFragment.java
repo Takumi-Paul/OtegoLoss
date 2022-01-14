@@ -20,12 +20,6 @@ public class ShippingProcedureFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_shipping_procedure, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // アクションバーにタイトルをセット
-        activity.setTitle("配送手続き");
-        // 戻るボタンは表示
-        activity.setupBackButton(true);
 
         return view;
     }
