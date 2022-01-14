@@ -46,6 +46,7 @@ public class ProfileConfigFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String profile_usernames = profile_username.getText().toString();
+                System.out.println(profile_usernames);
                 Navigation.findNavController(view).navigate(R.id.action_profile_config_to_navigation_user);
             }
         });

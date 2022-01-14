@@ -106,7 +106,11 @@
     <fragment
         android:id="@+id/purchaseHistory"
         android:name="com.example.otegoloss.mypage.PurchaseHistory"
-        android:label="PurchaseHistory" />
+        android:label="PurchaseHistory" >
+        <action
+            android:id="@+id/action_purchaseHistory_to_fragmentProduct"
+            app:destination="@id/fragmentProduct" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteUserView"
         android:name="com.example.otegoloss.mypage.FavoriteUserView"
