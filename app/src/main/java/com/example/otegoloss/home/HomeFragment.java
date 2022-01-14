@@ -57,17 +57,7 @@ public class HomeFragment extends Fragment {
         shippingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm_shipping = getChildFragmentManager();
-                FragmentTransaction t_shipping = fm_shipping.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new EntryOfExhibitInfoFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_shipping.add(R.id.fragmentHome, secondFragment);
-                // 画面遷移戻りを設定
-                t_shipping.addToBackStack(null);
-                // 画面遷移
-                t_shipping.commit();
-
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_navigation_entry_of_exhibit_info);
             }
         });
 

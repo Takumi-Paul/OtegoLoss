@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,16 +67,7 @@ public class ShippingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragment_view_yet_sold_out_historyに遷移させる
-                FragmentManager fm_ViewYetSoldOutHistory = getParentFragmentManager();
-                FragmentTransaction t_ViewYetSoldOutHistory  =  fm_ViewYetSoldOutHistory.beginTransaction();
-                // 次のFragment
-                Fragment secondFragment = new ViewYetSoldOutHistoryFragment();
-                // fragmentManagerに次のfragmentを追加
-                t_ViewYetSoldOutHistory.replace(R.id.fragmentShipping, secondFragment);
-                // 画面遷移戻りを設定
-                t_ViewYetSoldOutHistory.addToBackStack(null);
-                // 画面遷移
-                t_ViewYetSoldOutHistory.commit();
+                Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history);
             }
         });
         for (String productName: productNames){
@@ -110,16 +102,8 @@ public class ShippingFragment extends Fragment {
                 bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putInt("PRODUCT_ID", productID[position]);
-                // 次のFragment
-                Fragment secondFragment = new ViewSoldOutProductFragment();
-                // bundleを次のfragmentに設定
-                secondFragment.setArguments(bundle);
-                // fragmentManagerに次のfragmentを追加
-                t_item.replace(R.id.fragmentShipping, secondFragment);
-                // 画面遷移戻りを設定
-                t_item.addToBackStack(null);
-                // 画面遷移
-                t_item.commit();
+
+                Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_sold_out_product, bundle);
             }
         });
         return view;

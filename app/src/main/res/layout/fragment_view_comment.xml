@@ -13,7 +13,7 @@
         android:layout_height="46dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="ここにテキストを入力"
+        android:hint="ここにテキストを入力"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/sendComment_button"
         app:layout_constraintHorizontal_bias="0.228"

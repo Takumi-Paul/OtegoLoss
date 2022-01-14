@@ -79,6 +79,7 @@ public class ViewProduct extends Fragment {
         });
 
 
+
         return view;
     }
 

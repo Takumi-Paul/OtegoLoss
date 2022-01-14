@@ -63,7 +63,6 @@
         android:layout_height="28dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="140dp"
-        android:text="生産者名"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/backGround_view"
         app:layout_constraintStart_toEndOf="@+id/textView_hoge1"
@@ -74,7 +73,6 @@
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
-        android:text="商品名"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textview_hoge2"
         app:layout_constraintTop_toBottomOf="@+id/proName_textView" />
@@ -106,7 +104,6 @@
         android:layout_width="93dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
-        android:text="重量"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textview_hoge3"
         app:layout_constraintTop_toBottomOf="@+id/productName_textView" />
@@ -128,7 +125,6 @@
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="出品日"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textview_hoge6"
         app:layout_constraintTop_toBottomOf="@+id/region_textView" />
@@ -138,7 +134,6 @@
         android:layout_width="57dp"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
-        android:text="地域"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textview_hoge5"
         app:layout_constraintTop_toBottomOf="@+id/price_textView" />
@@ -173,7 +168,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="174dp"
-        android:text="価格"
         android:textColor="#BC4749"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/backGround_view"

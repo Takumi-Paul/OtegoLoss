@@ -37,7 +37,7 @@
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="商品名"
+        android:hint="商品名"
         app:layout_constraintEnd_toEndOf="@+id/search_view"
         app:layout_constraintStart_toStartOf="@+id/search_view"
         app:layout_constraintTop_toTopOf="@+id/search_view" />
@@ -51,7 +51,7 @@
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="出品者名"
+        android:hint="出品者名"
         app:layout_constraintEnd_toEndOf="@+id/search_view"
         app:layout_constraintStart_toStartOf="@+id/search_view"
         app:layout_constraintTop_toBottomOf="@+id/kensaku_area" />

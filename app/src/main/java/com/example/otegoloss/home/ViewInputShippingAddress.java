@@ -30,6 +30,29 @@ public class ViewInputShippingAddress extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_input_shipping_address, container, false);
 
 
+
+        //「住所を追加」を押したときの処理
+        Button AddAddressButton  = view.findViewById(R.id.addAddress_button);
+
+        AddAddressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_shipping_addr_info_regist_config);
+            }
+        });
+
+        //「住所を削除」を押したときの処理
+        Button DeleteAddressButton  = view.findViewById(R.id.deleteAddress_button);
+
+        DeleteAddressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_shipping_addr_info_delete);
+            }
+        });
+
+
+
         //「次へ」ボタンが押された時の処理
         Button NextButtonShipping = view.findViewById(R.id.next_button_shipping);
 

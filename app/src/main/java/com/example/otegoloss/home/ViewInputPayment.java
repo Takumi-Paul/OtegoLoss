@@ -28,6 +28,28 @@ public class ViewInputPayment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_input_payment, container, false);
 
 
+
+        //「決済情報を追加」ボタンが押された時の処理
+        Button AddCreditButton = view.findViewById(R.id.addCredit_button);
+
+        AddCreditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_creditcard_regist);
+            }
+        });
+
+
+        //「決済情報を削除」ボタンが押された時の処理
+        Button DeleteCreditButton = view.findViewById(R.id.deleteCredit_button);
+
+        DeleteCreditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_pay_info_delete);
+            }
+        });
+
         //「次へ」ボタンが押された時の処理
         Button NextButtonPayment = view.findViewById(R.id.next_button_payment);
 
@@ -35,17 +57,6 @@ public class ViewInputPayment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
-
-                //FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
-                //FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
-                // 次のFragment
-                //Fragment secondFragment = new ViewInputShippingAddress();
-                // fragmentManagerに次のfragmentを追加
-                //t_ViewPurchaseInformation1.replace(R.id.fragmentViewInputPayment, secondFragment);
-                // 画面遷移戻りを設定
-                //t_ViewPurchaseInformation1.addToBackStack(null);
-                // 画面遷移
-                //t_ViewPurchaseInformation1.commit();
             }
         });
 
