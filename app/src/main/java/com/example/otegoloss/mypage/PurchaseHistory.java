@@ -65,8 +65,6 @@ public class PurchaseHistory extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm_item = getActivity().getSupportFragmentManager();
-                FragmentTransaction t_item = fm_item.beginTransaction();
 
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
