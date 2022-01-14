@@ -42,7 +42,7 @@ public class ExhibitProfile extends Fragment {
         ReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_exhibitProfile_to_fragmentViewReview);
+                Navigation.findNavController(view).navigate(R.id.action_exhibitProfile_to_reviewUser);
             }
         });
 
