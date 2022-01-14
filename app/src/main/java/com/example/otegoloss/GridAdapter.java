@@ -22,6 +22,7 @@ public class GridAdapter extends BaseAdapter {
         ImageView imageView;
         TextView pro_textView;
         TextView pri_textView;
+        TextView producerID_textView;
         View view;
     }
     private List<Integer> imageList = new ArrayList<>();
@@ -29,13 +30,15 @@ public class GridAdapter extends BaseAdapter {
     private int[] price;
     private LayoutInflater inflater;
     private int layoutId;
+    private String[] producerIDs;
 
     // 引数がHomeFragmentからの設定と合わせる
     public GridAdapter(Context context,
                        int layoutId,
                        List<Integer> imgList,
                        String[] productNames,
-                       int[] prices) {
+                       int[] prices,
+                       String[] producerID) {
 
         super();
         this.inflater = (LayoutInflater)
@@ -44,6 +47,7 @@ public class GridAdapter extends BaseAdapter {
         imageList = imgList;
         pro_names = productNames;
         price = prices;
+        producerIDs = producerID;
     }
 
     @Override
@@ -75,6 +79,7 @@ public class GridAdapter extends BaseAdapter {
             holder.imageView = convertView.findViewById(R.id.image_view);
             holder.pro_textView = convertView.findViewById(R.id.productHome_textView);
             holder.pri_textView = convertView.findViewById(R.id.priceHome_textView);
+            holder.producerID_textView=convertView.findViewById(R.id.producer_id_textView);
             holder.view = convertView.findViewById(R.id.product_view);
 
             convertView.setTag(holder);
@@ -87,6 +92,7 @@ public class GridAdapter extends BaseAdapter {
         holder.pro_textView.setText(pro_names[position]);
         String pro_price = String.valueOf(price[position]);
         holder.pri_textView.setText(pro_price+"円");
+        holder.producerID_textView.setText(producerIDs[position]);
 
         return convertView;
     }

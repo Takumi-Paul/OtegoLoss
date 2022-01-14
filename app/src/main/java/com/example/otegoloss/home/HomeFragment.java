@@ -38,11 +38,15 @@ public class HomeFragment extends Fragment {
     };
     // 価格配列
     private int[] prices = {
-            100, 200, 300
+            100, 200000, 300
     };
     // 商品ID
     private int[] productID = new int[]{
             0, 1, 2
+    };
+    //生産者ID
+    private String[] producerID = {
+            "@KochiTarou", "@KawakamiSyoya", "@Iwasaki"
     };
 
     private List<Integer> imgList = new ArrayList<>();
@@ -77,7 +81,8 @@ public class HomeFragment extends Fragment {
                 R.layout.grid_items,
                 imgList,
                 productNames,
-                prices
+                prices,
+                producerID
         );
         // gridViewにadapterをセット
         gridview.setAdapter(adapter);
@@ -85,9 +90,6 @@ public class HomeFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm_item = getActivity().getSupportFragmentManager();
-                FragmentTransaction t_item = fm_item.beginTransaction();
-
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
                 // 画像ID

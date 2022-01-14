@@ -32,6 +32,10 @@ public class PurchaseHistory extends Fragment {
     private int[] productID = new int[]{
             0, 1, 2
     };
+    //生産者ID
+    private String[] producerID = {
+            "@KochiTarou", "@KawakamiSyoya", "@Iwasaki"
+    };
 
     private List<Integer> imgList = new ArrayList<>();
     @Override
@@ -56,7 +60,8 @@ public class PurchaseHistory extends Fragment {
                 R.layout.grid_items,
                 imgList,
                 productNames,
-                prices
+                prices,
+                producerID
         );
         // gridViewにadapterをセット
         gridview.setAdapter(adapter);

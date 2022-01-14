@@ -9,6 +9,7 @@
         android:id="@+id/product_view"
         android:layout_width="match_parent"
         android:layout_height="230dp"
+        android:background="@color/white"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -25,17 +26,28 @@
         android:layout_below="@+id/image_view"
         android:layout_marginTop="11dp"
         android:gravity="left"
-        android:textColor="#fff"
+        android:textColor="@color/blue_black"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/priceHome_textView"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/productHome_textView"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="110dp"
+        android:gravity="right"
+        android:textColor="@color/red_brown"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/producer_id_textView"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productHome_textView"
         android:layout_marginTop="10dp"
         android:gravity="left"
-        android:textColor="#fff"
-        android:textSize="18sp" />
+        android:textColor="@color/blue_black"
+        android:textSize="12sp" />
 
 </RelativeLayout>
