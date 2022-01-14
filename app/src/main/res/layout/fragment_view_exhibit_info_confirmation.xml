@@ -31,7 +31,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="商品名" />
+                android:text="商品名"
+                android:textColor="@color/blue_black" />
 
 
             <TextView
@@ -42,7 +43,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -58,7 +60,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="商品情報" />
+                android:text="商品情報"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/productInfo_confirmation"
@@ -67,7 +70,8 @@
                 android:layout_marginLeft="1sp"
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -83,7 +87,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="産地" />
+                android:text="産地"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/product_area_confirmation"
@@ -93,7 +98,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -109,7 +115,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="量" />
+                android:text="量"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/weight_confirmation"
@@ -119,7 +126,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
 
         </TableRow>
 
@@ -136,7 +144,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="金額" />
+                android:text="金額"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/price_confirmation"
@@ -146,7 +155,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -162,7 +172,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="商品画像" />
+                android:text="商品画像"
+                android:textColor="@color/blue_black"/>
 
             <ImageView
                 android:id="@+id/product_imageView_confirmation"
@@ -171,7 +182,8 @@
                 android:layout_marginLeft="1sp"
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -187,7 +199,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="レシピURL" />
+                android:text="レシピURL"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/recipe_url_confirmation"
@@ -197,7 +210,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
 
         <TableRow
@@ -213,7 +227,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="配達方法" />
+                android:text="配達方法"
+                android:textColor="@color/blue_black"/>
 
             <TextView
                 android:id="@+id/delivery_confirmation"
@@ -223,7 +238,8 @@
                 android:layout_marginTop="1sp"
                 android:background="#F2E8CF"
                 android:gravity="center|left"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
         </TableRow>
     </TableLayout>
 

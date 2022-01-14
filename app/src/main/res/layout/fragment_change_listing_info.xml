@@ -97,6 +97,7 @@
         android:layout_height="45dp"
         android:hint="配達方法"
         android:splitMotionEvents="false"
+        android:entries="@array/delivery_method"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
