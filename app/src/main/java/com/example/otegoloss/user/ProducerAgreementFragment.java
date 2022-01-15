@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -20,19 +23,22 @@ public class ProducerAgreementFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_producer_agreement, container, false);
 
-        // 所属親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを表示する
-        activity.setupBackButton(true);
-
-        // この記述でフラグメントでアクションバーメニューが使えるようになる
-        setHasOptionsMenu(true);
-
         Button nextProRegisterButton = view.findViewById(R.id.nextProRegister_button);
+        RadioButton proAgreeRuleRadioButton = (RadioButton)view.findViewById(R.id.proAgreeRule_radioButton);
+        RadioButton proRejectRuleRadioButton = (RadioButton)view.findViewById(R.id.proRejectRule_radioButton);
+
+        String errormessage = "同意しないのであれば、生産者登録できません";
+
+
         nextProRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_producer_agreement_to_producer_info);
+                if (proAgreeRuleRadioButton.isChecked() == true) {
+                    Navigation.findNavController(view).navigate(R.id.action_producer_agreement_to_producer_info);
+                }
+                if (proRejectRuleRadioButton.isChecked() == true) {
+                    Toast.makeText(view.getContext(), errormessage, Toast.LENGTH_LONG).show();
+                }
             }
         });
 
