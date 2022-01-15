@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/next_button_delivery_completed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
         android:background="#386641"
         android:text="出品履歴へ戻る"
         android:textColor="#FFFFFF"
