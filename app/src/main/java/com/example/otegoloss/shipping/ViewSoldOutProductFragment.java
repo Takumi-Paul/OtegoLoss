@@ -20,6 +20,13 @@ import com.example.otegoloss.R;
 
 
 public class ViewSoldOutProductFragment extends Fragment{
+    //価格
+    private String price = "100";
+    //地域
+    private String product_area = "高知県";
+    //出品日
+    private String listing_date = "20220107";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
@@ -39,6 +46,15 @@ public class ViewSoldOutProductFragment extends Fragment{
         //商品名を表示
         TextView product_name_view = view.findViewById(R.id.product_name_text_view_view_sold_out_product);
         product_name_view.setText(getArguments().getString("PRODUCT_NAME"));
+        //価格を表示
+        TextView prices = view.findViewById(R.id.price_sold_out_product);
+        prices.setText(price+"円");
+        //地域を表示
+        TextView product_areas = view.findViewById(R.id.product_area_sold_out_product);
+        product_areas.setText(product_area);
+        //出品日を表示
+        TextView listing_dates = view.findViewById(R.id.listing_date_sold_out_product);
+        listing_dates.setText(listing_date);
 
         // ボタンを取得
         Button nextButton = view.findViewById(R.id.delivery_procedure_button_view_sold_out_product);

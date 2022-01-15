@@ -58,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="@+id/back_colour_view_sold_out_product"
         app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.62" />
 
     <ImageView
         android:id="@+id/product_image_view_sold_out_product"
@@ -74,8 +74,8 @@
 
     <Button
         android:id="@+id/content_change_button_view_yet_sold_out_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
         android:background="@color/light_brown"
         android:text="出品内容の変更"
         android:textColor="@color/black"
@@ -88,8 +88,8 @@
 
     <Button
         android:id="@+id/content_delete_button_view_yet_sold_out_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:background="@color/light_brown"
         android:text="出品情報の削除"
         android:textColor="@color/black"
@@ -113,5 +113,42 @@
         app:layout_constraintStart_toStartOf="@+id/back_colour_view_sold_out_product"
         app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
         app:layout_constraintVertical_bias="0.116" />
+
+    <TextView
+        android:id="@+id/price_yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textview_price_view_sold_out_product"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <TextView
+        android:id="@+id/product_area_yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/area_view_sold_out_product"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <TextView
+        android:id="@+id/listing_date_yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/listing_day_view_sold_out_product"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintVertical_bias="0.62" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
