@@ -115,7 +115,7 @@
     <fragment
         android:id="@+id/purchaseHistory"
         android:name="com.example.otegoloss.mypage.PurchaseHistory"
-        android:label="PurchaseHistory" >
+        android:label="購入履歴" >
         <action
             android:id="@+id/action_purchaseHistory_to_fragmentProduct"
             app:destination="@id/fragmentProduct" />
@@ -123,7 +123,7 @@
     <fragment
         android:id="@+id/favoriteUserView"
         android:name="com.example.otegoloss.mypage.FavoriteUserView"
-        android:label="FavoriteUserView" >
+        android:label="お気に入りユーザ" >
         <action
             android:id="@+id/action_favoriteUserView_to_exhibitProfile"
             app:destination="@id/exhibitProfile" />
@@ -131,7 +131,7 @@
     <fragment
         android:id="@+id/purchase_information1"
         android:name="com.example.otegoloss.home.ViewPurchaseInformation1"
-        android:label=""
+        android:label="購入内容確認"
         tools:layout="@layout/fragment_view_purchase_information1">
         <action
             android:id="@+id/action_purchase_information1_to_fragmentViewPurchaseCompleted"
@@ -140,7 +140,7 @@
     <fragment
         android:id="@+id/fragmentProduct"
         android:name="com.example.otegoloss.home.ViewProduct"
-        android:label=""
+        android:label="商品詳細"
         tools:layout="@layout/fragment_view_product">
         <action
             android:id="@+id/action_fragmentProduct_to_fragmentViewInputPayment2"
@@ -315,7 +315,7 @@
     <fragment
         android:id="@+id/exhibitProfile"
         android:name="com.example.otegoloss.mypage.ExhibitProfile"
-        android:label="ExhibitProfile" >
+        android:label="出品者プロフィール" >
         <action
             android:id="@+id/action_exhibitProfile_to_reviewUser"
             app:destination="@id/reviewUser" />
@@ -324,7 +324,7 @@
     <fragment
         android:id="@+id/reviewUser"
         android:name="com.example.otegoloss.mypage.ReviewUser"
-        android:label="ExhibitProfile" />
+        android:label="レビュー" />
     <fragment
         android:id="@+id/meter"
         android:name="com.example.otegoloss.user.MeterFragment"
