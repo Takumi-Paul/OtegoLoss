@@ -121,7 +121,7 @@
         android:layout_marginTop="100dp"
         android:background="#92FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@android:drawable/btn_star" />

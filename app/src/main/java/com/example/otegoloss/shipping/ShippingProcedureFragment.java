@@ -17,7 +17,7 @@ import com.example.otegoloss.R;
 
 public class ShippingProcedureFragment extends Fragment {
     //購入者
-    private String purchaser_name = "岩田誠";
+    private String purchaser_name = "高知太郎";
     //購入品
     private String product_name = "tomato";
     //住所
@@ -36,6 +36,18 @@ public class ShippingProcedureFragment extends Fragment {
         //住所
         TextView address_view = view.findViewById(R.id.address_view_shipping_product);
         address_view.setText(address);
+
+        // ボタン要素を取得
+        Button nextButton = view.findViewById(R.id.shipment_comp_button_view_shipping_product);
+
+        // 完売済みボタンをクリックした時の処理
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // HomeFragmentに遷移させる
+                Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_procedure_to_navigation_delivery_completed);
+            }
+        });
 
         return view;
     }
