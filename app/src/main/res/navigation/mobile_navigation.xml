@@ -78,7 +78,32 @@
         android:id="@+id/navigation_change_listing_info"
         android:name="com.example.otegoloss.shipping.ChangeListingInfoFragment"
         android:label="出品情報変更"
-        tools:layout="@layout/fragment_change_listing_info" />
+        tools:layout="@layout/fragment_change_listing_info" >
+        <action
+            android:id="@+id/action_navigation_change_listing_info_to_navigation_view_change_listing_info_confirmation"
+            app:destination="@id/navigation_view_change_listing_info_confirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_view_change_listing_info_completed"
+        android:name="com.example.otegoloss.shipping.ViewChangeListingInfoCompletedFragment"
+        android:label="出品情報変更完了"
+        tools:layout="@layout/fragment_view_change_listing_info_completed" >
+        <action
+            android:id="@+id/action_navigation_view_change_listing_info_completed_to_navigation_yet_sold_out_history"
+            app:destination="@id/navigation_yet_sold_out_history" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_view_change_listing_info_confirmation"
+        android:name="com.example.otegoloss.shipping.ViewChangeListingInfoConfirmationFragment"
+        android:label="出品情報変更確認"
+        tools:layout="@layout/fragment_view_change_listing_info_confirmation" >
+        <action
+            android:id="@+id/action_navigation_view_change_listing_info_confirmation_to_navigation_change_listing_info"
+            app:destination="@id/navigation_change_listing_info" />
+        <action
+            android:id="@+id/action_navigation_view_change_listing_info_confirmation_to_navigation_view_change_listing_info_completed"
+            app:destination="@id/navigation_view_change_listing_info_completed" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_delivery_completed"
         android:name="com.example.otegoloss.shipping.DeliveryCompletedFragment"

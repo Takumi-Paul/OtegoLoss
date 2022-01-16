@@ -8,7 +8,7 @@
     android:background="@color/beige">
 
     <EditText
-        android:id="@+id/product_name_change_lishting_info"
+        android:id="@+id/product_name_listing_info"
         android:layout_width="375dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
-        android:id="@+id/product_description_change_lishting_info"
+        android:id="@+id/product_description_listing_info"
         android:layout_width="375dp"
         android:layout_height="92dp"
         android:ems="10"
@@ -32,11 +32,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_name_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_name_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/product_area_change_listing_info"
+        android:id="@+id/product_area_listing_info"
         android:layout_width="375dp"
         android:layout_height="49dp"
         android:entries="@array/product_area"
@@ -47,11 +47,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_description_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/product_weight_change_lishting_info"
+        android:id="@+id/product_weight_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -61,11 +61,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area_change_listing_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_area_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/amount_change_lishting_info"
+        android:id="@+id/amount_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -75,11 +75,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_area_change_listing_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_area_listing_info"
         app:layout_constraintVertical_bias="0.142" />
 
     <EditText
-        android:id="@+id/recipe_url_change_lishting_info"
+        android:id="@+id/recipe_url_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -89,11 +89,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintTop_toBottomOf="@+id/product_picture_text_entry_exhibit_product"
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/delivery_method_change_lishting_info"
+        android:id="@+id/delivery_method_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:entries="@array/delivery_method"
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_url_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_url_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.907" />
 
     <TextView
-        android:id="@+id/product_picture_text__entry_exhibit_product"
+        android:id="@+id/product_picture_text_entry_exhibit_product"
         android:layout_width="375dp"
         android:layout_height="69dp"
         android:text="商品画像"
@@ -130,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amount_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/amount_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -138,11 +138,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_lishting_info"
-        app:layout_constraintEnd_toEndOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_listing_info"
+        app:layout_constraintEnd_toEndOf="@+id/product_picture_text_entry_exhibit_product"
         app:layout_constraintHorizontal_bias="0.289"
-        app:layout_constraintStart_toStartOf="@+id/product_picture_text__entry_exhibit_product"
-        app:layout_constraintTop_toTopOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintStart_toStartOf="@+id/product_picture_text_entry_exhibit_product"
+        app:layout_constraintTop_toTopOf="@+id/product_picture_text_entry_exhibit_product"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -151,11 +151,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_lishting_info"
-        app:layout_constraintEnd_toEndOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_listing_info"
+        app:layout_constraintEnd_toEndOf="@+id/product_picture_text_entry_exhibit_product"
         app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toStartOf="@+id/product_picture_text__entry_exhibit_product"
-        app:layout_constraintTop_toTopOf="@+id/product_picture_text__entry_exhibit_product"
+        app:layout_constraintStart_toStartOf="@+id/product_picture_text_entry_exhibit_product"
+        app:layout_constraintTop_toTopOf="@+id/product_picture_text_entry_exhibit_product"
         app:layout_constraintVertical_bias="0.0" />
 
 

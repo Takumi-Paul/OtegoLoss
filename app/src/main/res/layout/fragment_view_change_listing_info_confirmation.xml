@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2E8CF">
+    <TableLayout
+        android:id="@+id/table_layout_change_info_comtable"
+        android:layout_width="375.5dp"
+        android:layout_height="426.5dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.332">
+
+        <TableRow
+            android:id="@+id/product_name_change_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="59dp">
+
+            <TextView
+                android:id="@+id/product_textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="商品名"
+                android:textColor="@color/blue_black" />
+
+
+            <TextView
+                android:id="@+id/product_name_change_confirmation"
+                android:layout_width="296dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/product_info_change_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/productInfo_textView"
+                android:layout_width="76dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="商品情報"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/productInfo_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/area_exhibit_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/origin_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="産地"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/product_area_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/weight_change_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/weight_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="量"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/weight_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/amount_change_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/amount_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="金額"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/price_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pictuer_change_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/picture_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="商品画像"
+                android:textColor="@color/blue_black"/>
+
+            <ImageView
+                android:id="@+id/product_imageView_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/url_exhibit_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/url_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="レシピURL"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/recipe_url_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/delivery_exhibit_info_comtable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/delivery_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="配達方法"
+                android:textColor="@color/blue_black"/>
+
+            <TextView
+                android:id="@+id/delivery_change_confirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="1sp"
+                android:background="#F2E8CF"
+                android:gravity="center|left"
+                android:text="TextView"
+                android:textColor="@color/blue_black"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/back_button_change_info_com"
+        android:layout_width="127dp"
+        android:layout_height="58dp"
+        android:background="#D3B485"
+        android:text="編集に戻る"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
+
+    <Button
+        android:id="@+id/next_button_change_info_com"
+        android:layout_width="127dp"
+        android:layout_height="58dp"
+        android:background="#386641"
+        android:text="確認完了"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

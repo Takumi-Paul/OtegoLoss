@@ -8,7 +8,7 @@
     android:background="@color/beige">
 
     <EditText
-        android:id="@+id/product_name_change_lishting_info"
+        android:id="@+id/product_name_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
-        android:id="@+id/product_description_change_lishting_info"
+        android:id="@+id/product_description_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="113dp"
         android:ems="10"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_name_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_name_change_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
@@ -46,11 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_description_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_change_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/product_weight_change_lishting_info"
+        android:id="@+id/product_weight_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/amount_change_lishting_info"
+        android:id="@+id/amount_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.15" />
 
     <EditText
-        android:id="@+id/recipe_url_change_lishting_info"
+        android:id="@+id/recipe_url_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -88,11 +88,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_listing_info"
         app:layout_constraintVertical_bias="0.293" />
 
     <Spinner
-        android:id="@+id/delivery_method_change_lishting_info"
+        android:id="@+id/delivery_method_change_listing_info"
         android:layout_width="375dp"
         android:layout_height="45dp"
         android:hint="配達方法"
@@ -103,11 +103,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_url_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_url_change_listing_info"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/next_button_entry_exhibit_product"
+        android:id="@+id/next_button_entry_change_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#386641"
@@ -124,11 +124,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="商品画像"
-        app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_lishting_info"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_url_change_listing_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_lishting_info"
+        app:layout_constraintTop_toBottomOf="@+id/product_weight_change_listing_info"
         app:layout_constraintVertical_bias="0.743" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,14 +35,14 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_entry_of_exhibit_info, container, false);
 
         //入力情報保持用のインスタンス生成
-        pro_name = (EditText) view.findViewById(R.id.product_name_change_lishting_info);
-        pro_description= (EditText) view.findViewById(R.id.product_description_change_lishting_info);
-        weight = (EditText) view.findViewById(R.id.product_weight_change_lishting_info);
-        price = (EditText) view.findViewById(R.id.amount_change_lishting_info);
-        recipe_url = (EditText) view.findViewById(R.id.recipe_url_change_lishting_info);
+        pro_name = (EditText) view.findViewById(R.id.product_name_listing_info);
+        pro_description= (EditText) view.findViewById(R.id.product_description_listing_info);
+        weight = (EditText) view.findViewById(R.id.product_weight_listing_info);
+        price = (EditText) view.findViewById(R.id.amount_listing_info);
+        recipe_url = (EditText) view.findViewById(R.id.recipe_url_listing_info);
 
         //産地のSpinner処理
-        Spinner product_area_spinner = (Spinner)view.findViewById(R.id.product_area_change_listing_info);
+        Spinner product_area_spinner = (Spinner)view.findViewById(R.id.product_area_listing_info);
         product_area_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                @Override
                public void onItemSelected(AdapterView<?> adapter,
@@ -57,7 +57,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
            });
 
         //配達方法のSpinner処理
-        Spinner delivery_method_spinner = (Spinner)view.findViewById(R.id.delivery_method_change_lishting_info);
+        Spinner delivery_method_spinner = (Spinner)view.findViewById(R.id.delivery_method_listing_info);
         delivery_method_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapter,
