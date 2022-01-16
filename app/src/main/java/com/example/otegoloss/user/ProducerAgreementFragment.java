@@ -29,7 +29,6 @@ public class ProducerAgreementFragment extends Fragment {
 
         String errormessage = "同意しないのであれば、生産者登録できません";
 
-
         nextProRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

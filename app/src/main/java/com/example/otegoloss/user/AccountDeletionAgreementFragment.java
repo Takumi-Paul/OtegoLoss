@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -20,20 +22,21 @@ public class AccountDeletionAgreementFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_deletion_agreement, container, false);
 
-        // 所属親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを表示する
-        activity.setupBackButton(true);
-
-        // この記述でフラグメントでアクションバーメニューが使えるようになる
-        setHasOptionsMenu(true);
-
         Button nextDeleteButton = view.findViewById(R.id.nextDelete_button);
+        RadioButton agreeDeleteRuleRadioButton = (RadioButton)view.findViewById(R.id.agreeDeleteRule_radioButton);
+        RadioButton rejectDeleteRuleRadioButton = (RadioButton)view.findViewById(R.id.rejectDeleteRule_radioButton);
+
+        String errormessage = "同意しないのであれば、アカウント削除できません";
 
         nextDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_deletion_agreement_to_accountdelete);
+                if (agreeDeleteRuleRadioButton.isChecked() == true) {
+                    Navigation.findNavController(view).navigate(R.id.action_deletion_agreement_to_accountdelete);
+                }
+                if (rejectDeleteRuleRadioButton.isChecked() == true) {
+                    Toast.makeText(view.getContext(), errormessage, Toast.LENGTH_LONG).show();
+                }
             }
         });
 
