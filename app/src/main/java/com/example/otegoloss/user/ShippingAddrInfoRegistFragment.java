@@ -1,6 +1,8 @@
 package com.example.otegoloss.user;
 
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,6 @@ import com.example.otegoloss.R;
 
 public class ShippingAddrInfoRegistFragment extends Fragment {
     //入力情報保持用の宣言
-    private EditText fullname;
     private EditText phone_number;
     private EditText postal_code;
     private String area_sap;
@@ -30,7 +31,27 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_shipping_address_info_regist, container, false);
 
-        fullname = (EditText) view.findViewById(R.id.name_editText);
+        EditText fullname = (EditText) view.findViewById(R.id.name_editText);
+        // 文字数制限
+        InputFilter[] fullnameTextfilters = new InputFilter[1];
+        fullnameTextfilters[0] = new InputFilter.LengthFilter(20);
+
+        // 半角英大文字のみ
+        InputFilter fullnameinputFilter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                if (source.toString().matches("^[a-zA-Z]+$")) {
+                    fullname.setFilters(fullnameTextfilters);
+                    return source;
+                } else {
+                    return "";
+                }
+            }
+        };
+        // 配列をセットする
+        fullname.setFilters(new InputFilter[]{fullnameinputFilter});
+
         phone_number= (EditText) view.findViewById(R.id.proPhoneNumber_editText);
         postal_code = (EditText) view.findViewById(R.id.addressNumber_editText);
         area_city = (EditText) view.findViewById(R.id.postalAddress_editText);

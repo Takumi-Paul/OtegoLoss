@@ -7,7 +7,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 
+import android.text.InputFilter;
 import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,13 +37,6 @@ public class ProfileConfigFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_profile_config, container, false);
 
-        // 所属親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを表示する
-        activity.setupBackButton(true);
-
-        // この記述でフラグメントでアクションバーメニューが使えるようになる
-        setHasOptionsMenu(true);
 
         config_username = (EditText)view.findViewById(R.id.userName_editText) ;
         config_userid = (EditText)view.findViewById(R.id.userId_editText) ;
