@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -29,26 +30,6 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
 
         // 氏名の定義
         EditText fullname = (EditText) view.findViewById(R.id.name_editText);
-        // 文字数制限(20文字)
-        InputFilter[] fullnameTextfilters = new InputFilter[1];
-        fullnameTextfilters[0] = new InputFilter.LengthFilter(20);
-
-        // 半角英大文字のみ
-        InputFilter fullnameinputFilter = new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end,
-                                       Spanned dest, int dstart, int dend) {
-                if (source.toString().matches("^[a-zA-Z]+$")) {
-                    fullname.setFilters(fullnameTextfilters);
-
-                    return source;
-                } else {
-                    return "";
-                }
-            }
-        };
-        // 配列をセットする
-        fullname.setFilters(new InputFilter[]{fullnameinputFilter});
 
         // 電話番号の定義
         EditText phone_number= (EditText) view.findViewById(R.id.proPhoneNumber_editText);
@@ -127,14 +108,10 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
         inputAddressButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //入力情報を格納する
-                //String fullname = fullname.getText().toString();
-                //String phone_number = phone_number.getText().toString();
-                //String postal_code = postal_code.getText().toString();
-                //String area_city = area_city.getText().toString();
-                //String area_number = area_number.getText().toString();
-
-                Navigation.findNavController(view).navigate(R.id.action_shipping_addr_info_regist_config_to_shipping_addr_info_regist_comp);
+                String fullnames = fullname.getText().toString();
+                if(fullnames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠]*$")) {
+                    Navigation.findNavController(view).navigate(R.id.shipping_addr_info_regist_comp);
+                }
             }
         });
 
