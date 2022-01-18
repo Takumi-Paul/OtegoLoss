@@ -78,9 +78,11 @@ public class ChangeListingInfoFragment extends Fragment {
                 String prices = price.getText().toString();
                 String recipe_urls = recipe_url.getText().toString();
 
-                if (pro_names.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9]")
-                        && pro_descriptions.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9]")
-                        && recipe_urls.matches("[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]")) {
+                if (pro_names.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
+                        && pro_descriptions.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
+                        && recipe_urls.matches("[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]")
+                        && weights.matches("[0-9]")
+                        && prices.matches("[0-9]")){
 
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
