@@ -84,20 +84,25 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 String prices = price.getText().toString();
                 String recipe_urls = recipe_url.getText().toString();
 
-                //次のフラグメントにBundleを使ってデータを渡す
-                //タイトル
-                Bundle bundle = new Bundle();
-                bundle.putString("PRODUCT_NAME", pro_names);
-                bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
-                bundle.putString("PRODUCT_WEIGHT", weights);
-                bundle.putString("PRODUCT_PRICE", prices);
-                bundle.putString("RECIPE_URL", recipe_urls);
-                bundle.putString("PRODUCT_AREA", Product_area);
-                bundle.putString("DELIVERY_METHOD", Delivery_method);
+
+                if (pro_names.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9]")
+                    && pro_descriptions.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9]")
+                    && recipe_urls.matches("[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]")) {
+                    //次のフラグメントにBundleを使ってデータを渡す
+                    //タイトル
+                    Bundle bundle = new Bundle();
+                    bundle.putString("PRODUCT_NAME", pro_names);
+                    bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
+                    bundle.putString("PRODUCT_WEIGHT", weights);
+                    bundle.putString("PRODUCT_PRICE", prices);
+                    bundle.putString("RECIPE_URL", recipe_urls);
+                    bundle.putString("PRODUCT_AREA", Product_area);
+                    bundle.putString("DELIVERY_METHOD", Delivery_method);
 
 
-                // fragmentViewExhibitInfoConfirmationに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation,bundle);
+                    // fragmentViewExhibitInfoConfirmationに遷移させる
+                    Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation, bundle);
+                }
             }
         });
 
