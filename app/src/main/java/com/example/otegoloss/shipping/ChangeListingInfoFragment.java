@@ -3,6 +3,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,23 +75,28 @@ public class ChangeListingInfoFragment extends Fragment {
                 //入力情報を格納する
                 String pro_names = pro_name.getText().toString();
                 String pro_descriptions = pro_description.getText().toString();
-                String weights = weight.getText().toString();
-                String prices = price.getText().toString();
                 String recipe_urls = recipe_url.getText().toString();
+
+                //weightとpriceはInt型に変換
+                Editable edit_weight = weight.getText();
+                Editable edit_prices = price.getText();
+                int int_weight = Integer.parseInt(edit_weight.toString());
+                int int_price = Integer.parseInt(edit_prices.toString());
 
                 if (pro_names.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
                         && pro_descriptions.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
                         && recipe_urls.matches("[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]")
-                        && weights.matches("[0-9]")
-                        && prices.matches("[0-9]")){
+                        && (int_weight >= 0 && int_weight <= 30000)
+                        && (int_price >= 10 && int_price <= 99999)
+                ){
 
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
                     Bundle bundle = new Bundle();
                     bundle.putString("PRODUCT_NAME", pro_names);
                     bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
-                    bundle.putString("PRODUCT_WEIGHT", weights);
-                    bundle.putString("PRODUCT_PRICE", prices);
+                    bundle.putInt("PRODUCT_WEIGHT", int_weight);
+                    bundle.putInt("PRODUCT_PRICE", int_price);
                     bundle.putString("RECIPE_URL", recipe_urls);
                     bundle.putString("PRODUCT_AREA", Product_area);
                     bundle.putString("DELIVERY_METHOD", Delivery_method);
