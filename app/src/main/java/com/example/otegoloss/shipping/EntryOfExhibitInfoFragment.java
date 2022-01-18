@@ -89,6 +89,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
 
                 //weightとpriceはInt型に変換
                 //入力制限のためにここで変換してみる
+                //正規表現を用いて条件を書くこともできそうだけど、どちらにせよInt型として取り出しておく必要がある
                 Editable edit_weight = weight.getText();
                 Editable edit_prices = price.getText();
                 int int_weight = Integer.parseInt(edit_weight.toString());
