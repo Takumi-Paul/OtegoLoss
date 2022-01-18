@@ -83,35 +83,42 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 String pro_names = pro_name.getText().toString();
                 String pro_descriptions = pro_description.getText().toString();
                 String recipe_urls = recipe_url.getText().toString();
+                String pro_weights = weight.getText().toString();
+                String pro_prices = price.getText().toString();
+
 
                 //weightとpriceはInt型に変換
+                //入力制限のためにここで変換してみる
                 Editable edit_weight = weight.getText();
                 Editable edit_prices = price.getText();
                 int int_weight = Integer.parseInt(edit_weight.toString());
                 int int_price = Integer.parseInt(edit_prices.toString());
 
-                if (pro_names.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
-                    && pro_descriptions.matches("[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~] 　]")
-                    && recipe_urls.matches("[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]")
+                if (pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                    && pro_descriptions.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                    && recipe_urls.matches("^[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                     && (int_weight >= 0 && int_weight <= 30000)
-                    &&  (int_price >= 10 && int_price <= 99999)
+                    && (int_price >= 10 && int_price <= 99999)
                 ) {
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
                     Bundle bundle = new Bundle();
                     bundle.putString("PRODUCT_NAME", pro_names);
                     bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
-                    bundle.putInt("PRODUCT_WEIGHT", int_weight);
-                    bundle.putInt("PRODUCT_PRICE", int_price);
+                    bundle.putString("PRODUCT_WEIGHT", pro_weights);
+                    bundle.putString("PRODUCT_PRICE", pro_prices);
                     bundle.putString("RECIPE_URL", recipe_urls);
                     bundle.putString("PRODUCT_AREA", Product_area);
                     bundle.putString("DELIVERY_METHOD", Delivery_method);
+                    //数字
+                    bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
+                    bundle.putInt("PRODUCT_INT_PRICE", int_price);
 
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
                     Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation, bundle);
                 } else {
-                    Toast.makeText(view.getContext(), "入力情報が正しくありません。もう一度確認してください", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
             }
         });
