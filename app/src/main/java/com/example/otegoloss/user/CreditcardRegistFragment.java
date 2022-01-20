@@ -43,10 +43,15 @@ public class CreditcardRegistFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String cardNameEditTexts = cardNameEditText.getText().toString();
-                if(cardNameEditTexts.matches("[A-Z]")) {
+                String cardNumberEditTexts = cardNumberEditText.getText().toString();
+                String cardCodeEditTexts = cardCodeEditText.getText().toString();
+
+                if(cardNameEditTexts.equals("") || cardNumberEditTexts.equals("") || cardCodeEditTexts.equals("")){
+                    Toast.makeText(view.getContext(), "入力欄に不備があります", Toast.LENGTH_LONG).show();
+                } else if(cardNameEditTexts.matches("^[A-Z]*$") && cardNumberEditTexts.matches("^[0-9]*$") && cardCodeEditTexts.matches("^[0-9]*$")) {
                     Navigation.findNavController(view).navigate(R.id.action_creditcard_regist_to_pay_info_regist_comp);
                 } else {
-                    Toast.makeText(view.getContext(), cardNameEditTexts, Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "入力欄に不備があります", Toast.LENGTH_LONG).show();
                 }
             }
         });
