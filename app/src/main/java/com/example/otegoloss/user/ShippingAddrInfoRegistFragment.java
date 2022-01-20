@@ -33,61 +33,15 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
 
         // 電話番号の定義
         EditText phone_number= (EditText) view.findViewById(R.id.proPhoneNumber_editText);
-        // 文字数制限(11桁)
-        InputFilter[] phone_numberTextfilters = new InputFilter[1];
-        phone_numberTextfilters[0] = new InputFilter.LengthFilter(11);
-        // 数字のみ
-        InputFilter phone_numberinputFilter = new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end,
-                                       Spanned dest, int dstart, int dend) {
-                if (source.toString().matches("^[0-9]+$")) {
-                    phone_number.setFilters(phone_numberTextfilters);
-
-                    return source;
-                } else {
-                    return "";
-                }
-            }
-        };
-        // 配列をセットする
-        phone_number.setFilters(new InputFilter[]{phone_numberinputFilter});
 
         // 郵便番号の定義
         EditText postal_code = (EditText) view.findViewById(R.id.addressNumber_editText);
-        // 文字数制限(7桁)
-        InputFilter[] postal_codeTextfilters = new InputFilter[1];
-        postal_codeTextfilters[0] = new InputFilter.LengthFilter(7);
-        // 数字のみ
-        InputFilter postal_codeinputFilter = new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end,
-                                       Spanned dest, int dstart, int dend) {
-                if (source.toString().matches("^[0-9]+$")) {
-                    postal_code.setFilters(postal_codeTextfilters);
-
-                    return source;
-                } else {
-                    return "";
-                }
-            }
-        };
-        // 配列をセットする
-        postal_code.setFilters(new InputFilter[]{postal_codeinputFilter});
 
         // 市町村区の定義
         EditText area_city = (EditText) view.findViewById(R.id.postalAddress_editText);
-        // 文字数制限(20文字)
-        InputFilter[] area_cityTextfilters = new InputFilter[1];
-        area_cityTextfilters[0] = new InputFilter.LengthFilter(20);
-        area_city.setFilters(area_cityTextfilters);
 
         // 丁目・番地・号の定義
         EditText area_number = (EditText) view.findViewById(R.id.homeNumber_editText);
-        // 文字数制限(20文字)
-        InputFilter[] area_numberTextfilters = new InputFilter[1];
-        area_numberTextfilters[0] = new InputFilter.LengthFilter(20);
-        area_number.setFilters(area_numberTextfilters);
 
         //都道府県のSpinner処理
         Spinner product_area_spinner = (Spinner)view.findViewById(R.id.prefecture_spinner);
@@ -109,8 +63,17 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String fullnames = fullname.getText().toString();
-                if(fullnames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠]*$")) {
+                String phone_numbers = phone_number.getText().toString();
+                String postal_codes = postal_code.getText().toString();
+                String area_citys = area_city.getText().toString();
+                String area_numbers = area_number.getText().toString();
+
+                if (fullnames.equals("") || phone_numbers.equals("") || postal_codes.equals("") || area_citys.equals("") || area_numbers.equals("")){
+                    Toast.makeText(view.getContext(), "入力欄に不備があります", Toast.LENGTH_LONG).show();
+                } else if (fullnames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠]*$") && phone_numbers.matches("^[0-9]*$")&& postal_codes.matches("^[0-9]*$")) {
                     Navigation.findNavController(view).navigate(R.id.shipping_addr_info_regist_comp);
+                } else {
+                    Toast.makeText(view.getContext(), "入力欄に不備があります", Toast.LENGTH_LONG).show();
                 }
             }
         });
