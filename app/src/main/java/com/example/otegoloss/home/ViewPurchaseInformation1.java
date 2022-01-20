@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.R;
@@ -29,7 +27,7 @@ public class ViewPurchaseInformation1 extends Fragment {
 
 
         //「次へ」ボタンが押された時の処理
-        Button ConfirmBuyButton = view.findViewById(R.id.confirmBuy_button);
+        Button ConfirmBuyButton = view.findViewById(R.id.search_button);
 
         ConfirmBuyButton.setOnClickListener(new View.OnClickListener() {
             @Override
