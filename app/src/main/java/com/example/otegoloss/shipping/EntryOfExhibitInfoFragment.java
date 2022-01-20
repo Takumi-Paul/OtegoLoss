@@ -90,16 +90,27 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 //weightとpriceはInt型に変換
                 //入力制限のためにここで変換してみる
                 //正規表現を用いて条件を書くこともできそうだけど、どちらにせよInt型として取り出しておく必要がある
+                //落ちるバグの原因になってるっぽいので一旦隠す
+                /*
                 Editable edit_weight = weight.getText();
                 Editable edit_prices = price.getText();
                 int int_weight = Integer.parseInt(edit_weight.toString());
                 int int_price = Integer.parseInt(edit_prices.toString());
+                */
 
-                if (pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                if (pro_names.equals("")
+                        || pro_descriptions.equals("")
+                        || recipe_urls.equals("")
+                ) {
+                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
+
+                } else if(pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                     && pro_descriptions.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                     && recipe_urls.matches("^[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                   /*
                     && (int_weight >= 0 && int_weight <= 30000)
                     && (int_price >= 10 && int_price <= 99999)
+                    */
                 ) {
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
@@ -112,8 +123,8 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                     bundle.putString("PRODUCT_AREA", Product_area);
                     bundle.putString("DELIVERY_METHOD", Delivery_method);
                     //数字
-                    bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
-                    bundle.putInt("PRODUCT_INT_PRICE", int_price);
+                    //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
+                    //bundle.putInt("PRODUCT_INT_PRICE", int_price);
 
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
