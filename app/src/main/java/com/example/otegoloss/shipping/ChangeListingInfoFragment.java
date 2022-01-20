@@ -88,7 +88,13 @@ public class ChangeListingInfoFragment extends Fragment {
                 int int_weight = Integer.parseInt(edit_weight.toString());
                 int int_price = Integer.parseInt(edit_prices.toString());
 
-                if (pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                if (pro_names.equals("")
+                        || pro_descriptions.equals("")
+                        || recipe_urls.equals("")
+                ) {
+                        Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
+
+                } else if (pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && pro_descriptions.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && recipe_urls.matches("^[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && (int_weight >= 0 && int_weight <= 30000)
