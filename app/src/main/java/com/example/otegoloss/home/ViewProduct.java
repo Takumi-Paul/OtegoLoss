@@ -92,6 +92,7 @@ public class ViewProduct extends Fragment {
 
                             JSONObject jsnObject = ChangeJson(str);
                             try {
+                                // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -153,6 +154,7 @@ public class ViewProduct extends Fragment {
         return sb.toString();
     }
 
+    // Jsonデータに変換
     static JSONObject ChangeJson(String str) {
         try {
             JSONArray jsonArray = new JSONArray(str);
