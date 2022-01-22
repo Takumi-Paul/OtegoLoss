@@ -7,6 +7,7 @@ Kobayashi
 package com.example.otegoloss.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,8 +29,25 @@ import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
 import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class ViewProduct extends Fragment {
 
+    TextView productNameTextView;
+
+    // http通信の開始・終了時刻
+    long startTime;
+    long endTime;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +66,45 @@ public class ViewProduct extends Fragment {
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.productImage_imageView);
         imageView.setImageResource(imageId);
+
+        productNameTextView = view.findViewById(R.id.productName_textView);
+
+        // http通信
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ProductDetails.php?product_id=g0000001");
+                    // 処理開始時刻
+                    startTime = System.currentTimeMillis();
+                    HttpURLConnection con =(HttpURLConnection)url.openConnection();
+                    final String str = InputStreamToString(con.getInputStream());
+
+                    // 終了時刻
+                    endTime = System.currentTimeMillis();
+                    Log.d("HTTP", str);
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            System.out.println(String.valueOf(str));
+                            System.out.println(endTime - startTime);
+
+                            JSONObject jsnObject = ChangeJson(str);
+                            try {
+                                productNameTextView.setText(jsnObject.getString("product_name"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println(e);
+                }
+            }
+        }).start();
 
         Button buyButton = view.findViewById(R.id.buy_button);
 
@@ -79,8 +137,34 @@ public class ViewProduct extends Fragment {
         });
 
 
-
         return view;
     }
 
+
+    // http通信で受け取ったデータをString化する
+    static String InputStreamToString(InputStream is) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = br.readLine()) != null) {
+            sb.append(line);
+        }
+        br.close();
+        return sb.toString();
+    }
+
+    static JSONObject ChangeJson(String str) {
+        try {
+            JSONArray jsonArray = new JSONArray(str);
+            // JSONArray jsonArray = jsonObject.getJSONArray("sample");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonData = jsonArray.getJSONObject(i);
+                Log.d("Check", jsonData.getString("product_name"));
+                return jsonData;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
