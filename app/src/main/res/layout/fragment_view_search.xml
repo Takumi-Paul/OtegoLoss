@@ -6,149 +6,210 @@
     android:layout_height="match_parent"
     android:id="@+id/searchFragment">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/background"
-    android:orientation="horizontal" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <View
-        android:id="@+id/search_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:background="#92FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/background"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/kensaku_shouhin_name"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="商品名"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toTopOf="@+id/search_view" />
+            <View
+                android:id="@+id/view15"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
-    <EditText
-        android:id="@+id/kensaku_shuppin_name"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="出品者名"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_area" />
+            <TextView
+                android:id="@+id/textview_hoge"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="商品名"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
 
-    <Spinner
-        android:id="@+id/kensaku_haitatsu"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/haitatsu"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_kingaku" />
+            <EditText
+                android:id="@+id/kensaku_shouhin_name"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
-    <Spinner
-        android:id="@+id/kensaku_omosa"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/weight"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_shuppin_day" />
+            <TextView
+                android:id="@+id/textview_hoge1"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="カテゴリー"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
 
-    <Spinner
-        android:id="@+id/kensaku_kingaku"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/price"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_category" />
 
-    <Spinner
-        android:id="@+id/kensaku_shuppin_day"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/shuppin_day"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_haitatsu" />
+            <Spinner
+                android:id="@+id/kensaku_category_name"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/shuppin_day"
+                android:spinnerMode="dropdown" />
 
-    <Spinner
-        android:id="@+id/kensaku_area"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/area"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_omosa" />
+            <TextView
+                android:id="@+id/textview_hoge2"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="金額"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
 
-    <Spinner
-        android:id="@+id/kensaku_category"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/category"
-        app:layout_constraintEnd_toEndOf="@+id/search_view"
-        app:layout_constraintStart_toStartOf="@+id/search_view"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_shouhin_name" />
 
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="検索"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kensaku_shuppin_name" />
+            <Spinner
+                android:id="@+id/kensaku_haitatsu"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/haitatsu"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textview_hoge3"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="配達方法"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+
+            <Spinner
+                android:id="@+id/kensaku_haitstsu"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/haitatsu"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textview_hoge20"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="出品日"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+
+
+            <Spinner
+                android:id="@+id/kensaku_shuppin_day"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/weight"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textview_hoge4"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="重さ"
+                android:textSize="20sp"
+                android:textColor="@color/blue_black"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+
+            <Spinner
+                android:id="@+id/kensaku_omosa"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/area"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textview_hoge7"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="地域"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+            <Spinner
+                android:id="@+id/kensaku_area"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/price"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textview_hoge8"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="出品者名"
+                android:textColor="@color/blue_black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+            <EditText
+                android:id="@+id/kensaku_shuppin_name"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:textColor="@color/blue_black"
+                android:inputType="textPersonName" />
+
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="167dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:background="@color/light_green"
+                android:text="検索"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="511dp" />
+
+            <View
+                android:id="@+id/view16"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

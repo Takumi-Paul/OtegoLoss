@@ -122,6 +122,3 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 }
-//test matsu
-//test Iwasaki
-//test shoya
