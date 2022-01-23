@@ -26,6 +26,10 @@ public class ChangeListingInfoFragment extends Fragment {
     private String Product_area;
     private String Delivery_method;
 
+    // http通信の開始・終了時刻
+    long startTime;
+    long endTime;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
