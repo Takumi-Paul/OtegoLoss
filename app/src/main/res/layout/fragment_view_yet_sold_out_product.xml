@@ -102,7 +102,7 @@
         app:layout_constraintVertical_bias="0.854" />
 
     <TextView
-        android:id="@+id/product_name_text_view_view_sold_out_product"
+        android:id="@+id/product_name_text_view_yet_sold_out_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
@@ -142,6 +142,45 @@
         android:id="@+id/listing_date_yet_sold_out_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/listing_day_view_sold_out_product"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <TextView
+        android:id="@+id/product_price_yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textview_price_view_sold_out_product"
+        app:layout_constraintTop_toTopOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <TextView
+        android:id="@+id/product_area__yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/area_view_sold_out_product"
+        app:layout_constraintTop_toBottomOf="@+id/product_price_yet_sold_out_product"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/listing_date__yet_sold_out_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/back_colour_view_sold_out_product"
         app:layout_constraintEnd_toEndOf="@+id/back_colour_view_sold_out_product"
