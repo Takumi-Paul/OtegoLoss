@@ -66,8 +66,8 @@
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="102dp"
-        android:layout_height="336dp"
+        android:layout_width="90dp"
+        android:layout_height="316dp"
         app:layout_constraintBottom_toBottomOf="@+id/shippingAddress2_view"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
         app:layout_constraintHorizontal_bias="0.059"
@@ -86,7 +86,7 @@
             android:id="@+id/choice2_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="140dp"
             android:buttonTint="@color/blue_black" />
     </RadioGroup>
 
