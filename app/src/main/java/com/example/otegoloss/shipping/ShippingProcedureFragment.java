@@ -102,7 +102,7 @@ public class ShippingProcedureFragment extends Fragment {
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
                                 purchaserNameTextView.setText(jsnObject.getString("real_name"));
-                                purchasedProductTextView.setText(jsnObject.getString("pro.product_name"));
+                                purchasedProductTextView.setText(jsnObject.getString("product_name"));
                                 addressTextView.setText(jsnObject.getString("address"));
 
                             } catch (JSONException e) {
