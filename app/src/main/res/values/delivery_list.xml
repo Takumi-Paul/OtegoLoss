@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(プルダウン式選択)用の選択肢を入れる配列
+    <string-array name="delivery">
+        <item>普通</item>
+        <item>冷蔵</item>
+        <item>冷凍</item>
+    </string-array>
+
+
+    };
+</resources>

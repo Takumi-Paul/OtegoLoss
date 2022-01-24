@@ -59,6 +59,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
+                android:entries="@array/category"
                 android:contentDescription="@string/shuppin_day"
                 android:spinnerMode="dropdown" />
 
@@ -80,6 +81,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
+                android:entries="@array/money"
                 android:contentDescription="@string/haitatsu"
                 android:spinnerMode="dropdown" />
 
@@ -99,32 +101,12 @@
                 android:id="@+id/kensaku_haitstsu"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
+                android:entries="@array/delivery"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/haitatsu"
                 android:spinnerMode="dropdown" />
 
-            <TextView
-                android:id="@+id/textview_hoge20"
-                android:layout_width="320dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:text="出品日"
-                android:textColor="@color/blue_black"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="39dp"
-                tools:layout_editor_absoluteY="229dp" />
-
-
-
-            <Spinner
-                android:id="@+id/kensaku_shuppin_day"
-                android:layout_width="320dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:background="#FFFFFF"
-                android:contentDescription="@string/weight"
-                android:spinnerMode="dropdown" />
 
             <TextView
                 android:id="@+id/textview_hoge4"
@@ -144,6 +126,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
+                android:entries="@array/weight"
                 android:contentDescription="@string/area"
                 android:spinnerMode="dropdown" />
 
@@ -164,6 +147,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
+                android:entries="@array/product_area"
                 android:contentDescription="@string/price"
                 android:spinnerMode="dropdown" />
 

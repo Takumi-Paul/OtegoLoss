@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
@@ -38,6 +39,17 @@ public class ViewSearch extends Fragment {
 
         //検索ボタンが押された時の処理
         Button SearchButton  = view.findViewById(R.id.search_button);
+
+        SearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
+            }
+        });
+
+
+
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
