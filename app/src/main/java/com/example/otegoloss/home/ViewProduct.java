@@ -35,6 +35,7 @@ import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -50,6 +51,11 @@ import java.util.StringJoiner;
 public class ViewProduct extends Fragment {
 
     TextView productNameTextView;
+    TextView proNameTextView;
+    TextView showWeightTextView;
+    TextView priceTextView;
+    TextView regionTextView;
+    TextView exhibitDayTextView;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -74,6 +80,11 @@ public class ViewProduct extends Fragment {
         imageView.setImageResource(imageId);
 
         productNameTextView = view.findViewById(R.id.productName_textView);
+        proNameTextView = view.findViewById(R.id.proName_textView);
+        showWeightTextView = view.findViewById(R.id.showWeight_textView);
+        priceTextView = view.findViewById(R.id.price_textView);
+        regionTextView = view.findViewById(R.id.region_textView);
+        exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
 
         // http通信
         new Thread(new Runnable() {
@@ -111,8 +122,15 @@ public class ViewProduct extends Fragment {
 
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
+
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
+                                proNameTextView.setText(jsnObject.getString("seller_id"));
+                                showWeightTextView.setText(jsnObject.getString("weight"));
+                                priceTextView.setText(jsnObject.getString("price"));
+                                regionTextView.setText(jsnObject.getString("prefecture"));
+                                exhibitDayTextView.setText(jsnObject.getString("Listing_date"));
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
