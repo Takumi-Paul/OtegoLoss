@@ -48,12 +48,7 @@ public class ViewSearch extends Fragment {
                 String productNames = productName.getText().toString();
                 String sellerNames = sellerName.getText().toString();
 
-                if (productNames.equals("")
-                        || sellerNames.equals("")
-                ) {
-                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
-
-                } else if(productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                if(productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                    /*
                     && (int_weight >= 0 && int_weight <= 30000)
