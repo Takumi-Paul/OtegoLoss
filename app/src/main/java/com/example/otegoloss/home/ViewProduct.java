@@ -6,6 +6,7 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -26,6 +28,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.otegoloss.ChangeBackgraund;
+import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;
 
@@ -40,6 +43,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringJoiner;
 
 public class ViewProduct extends Fragment {
 
@@ -61,7 +67,7 @@ public class ViewProduct extends Fragment {
         // 画像ID
         int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
-        int productID = bundle.getInt("PRODUCT_ID", 0);
+        String productID = bundle.getString("PRODUCT_ID", "");
 
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.productImage_imageView);
@@ -71,14 +77,27 @@ public class ViewProduct extends Fragment {
 
         // http通信
         new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
                 try {
-                    URL url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ProductDetails.php?product_id=g0000001");
+                    // phpファイルまでのリンク
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ProductDetails.php";
+
+                    // クエリ文字列を連想配列に入れる
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("product_id", productID);
+                    // クエリ文字列組み立て・URL との連結
+                    StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
+                    for (Map.Entry<String, String> param: map.entrySet()) {
+                        stringUrl.add(param.getKey() + "=" + param.getValue());
+                    }
+                    URL url = new URL(stringUrl.toString());
+                    System.out.println(url);
                     // 処理開始時刻
                     startTime = System.currentTimeMillis();
                     HttpURLConnection con =(HttpURLConnection)url.openConnection();
-                    final String str = InputStreamToString(con.getInputStream());
+                    final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
 
                     // 終了時刻
                     endTime = System.currentTimeMillis();
@@ -90,7 +109,7 @@ public class ViewProduct extends Fragment {
                             System.out.println(String.valueOf(str));
                             System.out.println(endTime - startTime);
 
-                            JSONObject jsnObject = ChangeJson(str);
+                            JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
@@ -142,31 +161,4 @@ public class ViewProduct extends Fragment {
     }
 
 
-    // http通信で受け取ったデータをString化する
-    static String InputStreamToString(InputStream is) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line;
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
-        }
-        br.close();
-        return sb.toString();
-    }
-
-    // Jsonデータに変換
-    static JSONObject ChangeJson(String str) {
-        try {
-            JSONArray jsonArray = new JSONArray(str);
-            // JSONArray jsonArray = jsonObject.getJSONArray("sample");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonData = jsonArray.getJSONObject(i);
-                Log.d("Check", jsonData.getString("product_name"));
-                return jsonData;
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
