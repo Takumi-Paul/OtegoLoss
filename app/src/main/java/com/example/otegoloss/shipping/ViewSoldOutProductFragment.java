@@ -115,9 +115,9 @@ public class ViewSoldOutProductFragment extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
-                                productPriceTextView.setText(jsnObject.getString("seller_id"));
-                                productAreaTextView.setText(jsnObject.getString("weight"));
-                                listingDateTextView.setText(jsnObject.getString("price"));
+                                productPriceTextView.setText(jsnObject.getString("price")+"円");
+                                productAreaTextView.setText(jsnObject.getString("prefecture"));
+                                listingDateTextView.setText(jsnObject.getString("listing_date"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

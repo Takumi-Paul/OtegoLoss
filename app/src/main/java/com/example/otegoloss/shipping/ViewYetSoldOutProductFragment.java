@@ -69,7 +69,7 @@ public class ViewYetSoldOutProductFragment extends Fragment {
         //商品名を表示
         productNameTextView = view.findViewById(R.id.product_name_text_view_yet_sold_out_product);
         //価格
-        productPriceTextView= view.findViewById(R.id.price_yet_sold_out_product);
+        productPriceTextView= view.findViewById(R.id.product_price_yet_sold_out_product);
         //産地を表示
         productAreaTextView = view.findViewById(R.id.product_area__yet_sold_out_product);
         //出品日を表示
@@ -114,9 +114,9 @@ public class ViewYetSoldOutProductFragment extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
-                                productPriceTextView.setText(jsnObject.getString("seller_id"));
-                                productAreaTextView.setText(jsnObject.getString("weight"));
-                                listingDateTextView.setText(jsnObject.getString("price"));
+                                productPriceTextView.setText(jsnObject.getString("price")+"円");
+                                productAreaTextView.setText(jsnObject.getString("prefecture"));
+                                listingDateTextView.setText(jsnObject.getString("listing_date"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

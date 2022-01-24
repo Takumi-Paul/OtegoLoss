@@ -43,7 +43,8 @@ public class ShippingProcedureFragment extends Fragment {
     //private String address = "高知市万々111111-11111-2--1212111";
 
     TextView purchaserNameTextView;
-    TextView purchasedProductTextView;
+    TextView telNumberTextView;
+    TextView postalCodeTextView;
     TextView addressTextView;
 
     // http通信の開始・終了時刻
@@ -56,13 +57,15 @@ public class ShippingProcedureFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_shipping_procedure, container, false);
 
         //商品名を表示
-        purchasedProductTextView = view.findViewById(R.id.purchase_name_view_shipping_product);
-        //購入者名を表示
-        purchaserNameTextView = view.findViewById(R.id.product_name_view_shipping_product);
+        purchaserNameTextView = view.findViewById(R.id.purchase_name_view_shipping_product);
+        //電話番号を表示
+        telNumberTextView = view.findViewById(R.id.tel_number_view_shipping_product);
+        //住所番号を表示
+        postalCodeTextView = view.findViewById(R.id.postal_number_shipping_product);
         //住所を表示
         addressTextView = view.findViewById(R.id.address_view_shipping_product);
 
-        String productID = "d0000001";
+        String productID = "g0000001";
 
         // http通信
         new Thread(new Runnable() {
@@ -102,7 +105,8 @@ public class ShippingProcedureFragment extends Fragment {
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
                                 purchaserNameTextView.setText(jsnObject.getString("real_name"));
-                                purchasedProductTextView.setText(jsnObject.getString("product_name"));
+                                telNumberTextView.setText(jsnObject.getString("telephone_number"));
+                                postalCodeTextView.setText("〒" + jsnObject.getString("postal_code"));
                                 addressTextView.setText(jsnObject.getString("address"));
 
                             } catch (JSONException e) {
