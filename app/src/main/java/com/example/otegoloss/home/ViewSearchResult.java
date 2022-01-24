@@ -49,7 +49,7 @@ public class ViewSearchResult extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
 
-
+/*
         //商品一覧画面
         // for-each member名をR.drawable.名前としてintに変換してarrayに登録
         for (String productName: productNames){
@@ -85,7 +85,7 @@ public class ViewSearchResult extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_fragmentProduct, bundle);
             }
         });
-
+*/
         return view;
     }
 

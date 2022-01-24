@@ -40,27 +40,16 @@ public class ViewSearch extends Fragment {
         //検索ボタンが押された時の処理
         Button SearchButton  = view.findViewById(R.id.search_button);
 
-        SearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
-            }
-        });
-
-
-
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //商品名と出品者名を取得
-                String productNames = productName.getText().toString();
-                String sellerNames =  sellerName.getText().toString();
-                //確認用
-                Toast.makeText(view.getContext(), productNames, Toast.LENGTH_LONG).show();
-                Toast.makeText(view.getContext(), sellerNames, Toast.LENGTH_LONG).show();
+                //String productNames = productName.getText().toString();
+                //String sellerNames =  sellerName.getText().toString();
+
+                Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
             }
         });
 
