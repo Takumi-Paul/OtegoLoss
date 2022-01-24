@@ -42,13 +42,13 @@
             android:id="@+id/profileMessage_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:text="プロフィールメッセージ"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintHorizontal_bias="0.063"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userId_editText" />
+            app:layout_constraintTop_toBottomOf="@+id/userName_editText" />
 
         <ImageView
             android:id="@+id/account_imageView"
@@ -72,18 +72,6 @@
             app:layout_constraintTop_toTopOf="@+id/account_imageView"
             app:srcCompat="@android:drawable/ic_menu_camera" />
 
-        <TextView
-            android:id="@+id/userId_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="ユーザID"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userName_editText" />
-
         <EditText
             android:id="@+id/userName_editText"
             android:layout_width="380dp"
@@ -100,23 +88,6 @@
             app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userName_textView" />
-
-        <EditText
-            android:id="@+id/userId_editText"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:background="#000000"
-            android:backgroundTint="#E4E4E4"
-            android:ems="10"
-            android:hint="8文字まで"
-            android:inputType="textVisiblePassword"
-            android:maxLength="8"
-            android:maxLines="1"
-            android:textAlignment="viewStart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.483"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userId_textView" />
 
         <TextView
             android:id="@+id/userName_textView"

@@ -23,9 +23,9 @@
         android:id="@+id/nextDeleteAccount_button"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/light_green"
         android:text="アカウント削除"
         android:textColor="@color/white"
-        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextInformation_button" />
@@ -34,9 +34,9 @@
         android:id="@+id/nextProcedureRegister_button"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/light_green"
         android:text="生産者登録"
         android:textColor="@color/white"
-        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingAddress_button" />
@@ -45,9 +45,9 @@
         android:id="@+id/nextSettingAddress_button"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/light_green"
         android:text="配送先情報設定"
         android:textColor="@color/white"
-        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingCredit_button" />
@@ -56,9 +56,9 @@
         android:id="@+id/nextSettingCredit_button"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/light_green"
         android:text="決済情報設定"
         android:textColor="@color/white"
-        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextMeter_button" />
@@ -68,20 +68,20 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:text="プロフィール設定"
         android:backgroundTint="@color/light_green"
+        android:onClick="viewConfigProfile"
+        android:text="プロフィール設定"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView"
-        android:textColor="@color/white"
-        android:onClick="viewConfigProfile"/>
+        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
 
     <ImageView
         android:id="@+id/accountImage_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -100,35 +100,24 @@
         app:layout_constraintTop_toBottomOf="@+id/accountImage_imageView" />
 
     <TextView
-        android:id="@+id/profileUserID_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="user id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserName_textView" />
-
-    <TextView
         android:id="@+id/profileUserMessage_textView"
         android:layout_width="380dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="プロフィールメッセージ"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserID_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/profileUserName_textView" />
 
     <Button
         android:id="@+id/nextMeter_button"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/light_green"
         android:text="ロス削減メーター"
         android:textColor="@color/white"
-        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingProfile_button" />
