@@ -56,15 +56,15 @@ public class PurchaseHistory extends Fragment {
         // BaseAdapter を継承したGridAdapterのインスタンスを生成
         // 子要素のレイアウトファイル grid_items.xml を
         // fragment_home.xml に inflate するためにGridAdapterに引数として渡す
-        GridAdapter adapter = new GridAdapter(getActivity().getApplicationContext(),
-                R.layout.grid_items,
-                imgList,
-                productNames,
-                prices,
-                producerID
-        );
+//        GridAdapter adapter = new GridAdapter(getActivity().getApplicationContext(),
+//                R.layout.grid_items,
+//                imgList,
+//                productNames,
+//                prices,
+//                producerID
+//        );
         // gridViewにadapterをセット
-        gridview.setAdapter(adapter);
+        //gridview.setAdapter(adapter);
 
         // item clickのListenerをセット
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

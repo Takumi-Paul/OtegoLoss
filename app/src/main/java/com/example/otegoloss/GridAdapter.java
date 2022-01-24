@@ -40,6 +40,8 @@ public class GridAdapter extends BaseAdapter {
                        int[] prices,
                        String[] producerID) {
 
+        // List<Integer> imgList,
+
         super();
         this.inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,12 +50,13 @@ public class GridAdapter extends BaseAdapter {
         pro_names = productNames;
         price = prices;
         producerIDs = producerID;
+        System.out.println(pro_names);
     }
 
     @Override
     public int getCount() {
         // List<String> imgList の全要素数を返す
-        return imageList.size();
+        return pro_names.length;
     }
 
     @Override
