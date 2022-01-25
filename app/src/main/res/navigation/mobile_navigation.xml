@@ -385,4 +385,21 @@
     </fragment>
 
 
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.otegoloss.home.ViewSearch"
+        android:label="検索"
+        tools:layout="@layout/fragment_view_search">
+        <action
+            android:id="@+id/action_searchFragment_to_fragmentresult"
+            app:destination="@id/fragmentresult" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentresult"
+        android:name="com.example.otegoloss.home.ViewSearchResult"
+        android:label="検索結果"
+        tools:layout="@layout/fragment_search_result"/>
+
+
 </navigation>

@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
@@ -39,16 +40,48 @@ public class ViewSearch extends Fragment {
         //検索ボタンが押された時の処理
         Button SearchButton  = view.findViewById(R.id.search_button);
 
+
         SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //商品名と出品者名を取得
                 String productNames = productName.getText().toString();
-                String sellerNames =  sellerName.getText().toString();
-                //確認用
-                Toast.makeText(view.getContext(), productNames, Toast.LENGTH_LONG).show();
-                Toast.makeText(view.getContext(), sellerNames, Toast.LENGTH_LONG).show();
+                String sellerNames = sellerName.getText().toString();
+
+                if(productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                        && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                   /*
+                    && (int_weight >= 0 && int_weight <= 30000)
+                    && (int_price >= 10 && int_price <= 99999)
+                    */
+                ) {
+                    //次のフラグメントにBundleを使ってデータを渡す
+                    //タイトル
+                    /*
+                    Bundle bundle = new Bundle();
+                    bundle.putString("PRODUCT_NAME", pro_names);
+                    bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
+                    bundle.putString("PRODUCT_WEIGHT", pro_weights);
+                    bundle.putString("PRODUCT_PRICE", pro_prices);
+                    bundle.putString("RECIPE_URL", recipe_urls);
+                    bundle.putString("PRODUCT_AREA", Product_area);
+                    bundle.putString("DELIVERY_METHOD", Delivery_method);
+                    */
+                    //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
+                    //bundle.putInt("PRODUCT_INT_PRICE", int_price);
+
+
+                    // fragmentViewExhibitInfoConfirmationに遷移させる
+                    Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
+                } else {
+                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
+                }
+
+                //商品名と出品者名を取得
+                //String productNames = productName.getText().toString();
+                //String sellerNames =  sellerName.getText().toString();
+
+
             }
         });
 

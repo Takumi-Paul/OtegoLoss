@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(プルダウン式選択)用の選択肢を入れる配列
+    <string-array name="weight">
+        <item>0 ~ 1000</item>
+        <item>1000 ~ 2000</item>
+        <item>2000 ~ 3000</item>
+        <item>3000 ~ 4000</item>
+        <item>4000 ~ 5000</item>
+        <item>5000 ~</item>
+    </string-array>
+
+
+    };
+</resources>

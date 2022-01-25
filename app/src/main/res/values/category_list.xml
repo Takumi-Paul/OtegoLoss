@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    //Spinner(ウルダウン式選択)用の選択肢を入れる配列
+    <string-array name="category">
+        <item>魚</item>
+        <item>野菜</item>
+    </string-array>
+
+
+    };
+</resources>

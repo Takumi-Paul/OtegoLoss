@@ -66,8 +66,8 @@
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="102dp"
-        android:layout_height="336dp"
+        android:layout_width="90dp"
+        android:layout_height="316dp"
         app:layout_constraintBottom_toBottomOf="@+id/shippingAddress2_view"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
         app:layout_constraintHorizontal_bias="0.059"
@@ -86,79 +86,79 @@
             android:id="@+id/choice2_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="140dp"
             android:buttonTint="@color/blue_black" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/addressNumber1_textView"
-        android:layout_width="104dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/ShippingAddressNumber1_textView"
+        android:layout_width="268dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="28dp"
         android:text="郵便番号1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress1_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress1_view" />
 
     <TextView
-        android:id="@+id/addressNumber2_textView"
-        android:layout_width="104dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/ShippingAddressNumber2_textView"
+        android:layout_width="266dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
         android:text="郵便番号2"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress2_view"
-        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintHorizontal_bias="0.819"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress2_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress2_view" />
 
     <TextView
-        android:id="@+id/address1_textView"
-        android:layout_width="90dp"
-        android:layout_height="27dp"
+        android:id="@+id/ShippingAddress1_textView"
+        android:layout_width="252dp"
+        android:layout_height="30dp"
         android:layout_marginTop="64dp"
         android:text="住所1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
-        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress1_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress1_view" />
 
     <TextView
-        android:id="@+id/address2_textView"
-        android:layout_width="90dp"
-        android:layout_height="27dp"
+        android:id="@+id/ShippingAddress2_textView"
+        android:layout_width="261dp"
+        android:layout_height="29dp"
         android:layout_marginTop="64dp"
         android:text="住所2"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress2_view"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress2_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress2_view" />
 
     <TextView
-        android:id="@+id/name1_textView"
-        android:layout_width="90dp"
+        android:id="@+id/ShippingName1_textView"
+        android:layout_width="260dp"
         android:layout_height="27dp"
         android:layout_marginTop="108dp"
         android:text="名前1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress1_view"
-        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress1_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress1_view" />
 
     <TextView
-        android:id="@+id/name2_textView"
-        android:layout_width="90dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="108dp"
+        android:id="@+id/ShippingName2_textView"
+        android:layout_width="266dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="104dp"
         android:text="名前2"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/shippingAddress2_view"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintHorizontal_bias="0.819"
         app:layout_constraintStart_toStartOf="@+id/shippingAddress2_view"
         app:layout_constraintTop_toTopOf="@+id/shippingAddress2_view" />
 

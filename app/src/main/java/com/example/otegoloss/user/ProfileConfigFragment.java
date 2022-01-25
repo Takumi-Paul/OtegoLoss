@@ -28,7 +28,6 @@ import java.util.Objects;
 public class ProfileConfigFragment extends Fragment {
 
     private EditText config_username;
-    private EditText config_userid;
     private EditText config_usermessage;
 
     @Override
@@ -41,9 +40,6 @@ public class ProfileConfigFragment extends Fragment {
         // ユーザ名の定義
         config_username = (EditText)view.findViewById(R.id.userName_editText) ;
 
-        // ユーザIDの定義
-        config_userid = (EditText)view.findViewById(R.id.userId_editText) ;
-
         // プロフィールメッセージの定義
         config_usermessage = (EditText)view.findViewById(R.id.profileMessage_editText) ;
 
@@ -52,8 +48,6 @@ public class ProfileConfigFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String config_usernames = config_username.getText().toString();
-
-                String config_userids = config_userid.getText().toString();
 
                 String config_usermessages = config_usermessage.getText().toString();
 

@@ -38,8 +38,8 @@ public class ShippingFragment extends Fragment {
             100, 200, 300
     };
     // 商品ID
-    private int[] productID = new int[]{
-            0, 1, 2
+    private String[] productID = new String[]{
+            "g0000001", "g0000002", "g0000003"
     };
     //出品日
     private String[]  listingDate= new String[]{
@@ -92,7 +92,7 @@ public class ShippingFragment extends Fragment {
                 // 画像ID
                 bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
-                bundle.putInt("PRODUCT_ID", productID[position]);
+                bundle.putString("PRODUCT_ID", productID[position]);
                 //商品名
                 bundle.putString("PRODUCT_NAME",productNames[position]);
 

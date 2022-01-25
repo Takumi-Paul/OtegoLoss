@@ -6,7 +6,10 @@ Kobayashi
 
 package com.example.otegoloss.user;
 
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.TextView;
 
+import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.databinding.FragmentUserBinding;
@@ -39,13 +43,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class UserFragment extends Fragment {
 
     public ImageView profile_image;
     public TextView profile_username;
-    public TextView profile_userid;
     public TextView profile_message;
 
     // http通信の開始・終了時刻
@@ -60,9 +66,10 @@ public class UserFragment extends Fragment {
 
         profile_image = view.findViewById(R.id.accountImage_imageView) ;
         profile_username = view.findViewById(R.id.profileUserName_textView) ;
-        profile_userid = view.findViewById(R.id.profileUserID_textView) ;
         profile_message = view.findViewById(R.id.profileUserMessage_textView) ;
 
+        // ユーザID
+        String userID = "u0000003";
 
         Button nextSettingProfileButton = view.findViewById(R.id.nextSettingProfile_button);
         Button nextMeterButton = view.findViewById(R.id.nextMeter_button);
@@ -73,15 +80,28 @@ public class UserFragment extends Fragment {
         Button nextDeleteAccountButton = view.findViewById(R.id.nextDeleteAccount_button);
 
         // http通信
-        new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
                 try {
-                    URL url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ProductDetails.php?product_id=g0000001");
+                    // phpファイルまでのリンク
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
+
+                    // クエリ文字列を連想配列に入れる
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("user_id", userID);
+                    // クエリ文字列組み立て・URL との連結
+                    StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
+                    for (Map.Entry<String, String> param: map.entrySet()) {
+                        stringUrl.add(param.getKey() + "=" + param.getValue());
+                    }
+                    URL url = new URL(stringUrl.toString());
+                    System.out.println(url);
                     // 処理開始時刻
                     startTime = System.currentTimeMillis();
                     HttpURLConnection con =(HttpURLConnection)url.openConnection();
-                    final String str = InputStreamToString(con.getInputStream());
+                    final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
 
                     // 終了時刻
                     endTime = System.currentTimeMillis();
@@ -93,13 +113,12 @@ public class UserFragment extends Fragment {
                             System.out.println(String.valueOf(str));
                             System.out.println(endTime - startTime);
 
-                            JSONObject jsnObject = ChangeJson(str);
+                            JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
-                                //profile_image.setImageBitmap(jsnObject.getString("user_profile_image"));
                                 profile_username.setText(jsnObject.getString("user_name"));
-                                profile_userid.setText(jsnObject.getString("user_id"));
                                 profile_message.setText(jsnObject.getString("user_profile_message"));
+                                //profile_image.setText(jsnObject.getString("user_profile_image"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -111,7 +130,14 @@ public class UserFragment extends Fragment {
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try {
+            t.start();
+            t.join();
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
 
         nextSettingProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,37 +190,6 @@ public class UserFragment extends Fragment {
 
 
         return view;
-    }
-
-    // http通信で受け取ったデータをString化する
-    static String InputStreamToString(InputStream is) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line;
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
-        }
-        br.close();
-        return sb.toString();
-    }
-
-    // Jsonデータに変換
-    static JSONObject ChangeJson(String str) {
-        try {
-            JSONArray jsonArray = new JSONArray(str);
-            // JSONArray jsonArray = jsonObject.getJSONArray("sample");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonData = jsonArray.getJSONObject(i);
-                //Log.d("Check", jsonData.getString("user_profile_image"));
-                Log.d("Check", jsonData.getString("user_name"));
-                Log.d("Check", jsonData.getString("user_id"));
-                Log.d("Check", jsonData.getString("user_profile_message"));
-                return jsonData;
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 }

@@ -84,7 +84,7 @@ public class ViewProduct extends Fragment {
         showWeightTextView = view.findViewById(R.id.showWeight_textView);
         priceTextView = view.findViewById(R.id.price_textView);
         regionTextView = view.findViewById(R.id.region_textView);
-        exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
+        //exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
 
         // http通信
         new Thread(new Runnable() {
@@ -129,7 +129,7 @@ public class ViewProduct extends Fragment {
                                 showWeightTextView.setText(jsnObject.getString("weight"));
                                 priceTextView.setText(jsnObject.getString("price"));
                                 regionTextView.setText(jsnObject.getString("prefecture"));
-                                exhibitDayTextView.setText(jsnObject.getString("Listing_date"));
+                                //exhibitDayTextView.setText(jsnObject.getString("Listing_date"));
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
