@@ -58,6 +58,7 @@
         <entry key="..\:/Users/shoya/StudioProjects/OtegoLoss/app/src/main/res/layout/test_search.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable/splash.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/fragment_exhibit_profile.xml" value="0.1328125" />
@@ -97,6 +98,7 @@
         <entry key="app/src/main/res/layout/fragment_view_yet_sold_out_product.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/grid_items.xml" value="0.231693365767161" />
         <entry key="app/src/main/res/layout/list.xml" value="0.12563323201621074" />
+        <entry key="app/src/main/res/layout/splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/template.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/view_shipping_procedure.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />

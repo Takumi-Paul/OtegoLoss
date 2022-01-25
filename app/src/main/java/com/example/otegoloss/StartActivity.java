@@ -1,17 +1,41 @@
 package com.example.otegoloss;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.otegoloss.user.UserFragment;
+
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private SharedPreferences userIDData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                userIDData = getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+                String userID = userIDData.getString("userID", "error");
+                System.out.println(userID);
+                    if (userID != "error") {
+                        // HOME画面に遷移
+                        Intent mainIntent = new Intent(StartActivity.this, MainActivity.class);
+                        startActivity(mainIntent);
+                    }
+            }
+        });
+        t.start();
+
+        setTheme(R.style.Theme_OtegoLoss);
         setContentView(R.layout.activity_start);
 
         Button newAccountButton = (Button) findViewById(R.id.newAccountButton);

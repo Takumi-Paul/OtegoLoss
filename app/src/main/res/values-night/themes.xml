@@ -21,4 +21,7 @@
         <item name="colorControlNormal">@color/white</item>
         <item name="drawerArrowStyle">@style/Widget.AppCompat.DrawerArrowToggle</item>
     </style>
+    <style name="SplashTheme" parent="Theme.OtegoLoss">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
 </resources>

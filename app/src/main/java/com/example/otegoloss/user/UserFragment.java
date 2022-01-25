@@ -6,6 +6,9 @@ Kobayashi
 
 package com.example.otegoloss.user;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -30,6 +33,7 @@ import android.widget.TextView;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
+import com.example.otegoloss.StartActivity;
 import com.example.otegoloss.databinding.FragmentUserBinding;
 import com.example.otegoloss.shipping.EntryOfExhibitInfoFragment;
 
@@ -54,9 +58,15 @@ public class UserFragment extends Fragment {
     public TextView profile_username;
     public TextView profile_message;
 
+    // ユーザID
+    String userID;
+
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
+
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,8 +78,13 @@ public class UserFragment extends Fragment {
         profile_username = view.findViewById(R.id.profileUserName_textView) ;
         profile_message = view.findViewById(R.id.profileUserMessage_textView) ;
 
-        // ユーザID
-        String userID = "u0000003";
+        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+
+        if (userID == "error") {
+            userID = "u0000003";
+        }
+        System.out.println(userID);
 
         Button nextSettingProfileButton = view.findViewById(R.id.nextSettingProfile_button);
         Button nextMeterButton = view.findViewById(R.id.nextMeter_button);
