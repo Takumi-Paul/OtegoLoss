@@ -39,7 +39,9 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
     private EditText password;
     private EditText rePassword;
 
+    // http通信で返ってくる値
     String str;
+
     // ユーザIDを保存するメモリ
     private SharedPreferences userIDData;
 
@@ -54,7 +56,7 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
         password = (EditText) findViewById(R.id.passwordEditText);
         rePassword = (EditText) findViewById(R.id.rePasswordEditText);
 
-        //検索ボタンが押された時の処理
+        //登録ボタンが押された時の処理
         Button registerButton  = findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(this);
@@ -63,7 +65,7 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
 
-        //商品名と出品者名を取得
+        //商品名と出品者名, パスワードを取得
         String mailAddressString = mailAddress.getText().toString();
         String userNameString = userName.getText().toString();
         String passwordString = password.getText().toString();
@@ -76,11 +78,12 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
         if (mailAddressString.equals("") || userNameString.equals("") || passwordString.equals("") ||
                 rePasswordString .equals("")) {
             Toast.makeText(this, "入力が足りません", Toast.LENGTH_LONG).show();
-        } else if (passwordString.equals(rePasswordString)) {
+        } else if (!passwordString.equals(rePasswordString)) {
             Toast.makeText(this, "パスワードが間違っています", Toast.LENGTH_LONG).show();
         } else if (passwordString.length() < 8) {
             Toast.makeText(this, "パスワードは8文字以上にしてください", Toast.LENGTH_LONG).show();
         } else {
+
             // http通信
             Thread t = new Thread(new Runnable() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -90,29 +93,13 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
                         // phpファイルまでのリンク
                         URL path = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/InsertAccount.php");
 
-
-                        // クエリ文字列を連想配列に入れる
-                        Map<String, Object> map = new HashMap<String, Object>();
-                        map.put("user_password", passwordString);
-                        map.put("user_name", userNameString);
-                        map.put("user_mail", mailAddressString);
-                        map.put("gross_weight", 0);
-                        map.put("user_profile_image", "");
-                        map.put("user_profile_message", "");
-                        // クエリ文字列組み立て・URL との連結
-//                        StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
-//                        for (Map.Entry<String, String> param: map.entrySet()) {
-//                            stringUrl.add(param.getKey() + "=" + param.getValue());
-//                        }
-//                        URL url = new URL(stringUrl.toString());
-
+                        // POSTで送るStringデータ
                         String postData = "user_password=" + passwordString +
                                 "&user_name=" + userNameString +
                                 "&user_mail=" + mailAddressString +
                                 "&gross_weight=" + 0 +
                                 "&user_profile_image=" + "" +
                                 "&user_profile_message=" + "";
-
 
                         System.out.println(path);
                         // 処理開始時刻
@@ -122,20 +109,24 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
                         con.setUseCaches(false);// キャッシュ利用
                         con.setDoOutput(true);// リクエストのボディの送信を許可(GETのときはfalse,POSTのときはtrueにする)
                         con.setDoInput(true);// レスポンスのボディの受信を許可
-                        //con.setRequestProperty("Content-Type", "application/json; charset=utf-8");
 
                         System.out.println(postData);
+                        // サーバとパイプをつなぐ
                         OutputStream os = con.getOutputStream();
                         PrintStream ps = new PrintStream(os);
+                        // リクエストパラメータを送信する
                         ps.write(postData.getBytes());
+                        // ファイルを書き込む
+                        ps.flush();
+                        // ファイルを閉じる
                         ps.close();
 
-                        con.connect();
-
+                        // レスポンスコード確認
                         final int responseCode = con.getResponseCode();
                         System.out.println(responseCode);
 
                         if (responseCode == HttpURLConnection.HTTP_OK) {
+                            // レスポンスコードが200ならStringに変換
                             str = ConnectionJSON.InputStreamToString(con.getInputStream());
                         }
 
@@ -149,14 +140,9 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
                                 System.out.println(String.valueOf(str));
                                 System.out.println(endTime - startTime);
 
-                                //JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
-                                //try {
-                                    System.out.println(str);
-
-                                //}
-
                             }
                         });
+
                     } catch (IOException e) {
                         e.printStackTrace();
                         System.out.println(e);
@@ -165,7 +151,9 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
             });
 
             try {
+                // スレッド開始
                 t.start();
+                // スレッドが終わるまで他の処理を停止
                 t.join();
 
                 // 返ってくるuser_idの先頭がuなら
@@ -173,20 +161,24 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
 
                     // "userIDData"という名前でインスタンスを生成
                     userIDData = getSharedPreferences("DataStore", MODE_PRIVATE);
-                    // 入力文字列を"input"に書き込む
+                    // 入力文字列を"userID"に書き込む
                     SharedPreferences.Editor editor = userIDData.edit();
                     editor.putString("userID", str);
+                    // userIDを端末内に保存
                     editor.commit();
 
+                    // HOME画面に遷移
                     Intent accountIntent = new Intent(this, MainActivity.class);
                     startActivity(accountIntent);
 
+                    // ダイアログ表示
                     progressDialog = new ProgressDialog(this);
-                    progressDialog.setTitle("処理しています");
-                    progressDialog.setMessage("メッセージ");
+                    progressDialog.setTitle("ロード中");
+                    progressDialog.setMessage("処理しています");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     progressDialog.show();
                 } else {
+                    // エラー処理
                     Toast.makeText(this, "登録できませんでした", Toast.LENGTH_LONG).show();
                 }
             } catch (InterruptedException e) {
