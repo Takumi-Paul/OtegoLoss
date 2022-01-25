@@ -6,10 +6,10 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +21,13 @@ import android.widget.GridView;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.GridAdapter;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.otegoloss.NewAccountActivity;
 import com.example.otegoloss.R;
 
 import java.io.IOException;
@@ -35,6 +38,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class HomeFragment extends Fragment {
+
+    ProgressDialog progressDialog;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -51,11 +56,14 @@ public class HomeFragment extends Fragment {
 
     private List<Integer> imgList = new ArrayList<>();
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        this.progressDialog   = NewAccountActivity.progressDialog;
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -76,7 +84,6 @@ public class HomeFragment extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
-                    Handler handle = new Handler(Looper.getMainLooper());
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -96,6 +103,7 @@ public class HomeFragment extends Fragment {
                             producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
 
                             System.out.println("array");
+                            //progressDialog.dismiss();
                             settingUI(view);
                         }
                     });
@@ -140,8 +148,6 @@ public class HomeFragment extends Fragment {
                 imgList.add(imageId);
             }
 
-
-
             System.out.println(productNames[0]);
             // GridViewのインスタンスを生成
             GridView gridview = view.findViewById(R.id.product_gridView);
@@ -176,5 +182,4 @@ public class HomeFragment extends Fragment {
 
         }
 
-
-    }
+}
