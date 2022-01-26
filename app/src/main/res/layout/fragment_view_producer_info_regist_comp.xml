@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pay_info_regist_comp"
+    android:id="@+id/producer_info_regist_comp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2E8CF">
@@ -26,7 +26,7 @@
         android:id="@+id/text_view1_exhibit_completed2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="決済情報の登録が完了しました！"
+        android:text="申請登録が完了しました！"
         android:textColor="#BC4749"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -38,12 +38,14 @@
         app:layout_constraintVertical_bias="0.277" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="203dp"
-        android:layout_height="194dp"
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view1_exhibit_completed2"
-        app:srcCompat="@drawable/credit_card_hoso" />
+        app:srcCompat="@drawable/sozai_cman_jp_20220127012245" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

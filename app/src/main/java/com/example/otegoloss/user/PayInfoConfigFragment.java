@@ -1,7 +1,5 @@
 package com.example.otegoloss.user;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -44,25 +42,14 @@ public class PayInfoConfigFragment extends Fragment {
     long startTime;
     long endTime;
 
-    // ユーザデータが保存されている変数
-    private SharedPreferences userIDData;
-    String userID;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_pay_info_config, container, false);
 
-
-        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
-        userID = userIDData.getString("userID", "error");
-        System.out.println(userID);
-
-        if (userID == "error") {
-            userID = "u0000003";
-        }
-        System.out.println(userID);
+        // ユーザID(仮定義)
+        String userID = "u0000001";
 
         creditcard_company = view.findViewById(R.id.texiview_creditcard_company) ;
         creditcard_number = view.findViewById(R.id.textView_creditcard_number) ;
@@ -77,7 +64,7 @@ public class PayInfoConfigFragment extends Fragment {
             public void run() {
                 try {
                     // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ListingCredit.php";
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
 
                     // クエリ文字列を連想配列に入れる
                     Map<String, String> map = new HashMap<String, String>();
