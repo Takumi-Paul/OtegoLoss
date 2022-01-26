@@ -374,7 +374,11 @@
     <fragment
         android:id="@+id/accountdelete"
         android:name="com.example.otegoloss.user.AccountDeleteFragment"
-        android:label="@string/accouuntdelete" />
+        android:label="@string/accouuntdelete" >
+        <action
+            android:id="@+id/action_accountdelete_to_delete_comp"
+            app:destination="@id/delete_comp" />
+    </fragment>
     <fragment
         android:id="@+id/deletion_agreement"
         android:name="com.example.otegoloss.user.AccountDeletionAgreementFragment"
@@ -400,6 +404,10 @@
         android:name="com.example.otegoloss.home.ViewSearchResult"
         android:label="検索結果"
         tools:layout="@layout/fragment_search_result"/>
+    <fragment
+        android:id="@+id/delete_comp"
+        android:name="com.example.otegoloss.user.DeleteCompFragment"
+        android:label="アカウント削除" />
 
 
 

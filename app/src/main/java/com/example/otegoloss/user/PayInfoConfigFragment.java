@@ -1,5 +1,6 @@
 package com.example.otegoloss.user;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -29,18 +30,30 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.StringJoiner;
 
 public class PayInfoConfigFragment extends Fragment {
 
-    public TextView creditcard_company;
-    public TextView creditcard_number;
+    private TextView creditcard_company1;
+    private TextView creditcard_number1;
+    private TextView creditcard_company2;
+    private TextView creditcard_number2;
+
+    private String[] creditnumbers;
+    private String[] creditcompanies;
+
+    // ユーザID
+    String userID;
 
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
+
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,10 +62,12 @@ public class PayInfoConfigFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_pay_info_config, container, false);
 
         // ユーザID(仮定義)
-        String userID = "u0000001";
+        userID = "u0000003";
 
-        creditcard_company = view.findViewById(R.id.texiview_creditcard_company) ;
-        creditcard_number = view.findViewById(R.id.textView_creditcard_number) ;
+        creditcard_company1 = view.findViewById(R.id.texiview_creditcard_company) ;
+        creditcard_number1 = view.findViewById(R.id.textView_creditcard_number) ;
+        creditcard_company2 = view.findViewById(R.id.texiview_creditcard_company2) ;
+        creditcard_number2 = view.findViewById(R.id.textView_creditcard_number2) ;
 
         Button addCreditButton = view.findViewById(R.id.addCredit_button);
         Button deleteCreditButton = view.findViewById(R.id.deleteCredit_button);
@@ -64,7 +79,7 @@ public class PayInfoConfigFragment extends Fragment {
             public void run() {
                 try {
                     // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ListingCredit.php";
 
                     // クエリ文字列を連想配列に入れる
                     Map<String, String> map = new HashMap<String, String>();
@@ -94,9 +109,16 @@ public class PayInfoConfigFragment extends Fragment {
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
-                                creditcard_number.setText(jsnObject.getString("card_number"));
-                                creditcard_company.setText(jsnObject.getString("card_comp"));
-                            } catch (JSONException e) {
+                                List<String> creditnumberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
+                                creditnumbers = creditnumberList.toArray(new String[creditnumberList.size()]);
+                                creditcard_number1.setText(creditnumbers[0]);
+                                creditcard_number2.setText(creditnumbers[1]);
+
+                                List<String> creditcompanyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
+                                creditcompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
+                                creditcard_company1.setText(creditcompanies[0]);
+                                creditcard_company2.setText(creditcompanies[1]);
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 

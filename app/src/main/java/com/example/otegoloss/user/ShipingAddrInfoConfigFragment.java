@@ -1,5 +1,6 @@
 package com.example.otegoloss.user;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -30,20 +31,33 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.StringJoiner;
 
 public class ShipingAddrInfoConfigFragment extends Fragment {
 
-    public TextView shipping_info_realname;
-    public TextView postalcode_first;
-    public TextView postalcode_Last;
-    public TextView user_addr;
+    public TextView shipping_info_realname1;
+    public TextView postalcode1;
+    public TextView user_addr1;
+    public TextView shipping_info_realname2;
+    public TextView postalcode2;
+    public TextView user_addr2;
+
+    private String[] realnames;
+    private String[] postalcodes;
+    private String[] addrs;
+
+    // ユーザID
+    String userID;
 
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
+
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,11 +66,14 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_shipping_address_info_config, container, false);
 
         // ユーザID(仮定義)
-        String userID = "u0000001";
+        userID = "u0000001";
 
-        shipping_info_realname = view.findViewById(R.id.textView_shipping_info_realname) ;
-        postalcode_first = view.findViewById(R.id.textView_postalcode_first) ;
-        user_addr = view.findViewById(R.id.textView_user_addr) ;
+        shipping_info_realname1 = view.findViewById(R.id.textView_shipping_info_realname) ;
+        postalcode1 = view.findViewById(R.id.textView_postalcode_first) ;
+        user_addr1 = view.findViewById(R.id.textView_user_addr) ;
+        shipping_info_realname2 = view.findViewById(R.id.textView_shipping_info_realname2) ;
+        postalcode2 = view.findViewById(R.id.textView_postalcode_first2) ;
+        user_addr2 = view.findViewById(R.id.textView_user_addr2) ;
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -65,7 +82,7 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
             public void run() {
                 try {
                     // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ListingDelivery.php";
 
                     // クエリ文字列を連想配列に入れる
                     Map<String, String> map = new HashMap<String, String>();
@@ -95,10 +112,21 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
-                                postalcode_first.setText(jsnObject.getString("postal_code"));
-                                user_addr.setText(jsnObject.getString("address"));
-                                shipping_info_realname.setText(jsnObject.getString("real_name"));
-                            } catch (JSONException e) {
+                                List<String> postalcodeList = ConnectionJSON.ChangeArrayJSON(str, "postal_code");
+                                postalcodes = postalcodeList.toArray(new String[postalcodeList.size()]);
+                                postalcode1.setText(postalcodes[0]);
+                                postalcode2.setText(postalcodes[3]);
+
+                                List<String> user_addrList = ConnectionJSON.ChangeArrayJSON(str, "address");
+                                addrs = user_addrList.toArray(new String[user_addrList.size()]);
+                                user_addr1.setText(addrs[0]);
+                                user_addr2.setText(addrs[3]);
+
+                                List<String> shipping_info_realnameList = ConnectionJSON.ChangeArrayJSON(str, "real_name");
+                                realnames = shipping_info_realnameList.toArray(new String[shipping_info_realnameList.size()]);
+                                shipping_info_realname1.setText(realnames[0]);
+                                shipping_info_realname2.setText(realnames[3]);
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 

@@ -7,114 +7,88 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
-    <EditText
-        android:id="@+id/proEmailAddress_editText"
-        android:layout_width="270dp"
+    <TextView
+        android:id="@+id/phoneNumber_textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="text"
-        android:maxLines="1"
-        android:hint="30文字まで"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:text="電話番号（ハイフンを除く）"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proEmailAddress_textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/accountName_editText"
+        android:id="@+id/bankname_editText"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="日本語 20文字まで"
         android:inputType="text"
+        android:maxLength="20"
         android:maxLines="1"
-        android:hint="30文字まで"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountName_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/bank_textView" />
+
+    <Button
+        android:id="@+id/identification_button"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="提出BOX（ファイルを選択する）"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identification_textView" />
 
     <TextView
         android:id="@+id/branch_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="380dp"
-        android:text="支店名の選択"
+        android:layout_marginTop="332dp"
+        android:text="支店名"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bankbranchname_editText"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="日本語 30文字まで"
+        android:inputType="text"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/branch_textView" />
 
     <TextView
         android:id="@+id/accountName_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="452dp"
-        android:text="口座の名義（カタカナ）"
+        android:layout_marginTop="404dp"
+        android:text="口座の名義"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/phoneNumber_editText"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="phone"
-        android:maxLines="1"
-        android:hint="11文字まで"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber_textView" />
-
-    <Spinner
-        android:id="@+id/choiceBranch_spinner"
-        android:layout_width="270dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/branch_textView" />
-
-    <Spinner
-        android:id="@+id/choiceBank_spinner"
-        android:layout_width="270dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="12dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bank_textView" />
-
-    <TextView
-        android:id="@+id/proEmailAddress_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="76dp"
-        android:text="メールアドレス"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,20 +97,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="304dp"
-        android:text="銀行機関名の選択"
+        android:layout_marginTop="260dp"
+        android:text="銀行機関名"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/phoneNumber_editText"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="半角数字 11文字まで"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber_textView" />
+
+    <EditText
+        android:id="@+id/accountName_editText"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="日本語 30文字まで"
+        android:inputType="text"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountName_textView" />
 
     <TextView
         android:id="@+id/identification_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="172dp"
         android:text="身分証明書（顔写真がついたもの）"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,41 +152,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/phoneNumber_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="144dp"
-        android:text="電話番号（ハイフンを除く）"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/proRegister_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:text="生産者登録"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountName_editText" />
-
-    <Button
-        android:id="@+id/identification_button"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="提出BOX（ファイルを選択する）"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identification_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,28 +7,83 @@
     android:layout_height="match_parent"
     android:background="#F2E8CF" >
 
-    <View
-        android:id="@+id/view12"
-        android:layout_width="332dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="4dp"
-        android:background="#E4E4E4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="48dp"
         android:text="登録されている配送先情報"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteShipping_button" />
+
+    <View
+        android:id="@+id/view17"
+        android:layout_width="332dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="96dp"
+        android:background="#E4E4E4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView_user_addr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/view17"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="@+id/view17"
+        app:layout_constraintTop_toBottomOf="@+id/textView_postalcode_first2" />
+
+    <View
+        android:id="@+id/view12"
+        android:layout_width="332dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="8dp"
+        android:background="#E4E4E4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView_postalcode_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
+
+    <TextView
+        android:id="@+id/textView_shipping_info_realname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="NO DATA"
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toTopOf="@+id/view17" />
+
+    <TextView
+        android:id="@+id/textView_postalcode_first2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/view17"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/view17"
+        app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname2" />
 
     <Button
         android:id="@+id/registerShipping_button"
@@ -57,35 +112,25 @@
         app:layout_constraintTop_toBottomOf="@+id/registerShipping_button" />
 
     <TextView
+        android:id="@+id/textView_user_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/view12"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toBottomOf="@+id/textView_postalcode_first" />
+
+    <TextView
         android:id="@+id/textView_shipping_info_realname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="氏名"
+        android:text="NO DATA"
         app:layout_constraintEnd_toEndOf="@+id/view12"
         app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view12"
         app:layout_constraintTop_toTopOf="@+id/view12" />
 
-    <TextView
-        android:id="@+id/textView_postalcode_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="郵便番号前半"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="@+id/view12"
-        app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
-
-    <TextView
-        android:id="@+id/textView_user_addr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="住所"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.032"
-        app:layout_constraintStart_toStartOf="@+id/view12"
-        app:layout_constraintTop_toBottomOf="@+id/textView_postalcode_first" />
 </androidx.constraintlayout.widget.ConstraintLayout>
