@@ -183,17 +183,6 @@
                         android:textSize="20sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/proShippingDay_textView"
-                    android:layout_width="320dp"
-                    android:layout_height="50dp"
-                    android:text="※配達には約〇日かかります"
-                    android:layout_gravity="center"
-                    android:textColor="#BC4749"
-                    android:textSize="16sp"
-                    tools:layout_editor_absoluteX="63dp"
-                    tools:layout_editor_absoluteY="507dp" />
-
                 <View
                     android:id="@+id/view2"
                     android:layout_width="match_parent"
