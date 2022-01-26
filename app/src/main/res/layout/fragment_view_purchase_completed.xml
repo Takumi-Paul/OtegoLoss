@@ -12,11 +12,10 @@
         android:id="@+id/backProduct_button"
         android:layout_width="193dp"
         android:layout_height="52dp"
-        android:layout_marginTop="28dp"
         android:text="ホーム画面に戻る"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shippingDay_textView" />
+        tools:layout_editor_absoluteY="455dp" />
 
     <TextView
         android:id="@+id/decide_textView"
@@ -51,16 +50,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buy_imageView" />
-
-    <TextView
-        android:id="@+id/shippingDay_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="お届けするまで約〇日かかります。"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thanks_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
