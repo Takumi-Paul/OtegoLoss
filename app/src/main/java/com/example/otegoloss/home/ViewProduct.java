@@ -79,7 +79,7 @@ public class ViewProduct extends Fragment {
         System.out.println(userID);
 
         if (userID != "error") {
-            userID = "u0000003";
+            userID = "u0000001";
         }
         System.out.println(userID);
 
@@ -177,7 +177,7 @@ public class ViewProduct extends Fragment {
                 nextbundle.putString("USER_ID", userID);
                 nextbundle.putString("PRODUCT_ID", productID);
 
-                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewInputPayment2);
+                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewInputPayment2, nextbundle);
             }
         });
 

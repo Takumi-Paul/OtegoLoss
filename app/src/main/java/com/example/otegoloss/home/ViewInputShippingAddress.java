@@ -197,16 +197,18 @@ public class ViewInputShippingAddress extends Fragment {
             public void onClick(View v) {
 
                 Bundle nextbundle = new Bundle();
-                nextbundle.putString("CARD_ID", cardID);
+
                 nextbundle.putString("USER_ID", userID);
                 nextbundle.putString("PRODUCT_ID", productID);
+                nextbundle.putString("CARD_ID", cardID);
+
 
                 if (Choice1Button.isChecked() == true) {
 
                     //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
                     nextbundle.putString("SHIPPING_ID", daddressID[0]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
 
                 }
 
@@ -215,7 +217,7 @@ public class ViewInputShippingAddress extends Fragment {
                     //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
                     nextbundle.putString("SHIPPING_ID", daddressID[1]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
 
                 }
 

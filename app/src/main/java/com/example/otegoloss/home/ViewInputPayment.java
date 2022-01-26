@@ -201,7 +201,7 @@ public class ViewInputPayment extends Fragment {
                     //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
                     nextbundle.putString("CARD_ID", creditCardid[0]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress, nextbundle);
 
                 }
 
@@ -210,7 +210,7 @@ public class ViewInputPayment extends Fragment {
                     //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
                     nextbundle.putString("CARD_ID", creditCardid[1]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress,nextbundle);
 
                 }
 

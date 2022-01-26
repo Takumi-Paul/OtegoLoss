@@ -6,6 +6,7 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ import java.util.StringJoiner;
 
 public class ViewPurchaseInformation1 extends Fragment {
 
+    ProgressDialog progressDialog;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -51,6 +53,7 @@ public class ViewPurchaseInformation1 extends Fragment {
 
         // ユーザID
         String userID = bundle.getString("USER_ID", "");
+        System.out.println("bundle"+userID);
 
         String productID = bundle.getString("PRODUCT_ID", "");
 
@@ -103,8 +106,6 @@ public class ViewPurchaseInformation1 extends Fragment {
                                 public void run() {
                                     System.out.println(String.valueOf(str));
                                     System.out.println(endTime - startTime);
-
-                                    JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                                 }
                             });
                         } catch (IOException e) {
@@ -116,7 +117,16 @@ public class ViewPurchaseInformation1 extends Fragment {
 
                 try{
                     t.start();
+                    System.out.println("start");
+                    // ダイアログ表示
+                    progressDialog = new ProgressDialog(getContext());
+                    progressDialog.setTitle("ロード中");
+                    progressDialog.setMessage("処理しています");
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    progressDialog.show();
                     t.join();
+                    progressDialog.dismiss();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
