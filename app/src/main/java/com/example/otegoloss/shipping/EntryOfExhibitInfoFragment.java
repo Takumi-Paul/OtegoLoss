@@ -2,7 +2,14 @@
 package com.example.otegoloss.shipping;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.ActivityResultRegistry;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -13,11 +20,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
+
+import java.net.URI;
 
 
 public class EntryOfExhibitInfoFragment extends Fragment {
@@ -27,8 +37,20 @@ public class EntryOfExhibitInfoFragment extends Fragment {
     private EditText weight;
     private EditText price;
     private EditText recipe_url;
+
+    // 画像の取り込み
+    private ImageView input_image;
+    private Button input_button;
+
     private String Product_area;
     private String Delivery_method;
+
+    private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        @Override
+        public void onActivityResult(Uri result) {
+            input_image.setImageURI(result);
+        }
+    });
 
 
     @Override
@@ -42,6 +64,8 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         weight = (EditText) view.findViewById(R.id.product_weight_listing_info);
         price = (EditText) view.findViewById(R.id.amount_listing_info);
         recipe_url = (EditText) view.findViewById(R.id.recipe_url_listing_info);
+        input_image = (ImageView) view.findViewById(R.id.input_image);
+        input_button = (Button) view.findViewById(R.id.input_button);
 
         //産地のSpinner処理
         Spinner product_area_spinner = (Spinner)view.findViewById(R.id.product_area_listing_info);
@@ -72,6 +96,13 @@ public class EntryOfExhibitInfoFragment extends Fragment {
 
             }
         });
+
+        input_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launcher.launch("image/*");
+            }
+        }));
 
             // 入力完了ボタンを取得
         Button buttonNext= view.findViewById(R.id.next_button_entry_exhibit_product);
