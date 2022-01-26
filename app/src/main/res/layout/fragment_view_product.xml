@@ -94,6 +94,18 @@
         app:layout_constraintTop_toBottomOf="@+id/proName_textView" />
 
     <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-150dp"
+        android:layout_weight="1"
+        android:text="g"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/showWeight_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/showWeight_textView" />
+
+    <TextView
         android:id="@+id/textview_hoge2"
         android:layout_width="93dp"
         android:layout_height="28dp"
