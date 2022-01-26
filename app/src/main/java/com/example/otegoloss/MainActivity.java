@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        //setContentView(R.layout.fragment_home);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.app_bar_search) {
 
-                    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-                            .findFragmentById(R.id.nav_host_fragment_activity_search);
-                    NavController navController = navHostFragment.getNavController();
-                    navController.navigate(R.id.action_mainActivity_to_searchFragment);
+//                    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+//                            .findFragmentById(R.id.nav_host_fragment_activity_search);
+//                    NavController navController = navHostFragment.getNavController();
+                    //navController.navigate(R.id.action_mainActivity_to_searchFragment);
 
                     //Navigation.findNavController().navigate(R.id.action_mainActivity_to_searchFragment);
 //
