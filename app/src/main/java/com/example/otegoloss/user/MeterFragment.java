@@ -44,7 +44,7 @@ public class MeterFragment extends Fragment {
         meter_weight = view.findViewById(R.id.meter_weight) ;
 
         // ユーザID
-        String userID = "u0000003";
+        String userID = "u0000005";
 
         // http通信
         Thread t = new Thread(new Runnable() {

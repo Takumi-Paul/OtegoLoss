@@ -79,28 +79,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="ー"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toEndOf="@+id/textView_postalcode_first"
-        app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
-
-    <TextView
-        android:id="@+id/textView_postalcode_Last"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="郵便番号後半"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
-
-    <TextView
         android:id="@+id/textView_user_addr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
