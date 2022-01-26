@@ -43,6 +43,8 @@ public class ViewSearchResult extends Fragment {
     };
 
     private List<Integer> imgList = new ArrayList<>();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -50,6 +52,7 @@ public class ViewSearchResult extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
 
 /*
+
         //商品一覧画面
         // for-each member名をR.drawable.名前としてintに変換してarrayに登録
         for (String productName: productNames){

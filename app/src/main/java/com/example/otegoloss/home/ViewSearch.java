@@ -15,11 +15,16 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
+import com.example.otegoloss.databinding.FragmentSearchResultBinding;
 
 public class ViewSearch extends Fragment {
 
@@ -30,6 +35,7 @@ public class ViewSearch extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_search, container, false);
+
         LinearLayout background_view = view.findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(background_view);
 
@@ -48,7 +54,7 @@ public class ViewSearch extends Fragment {
                 String productNames = productName.getText().toString();
                 String sellerNames = sellerName.getText().toString();
 
-                if(productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
+                if (productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                    /*
                     && (int_weight >= 0 && int_weight <= 30000)
@@ -73,6 +79,25 @@ public class ViewSearch extends Fragment {
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
                     Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
+
+
+//                    Fragment fr = new ViewSearchResult();
+//
+//                    System.out.println(fr.getId());
+
+
+//                    FragmentManager fm_item = getChildFragmentManager();
+//                    FragmentTransaction t_item = fm_item.beginTransaction();
+//                    // 次のFragment
+//                    Fragment secondFragment = new ViewSearchResult();
+//                    // bundleを次のfragmentに設定
+//                    // fragmentManagerに次のfragmentを追加
+//                    t_item.replace(R.id.fragmentresult, secondFragment);
+//                    // 画面遷移戻りを設定
+//                    t_item.addToBackStack(null);
+//                    // 画面遷移
+//                    t_item.commit();
+
                 } else {
                     Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
@@ -81,11 +106,8 @@ public class ViewSearch extends Fragment {
                 //String productNames = productName.getText().toString();
                 //String sellerNames =  sellerName.getText().toString();
 
-
             }
         });
-
-
 
         return view;
     }

@@ -2,6 +2,8 @@ package com.example.otegoloss;
 
 import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavController;
 import static com.example.otegoloss.R.id.fragmentHome;
+import static com.example.otegoloss.R.id.searchFragment;
+import static com.example.otegoloss.R.id.view;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.otegoloss.databinding.ActivityMainBinding;
+
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_home);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -73,20 +77,33 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.app_bar_search) {
-                    FragmentManager fm_item = getSupportFragmentManager();
-                    FragmentTransaction t_item = fm_item.beginTransaction();
 
-                    // 次のFragment
-                    Fragment secondFragment = new ViewSearch();
-                    // bundleを次のfragmentに設定
-                    // fragmentManagerに次のfragmentを追加
-                    t_item.replace(R.id.container, secondFragment);
-                    // 画面遷移戻りを設定
-                    t_item.addToBackStack(null);
-                    // 画面遷移
-                    t_item.commit();
-                    return true;
+                if (id == R.id.app_bar_search) {
+
+                    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                            .findFragmentById(R.id.nav_host_fragment_activity_search);
+                    NavController navController = navHostFragment.getNavController();
+                    navController.navigate(R.id.action_mainActivity_to_searchFragment);
+
+                    //Navigation.findNavController().navigate(R.id.action_mainActivity_to_searchFragment);
+//
+
+
+                    //NavHostFragment.findNavController(new searchFragment());
+
+//                    FragmentManager fm_item = getSupportFragmentManager();
+//                    FragmentTransaction t_item = fm_item.beginTransaction();
+//
+//                    // 次のFragment
+//                    Fragment secondFragment = new ViewSearch();
+//                    // bundleを次のfragmentに設定
+//                    // fragmentManagerに次のfragmentを追加
+//                    t_item.replace(R.id.container, secondFragment);
+//                    // 画面遷移戻りを設定
+//                    t_item.addToBackStack(null);
+//                    // 画面遷移
+//                    t_item.commit();
+//                    return true;
                 }
                 return true;
             }

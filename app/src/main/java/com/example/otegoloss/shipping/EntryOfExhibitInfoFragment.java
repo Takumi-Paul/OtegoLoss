@@ -3,6 +3,8 @@ package com.example.otegoloss.shipping;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.text.Editable;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,7 @@ import android.widget.Toast;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
+import java.io.ByteArrayOutputStream;
 import java.net.URI;
 
 
@@ -45,6 +49,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
     private String Product_area;
     private String Delivery_method;
 
+    // 画像ファイルを開く
     private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
         @Override
         public void onActivityResult(Uri result) {
@@ -97,6 +102,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
             }
         });
 
+        // 画像ファイルを開く
         input_button.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,6 +149,10 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                     && (int_price >= 10 && int_price <= 99999)
                     */
                 ) {
+                    // 画像ファイル取得
+                    Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
+                    String strBase64 = encodeImage(bitmap);
+
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
                     Bundle bundle = new Bundle();
@@ -153,6 +163,8 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                     bundle.putString("RECIPE_URL", recipe_urls);
                     bundle.putString("PRODUCT_AREA", Product_area);
                     bundle.putString("DELIVERY_METHOD", Delivery_method);
+                    bundle.putString("PRODUCT_IMAGE", strBase64);
+
                     //数字
                     //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
                     //bundle.putInt("PRODUCT_INT_PRICE", int_price);
@@ -171,5 +183,11 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         return view;
     }
 
-
+    private String encodeImage(Bitmap bm) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG,100,baos);
+        byte[] b = baos.toByteArray();
+        String encImage = Base64.encodeToString(b, Base64.DEFAULT);
+        return encImage;
+    }
 }

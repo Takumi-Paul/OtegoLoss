@@ -402,4 +402,5 @@
         tools:layout="@layout/fragment_search_result"/>
 
 
+
 </navigation>

@@ -80,8 +80,9 @@ public class UserFragment extends Fragment {
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
 
-        if (userID == "error") {
+        if (userID != "error") {
             userID = "u0000003";
         }
         System.out.println(userID);
