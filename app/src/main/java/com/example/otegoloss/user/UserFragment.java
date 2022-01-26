@@ -82,7 +82,7 @@ public class UserFragment extends Fragment {
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-        if (userID != "error") {
+        if (userID == "error") {
             userID = "u0000003";
         }
         System.out.println(userID);
