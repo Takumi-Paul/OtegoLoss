@@ -9,10 +9,9 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
-public class PayInfoRegistCompFragment extends Fragment {
+public class ProducerInfoRegistCompFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -20,19 +19,11 @@ public class PayInfoRegistCompFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_pay_info_regist_comp, container, false);
 
-        // 所属親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを表示する
-        activity.setupBackButton(true);
-
-        // この記述でフラグメントでアクションバーメニューが使えるようになる
-        setHasOptionsMenu(true);
-
-        Button nexthomeRegistButton = view.findViewById(R.id.nexthome_regist_button3);
-        nexthomeRegistButton.setOnClickListener(new View.OnClickListener() {
+        Button nexthomeRegistButton3 = view.findViewById(R.id.nexthome_regist_button3);
+        nexthomeRegistButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_pay_info_regist_comp_to_navigation_home);
+                //Navigation.findNavController(view).navigate(R.id.action_producer_info_regist_comp_to_navigation_home);
             }
         });
 

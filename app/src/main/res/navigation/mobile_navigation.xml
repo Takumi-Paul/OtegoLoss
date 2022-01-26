@@ -252,7 +252,11 @@
     <fragment
         android:id="@+id/producer_info"
         android:name="com.example.otegoloss.user.ProducerInfoFragment"
-        android:label="@string/producer_info" />
+        android:label="@string/producer_info" >
+        <action
+            android:id="@+id/action_producer_info_to_producer_info_regist_comp"
+            app:destination="@id/producer_info_regist_comp" />
+    </fragment>
     <fragment
         android:id="@+id/pay_info_regist_comp"
         android:name="com.example.otegoloss.user.PayInfoRegistCompFragment"
@@ -408,6 +412,14 @@
         android:id="@+id/delete_comp"
         android:name="com.example.otegoloss.user.DeleteCompFragment"
         android:label="アカウント削除" />
+    <fragment
+        android:id="@+id/producer_info_regist_comp"
+        android:name="com.example.otegoloss.user.ProducerInfoRegistCompFragment"
+        android:label="生産者登録申請完了" >
+        <action
+            android:id="@+id/action_producer_info_regist_comp_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 
 
