@@ -6,6 +6,8 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,6 +59,10 @@ public class ViewProduct extends Fragment {
     TextView regionTextView;
     TextView exhibitDayTextView;
 
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
+    String userID;
+
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
@@ -67,6 +73,16 @@ public class ViewProduct extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
         LinearLayout background_view = view.findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(background_view);
+
+        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
+
+        if (userID != "error") {
+            userID = "u0000003";
+        }
+        System.out.println(userID);
+
 
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
@@ -87,7 +103,7 @@ public class ViewProduct extends Fragment {
         //exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
 
         // http通信
-        new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
@@ -142,13 +158,25 @@ public class ViewProduct extends Fragment {
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try {
+            t.start();
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Button buyButton = view.findViewById(R.id.buy_button);
 
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Bundle nextbundle = new Bundle();
+                nextbundle.putString("USER_ID", userID);
+                nextbundle.putString("PRODUCT_ID", productID);
+
                 Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewInputPayment2);
             }
         });

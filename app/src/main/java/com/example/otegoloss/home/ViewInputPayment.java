@@ -46,6 +46,7 @@ public class ViewInputPayment extends Fragment {
     private String[] creditCompanies;
     private String[] creditNumbers;
     private String[] creditNominee;
+    private String[] creditCardid;
 
     long startTime;
     long endTime;
@@ -61,10 +62,12 @@ public class ViewInputPayment extends Fragment {
         Bundle bundle = getArguments();
 
         // ユーザID(仮定義)
-        String userID = "u0000001";
+        //String userID = "u0000001";
 
         // ユーザID
-        //String userID = bundle.getString("USER_ID", "");
+        String userID = bundle.getString("USER_ID", "");
+
+        String productID = bundle.getString("PRODUCT_ID", "");
 
 
         creditCompany1 = view.findViewById(R.id.credit_company1);
@@ -75,8 +78,9 @@ public class ViewInputPayment extends Fragment {
         creditNominee2 = view.findViewById(R.id.credit_nominee2);
 
 
+
         // http通信
-        new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
@@ -112,15 +116,6 @@ public class ViewInputPayment extends Fragment {
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
 
-                                // Jsonのキーを指定すれば対応する値が入る
-                                //creditCompany1.setText(jsnObject.getString("card_id"));
-                                //creditNumber1.setText(jsnObject.getString("card_comp"));
-                                //creditNominee1.setText(jsnObject.getString("nominee"));
-
-                                //creditCompany2.setText(jsnObject.getString("price"));
-                                //creditNumber2.setText(jsnObject.getString("prefecture"));
-                                //creditNominee2.setText(jsnObject.getString("Listing_date"));
-
                                 List<String> creditcompanyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
                                 creditCompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
                                 creditCompany1.setText(creditCompanies[0]);
@@ -136,6 +131,10 @@ public class ViewInputPayment extends Fragment {
                                 creditNominee1.setText(creditNominee[0]);
                                 creditNominee2.setText(creditNominee[1]);
 
+                                List<String> creditidList = ConnectionJSON.ChangeArrayJSON(str, "card_id");
+                                creditCardid = creditidList.toArray(new String[creditidList.size()]);
+
+
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -147,7 +146,14 @@ public class ViewInputPayment extends Fragment {
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try {
+            t.start();
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
 
@@ -185,10 +191,15 @@ public class ViewInputPayment extends Fragment {
         NextButtonPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Bundle nextbundle = new Bundle();
+                nextbundle.putString("USER_ID", userID);
+                nextbundle.putString("PRODUCT_ID", productID);
+
                 if (paymentRadioButton1.isChecked() == true) {
 
                     //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
-
+                    nextbundle.putString("CARD_ID", creditCardid[0]);
 
                     Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
 
@@ -197,7 +208,7 @@ public class ViewInputPayment extends Fragment {
                 if (paymentRadioButton2.isChecked() == true) {
 
                     //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
-
+                    nextbundle.putString("CARD_ID", creditCardid[1]);
 
                     Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
 

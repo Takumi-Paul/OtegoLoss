@@ -51,6 +51,7 @@ public class ViewInputShippingAddress extends Fragment {
     private String[] postalCodes;
     private String[] addresses;
     private String[] realNames;
+    private String[] daddressID;
 
     long startTime;
     long endTime;
@@ -63,12 +64,18 @@ public class ViewInputShippingAddress extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_view_input_shipping_address, container, false);
 
+        // BundleでHome画面の値を受け取り
+        Bundle bundle = getArguments();
 
         // ユーザID(仮定義)
-        String userID = "u0000001";
+        //String userID = "u0000001";
 
         // ユーザID
-        //String userID = bundle.getString("USER_ID", "");
+        String userID = bundle.getString("USER_ID", "");
+
+        String productID = bundle.getString("PRODUCT_ID", "");
+
+        String cardID = bundle.getString("CARD_ID", "");
 
         addressNumber1 = view.findViewById(R.id.ShippingAddressNumber1_textView);
         shippingAddress1 = view.findViewById(R.id.ShippingAddress1_textView);
@@ -78,7 +85,7 @@ public class ViewInputShippingAddress extends Fragment {
         shippingName2 = view.findViewById(R.id.ShippingName2_textView);
 
         // http通信
-        new Thread(new Runnable() {
+       Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
@@ -115,15 +122,6 @@ public class ViewInputShippingAddress extends Fragment {
                             try {
 
                                 // Jsonのキーを指定すれば対応する値が入る
-                                //addressNumber1.setText(jsnObject.getString("postal_code"));
-                                //shippingAddress1.setText(jsnObject.getString("address"));
-                                //shippingName1.setText(jsnObject.getString("real_name"));
-
-                                //addressNumber2.setText(jsnObject.getString("postal_code"));
-                                //shippingAddress2.setText(jsnObject.getString("address"));
-                                //shippingName2.setText(jsnObject.getString("real_name"));
-
-
                                 List<String> postalcodeList = ConnectionJSON.ChangeArrayJSON(str, "postal_code");
                                 postalCodes = postalcodeList.toArray(new String[postalcodeList.size()]);
                                 addressNumber1.setText(postalCodes[0]);
@@ -139,6 +137,9 @@ public class ViewInputShippingAddress extends Fragment {
                                 shippingName1.setText(realNames[0]);
                                 shippingName2.setText(realNames[1]);
 
+                                List<String> daddressList = ConnectionJSON.ChangeArrayJSON(str, "d_address_id");
+                                daddressID = daddressList.toArray(new String[daddressList.size()]);
+
                             } catch (Exception e) {         //修正するかも　元はcatch (JSONException e) {e.printStackTrace();}
                                 e.printStackTrace();
                             }
@@ -150,7 +151,14 @@ public class ViewInputShippingAddress extends Fragment {
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try {
+            t.start();
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         
@@ -187,10 +195,16 @@ public class ViewInputShippingAddress extends Fragment {
         NextButtonShipping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Bundle nextbundle = new Bundle();
+                nextbundle.putString("CARD_ID", cardID);
+                nextbundle.putString("USER_ID", userID);
+                nextbundle.putString("PRODUCT_ID", productID);
+
                 if (Choice1Button.isChecked() == true) {
 
                     //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
-
+                    nextbundle.putString("SHIPPING_ID", daddressID[0]);
 
                     Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
 
@@ -199,7 +213,7 @@ public class ViewInputShippingAddress extends Fragment {
                 if (Choice2Button.isChecked() == true) {
 
                     //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
-
+                    nextbundle.putString("SHIPPING_ID", daddressID[1]);
 
                     Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
 

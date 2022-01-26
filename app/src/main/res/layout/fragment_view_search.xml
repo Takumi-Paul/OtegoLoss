@@ -178,7 +178,7 @@
                 android:layout_height="80dp" />
 
             <Button
-                android:id="@+id/search_button"
+                android:id="@+id/buyCompletedButton"
                 android:layout_width="167dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
