@@ -54,6 +54,8 @@ public class ViewSearch extends Fragment {
                 String productNames = productName.getText().toString();
                 String sellerNames = sellerName.getText().toString();
 
+
+
                 if (productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                    /*
@@ -101,6 +103,9 @@ public class ViewSearch extends Fragment {
                 } else {
                     Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
+
+
+
 
                 //商品名と出品者名を取得
                 //String productNames = productName.getText().toString();

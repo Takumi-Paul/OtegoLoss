@@ -29,6 +29,7 @@ public class ViewPurchaseInformation1 extends Fragment {
         //「次へ」ボタンが押された時の処理
         Button ConfirmBuyButton = view.findViewById(R.id.search_button);
 
+
         ConfirmBuyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

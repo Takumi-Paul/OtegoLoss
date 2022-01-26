@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -29,6 +30,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
@@ -41,9 +43,12 @@ public class ViewInputPayment extends Fragment {
     TextView creditNumber2;
     TextView creditNominee2;
 
+    private String[] creditCompanies;
+    private String[] creditNumbers;
+    private String[] creditNominee;
+
     long startTime;
     long endTime;
-
 
 
     @Override
@@ -68,6 +73,7 @@ public class ViewInputPayment extends Fragment {
         creditCompany2 = view.findViewById(R.id.credit_company2);
         creditNumber2 = view.findViewById(R.id.credit_number2);
         creditNominee2 = view.findViewById(R.id.credit_nominee2);
+
 
         // http通信
         new Thread(new Runnable() {
@@ -107,15 +113,30 @@ public class ViewInputPayment extends Fragment {
                             try {
 
                                 // Jsonのキーを指定すれば対応する値が入る
-                                creditCompany1.setText(jsnObject.getString("card_id"));
-                                creditNumber1.setText(jsnObject.getString("card_comp"));
-                                creditNominee1.setText(jsnObject.getString("nominee"));
+                                //creditCompany1.setText(jsnObject.getString("card_id"));
+                                //creditNumber1.setText(jsnObject.getString("card_comp"));
+                                //creditNominee1.setText(jsnObject.getString("nominee"));
 
                                 //creditCompany2.setText(jsnObject.getString("price"));
                                 //creditNumber2.setText(jsnObject.getString("prefecture"));
                                 //creditNominee2.setText(jsnObject.getString("Listing_date"));
 
-                            } catch (JSONException e) {
+                                List<String> creditcompanyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
+                                creditCompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
+                                creditCompany1.setText(creditCompanies[0]);
+                                creditCompany2.setText(creditCompanies[1]);
+
+                                List<String> creditnumberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
+                                creditNumbers = creditnumberList.toArray(new String[creditnumberList.size()]);
+                                creditNumber1.setText(creditNumbers[0]);
+                                creditNumber2.setText(creditNumbers[1]);
+
+                                List<String> nomineeList = ConnectionJSON.ChangeArrayJSON(str, "nominee");
+                                creditNominee = nomineeList.toArray(new String[nomineeList.size()]);
+                                creditNominee1.setText(creditNominee[0]);
+                                creditNominee2.setText(creditNominee[1]);
+
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
@@ -153,13 +174,35 @@ public class ViewInputPayment extends Fragment {
             }
         });
 
+
+        //「ラジオボタン」が押された時の処理
+        RadioButton paymentRadioButton1 = (RadioButton)view.findViewById(R.id.payment_radiobutton1);
+        RadioButton paymentRadioButton2 = (RadioButton)view.findViewById(R.id.payment_radiobutton2);
+
         //「次へ」ボタンが押された時の処理
         Button NextButtonPayment = view.findViewById(R.id.review_finish_button);
 
         NextButtonPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
+                if (paymentRadioButton1.isChecked() == true) {
+
+                    //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
+
+
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
+
+                }
+
+                if (paymentRadioButton2.isChecked() == true) {
+
+                    //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
+
+
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress);
+
+                }
+
             }
         });
 

@@ -13,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -33,6 +35,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
@@ -44,6 +47,10 @@ public class ViewInputShippingAddress extends Fragment {
     TextView addressNumber2;
     TextView shippingAddress2;
     TextView shippingName2;
+
+    private String[] postalCodes;
+    private String[] addresses;
+    private String[] realNames;
 
     long startTime;
     long endTime;
@@ -108,15 +115,31 @@ public class ViewInputShippingAddress extends Fragment {
                             try {
 
                                 // Jsonのキーを指定すれば対応する値が入る
-                                addressNumber1.setText(jsnObject.getString("postal_code"));
-                                shippingAddress1.setText(jsnObject.getString("address"));
-                                shippingName1.setText(jsnObject.getString("real_name"));
+                                //addressNumber1.setText(jsnObject.getString("postal_code"));
+                                //shippingAddress1.setText(jsnObject.getString("address"));
+                                //shippingName1.setText(jsnObject.getString("real_name"));
 
-                                //addressNumber2.setText(jsnObject.getString("price"));
-                                //shippingAddress2.setText(jsnObject.getString("prefecture"));
-                                //shippingName2.setText(jsnObject.getString("Listing_date"));
+                                //addressNumber2.setText(jsnObject.getString("postal_code"));
+                                //shippingAddress2.setText(jsnObject.getString("address"));
+                                //shippingName2.setText(jsnObject.getString("real_name"));
 
-                            } catch (JSONException e) {
+
+                                List<String> postalcodeList = ConnectionJSON.ChangeArrayJSON(str, "postal_code");
+                                postalCodes = postalcodeList.toArray(new String[postalcodeList.size()]);
+                                addressNumber1.setText(postalCodes[0]);
+                                addressNumber2.setText(postalCodes[1]);
+
+                                List<String> addressesList = ConnectionJSON.ChangeArrayJSON(str, "address");
+                                addresses = addressesList.toArray(new String[addressesList.size()]);
+                                shippingAddress1.setText(addresses[0]);
+                                shippingAddress2.setText(addresses[1]);
+
+                                List<String> realnameList = ConnectionJSON.ChangeArrayJSON(str, "real_name");
+                                realNames = realnameList.toArray(new String[realnameList.size()]);
+                                shippingName1.setText(realNames[0]);
+                                shippingName2.setText(realNames[1]);
+
+                            } catch (Exception e) {         //修正するかも　元はcatch (JSONException e) {e.printStackTrace();}
                                 e.printStackTrace();
                             }
 
@@ -153,24 +176,35 @@ public class ViewInputShippingAddress extends Fragment {
 
 
 
+        //「ラジオボタン」が押された時の処理
+        RadioButton Choice1Button = (RadioButton)view.findViewById(R.id.choice1_radioButton);
+        RadioButton Choice2Button = (RadioButton)view.findViewById(R.id.choice2_radioButton);
+
+
         //「次へ」ボタンが押された時の処理
         Button NextButtonShipping = view.findViewById(R.id.next_button_shipping);
 
         NextButtonShipping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
+                if (Choice1Button.isChecked() == true) {
 
-                //FragmentManager fm_NextButtonShipping = getChildFragmentManager();
-                //FragmentTransaction t_NextButtonShipping  =  fm_NextButtonShipping.beginTransaction();
-                // 次のFragment
-                //Fragment secondFragment = new ViewPurchaseInformation1();
-                // fragmentManagerに次のfragmentを追加
-                //t_NextButtonShipping.add(R.id.fragmentViewInputShippingAddress, secondFragment);
-                // 画面遷移戻りを設定
-                //t_NextButtonShipping.addToBackStack(null);
-                // 画面遷移
-                //t_NextButtonShipping.commit();
+                    //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
+
+
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
+
+                }
+
+                if (Choice2Button.isChecked() == true) {
+
+                    //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
+
+
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1);
+
+                }
+
             }
         });
 
@@ -178,3 +212,7 @@ public class ViewInputShippingAddress extends Fragment {
     }
 
 }
+
+
+
+
