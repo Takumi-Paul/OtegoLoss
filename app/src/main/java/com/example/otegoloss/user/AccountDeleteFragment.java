@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
@@ -65,7 +66,7 @@ public class AccountDeleteFragment extends Fragment {
         }
         System.out.println(userID);
 
-        Button deleteButton = view.findViewById(R.id.deleteAccount_button);
+        Button deleteButton = view.findViewById(R.id.append_button);
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,8 +123,7 @@ public class AccountDeleteFragment extends Fragment {
                     t.start();
                     t.join();
 
-                    Intent intent = new Intent(getActivity(), StartActivity.class);
-                    startActivity(intent);
+                    Navigation.findNavController(view).navigate(R.id.action_accountdelete_to_delete_comp);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

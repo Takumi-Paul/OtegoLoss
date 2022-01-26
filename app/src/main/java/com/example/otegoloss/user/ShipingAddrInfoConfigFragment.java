@@ -65,7 +65,7 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
             public void run() {
                 try {
                     // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ListingDelivery.php";
 
                     // クエリ文字列を連想配列に入れる
                     Map<String, String> map = new HashMap<String, String>();
