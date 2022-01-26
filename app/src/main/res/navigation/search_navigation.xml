@@ -5,31 +5,31 @@
     android:id="@+id/search_navigation">
 
 
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.otegoloss.home.ViewSearch"
-        android:label="検索"
-        tools:layout="@layout/fragment_view_search">
-        <action
-            android:id="@+id/action_searchFragment_to_fragmentresult"
-            app:destination="@id/fragmentresult" />
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/searchFragment"-->
+<!--        android:name="com.example.otegoloss.home.ViewSearch"-->
+<!--        android:label="検索"-->
+<!--        tools:layout="@layout/fragment_view_search">-->
+<!--        <action-->
+<!--            android:id="@+id/action_searchFragment_to_fragmentresult"-->
+<!--            app:destination="@id/fragmentresult" />-->
+<!--    </fragment>-->
 
 
-    <fragment
-        android:id="@+id/fragmentresult"
-        android:name="com.example.otegoloss.home.ViewSearchResult"
-        android:label="検索結果"
-        tools:layout="@layout/fragment_search_result"/>
+<!--    <fragment-->
+<!--        android:id="@+id/fragmentresult"-->
+<!--        android:name="com.example.otegoloss.home.ViewSearchResult"-->
+<!--        android:label="検索結果"-->
+<!--        tools:layout="@layout/fragment_search_result"/>-->
 
-    <activity
-        android:id="@+id/container"
-        android:name="com.example.otegoloss.home.HomeFragment"
-        android:label="MainActivity"
-        tools:layout="@layout/activity_main">
-        <action
-            android:id="@+id/action_mainActivity_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </activity>
+<!--    <activity-->
+<!--        android:id="@+id/container"-->
+<!--        android:name="com.example.otegoloss.home.HomeFragment"-->
+<!--        android:label="MainActivity"-->
+<!--        tools:layout="@layout/activity_main">-->
+<!--        <action-->
+<!--            android:id="@+id/action_mainActivity_to_searchFragment"-->
+<!--            app:destination="@id/searchFragment" />-->
+<!--    </activity>-->
 
 </navigation>

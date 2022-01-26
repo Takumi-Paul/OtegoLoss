@@ -34,8 +34,6 @@ import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.StartActivity;
-import com.example.otegoloss.databinding.FragmentUserBinding;
-import com.example.otegoloss.shipping.EntryOfExhibitInfoFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;

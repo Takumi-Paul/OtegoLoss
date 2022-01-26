@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bank_blanch">
+        <item>〇〇支店</item>
+        <item>××支店</item>
+        <item>▽▽支店</item>
+    </string-array>
+</resources>

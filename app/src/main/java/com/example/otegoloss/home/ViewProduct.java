@@ -78,7 +78,7 @@ public class ViewProduct extends Fragment {
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-        if (userID != "error") {
+        if (userID == "error") {
             userID = "u0000001";
         }
         System.out.println(userID);

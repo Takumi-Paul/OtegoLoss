@@ -27,6 +27,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.otegoloss.databinding.ActivitySearchBinding;
+import com.example.otegoloss.home.HomeFragment;
 import com.example.otegoloss.home.ViewProduct;
 import com.example.otegoloss.home.ViewSearch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,8 +38,10 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+//    private ActivitySearchBinding searchBinding;
     Toolbar toolbar;
     AppBarConfiguration appBarConfiguration;
+    AppBarConfiguration searchBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+//        searchBinding = ActivitySearchBinding.inflate(getLayoutInflater());
+//        setContentView(searchBinding.getRoot());
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -61,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+//       searchBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.app_bar_search)
+//                .build();
+//        NavHostFragment searchFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_search);
+//        NavController searchController = searchFragment.getNavController();
+//        setupActionBarWithNavController(this, searchController, searchBarConfiguration);
+//        NavigationUI.setupWithNavController(binding.toolbar, searchController);
+
         LinearLayout view = findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(view);
     }
@@ -71,45 +86,25 @@ public class MainActivity extends AppCompatActivity {
         //メニューを生成
         getMenuInflater().inflate(R.menu.search_menu, menu);
 
-        //MenuItem menuItem = menu.findItem(R.id.app_bar_search);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                int id = item.getItemId();
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-                if (id == R.id.app_bar_search) {
+        int id = item.getItemId();
 
-//                    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-//                            .findFragmentById(R.id.nav_host_fragment_activity_search);
-//                    NavController navController = navHostFragment.getNavController();
-                    //navController.navigate(R.id.action_mainActivity_to_searchFragment);
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.app_bar_search) {
+//            NavHostFragment navHostFragment =
+//                    (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_search);
+//            NavController navController = navHostFragment.getNavController();
 
-                    //Navigation.findNavController().navigate(R.id.action_mainActivity_to_searchFragment);
-//
+            //Navigation.findNavController(decorView).navigate(R.id.action_mainActivity_to_searchFragment);
+            return true;
+        }
 
-
-                    //NavHostFragment.findNavController(new searchFragment());
-
-//                    FragmentManager fm_item = getSupportFragmentManager();
-//                    FragmentTransaction t_item = fm_item.beginTransaction();
-//
-//                    // 次のFragment
-//                    Fragment secondFragment = new ViewSearch();
-//                    // bundleを次のfragmentに設定
-//                    // fragmentManagerに次のfragmentを追加
-//                    t_item.replace(R.id.container, secondFragment);
-//                    // 画面遷移戻りを設定
-//                    t_item.addToBackStack(null);
-//                    // 画面遷移
-//                    t_item.commit();
-//                    return true;
-                }
-                return true;
-            }
-        });
-
-        return super.onCreateOptionsMenu(menu);
+        return super.onOptionsItemSelected(item);
     }
 
     // Fragmentを表示させるメソッドを定義（表示したいFragmentを引数として渡す）

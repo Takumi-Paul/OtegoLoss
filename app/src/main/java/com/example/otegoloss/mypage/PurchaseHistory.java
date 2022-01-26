@@ -61,7 +61,7 @@ public class PurchaseHistory extends Fragment {
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
 
-        if (userID != "error") {
+        if (userID == "error") {
             userID = "u0000001";
         }
         System.out.println(userID);
@@ -160,7 +160,7 @@ public class PurchaseHistory extends Fragment {
                 producerID
         );
         // gridViewにadapterをセット
-        //gridview.setAdapter(adapter);
+        gridview.setAdapter(adapter);
 
         // item clickのListenerをセット
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
