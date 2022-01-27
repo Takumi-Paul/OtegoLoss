@@ -78,9 +78,13 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
         if (mailAddressString.equals("") || userNameString.equals("") || passwordString.equals("") ||
                 rePasswordString .equals("")) {
             Toast.makeText(this, "入力が足りません", Toast.LENGTH_LONG).show();
+        } else if (mailAddressString.length() < 15) {
+            Toast.makeText(this, "メールアドレスは15文字以上にしてください", Toast.LENGTH_LONG).show();
+        } else if (userNameString.length() < 2 || userNameString.length() > 10) {
+            Toast.makeText(this, "ユーザ名は2文字以上、10文字以下にしてください", Toast.LENGTH_LONG).show();
         } else if (!passwordString.equals(rePasswordString)) {
             Toast.makeText(this, "パスワードが間違っています", Toast.LENGTH_LONG).show();
-        } else if (passwordString.length() < 8) {
+        } else if (passwordString.length() < 8 || passwordString.length() > 16) {
             Toast.makeText(this, "パスワードは8文字以上にしてください", Toast.LENGTH_LONG).show();
         } else {
 

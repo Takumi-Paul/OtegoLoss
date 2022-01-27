@@ -1,5 +1,7 @@
 package com.example.otegoloss.user;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -45,14 +47,24 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
     long startTime;
     long endTime;
 
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
+    String userID;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_shipping_address_info_config, container, false);
 
-        // ユーザID(仮定義)
-        String userID = "u0000001";
+        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
+
+        if (userID == "error") {
+            userID = "u0000003";
+        }
+        System.out.println(userID);
 
         shipping_info_realname = view.findViewById(R.id.textView_shipping_info_realname) ;
         postalcode_first = view.findViewById(R.id.textView_postalcode_first) ;
