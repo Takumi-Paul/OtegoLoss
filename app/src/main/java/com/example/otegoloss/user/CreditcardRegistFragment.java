@@ -146,7 +146,7 @@ public class CreditcardRegistFragment extends Fragment {
                                 map.put("card_number", cardNumberEditTexts);
                                 map.put("security_number", cardCodeEditTexts);
                                 map.put("card_comp", CompName);
-                                map.put("nominee", cardNumberEditTexts);
+                                map.put("nominee", cardNameEditTexts);
                                 map.put("validated_date", Month + Year);
 
                                 // クエリ文字列組み立て・URL との連結
