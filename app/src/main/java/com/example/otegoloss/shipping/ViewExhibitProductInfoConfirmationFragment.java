@@ -33,11 +33,13 @@ import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 
 public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
@@ -90,13 +92,14 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
         ImageView product_img = view.findViewById(R.id.product_imageView_confirmation);
         String imageString = getArguments().getString("PRODUCT_IMAGE");
         Bitmap bitmap = decodeBase64(imageString);
+
         product_img.setImageBitmap(bitmap);
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-        if (userID != "error") {
+        if (userID == "error") {
             userID = "u0000003";
         }
         System.out.println(userID);
@@ -120,11 +123,11 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                             // POSTで送るStringデータ
                             String postData = "product_name=" + productName +
                                     "&product_desc=" + productDesk +
-                                    "&product_image=" + bitmap +
+                                    "&product_image=" + "" +
                                     "&recipe_url=" +  recipeURL+
                                     "&category=" + "野菜" +
                                     "&price=" + price +
-                                    "&delivery_meth=" + delivery +
+                                     "&delivery_meth=" + delivery +
                                     "&weight=" + productWeight +
                                     "&prefecture=" + area +
                                     "&seller_id=" + userID;
@@ -156,7 +159,15 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                             if (responseCode == HttpURLConnection.HTTP_OK) {
                                 // レスポンスコードが200ならStringに変換
                                 str = ConnectionJSON.InputStreamToString(con.getInputStream());
+                                System.out.println(String.valueOf(str));
                             }
+
+
+                            URL imgUrl = new URL("http://localhost:8888/APItest/img_Post.php");
+
+                            uploadImage upimg = new uploadImage();
+                            upimg.upload(bitmap, imgUrl, str);
+
 
                             // 終了時刻
                             endTime = System.currentTimeMillis();
@@ -165,7 +176,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    System.out.println(String.valueOf(str));
+
                                     System.out.println(endTime - startTime);
 
                                 }
@@ -210,5 +221,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
         byte[] decodedByte = Base64.decode(input, 0);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
+
+
 
 }

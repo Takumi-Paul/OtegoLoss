@@ -4,17 +4,21 @@ package com.example.otegoloss.shipping;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.ActivityResultRegistry;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.ParcelFileDescriptor;
 import android.text.Editable;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -31,7 +35,11 @@ import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.IOException;
 import java.net.URI;
+import java.nio.file.Files;
 
 
 public class EntryOfExhibitInfoFragment extends Fragment {
@@ -49,11 +57,15 @@ public class EntryOfExhibitInfoFragment extends Fragment {
     private String Product_area;
     private String Delivery_method;
 
+    // 画像のURI
+    Uri imgUri;
+
     // 画像ファイルを開く
     private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
         @Override
         public void onActivityResult(Uri result) {
             input_image.setImageURI(result);
+            imgUri = result;
         }
     });
 
@@ -114,6 +126,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
         Button buttonNext= view.findViewById(R.id.next_button_entry_exhibit_product);
         // 入力完了ボタンをクリックした時の処理
         buttonNext.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 //入力情報を格納する
@@ -152,6 +165,14 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                     // 画像ファイル取得
                     Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
                     String strBase64 = encodeImage(bitmap);
+
+//                    try {
+//                        Bitmap bmp = getBitmapFromUri(imgUri);
+//                        imageView.setImageBitmap(bmp);
+//                        new PostBmpAsyncHttpRequest(self).execute(new Param("http://xxxx.xxxx/index.php", bmp));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
 
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル

@@ -101,6 +101,7 @@ public class HomeFragment extends Fragment {
                             productID = produceIDList.toArray(new String[produceIDList.size()]);
                             List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "seller_id");
                             producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
+                            List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
 
                             System.out.println("array");
                             //progressDialog.dismiss();

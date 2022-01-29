@@ -20,11 +20,14 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.otegoloss.databinding.ActivityMainBinding;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.otegoloss.databinding.ActivitySearchBinding;
@@ -53,7 +56,13 @@ public class MainActivity extends AppCompatActivity {
 //        searchBinding = ActivitySearchBinding.inflate(getLayoutInflater());
 //        setContentView(searchBinding.getRoot());
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+
+        ViewGroup root = (ViewGroup) findViewById(R.id.activity_main_container).getParent();
+// false=rootをmy_toolbarのルートにしない.
+        Toolbar toolbar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.my_toolbar, root, false);
+        root.addView(toolbar, 0);
         setSupportActionBar(toolbar);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -96,11 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.app_bar_search) {
-//            NavHostFragment navHostFragment =
-//                    (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_search);
-//            NavController navController = navHostFragment.getNavController();
-
-            //Navigation.findNavController(decorView).navigate(R.id.action_mainActivity_to_searchFragment);
+            Intent intent = new Intent(MainActivity.this, ViewSearch.class);
+            startActivity(intent);
             return true;
         }
 

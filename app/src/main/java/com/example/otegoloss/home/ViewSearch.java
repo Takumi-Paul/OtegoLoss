@@ -6,6 +6,7 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,31 +16,32 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.R;
 
-public class ViewSearch extends Fragment {
+public class ViewSearch extends AppCompatActivity {
 
     private EditText productName;
     private EditText sellerName;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_view_search, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_view_search);
 
-        LinearLayout background_view = view.findViewById(R.id.background);
+        LinearLayout background_view = findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(background_view);
 
-        productName = (EditText)view.findViewById(R.id.kensaku_shouhin_name);
-        sellerName = (EditText)view.findViewById(R.id.kensaku_shuppin_name);
+        productName = (EditText)findViewById(R.id.kensaku_shouhin_name);
+        sellerName = (EditText)findViewById(R.id.kensaku_shuppin_name);
 
 
         //検索ボタンが押された時の処理
-        Button SearchButton  = view.findViewById(R.id.buyCompletedButton);
+        Button SearchButton  = findViewById(R.id.buyCompletedButton);
 
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +77,15 @@ public class ViewSearch extends Fragment {
 
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
-                    Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_fragmentresult);
+                    //Navigation.findNavController().navigate(R.id.action_searchFragment_to_fragmentresult);
+
+                    if (savedInstanceState == null) {
+                        Fragment fragment = new ViewSearchResult();
+                        Bundle bundle = new Bundle();
+                        fragment.setArguments(bundle);
+                    }
+//                    Intent intent = new Intent(ViewSearch.this, ViewSearchResult.class);
+//                    startActivity(intent);
 
 
 //                    Fragment fr = new ViewSearchResult();
@@ -96,7 +106,7 @@ public class ViewSearch extends Fragment {
 //                    t_item.commit();
 
                 } else {
-                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -108,8 +118,6 @@ public class ViewSearch extends Fragment {
 
             }
         });
-
-        return view;
     }
 
 }

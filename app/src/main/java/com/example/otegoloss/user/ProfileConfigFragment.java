@@ -2,9 +2,15 @@ package com.example.otegoloss.user;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -15,6 +21,7 @@ import androidx.navigation.Navigation;
 import android.text.InputFilter;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +29,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +42,7 @@ import com.example.otegoloss.databinding.FragmentUserBinding;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -63,6 +73,18 @@ public class ProfileConfigFragment extends Fragment {
 
     String str;
 
+    // 画像の取り込み
+    private ImageView input_image;
+    private ImageButton input_button;
+
+    // 画像ファイルを開く
+    private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        @Override
+        public void onActivityResult(Uri result) {
+            input_image.setImageURI(result);
+        }
+    });
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,6 +105,11 @@ public class ProfileConfigFragment extends Fragment {
 
         // プロフィールメッセージの定義
         config_usermessage = (EditText)view.findViewById(R.id.profileMessage_editText) ;
+
+        // ユーザ画像
+        input_image = (ImageView) view.findViewById(R.id.account_imageView);
+        input_button = (ImageButton) view.findViewById(R.id.inputAccount_imageButton);
+
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -152,6 +179,15 @@ public class ProfileConfigFragment extends Fragment {
         }
 
 
+        // 画像ファイルを開く
+        input_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launcher.launch("image/*");
+            }
+        }));
+
+
         Button inputCompleteButton = view.findViewById(R.id.inputComplete_button);
         inputCompleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,6 +195,10 @@ public class ProfileConfigFragment extends Fragment {
                 String config_usernames = config_username.getText().toString();
 
                 String config_usermessages = config_usermessage.getText().toString();
+
+                // 画像ファイル取得
+                Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
+                byte[] byteArray = encodeImage(bitmap);
 
                 // http通信
                 Thread t = new Thread(new Runnable() {
@@ -175,7 +215,7 @@ public class ProfileConfigFragment extends Fragment {
                                     "&user_name=" + config_usernames +
                                     "&user_mail=" + mail +
                                     "&gross_weight=" + weight +
-                                    "&user_profile_image=" + "" +
+                                    "&user_profile_image=" + byteArray +
                                     "&user_profile_message=" + config_usermessages;
 
                             System.out.println(path);
@@ -241,6 +281,14 @@ public class ProfileConfigFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private byte[] encodeImage(Bitmap bm) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG,100,baos);
+        byte[] b = baos.toByteArray();
+        //String encImage = Base64.encodeToString(b, Base64.DEFAULT);
+        return b;
     }
 
 }
