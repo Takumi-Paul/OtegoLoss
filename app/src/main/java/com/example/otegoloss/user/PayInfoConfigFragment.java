@@ -31,14 +31,20 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.StringJoiner;
 
 public class PayInfoConfigFragment extends Fragment {
 
-    public TextView creditcard_company;
-    public TextView creditcard_number;
+    public TextView creditcard_company1;
+    public TextView creditcard_number1;
+    public TextView creditcard_company2;
+    public TextView creditcard_number2;
+
+    private String[] creditcard_companies;
+    private String[] creditcard_numbers;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -63,8 +69,10 @@ public class PayInfoConfigFragment extends Fragment {
         }
         System.out.println(userID);
 
-        creditcard_company = view.findViewById(R.id.texiview_creditcard_company) ;
-        creditcard_number = view.findViewById(R.id.textView_creditcard_number) ;
+        creditcard_company1 = view.findViewById(R.id.texiview_creditcard_company) ;
+        creditcard_number1 = view.findViewById(R.id.textView_creditcard_number) ;
+        creditcard_company2 = view.findViewById(R.id.texiview_creditcard_company2) ;
+        creditcard_number2 = view.findViewById(R.id.textView_creditcard_number2) ;
 
         Button addCreditButton = view.findViewById(R.id.addCredit_button);
         Button deleteCreditButton = view.findViewById(R.id.deleteCredit_button);
@@ -105,10 +113,16 @@ public class PayInfoConfigFragment extends Fragment {
 
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
-                                // Jsonのキーを指定すれば対応する値が入る
-                                creditcard_number.setText(jsnObject.getString("card_number"));
-                                creditcard_company.setText(jsnObject.getString("card_comp"));
-                            } catch (JSONException e) {
+                                List<String> credit_companyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
+                                creditcard_companies = credit_companyList.toArray(new String[credit_companyList.size()]);
+                                creditcard_company1.setText(creditcard_companies[0]);
+                                creditcard_company2.setText(creditcard_companies[1]);
+
+                                List<String> creditcard_numberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
+                                creditcard_numbers = creditcard_numberList.toArray(new String[creditcard_numberList.size()]);
+                                creditcard_number1.setText(creditcard_numbers[0]);
+                                creditcard_number2.setText(creditcard_numbers[1]);
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 

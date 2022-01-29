@@ -1,8 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pay_info_delete"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2E8CF">
 
+    <TextView
+        android:id="@+id/textView_creditcard_numberd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/texiview_creditcard_companyd2"
+        app:layout_constraintTop_toTopOf="@+id/view18" />
+
+    <View
+        android:id="@+id/view18"
+        android:layout_width="332dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#E4E4E4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="登録されている決済情報"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view14"
+        android:layout_width="332dp"
+        android:layout_height="50dp"
+        android:background="#E4E4E4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/texiview_creditcard_companyd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="NO DATA"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view18"
+        app:layout_constraintStart_toStartOf="@+id/view18"
+        app:layout_constraintTop_toTopOf="@+id/view18"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/texiview_creditcard_companyd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="NO DATA"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/view14"
+        app:layout_constraintTop_toTopOf="@+id/view14" />
+
+    <TextView
+        android:id="@+id/textView_creditcard_numberd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/texiview_creditcard_companyd1"
+        app:layout_constraintTop_toTopOf="@+id/view14" />
+
+    <Button
+        android:id="@+id/creditdelete_button1"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#BC4749"
+        android:text="削除"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view14"
+        app:layout_constraintEnd_toEndOf="@+id/view14" />
+
+    <Button
+        android:id="@+id/creditdelete_button2"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#BC4749"
+        android:text="削除"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view18"
+        app:layout_constraintEnd_toEndOf="@+id/view18" />
 </androidx.constraintlayout.widget.ConstraintLayout>
