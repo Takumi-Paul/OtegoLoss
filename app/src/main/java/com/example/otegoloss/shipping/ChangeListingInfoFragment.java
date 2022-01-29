@@ -1,20 +1,44 @@
 package com.example.otegoloss.shipping;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.ActivityResultRegistry;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.ParcelFileDescriptor;
 import android.text.Editable;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+
 
 public class ChangeListingInfoFragment extends Fragment {
     //入力情報保持用の宣言
@@ -26,9 +50,23 @@ public class ChangeListingInfoFragment extends Fragment {
     private String Product_area;
     private String Delivery_method;
 
-    // http通信の開始・終了時刻
-    long startTime;
-    long endTime;
+    // 画像の取り込み
+    private ImageView input_image;
+    private Button input_button;
+
+
+    // 画像のURI
+    Uri imgUri;
+
+    // 画像ファイルを開く
+    private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        @Override
+        public void onActivityResult(Uri result) {
+            input_image.setImageURI(result);
+            imgUri = result;
+        }
+    });
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,6 +79,8 @@ public class ChangeListingInfoFragment extends Fragment {
         weight = (EditText) view.findViewById(R.id.product_weight_change_listing_info);
         price = (EditText) view.findViewById(R.id.amount_change_listing_info);
         recipe_url = (EditText) view.findViewById(R.id.recipe_url_change_listing_info);
+        input_image = (ImageView) view.findViewById(R.id.input_image_change_listing_info);
+        input_button = (Button) view.findViewById(R.id.input_button_change_listing_info);
 
         //産地のSpinner処理
         Spinner product_area_spinner = (Spinner)view.findViewById(R.id.product_area_change_listing_info);
@@ -70,6 +110,14 @@ public class ChangeListingInfoFragment extends Fragment {
 
             }
         });
+
+        // 画像ファイルを開く
+        input_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launcher.launch("image/*");
+            }
+        }));
 
         // 入力完了ボタンを取得
         Button buttonNext= view.findViewById(R.id.next_button_entry_change_product);
@@ -110,6 +158,18 @@ public class ChangeListingInfoFragment extends Fragment {
                     && (int_price >= 10 && int_price <= 99999)
                     */
                 ) {
+                    // 画像ファイル取得
+                    Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
+                    String strBase64 = encodeImage(bitmap);
+
+//                    try {
+//                        Bitmap bmp = getBitmapFromUri(imgUri);
+//                        imageView.setImageBitmap(bmp);
+//                        new PostBmpAsyncHttpRequest(self).execute(new Param("http://xxxx.xxxx/index.php", bmp));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル
                     Bundle bundle = new Bundle();
@@ -133,6 +193,14 @@ public class ChangeListingInfoFragment extends Fragment {
             }
         });
     return view;
+    }
+
+    private String encodeImage(Bitmap bm) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG,100,baos);
+        byte[] b = baos.toByteArray();
+        String encImage = Base64.encodeToString(b, Base64.DEFAULT);
+        return encImage;
     }
 
 }
