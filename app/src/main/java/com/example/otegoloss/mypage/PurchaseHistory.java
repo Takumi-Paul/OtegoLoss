@@ -2,6 +2,7 @@ package com.example.otegoloss.mypage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +52,7 @@ public class PurchaseHistory extends Fragment {
     private SharedPreferences userIDData;
     String userID;
 
-    private List<Integer> imgList = new ArrayList<>();
+    private List<Bitmap> imgList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -142,10 +144,10 @@ public class PurchaseHistory extends Fragment {
 
         //商品一覧画面
         // for-each member名をR.drawable.名前としてintに変換してarrayに登録
-        for (String productName: productNames){
-            int imageId = getResources().getIdentifier("tomato", "drawable", getActivity().getPackageName());
-            imgList.add(imageId);
-        }
+//        for (String productName: productNames){
+//            int imageId = getResources().getIdentifier("tomato", "drawable", getActivity().getPackageName());
+//            imgList.add(imageId);
+//        }
 
         // GridViewのインスタンスを生成
         GridView gridview = view.findViewById(R.id.purchaseHistory_grid);
@@ -170,7 +172,7 @@ public class PurchaseHistory extends Fragment {
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
                 // 画像ID
-                bundle.putInt("IMAGEID", imgList.get(position));
+                //bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putString("PRODUCT_ID", productID[position]);
                 // Navigation遷移

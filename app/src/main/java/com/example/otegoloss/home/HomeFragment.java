@@ -8,6 +8,7 @@ package com.example.otegoloss.home;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,9 +33,13 @@ import com.example.otegoloss.R;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.StringJoiner;
 import java.util.stream.Stream;
 
 public class HomeFragment extends Fragment {
@@ -53,8 +58,12 @@ public class HomeFragment extends Fragment {
     private String[] productID;
     //生産者ID
     private String[] producerID;
+    // 画像URL
+    private String[] imgURL;
+    // 画像のBitMap
+    private Bitmap[] bmps = new Bitmap[7];
 
-    private List<Integer> imgList = new ArrayList<>();
+    private List<Bitmap> imgList = new ArrayList<>();
 
 
     @Override
@@ -63,7 +72,7 @@ public class HomeFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        this.progressDialog   = NewAccountActivity.progressDialog;
+        this.progressDialog = NewAccountActivity.progressDialog;
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -84,35 +93,53 @@ public class HomeFragment extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println(String.valueOf(str));
-                            System.out.println(endTime - startTime);
+                    // Jsonのキーを指定すれば対応する値が入る
+                    //配列の取得
+                    List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
+                    productNames = productNameList.toArray(new String[productNameList.size()]);
+                    List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
+                    String[] priceString = priceList.toArray(new String[priceList.size()]);
+                    prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
+                    List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
+                    productID = produceIDList.toArray(new String[produceIDList.size()]);
+                    List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "seller_id");
+                    producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
+                    List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
+                    imgURL = imgStrList.toArray(new String[imgStrList.size()]);
 
-                            // Jsonのキーを指定すれば対応する値が入る
-                            //配列の取得
-                            List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
-                            productNames = productNameList.toArray(new String[productNameList.size()]);
-                            List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
-                            String[] priceString = priceList.toArray(new String[priceList.size()]);
-                            prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
-                            List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
-                            productID = produceIDList.toArray(new String[produceIDList.size()]);
-                            List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "seller_id");
-                            producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
-                            List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
-
-                            System.out.println("array");
-                            //progressDialog.dismiss();
-                            settingUI(view);
-                        }
-                    });
 
                 } catch (IOException e) {
                     e.printStackTrace();
                     System.out.println(e);
                 }
+            }
+        });
+
+        Thread t_img = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (int i = 1; i < imgURL.length+1; i++) {
+                    // phpファイルまでのリンク
+                    //URL img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/" + imgURL[i]);
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/g000000"+i+".jpg");
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    imgList.add(ConnectionJSON.downloadImage(img_url));
+                    System.out.println("connect");
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //progressDialog.dismiss();
+                        settingUI(view);
+                    }
+                });
             }
         });
 
@@ -122,6 +149,8 @@ public class HomeFragment extends Fragment {
             System.out.println("start");
             t.join();
             System.out.println("join");
+            t_img.start();
+            t_img.join();
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
@@ -142,14 +171,6 @@ public class HomeFragment extends Fragment {
 
             System.out.println("product");
             //商品一覧画面
-            // for-each member名をR.drawable.名前としてintに変換してarrayに登録
-            for (String productName : productNames) {
-                //imgList.add(tomato);
-                int imageId = getResources().getIdentifier("tomato", "drawable", getActivity().getPackageName());
-                imgList.add(imageId);
-            }
-
-            System.out.println(productNames[0]);
             // GridViewのインスタンスを生成
             GridView gridview = view.findViewById(R.id.product_gridView);
             // BaseAdapter を継承したGridAdapterのインスタンスを生成
@@ -172,8 +193,6 @@ public class HomeFragment extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     // bundleに受け渡したい値を保存
                     Bundle bundle = new Bundle();
-                    // 画像ID
-                    bundle.putInt("IMAGEID", imgList.get(position));
                     // 商品ID
                     bundle.putString("PRODUCT_ID", productID[position]);
                     // Navigation遷移

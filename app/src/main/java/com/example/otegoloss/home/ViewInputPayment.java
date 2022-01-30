@@ -119,20 +119,22 @@ public class ViewInputPayment extends Fragment {
                                 List<String> creditcompanyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
                                 creditCompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
                                 creditCompany1.setText(creditCompanies[0]);
-                                creditCompany2.setText(creditCompanies[1]);
+                                //creditCompany2.setText(creditCompanies[1]);
 
                                 List<String> creditnumberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
                                 creditNumbers = creditnumberList.toArray(new String[creditnumberList.size()]);
+                                System.out.println(creditNumbers[0]);
                                 creditNumber1.setText(creditNumbers[0]);
-                                creditNumber2.setText(creditNumbers[1]);
+                                //creditNumber2.setText(creditNumbers[1]);
 
                                 List<String> nomineeList = ConnectionJSON.ChangeArrayJSON(str, "nominee");
                                 creditNominee = nomineeList.toArray(new String[nomineeList.size()]);
                                 creditNominee1.setText(creditNominee[0]);
-                                creditNominee2.setText(creditNominee[1]);
+                                //creditNominee2.setText(creditNominee[1]);
 
                                 List<String> creditidList = ConnectionJSON.ChangeArrayJSON(str, "card_id");
                                 creditCardid = creditidList.toArray(new String[creditidList.size()]);
+                                System.out.println(creditCardid[0]);
 
 
                             } catch (Exception e) {
@@ -197,6 +199,8 @@ public class ViewInputPayment extends Fragment {
                 nextbundle.putString("PRODUCT_ID", productID);
 
                 if (paymentRadioButton1.isChecked() == true) {
+
+                    System.out.println(creditCardid[0]);
 
                     //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
                     nextbundle.putString("CARD_ID", creditCardid[0]);
