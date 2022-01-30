@@ -125,8 +125,9 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
                     List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
                     productID = produceIDList.toArray(new String[produceIDList.size()]);
                     List<String> listingDateList = ConnectionJSON.ChangeArrayJSON(str, "listing_date");
-                    listingDate = listingDateList.toArray(new String[listingDateList.size()]);
+                    listingDate= listingDateList.toArray(new String[produceIDList.size()]);
                     List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
+                    imgURL = imgStrList.toArray(new String[imgStrList.size()]);
 
                 } catch (IOException e) {
                     e.printStackTrace();
