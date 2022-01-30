@@ -4,6 +4,7 @@ package com.example.otegoloss.shipping;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -32,6 +33,7 @@ import com.example.otegoloss.home.ViewProduct;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,14 +59,18 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
     private String[] productID;
     //出品日
     private String[]  listingDate;
-
+    // 画像URL
+    private String[] imgURL;
+    // 画像のBitMap
+    private Bitmap[] bmps = new Bitmap[7];
+    private List<Bitmap> imgList = new ArrayList<>();
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
     // ユーザID
     String userID;
 
-    private List<Integer> imgList = new ArrayList<>();
-    //画面表示
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
@@ -73,6 +79,9 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
+        if (userID == "error") {
+            userID = "u0000001";
+        }
         System.out.println(userID);
 
         // http通信
@@ -103,36 +112,54 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
                     // 終了時刻
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
+                    System.out.println(String.valueOf(str));
+                    System.out.println(endTime - startTime);
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println(String.valueOf(str));
-                            System.out.println(endTime - startTime);
-
-                            // Jsonのキーを指定すれば対応する値が入る
-                            //配列の取得
-                            List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
-                            productNames = productNameList.toArray(new String[productNameList.size()]);
-                            List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
-                            String[] priceString = priceList.toArray(new String[priceList.size()]);
-                            prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
-                            List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
-                            productID = produceIDList.toArray(new String[produceIDList.size()]);
-                            List<String> listingDateList = ConnectionJSON.ChangeArrayJSON(str, "listing_date");
-                            listingDate = listingDateList.toArray(new String[listingDateList.size()]);
-                            List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
-
-                            System.out.println("array");
-                            //progressDialog.dismiss();
-                            settingUI(view);
-                        }
-                    });
+                    // Jsonのキーを指定すれば対応する値が入る
+                    //配列の取得
+                    List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
+                    productNames = productNameList.toArray(new String[productNameList.size()]);
+                    List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
+                    String[] priceString = priceList.toArray(new String[priceList.size()]);
+                    prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
+                    List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
+                    productID = produceIDList.toArray(new String[produceIDList.size()]);
+                    List<String> listingDateList = ConnectionJSON.ChangeArrayJSON(str, "listing_date");
+                    listingDate = listingDateList.toArray(new String[listingDateList.size()]);
+                    List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
 
                 } catch (IOException e) {
                     e.printStackTrace();
                     System.out.println(e);
                 }
+            }
+        });
+
+        Thread t_img = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (int i = 1; i < imgURL.length+1; i++) {
+                    // phpファイルまでのリンク
+                    //URL img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/" + imgURL[i]);
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/g000000"+i+".jpg");
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    imgList.add(ConnectionJSON.downloadImage(img_url));
+                    System.out.println("connect");
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //progressDialog.dismiss();
+                        settingUI(view);
+                    }
+                });
             }
         });
 
@@ -142,56 +169,55 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
             System.out.println("start");
             t.join();
             System.out.println("join");
+            t_img.start();
+            t_img.join();
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
         }
-        return view;
-    }
+            return view;
+        }
 
-    public void settingUI(View view){
-        // GridViewのインスタンスを生成
-        GridView gridview = view.findViewById(R.id.grid_view_yet_sold_out_history);
-        // BaseAdapter を継承したGridAdapterのインスタンスを生成
-        // 子要素のレイアウトファイル grid_items.xml を
-        // fragment_view_yet_sold_out_history.xml に inflate するためにGridAdapterに引数として渡す
-        GridAdapterOfYetSoldOut adapter = new GridAdapterOfYetSoldOut(getActivity().getApplicationContext(),
-                R.layout.grid_items_of_yet_history,
-                imgList,
-                productNames,
-                prices,
-                listingDate
-        );
-        // gridViewにadapterをセット
-        gridview.setAdapter(adapter);
-        // item clickのListenerをセット
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        public void settingUI(View view){
+            // GridViewのインスタンスを生成
+            GridView gridview = view.findViewById(R.id.grid_view_yet_sold_out_history);
+            // BaseAdapter を継承したGridAdapterのインスタンスを生成
+            // 子要素のレイアウトファイル grid_items.xml を
+            // fragment_view_yet_sold_out_history.xml に inflate するためにGridAdapterに引数として渡す
+            GridAdapterOfYetSoldOut adapter = new GridAdapterOfYetSoldOut(getActivity().getApplicationContext(),
+                    R.layout.grid_items_of_yet_history,
+                    imgList,
+                    productNames,
+                    prices,
+                    listingDate
+            );
+            // gridViewにadapterをセット
+            gridview.setAdapter(adapter);
+            // item clickのListenerをセット
+            gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                // bundleに受け渡したい値を保存
-                Bundle bundle = new Bundle();
-                // 画像ID
-                bundle.putInt("IMAGEID", imgList.get(position));
-                // 商品ID
-                bundle.putString("PRODUCT_ID", productID[position]);
-                //商品名
-                bundle.putString("PRODUCT_NAME",productNames[position]);
+                    // bundleに受け渡したい値を保存
+                    Bundle bundle = new Bundle();
+                    // 商品ID
+                    bundle.putString("PRODUCT_ID", productID[position]);
 
-                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product, bundle);
-            }
-        });
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product, bundle);
+                }
+            });
 
-        // ボタン要素を取得
-        Button buttonSoldOutHistory = view.findViewById(R.id.button_soldout_sold_out_history);
-        // 完売済みボタンをクリックした時の処理
-        buttonSoldOutHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // fragmentShippingに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_shipping);
-            }
-        });
-
+            // ボタン要素を取得
+            Button buttonSoldOutHistory = view.findViewById(R.id.button_soldout_sold_out_history);
+            // 完売済みボタンをクリックした時の処理
+            buttonSoldOutHistory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // fragmentShippingに遷移させる
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_shipping);
+                }
+            });
     }
 }
+
+
