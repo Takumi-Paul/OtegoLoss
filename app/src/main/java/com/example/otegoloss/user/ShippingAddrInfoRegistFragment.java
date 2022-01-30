@@ -101,7 +101,7 @@ public class ShippingAddrInfoRegistFragment extends Fragment {
 
                 if (fullnames.equals("") || phone_numbers.equals("") || postal_codes.equals("") || area_citys.equals("") || area_numbers.equals("")){
                     Toast.makeText(view.getContext(), "入力欄に不備があります", Toast.LENGTH_LONG).show();
-                } else if (fullnames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠]*$") && phone_numbers.matches("^[0-9]*$")&& postal_codes.matches("^[0-9]*$")) {
+                } else if (fullnames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠a-zA-Z]*$") && phone_numbers.matches("^[0-9]*$")&& postal_codes.matches("^[0-9]*$")) {
 
                     // http通信
                     Thread t = new Thread(new Runnable() {

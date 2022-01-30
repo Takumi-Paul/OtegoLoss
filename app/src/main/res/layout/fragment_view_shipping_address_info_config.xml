@@ -34,10 +34,9 @@
         android:id="@+id/textView_user_addr2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view17"
-        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view17"
         app:layout_constraintTop_toBottomOf="@+id/textView_postalcode_first2" />
 
@@ -56,10 +55,9 @@
         android:id="@+id/textView_postalcode_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="@+id/view12"
         app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname" />
 
@@ -67,10 +65,9 @@
         android:id="@+id/textView_shipping_info_realname2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="NO DATA"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view12"
         app:layout_constraintTop_toTopOf="@+id/view17" />
 
@@ -78,10 +75,9 @@
         android:id="@+id/textView_postalcode_first2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view17"
-        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="@+id/view17"
         app:layout_constraintTop_toBottomOf="@+id/textView_shipping_info_realname2" />
 
@@ -115,10 +111,9 @@
         android:id="@+id/textView_user_addr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view12"
         app:layout_constraintTop_toBottomOf="@+id/textView_postalcode_first" />
 
@@ -126,10 +121,9 @@
         android:id="@+id/textView_shipping_info_realname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="NO DATA"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view12"
         app:layout_constraintTop_toTopOf="@+id/view12" />
 

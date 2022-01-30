@@ -228,7 +228,11 @@
     <fragment
         android:id="@+id/pay_info_delete"
         android:name="com.example.otegoloss.user.PayInfoDeleteFragment"
-        android:label="@string/pay_info_delete" />
+        android:label="@string/pay_info_delete" >
+        <action
+            android:id="@+id/action_pay_info_delete_to_payinfoconfig"
+            app:destination="@id/payinfoconfig" />
+    </fragment>
     <fragment
         android:id="@+id/shipping_addr_info_regist_config"
         android:name="com.example.otegoloss.user.ShippingAddrInfoRegistFragment"
@@ -240,7 +244,11 @@
     <fragment
         android:id="@+id/shipping_addr_info_delete"
         android:name="com.example.otegoloss.user.ShippingAddrInfoDeleteFragment"
-        android:label="@string/shipping_addr_info_delete" />
+        android:label="@string/shipping_addr_info_delete" >
+        <action
+            android:id="@+id/action_shipping_addr_info_delete_to_shipping_addr_info_config"
+            app:destination="@id/shipping_addr_info_config" />
+    </fragment>
     <fragment
         android:id="@+id/producer_agreement"
         android:name="com.example.otegoloss.user.ProducerAgreementFragment"

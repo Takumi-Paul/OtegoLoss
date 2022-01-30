@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
@@ -32,6 +33,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -39,9 +41,15 @@ import java.util.StringJoiner;
 public class ShipingAddrInfoConfigFragment extends Fragment {
 
     public TextView shipping_info_realname;
-    public TextView postalcode_first;
-    public TextView postalcode_Last;
+    public TextView postalcode;
     public TextView user_addr;
+    public TextView shipping_info_realname2;
+    public TextView postalcode2;
+    public TextView user_addr2;
+
+    private String[] postalcodes;
+    private String[] user_addrs;
+    private String[] realnames;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -67,8 +75,11 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
         System.out.println(userID);
 
         shipping_info_realname = view.findViewById(R.id.textView_shipping_info_realname) ;
-        postalcode_first = view.findViewById(R.id.textView_postalcode_first) ;
+        postalcode = view.findViewById(R.id.textView_postalcode_first) ;
         user_addr = view.findViewById(R.id.textView_user_addr) ;
+        shipping_info_realname2 = view.findViewById(R.id.textView_shipping_info_realname2) ;
+        postalcode2 = view.findViewById(R.id.textView_postalcode_first2) ;
+        user_addr2 = view.findViewById(R.id.textView_user_addr2) ;
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -106,11 +117,21 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
 
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
-                                // Jsonのキーを指定すれば対応する値が入る
-                                postalcode_first.setText(jsnObject.getString("postal_code"));
-                                user_addr.setText(jsnObject.getString("address"));
-                                shipping_info_realname.setText(jsnObject.getString("real_name"));
-                            } catch (JSONException e) {
+                                List<String> postalcodeList = ConnectionJSON.ChangeArrayJSON(str, "postal_code");
+                                List<String> addrList = ConnectionJSON.ChangeArrayJSON(str, "address");
+                                List<String> realnameList = ConnectionJSON.ChangeArrayJSON(str, "real_name");
+
+                                postalcodes = postalcodeList.toArray(new String[postalcodeList.size()]);
+                                user_addrs = addrList.toArray(new String[addrList.size()]);
+                                realnames = realnameList.toArray(new String[realnameList.size()]);
+
+                                shipping_info_realname.setText(realnames[0]);
+                                postalcode.setText(postalcodes[0]);
+                                user_addr.setText(user_addrs[0]);
+                                shipping_info_realname2.setText(realnames[1]);
+                                postalcode2.setText(postalcodes[1]);
+                                user_addr2.setText(user_addrs[1]);
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
@@ -136,7 +157,12 @@ public class ShipingAddrInfoConfigFragment extends Fragment {
         registerShippingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_shipping_addr_info_config_to_shipping_addr_info_regist_config);
+                String shipping_info_realname2s = shipping_info_realname2.getText().toString();
+                if(shipping_info_realname2s.equals("NO DATA")) {
+                    Navigation.findNavController(view).navigate(R.id.action_shipping_addr_info_config_to_shipping_addr_info_regist_config);
+                }else{
+                    Toast.makeText(view.getContext(), "登録の上限に達しています", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

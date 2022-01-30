@@ -20,14 +20,6 @@ public class PayInfoRegistCompFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_pay_info_regist_comp, container, false);
 
-        // 所属親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを表示する
-        activity.setupBackButton(true);
-
-        // この記述でフラグメントでアクションバーメニューが使えるようになる
-        setHasOptionsMenu(true);
-
         Button nexthomeRegistButton = view.findViewById(R.id.nexthome_regist_button3);
         nexthomeRegistButton.setOnClickListener(new View.OnClickListener() {
             @Override
