@@ -75,15 +75,17 @@ public class ViewSearch extends AppCompatActivity {
                     //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
                     //bundle.putInt("PRODUCT_INT_PRICE", int_price);
 
-
+                    System.out.println("open");
                     // fragmentViewExhibitInfoConfirmationに遷移させる
                     //Navigation.findNavController().navigate(R.id.action_searchFragment_to_fragmentresult);
 
-                    if (savedInstanceState == null) {
+                    //if (savedInstanceState == null) {
+//
                         Fragment fragment = new ViewSearchResult();
                         Bundle bundle = new Bundle();
                         fragment.setArguments(bundle);
-                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.searchFragment, fragment).commit();
+                    //}
 //                    Intent intent = new Intent(ViewSearch.this, ViewSearchResult.class);
 //                    startActivity(intent);
 
