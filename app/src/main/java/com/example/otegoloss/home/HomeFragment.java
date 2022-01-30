@@ -121,10 +121,10 @@ public class HomeFragment extends Fragment {
 
                 for (int i = 1; i < imgURL.length+1; i++) {
                     // phpファイルまでのリンク
-                    //URL img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/" + imgURL[i]);
                     URL img_url = null;
                     try {
                         img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/g000000"+i+".jpg");
+                        //URL img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/" + imgURL[i]);
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
@@ -183,7 +183,6 @@ public class HomeFragment extends Fragment {
                     prices,
                     producerID
             );
-            //imgList,
 
             // gridViewにadapterをセット
             gridview.setAdapter(adapter);

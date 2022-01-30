@@ -32,6 +32,9 @@ import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -163,10 +166,12 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                             }
 
 
-                            URL imgUrl = new URL("http://localhost:8888/APItest/img_Post.php");
+                            URL imgUrl = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/upload.php");
 
                             uploadImage upimg = new uploadImage();
-                            upimg.upload(bitmap, imgUrl, str);
+                            JSONObject jsnObject = new JSONObject(str);
+                            System.out.println(jsnObject.getString("product_id"));
+                            upimg.upload(bitmap, imgUrl, jsnObject.getString("product_id"));
 
 
                             // 終了時刻
@@ -182,7 +187,7 @@ public class ViewExhibitProductInfoConfirmationFragment extends Fragment {
                                 }
                             });
 
-                        } catch (IOException e) {
+                        } catch (IOException | JSONException e) {
                             e.printStackTrace();
                             System.out.println(e);
                         }

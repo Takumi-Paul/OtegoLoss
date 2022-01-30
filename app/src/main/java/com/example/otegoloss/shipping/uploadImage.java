@@ -20,10 +20,10 @@ public class uploadImage {
     String twoHyphens = "--";
     String boundary =  "*****";
 
-    public void upload(Bitmap bitmap, URL _url, String fileName) throws IOException {
+    public void upload(Bitmap bitmap, URL _url, String id) throws IOException {
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
         byteArray = byteArrayOutputStream.toByteArray();
 
         HttpURLConnection con = (HttpURLConnection)_url.openConnection();
@@ -38,11 +38,11 @@ public class uploadImage {
         // ファイル名の送信
         outputStream.writeBytes("Content-Disposition: form-data; name=\"filename\";" + lineEnd);
         outputStream.writeBytes(lineEnd);
-        outputStream.writeBytes(fileName + ".png");
+        outputStream.writeBytes(id);
         outputStream.writeBytes(lineEnd);
         outputStream.writeBytes(twoHyphens + boundary + lineEnd);
         // データの送信
-        outputStream.writeBytes("Content-Disposition: form-data; name=\"upfile\";filename=\"upfile.png\"" + lineEnd);
+        outputStream.writeBytes("Content-Disposition: form-data; name=\"upfile\";filename=\"upfile.jpg\"" + lineEnd);
         outputStream.writeBytes(lineEnd);
         for(int i =  0 ; i < byteArray.length;i++){
             outputStream.writeByte(byteArray[i]);
@@ -60,6 +60,7 @@ public class uploadImage {
             objStr.append(sLine);
         }
         objStr.toString();//返り値
+         System.out.println(objStr.toString());
         in.close();
         objBuf.close();
     }
