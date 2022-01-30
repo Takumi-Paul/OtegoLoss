@@ -58,13 +58,13 @@ public class ViewYetSoldOutProductFragment extends Fragment {
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
         // 画像ID
-        int imageId = bundle.getInt("IMAGEID", 0);
+        //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
 
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.product_image_view_sold_out_product);
-        imageView.setImageResource(imageId);
+        //imageView.setImageResource(imageId);
 
         //商品名を表示
         productNameTextView = view.findViewById(R.id.product_name_text_view_yet_sold_out_product);
@@ -76,7 +76,7 @@ public class ViewYetSoldOutProductFragment extends Fragment {
         listingDateTextView = view.findViewById(R.id.listing_date__yet_sold_out_product);
 
         // http通信
-        new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
@@ -128,7 +128,14 @@ public class ViewYetSoldOutProductFragment extends Fragment {
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try {
+            t.start();
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // ボタンを取得
         Button changeButton = view.findViewById(R.id.content_change_button_view_yet_sold_out_product);

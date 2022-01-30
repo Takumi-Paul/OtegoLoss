@@ -59,13 +59,13 @@ public class ViewSoldOutProductFragment extends Fragment {
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
         // 画像ID
-        int imageId = bundle.getInt("IMAGEID", 0);
+        //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
 
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.product_image_view_sold_out_product);
-        imageView.setImageResource(imageId);
+        //imageView.setImageResource(imageId);
 
         //商品名を表示
         productNameTextView = view.findViewById(R.id.product_name_text_view_yet_sold_out_product);
