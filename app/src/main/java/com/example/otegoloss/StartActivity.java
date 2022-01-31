@@ -20,28 +20,22 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                userIDData = getSharedPreferences("DataStore", Context.MODE_PRIVATE);
-                String userID = userIDData.getString("userID", "error");
-                System.out.println(userID);
-                    if (userID != "error") {
-                        // HOME画面に遷移
-                        Intent mainIntent = new Intent(StartActivity.this, MainActivity.class);
-                        startActivity(mainIntent);
-                    }
-            }
-        });
-        t.start();
+        userIDData = getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        String userID = userIDData.getString("userID", "");
+        System.out.println(userID);
+        if (userID != "") {
+            // HOME画面に遷移
+            Intent mainIntent = new Intent(StartActivity.this, MainActivity.class);
+            startActivity(mainIntent);
+        } else {
+            setTheme(R.style.Theme_OtegoLoss);
+            setContentView(R.layout.activity_start);
 
-        setTheme(R.style.Theme_OtegoLoss);
-        setContentView(R.layout.activity_start);
-
-        Button newAccountButton = (Button) findViewById(R.id.newAccountButton);
-        newAccountButton.setOnClickListener(this);
-        Button loginButton = (Button) findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(this);
+            Button newAccountButton = (Button) findViewById(R.id.newAccountButton);
+            newAccountButton.setOnClickListener(this);
+            Button loginButton = (Button) findViewById(R.id.loginButton);
+            loginButton.setOnClickListener(this);
+        }
     }
 
     @Override

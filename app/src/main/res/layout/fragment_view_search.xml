@@ -23,7 +23,7 @@
                 android:layout_height="100dp" />
 
             <TextView
-                android:id="@+id/textview_hoge"
+                android:id="@+id/textview_product_name"
                 android:layout_width="320dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
@@ -34,7 +34,7 @@
                 tools:layout_editor_absoluteY="229dp" />
 
             <EditText
-                android:id="@+id/kensaku_shouhin_name"
+                android:id="@+id/kensaku_product_name"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -76,13 +76,13 @@
 
 
             <Spinner
-                android:id="@+id/kensaku_haitatsu"
+                android:id="@+id/kensaku_price"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
                 android:entries="@array/money"
-                android:contentDescription="@string/haitatsu"
+                android:contentDescription="@string/price"
                 android:spinnerMode="dropdown" />
 
             <TextView
@@ -98,7 +98,7 @@
 
 
             <Spinner
-                android:id="@+id/kensaku_haitstsu"
+                android:id="@+id/kensaku_delivery"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:entries="@array/delivery"
@@ -121,13 +121,13 @@
 
 
             <Spinner
-                android:id="@+id/kensaku_omosa"
+                android:id="@+id/kensaku_weight"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
                 android:entries="@array/weight"
-                android:contentDescription="@string/area"
+                android:contentDescription="@string/price"
                 android:spinnerMode="dropdown" />
 
             <TextView
@@ -148,7 +148,7 @@
                 android:layout_gravity="center"
                 android:background="#FFFFFF"
                 android:entries="@array/product_area"
-                android:contentDescription="@string/price"
+                android:contentDescription="@string/area"
                 android:spinnerMode="dropdown" />
 
             <TextView
@@ -163,7 +163,7 @@
                 tools:layout_editor_absoluteY="229dp" />
 
             <EditText
-                android:id="@+id/kensaku_shuppin_name"
+                android:id="@+id/kensaku_seller_name"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"

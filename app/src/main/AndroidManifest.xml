@@ -23,9 +23,6 @@
             android:name=".NewAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ViewSearch"
-            android:exported="false" />
-        <activity
             android:name=".StartActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">

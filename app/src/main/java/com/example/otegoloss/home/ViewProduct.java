@@ -53,7 +53,7 @@ import java.util.StringJoiner;
 public class ViewProduct extends Fragment {
 
     TextView productNameTextView;
-    TextView proNameTextView;
+    Button proNameTextView;
     TextView showWeightTextView;
     TextView priceTextView;
     TextView regionTextView;
@@ -66,6 +66,9 @@ public class ViewProduct extends Fragment {
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
+
+    // 出品者ID
+    String sellerID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,8 +89,6 @@ public class ViewProduct extends Fragment {
 
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
-        // 画像ID
-        //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
 
@@ -141,7 +142,8 @@ public class ViewProduct extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
-                                proNameTextView.setText(jsnObject.getString("seller_id"));
+                                sellerID = jsnObject.getString("seller_id");
+                                proNameTextView.setText(sellerID);
                                 showWeightTextView.setText(jsnObject.getString("weight"));
                                 priceTextView.setText(jsnObject.getString("price"));
                                 regionTextView.setText(jsnObject.getString("prefecture"));
@@ -199,6 +201,16 @@ public class ViewProduct extends Fragment {
                 //t_ViewComment.addToBackStack(null);
                 // 画面遷移
                 //t_ViewComment.commit();
+            }
+        });
+
+        proNameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle nextBundle = new Bundle();
+                // 出品者ID
+                bundle.putString("USER_NAME", sellerID);
+                Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_exhibitProfile, nextBundle);
             }
         });
 

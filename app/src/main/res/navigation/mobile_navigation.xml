@@ -209,6 +209,9 @@
         <action
             android:id="@+id/action_fragmentProduct_to_fragmentViewComment2"
             app:destination="@id/fragmentViewComment" />
+        <action
+            android:id="@+id/action_fragmentProduct_to_exhibitProfile"
+            app:destination="@id/exhibitProfile" />
     </fragment>
     <fragment
         android:id="@+id/profile_config"
@@ -422,23 +425,26 @@
             android:id="@+id/action_deletion_agreement_to_accountdelete"
             app:destination="@id/accountdelete" />
     </fragment>
-
-
     <fragment
         android:id="@+id/app_bar_search"
         android:name="com.example.otegoloss.home.ViewSearch"
         android:label="検索"
         tools:layout="@layout/fragment_view_search">
         <action
-            android:id="@+id/action_searchFragment_to_fragmentresult"
-            app:destination="@id/fragmentresult" />
+            android:id="@+id/action_search_to_result"
+            app:destination="@+id/result"
+            />
     </fragment>
-
     <fragment
-        android:id="@+id/fragmentresult"
+        android:id="@+id/result"
         android:name="com.example.otegoloss.home.ViewSearchResult"
         android:label="検索結果"
-        tools:layout="@layout/fragment_search_result"/>
+        tools:layout="@layout/fragment_search_result">
+        <action
+            android:id="@+id/action_result_to_fragmentProduct"
+            app:destination="@id/fragmentProduct" />
+    </fragment>
+
     <fragment
         android:id="@+id/delete_comp"
         android:name="com.example.otegoloss.user.DeleteCompFragment"
@@ -451,7 +457,6 @@
             android:id="@+id/action_producer_info_regist_comp_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
-
 
 
 </navigation>

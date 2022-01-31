@@ -3,6 +3,7 @@ package com.example.otegoloss.mypage;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ import com.example.otegoloss.R;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -47,12 +49,15 @@ public class PurchaseHistory extends Fragment {
     private String[] productID;
     //生産者ID
     private String[] producerID;
+    // 画像URL
+    private String[] imgURL;
+
+    private List<Bitmap> imgList = new ArrayList<>();
 
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
     String userID;
 
-    private List<Bitmap> imgList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -113,10 +118,9 @@ public class PurchaseHistory extends Fragment {
                             productID = produceIDList.toArray(new String[produceIDList.size()]);
                             List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "seller_id");
                             producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
+                            List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
+                            imgURL = imgStrList.toArray(new String[imgStrList.size()]);
 
-                            System.out.println("array");
-                            //progressDialog.dismiss();
-                            purchaseSettingUI(view);
                         }
                     });
 
@@ -127,12 +131,46 @@ public class PurchaseHistory extends Fragment {
             }
         });
 
+        Thread t_img = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < imgURL.length; i++) {
+                    // phpファイルまでのリンク
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + imgURL[i]);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    Bitmap bmp = ConnectionJSON.downloadImage(img_url);
+                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.box);
+                    if (bmp != null) {
+                        imgList.add(bmp);
+                    } else {
+                        imgList.add(normalBmp);
+                    }
+                    System.out.println("connect");
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //progressDialog.dismiss();
+                        purchaseSettingUI(view);
+                    }
+                });
+            }
+        });
+
         // ThreadTestクラスの処理が終了するまで待機の指示
         try {
             t.start();
             System.out.println("start");
             t.join();
             System.out.println("join");
+            t_img.start();
+            t_img.join();
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
@@ -142,12 +180,7 @@ public class PurchaseHistory extends Fragment {
 
     public void purchaseSettingUI(View view) {
 
-        //商品一覧画面
-        // for-each member名をR.drawable.名前としてintに変換してarrayに登録
-//        for (String productName: productNames){
-//            int imageId = getResources().getIdentifier("tomato", "drawable", getActivity().getPackageName());
-//            imgList.add(imageId);
-//        }
+
 
         // GridViewのインスタンスを生成
         GridView gridview = view.findViewById(R.id.purchaseHistory_grid);
