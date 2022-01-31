@@ -250,7 +250,7 @@ public class ShippingFragment extends Fragment {
             }
         });
 
-    // ThreadTestクラスの処理が終了するまで待機の指示
+        // ThreadTestクラスの処理が終了するまで待機の指示
         try {
             t.start();
             System.out.println("start");
@@ -259,11 +259,11 @@ public class ShippingFragment extends Fragment {
             t_img.start();
             t_img.join();
         } catch (InterruptedException e) {
-        // 例外処理
+            // 例外処理
             e.printStackTrace();
         }
-            return view;
-        }
+        return view;
+    }
 
 
 
