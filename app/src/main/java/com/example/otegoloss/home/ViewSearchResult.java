@@ -7,6 +7,7 @@ Kobayashi
 package com.example.otegoloss.home;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,6 +79,10 @@ public class ViewSearchResult extends Fragment {
         String area = bundle.getString("PRODUCT_AREA", "");
         String delivery = bundle.getString("DELIVERY_METHOD", "");
         String seller = bundle.getString("SELLER_NAME", "");
+
+        if (area == "産地") {
+            area = "";
+        }
 
         String hPrice = "";
         String lPrice = "";
@@ -147,12 +153,13 @@ public class ViewSearchResult extends Fragment {
                 break;
         }
 
-
-        // http通信
         String finalLPrice = lPrice;
         String finalHPrice = hPrice;
         String finalLWeight = lWeight;
         String finalHWeight = hWeight;
+        String finalArea = area;
+
+        // http通信
         Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -169,7 +176,7 @@ public class ViewSearchResult extends Fragment {
                     map.put("delivery_meth", delivery);
                     map.put("lweight", finalLWeight);
                     map.put("hweight", finalHWeight);
-                    map.put("prefecture", area);
+                    map.put("prefecture", finalArea);
                     map.put("user_name", seller);
 
                     // クエリ文字列組み立て・URL との連結
@@ -218,9 +225,7 @@ public class ViewSearchResult extends Fragment {
         Thread t_img = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("stop");
                 if (imgURL != null) {
-
                     for (int i = 0; i < imgURL.length; i++) {
                         // phpファイルまでのリンク
                         URL img_url = null;
@@ -230,7 +235,13 @@ public class ViewSearchResult extends Fragment {
                             e.printStackTrace();
                         }
                         System.out.println(img_url);
-                        imgList.add(ConnectionJSON.downloadImage(img_url));
+                        Bitmap bmp = ConnectionJSON.downloadImage(img_url);
+                        Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.box);
+                        if (bmp != null) {
+                            imgList.add(bmp);
+                        } else {
+                            imgList.add(normalBmp);
+                        }
                         System.out.println("connect");
                     }
                 }
@@ -241,7 +252,7 @@ public class ViewSearchResult extends Fragment {
                         if (str != null) {
                             settingUI(view);
                         } else {
-                            System.out.println("検索結果がありません");
+                            Toast.makeText(view.getContext(), "検索結果がありません", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -296,7 +307,6 @@ public class ViewSearchResult extends Fragment {
         });
 
     }
-
 
 
 }

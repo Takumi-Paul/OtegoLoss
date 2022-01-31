@@ -105,9 +105,13 @@ public class AccountDeleteFragment extends Fragment {
                                     System.out.println(str);
                                     System.out.println(endTime - startTime);
 
-//                                    SharedPreferences.Editor editor = userIDData.edit();
+                                    // "userIDData"という名前でインスタンスを生成
+                                    userIDData = getContext().getSharedPreferences("DataStore", getContext().MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = userIDData.edit();
 //                                    editor.putString("userID", "");
                                     userIDData.edit().remove("userID");
+                                    editor.commit();
+
                                     Toast.makeText(view.getContext() , str, Toast.LENGTH_LONG).show();
 
                                 }
@@ -122,6 +126,7 @@ public class AccountDeleteFragment extends Fragment {
                 try {
                     t.start();
                     t.join();
+
 
                     Navigation.findNavController(view).navigate(R.id.action_accountdelete_to_delete_comp);
                 } catch (InterruptedException e) {

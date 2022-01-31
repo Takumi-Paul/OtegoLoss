@@ -83,7 +83,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:ems="10"
                 android:hint="レシピURL(任意)"
-                android:inputType="text"
+                android:inputType="textUri"
                 android:maxLength="500"
                 android:minHeight="50dp" />
 

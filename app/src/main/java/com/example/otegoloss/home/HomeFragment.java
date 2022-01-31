@@ -9,6 +9,7 @@ package com.example.otegoloss.home;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -126,7 +127,13 @@ public class HomeFragment extends Fragment {
                         e.printStackTrace();
                     }
                     System.out.println(img_url);
-                    imgList.add(ConnectionJSON.downloadImage(img_url));
+                    Bitmap bmp = ConnectionJSON.downloadImage(img_url);
+                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.box);
+                    if (bmp != null) {
+                        imgList.add(bmp);
+                    } else {
+                        imgList.add(normalBmp);
+                    }
                     System.out.println("connect");
                 }
 
