@@ -3,6 +3,7 @@
  */
 package com.example.otegoloss;
 
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -21,7 +22,7 @@ public class GridAdapterOfShipping extends BaseAdapter {
         TextView dat_textView;
         View view;
     }
-    private List<Integer> imageList = new ArrayList<>();
+    private List<Bitmap> imageList = new ArrayList<>();
     private String[] pro_names;
     private int[] price;
     private String[] listingDate;
@@ -31,7 +32,7 @@ public class GridAdapterOfShipping extends BaseAdapter {
     // 引数を出品者画面と合わせる
     public GridAdapterOfShipping(Context context,
                                  int layoutId,
-                                 List<Integer> imgList,
+                                 List<Bitmap> imgList,
                                  String[] productNames,
                                  int[] prices,
                                  String[] Date) {
@@ -49,7 +50,7 @@ public class GridAdapterOfShipping extends BaseAdapter {
     @Override
     public int getCount() {
         // List<String> imgList の全要素数を返す
-        return imageList.size();
+        return pro_names.length;
     }
 
     @Override
@@ -84,7 +85,7 @@ public class GridAdapterOfShipping extends BaseAdapter {
             holder = (GridAdapterOfShipping.ViewHolder) convertView.getTag();
         }
 
-        holder.imageView.setImageResource(imageList.get(position));
+        holder.imageView.setImageBitmap(imageList.get(position));
         holder.pro_textView.setText(pro_names[position]);
         String pro_price = String.valueOf(price[position]);
         holder.pri_textView.setText(pro_price+"円");

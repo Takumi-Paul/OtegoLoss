@@ -11,7 +11,7 @@
         android:id="@+id/view9"
         android:layout_width="338dp"
         android:layout_height="400dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="112dp"
         android:background="#92FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -22,7 +22,7 @@
         android:id="@+id/kg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="g"
         android:textColor="#BC4749"
         android:textSize="34sp"
@@ -35,19 +35,18 @@
         android:id="@+id/metertext1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="220dp"
-        android:text="さんは"
+        android:layout_marginTop="12dp"
+        android:text="あなたは"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/view9"
-        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toTopOf="@+id/view9" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_mater" />
 
     <TextView
         android:id="@+id/metertext2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="食品ロスに貢献しました！"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/view9"
@@ -58,7 +57,7 @@
         android:id="@+id/meter_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="重さ"
         android:textColor="#BC4749"
         android:textSize="34sp"
@@ -68,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/metertext1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView_mater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -77,15 +76,4 @@
         app:layout_constraintTop_toTopOf="@+id/view9"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <TextView
-        android:id="@+id/textView_meter_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="ユーザ名"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/metertext1"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
