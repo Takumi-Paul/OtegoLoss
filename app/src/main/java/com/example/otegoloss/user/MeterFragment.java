@@ -1,23 +1,30 @@
 package com.example.otegoloss.user;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.otegoloss.ConnectionJSON;
-import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -27,12 +34,19 @@ import java.util.StringJoiner;
 
 public class MeterFragment extends Fragment {
 
+    public ImageView image_mater;
     public TextView meter_username;
     public TextView meter_weight;
+
+    // ユーザID
+    String userID;
 
     // http通信の開始・終了時刻
     long startTime;
     long endTime;
+
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,11 +54,23 @@ public class MeterFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_meter, container, false);
 
-        meter_username = view.findViewById(R.id.textView_meter_username) ;
+        image_mater = view.findViewById(R.id.imageView_mater) ;
         meter_weight = view.findViewById(R.id.meter_weight) ;
 
-        // ユーザID
-        String userID = "u0000005";
+        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
+
+        //userID = "u0000001";
+
+        System.out.println(userID);
+
+        Resources res = getResources();
+        Drawable meter0 = ResourcesCompat.getDrawable(res, R.drawable.meter0, null);
+        Drawable meter1 = ResourcesCompat.getDrawable(res, R.drawable.meter1, null);
+        Drawable meter2 = ResourcesCompat.getDrawable(res, R.drawable.meter2, null);
+        Drawable meter3 = ResourcesCompat.getDrawable(res, R.drawable.meter3, null);
+        Drawable meter4 = ResourcesCompat.getDrawable(res, R.drawable.meter4, null);
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -53,7 +79,7 @@ public class MeterFragment extends Fragment {
             public void run() {
                 try {
                     // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UserProfile.php";
+                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ReturnUidFromWeight.php";
 
                     // クエリ文字列を連想配列に入れる
                     Map<String, String> map = new HashMap<String, String>();
@@ -81,14 +107,30 @@ public class MeterFragment extends Fragment {
                             System.out.println(endTime - startTime);
 
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
-                            try {
+                            //try {
                                 // Jsonのキーを指定すれば対応する値が入る
-                                meter_username.setText(jsnObject.getString("user_name"));
-                                meter_weight.setText(jsnObject.getString("gross_weight"));
-                                //profile_username.setText(jsnObject.getString("user_name"));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                                //meter_weight.setText(jsnObject.getString("gross_weight"));
+                                meter_weight.setText("1000000");
+                                String meter_weights = meter_weight.getText().toString();
+                                if(meter_weights.equals("重さ")){
+                                    //image_mater.setImageDrawable(meter0);
+                                }else {
+                                    int meter_weighti = Integer.parseInt(meter_weights);
+                                    if (meter_weighti < 1000) {
+                                        image_mater.setImageDrawable(meter0);
+                                    }else if(meter_weighti < 2000){
+                                        image_mater.setImageDrawable(meter1);
+                                    }else if(meter_weighti < 5000){
+                                        image_mater.setImageDrawable(meter2);
+                                    }else if(meter_weighti < 10000){
+                                        image_mater.setImageDrawable(meter3);
+                                    }else{
+                                        image_mater.setImageDrawable(meter4);
+                                    }
+                                }
+                            //} catch (JSONException e) {
+                                //e.printStackTrace();
+                            //}
 
                         }
                     });
