@@ -21,9 +21,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         userIDData = getSharedPreferences("DataStore", Context.MODE_PRIVATE);
-        String userID = userIDData.getString("userID", "error");
+        String userID = userIDData.getString("userID", "");
         System.out.println(userID);
-        if (userID == "error") {
+        if (userID != "") {
             // HOME画面に遷移
             Intent mainIntent = new Intent(StartActivity.this, MainActivity.class);
             startActivity(mainIntent);
