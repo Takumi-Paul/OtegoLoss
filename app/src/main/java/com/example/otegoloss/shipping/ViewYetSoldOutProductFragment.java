@@ -154,7 +154,7 @@ public class ViewYetSoldOutProductFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentDeleteProductに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_product_to_navigation_delete_product);
             }
         });
 

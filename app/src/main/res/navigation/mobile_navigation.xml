@@ -74,6 +74,26 @@
             android:id="@+id/action_navigation_yet_sold_out_history_to_navigation_yet_sold_out_product"
             app:destination="@id/navigation_yet_sold_out_product" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_delete_product"
+        android:name="com.example.otegoloss.shipping.ProductDeleteFragment"
+        android:label="出品情報削除"
+        tools:layout="@layout/fragment_view_product_delete">
+        <action
+            android:id="@+id/action_navigation_delete_product_to_navigation_delete_product_completed"
+            app:destination="@id/navigation_delete_product_completed" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_delete_product_completed"
+        android:name="com.example.otegoloss.shipping.DeleteProductCompleted"
+        android:label="出品情報削除かんりょう"
+        tools:layout="@layout/fragment_delete_product_completed">
+        <action
+            android:id="@+id/action_navigation_delete_product_completed_to_navigation_yet_sold_out_history"
+            app:destination="@id/navigation_yet_sold_out_history" />
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_change_listing_info"
         android:name="com.example.otegoloss.shipping.ChangeListingInfoFragment"
@@ -121,6 +141,9 @@
         <action
             android:id="@+id/action_navigation_yet_sold_out_product_to_navigation_change_listing_info"
             app:destination="@id/navigation_change_listing_info" />
+        <action
+            android:id="@+id/action_navigation_yet_sold_out_product_to_navigation_delete_product"
+            app:destination="@id/navigation_delete_product" />
     </fragment>
     <fragment
         android:id="@+id/navigation_user"
