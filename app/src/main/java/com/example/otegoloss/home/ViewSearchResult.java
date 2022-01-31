@@ -91,6 +91,7 @@ public class ViewSearchResult extends Fragment {
             case "選択無し":
                 hPrice = "";
                 lPrice = "";
+                break;
             case "0 ~ 1000":
                 hPrice = "1000";
                 lPrice = "0";
