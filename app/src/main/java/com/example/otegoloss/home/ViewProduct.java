@@ -209,7 +209,7 @@ public class ViewProduct extends Fragment {
             public void onClick(View v) {
                 Bundle nextBundle = new Bundle();
                 // 出品者ID
-                bundle.putString("USER_NAME", sellerID);
+                nextBundle.putString("USER_ID", sellerID);
                 Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_exhibitProfile, nextBundle);
             }
         });
