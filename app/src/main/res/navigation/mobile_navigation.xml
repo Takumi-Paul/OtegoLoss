@@ -186,6 +186,9 @@
         <action
             android:id="@+id/action_fragmentProduct_to_fragmentViewComment2"
             app:destination="@id/fragmentViewComment" />
+        <action
+            android:id="@+id/action_fragmentProduct_to_exhibitProfile"
+            app:destination="@id/exhibitProfile" />
     </fragment>
     <fragment
         android:id="@+id/profile_config"

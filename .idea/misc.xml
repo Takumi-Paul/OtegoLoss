@@ -69,7 +69,7 @@
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_toolbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_entry_of_exhibit_info.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_exhibit_profile.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/fragment_exhibit_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16068852678774806" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_purchase_history.xml" value="0.1328125" />
