@@ -176,10 +176,11 @@ public class ExhibitProfile extends Fragment {
                                 userId_textView.setText(sellerID);
                                 profile_image.setImageBitmap(imgBmp);
 
-                                if (fav_bool == "true") {
+                                if (fav_bool.equals("true")) {
                                     heartImage.setImageResource(R.drawable.pink_heart);
                                     heart_flag = true;
-                                } else if (fav_bool == "false"){
+                                    System.out.println("heart.true");
+                                } else if (fav_bool.equals("false")){
                                     heartImage.setImageResource(R.drawable.empty_heart);
                                     heart_flag = false;
                                 }
@@ -208,8 +209,61 @@ public class ExhibitProfile extends Fragment {
             @Override
             public void onClick(View v) {
                 if (heart_flag) {
-                    heartImage.setImageResource(R.drawable.empty_heart);
+                    // http通信
+                    Thread t = new Thread(new Runnable() {
+                        @RequiresApi(api = Build.VERSION_CODES.N)
+                        @Override
+                        public void run() {
+                            try {
+                                // phpファイルまでのリンク
+                                String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/DeliteFavorite.php";
 
+                                // クエリ文字列を連想配列に入れる
+                                Map<String, String> map = new HashMap<String, String>();
+                                map.put("user_id", userID);
+                                map.put("favorite_user_id", sellerID);
+                                // クエリ文字列組み立て・URL との連結
+                                StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
+                                for (Map.Entry<String, String> param: map.entrySet()) {
+                                    stringUrl.add(param.getKey() + "=" + param.getValue());
+                                }
+                                URL url = new URL(stringUrl.toString());
+                                System.out.println(url);
+                                // 処理開始時刻
+                                startTime = System.currentTimeMillis();
+                                HttpURLConnection con =(HttpURLConnection)url.openConnection();
+                                final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
+
+                                // 終了時刻
+                                endTime = System.currentTimeMillis();
+                                Log.d("HTTP", str);
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        System.out.println(String.valueOf(str));
+                                        System.out.println(endTime - startTime);
+                                        heartImage.setImageResource(R.drawable.empty_heart);
+                                    }
+                                });
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                System.out.println(e);
+                            }
+                        }
+                    });
+                    try {
+                        // ダイアログ表示
+                        progressDialog = new ProgressDialog(getContext());
+                        progressDialog.setTitle("ロード中");
+                        progressDialog.setMessage("処理しています");
+                        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                        progressDialog.show();
+                        t.start();
+                        t.join();
+                        progressDialog.dismiss();
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
 
                 } else {
                     // http通信
