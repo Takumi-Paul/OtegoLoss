@@ -86,8 +86,6 @@ public class ViewProduct extends Fragment {
 
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
-        // 画像ID
-        //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
 

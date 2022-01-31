@@ -60,8 +60,6 @@ public class HomeFragment extends Fragment {
     private String[] producerID;
     // 画像URL
     private String[] imgURL;
-    // 画像のBitMap
-    private Bitmap[] bmps = new Bitmap[7];
 
     private List<Bitmap> imgList = new ArrayList<>();
 

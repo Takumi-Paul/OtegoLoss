@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,27 +23,108 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ChangeBackgraund;
+import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 
-public class ViewSearch extends AppCompatActivity {
+public class ViewSearch extends Fragment {
 
     private EditText productName;
     private EditText sellerName;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_view_search);
+    private String Product_area = "";
+    private String Category;
+    private String Price = "";
+    private String Delivery = "";
+    private String Weight = "";
+    private String pName = "";
+    private String sName = "";
 
-        LinearLayout background_view = findViewById(R.id.background);
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_view_search, container, false);
+
+        LinearLayout background_view = view.findViewById(R.id.background);
         ChangeBackgraund.changeBackGround(background_view);
 
-        productName = (EditText)findViewById(R.id.kensaku_shouhin_name);
-        sellerName = (EditText)findViewById(R.id.kensaku_shuppin_name);
+        productName = (EditText)view.findViewById(R.id.kensaku_product_name);
+        sellerName = (EditText)view.findViewById(R.id.kensaku_seller_name);
 
+
+        //産地のSpinner処理
+        Spinner product_area_spinner = (Spinner)view.findViewById(R.id.kensaku_area);
+        product_area_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter,
+                                       View v, int position, long id) {
+                String product_area = (String)adapter.getSelectedItem();
+                Product_area = product_area;
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+//        Spinner category_spinner = (Spinner)view.findViewById(R.id.kensaku_category_name);
+//        category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapter, View v, int position, long id) {
+//                String category = (String)adapter.getSelectedItem();
+//                Category = category;
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+
+        Spinner price_spinner = (Spinner)view.findViewById(R.id.kensaku_price);
+        price_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v, int position, long id) {
+                String price = (String)adapter.getSelectedItem();
+                Price = price;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        Spinner delivery_spinner = (Spinner)view.findViewById(R.id.kensaku_delivery);
+        delivery_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v, int position, long id) {
+                String delivery = (String)adapter.getSelectedItem();
+                Delivery = delivery;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        Spinner weight_spinner = (Spinner)view.findViewById(R.id.kensaku_weight);
+        weight_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v, int position, long id) {
+                String weight = (String)adapter.getSelectedItem();
+                Weight = weight;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //検索ボタンが押された時の処理
-        Button SearchButton  = findViewById(R.id.buyCompletedButton);
+        Button SearchButton  = view.findViewById(R.id.buyCompletedButton);
 
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +135,6 @@ public class ViewSearch extends AppCompatActivity {
                 String sellerNames = sellerName.getText().toString();
 
 
-
                 if (productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                         && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
                    /*
@@ -61,54 +143,26 @@ public class ViewSearch extends AppCompatActivity {
                     */
                 ) {
                     //次のフラグメントにBundleを使ってデータを渡す
-                    //タイトル
-                    /*
                     Bundle bundle = new Bundle();
-                    bundle.putString("PRODUCT_NAME", pro_names);
-                    bundle.putString("PRODUCT_DESCRIPTION", pro_descriptions);
-                    bundle.putString("PRODUCT_WEIGHT", pro_weights);
-                    bundle.putString("PRODUCT_PRICE", pro_prices);
-                    bundle.putString("RECIPE_URL", recipe_urls);
+                    pName = productName.getText().toString();
+                    bundle.putString("PRODUCT_NAME", pName);
+                    bundle.putString("PRODUCT_WEIGHT", Weight);
+                    bundle.putString("PRODUCT_PRICE", Price);
                     bundle.putString("PRODUCT_AREA", Product_area);
-                    bundle.putString("DELIVERY_METHOD", Delivery_method);
-                    */
+                    bundle.putString("DELIVERY_METHOD", Delivery);
+                    sName = sellerName.getText().toString();
+                    bundle.putString("SELLER_NAME", sName);
                     //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
                     //bundle.putInt("PRODUCT_INT_PRICE", int_price);
 
-                    System.out.println("open");
                     // fragmentViewExhibitInfoConfirmationに遷移させる
-                    //Navigation.findNavController().navigate(R.id.action_searchFragment_to_fragmentresult);
-
-                    //if (savedInstanceState == null) {
-//
-                        Fragment fragment = new ViewSearchResult();
-                        Bundle bundle = new Bundle();
-                        fragment.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.searchFragment, fragment).commit();
-                    //}
-//                    Intent intent = new Intent(ViewSearch.this, ViewSearchResult.class);
-//                    startActivity(intent);
+                    System.out.println("open");
+                    Navigation.findNavController(view).navigate(R.id.action_search_to_result, bundle);
 
 
-//                    Fragment fr = new ViewSearchResult();
-//
-//                    System.out.println(fr.getId());
-
-
-//                    FragmentManager fm_item = getChildFragmentManager();
-//                    FragmentTransaction t_item = fm_item.beginTransaction();
-//                    // 次のFragment
-//                    Fragment secondFragment = new ViewSearchResult();
-//                    // bundleを次のfragmentに設定
-//                    // fragmentManagerに次のfragmentを追加
-//                    t_item.replace(R.id.fragmentresult, secondFragment);
-//                    // 画面遷移戻りを設定
-//                    t_item.addToBackStack(null);
-//                    // 画面遷移
-//                    t_item.commit();
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -120,6 +174,8 @@ public class ViewSearch extends AppCompatActivity {
 
             }
         });
+
+        return view;
     }
 
 }

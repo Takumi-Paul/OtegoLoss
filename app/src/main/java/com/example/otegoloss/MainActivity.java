@@ -30,7 +30,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.otegoloss.databinding.ActivitySearchBinding;
+import com.example.otegoloss.databinding.ActivityMainBinding;
 import com.example.otegoloss.home.HomeFragment;
 import com.example.otegoloss.home.ViewProduct;
 import com.example.otegoloss.home.ViewSearch;
@@ -56,24 +56,23 @@ public class MainActivity extends AppCompatActivity {
 //        searchBinding = ActivitySearchBinding.inflate(getLayoutInflater());
 //        setContentView(searchBinding.getRoot());
 
-//        toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
         ViewGroup root = (ViewGroup) findViewById(R.id.activity_main_container).getParent();
 // false=rootをmy_toolbarのルートにしない.
-        Toolbar toolbar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.my_toolbar, root, false);
-        root.addView(toolbar, 0);
+
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment_activity_main);
+        NavController navController = navHostFragment.getNavController();
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_mypage, R.id.navigation_shipping, R.id.navigation_user)
+//                R.id.navigation_home, R.id.navigation_mypage, R.id.navigation_shipping, R.id.navigation_user)
+                navController.getGraph())
                 .build();
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.nav_host_fragment_activity_main);
-        NavController navController = navHostFragment.getNavController();
         setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
@@ -103,14 +102,17 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.app_bar_search) {
-            Intent intent = new Intent(MainActivity.this, ViewSearch.class);
-            startActivity(intent);
-            return true;
-        }
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        return NavigationUI.onNavDestinationSelected(item, navController)
+                || super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.app_bar_search) {
+//            Navigation.createNavigateOnClickListener(R.id.);
+//            return true;
+//        }
+
+//        return super.onOptionsItemSelected(item);
     }
 
     // Fragmentを表示させるメソッドを定義（表示したいFragmentを引数として渡す）
