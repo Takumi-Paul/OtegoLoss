@@ -123,7 +123,6 @@ public class HomeFragment extends Fragment {
                     // phpファイルまでのリンク
                     URL img_url = null;
                     try {
-                        //img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/g000000"+i+".jpg");
                         img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + imgURL[i]);
                     } catch (MalformedURLException e) {
                         e.printStackTrace();

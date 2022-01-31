@@ -38,6 +38,7 @@ import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 import com.example.otegoloss.databinding.FragmentUserBinding;
+import com.example.otegoloss.shipping.uploadImage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -215,7 +216,7 @@ public class ProfileConfigFragment extends Fragment {
                                     "&user_name=" + config_usernames +
                                     "&user_mail=" + mail +
                                     "&gross_weight=" + weight +
-                                    "&user_profile_image=" + byteArray +
+                                    "&user_profile_image=" + "" +
                                     "&user_profile_message=" + config_usermessages;
 
                             System.out.println(path);
@@ -246,6 +247,10 @@ public class ProfileConfigFragment extends Fragment {
                                 // レスポンスコードが200ならStringに変換
                                 str = ConnectionJSON.InputStreamToString(con.getInputStream());
                             }
+                            URL imgUrl = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/upload.php");
+
+                            uploadImage upimg = new uploadImage();
+                            upimg.upload(bitmap, imgUrl, userID);
 
                             // 終了時刻
                             endTime = System.currentTimeMillis();

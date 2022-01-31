@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/nextInformation_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="インフォメーション"
         android:textColor="@color/white"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/nextDeleteAccount_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="アカウント削除"
         android:textColor="@color/white"
@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/nextProcedureRegister_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="生産者登録"
         android:textColor="@color/white"
@@ -44,7 +44,7 @@
     <Button
         android:id="@+id/nextSettingAddress_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="配送先情報設定"
         android:textColor="@color/white"
@@ -55,7 +55,7 @@
     <Button
         android:id="@+id/nextSettingCredit_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="決済情報設定"
         android:textColor="@color/white"
@@ -66,7 +66,7 @@
     <Button
         android:id="@+id/nextSettingProfile_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/light_green"
         android:onClick="viewConfigProfile"
@@ -77,15 +77,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
 
-    <ImageView
-        android:id="@+id/accountImage_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/accountImage_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/user" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/profileUserName_textView"
@@ -97,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountImage_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
         android:id="@+id/profileUserMessage_textView"
@@ -114,7 +123,7 @@
     <Button
         android:id="@+id/nextMeter_button"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="@color/light_green"
         android:text="ロス削減メーター"
         android:textColor="@color/white"

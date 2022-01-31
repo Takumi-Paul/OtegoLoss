@@ -150,7 +150,6 @@ public class EntryOfExhibitInfoFragment extends Fragment {
 
                 if (pro_names.equals("")
                         || pro_descriptions.equals("")
-                        || recipe_urls.equals("")
                 ) {
                     Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
 
@@ -165,14 +164,6 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                     // 画像ファイル取得
                     Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
                     String strBase64 = encodeImage(bitmap);
-
-//                    try {
-//                        Bitmap bmp = getBitmapFromUri(imgUri);
-//                        imageView.setImageBitmap(bmp);
-//                        new PostBmpAsyncHttpRequest(self).execute(new Param("http://xxxx.xxxx/index.php", bmp));
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
 
                     //次のフラグメントにBundleを使ってデータを渡す
                     //タイトル

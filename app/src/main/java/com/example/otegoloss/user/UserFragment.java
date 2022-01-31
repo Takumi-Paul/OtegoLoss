@@ -9,6 +9,7 @@ package com.example.otegoloss.user;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -44,6 +45,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,6 +58,7 @@ public class UserFragment extends Fragment {
     public TextView profile_username;
     public TextView profile_message;
 
+
     // ユーザID
     String userID;
 
@@ -65,6 +68,10 @@ public class UserFragment extends Fragment {
 
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
+
+    // 画像関連
+    String user_image_url;
+    Bitmap imgBmp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -121,25 +128,39 @@ public class UserFragment extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
+                    // 画像の受信
+                    JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
+                    user_image_url = jsnObject.getString("user_profile_image");
+
+                    // phpファイルまでのリンク
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + user_image_url);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    imgBmp = ConnectionJSON.downloadImage(img_url);
+                    System.out.println("connect");
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             System.out.println(String.valueOf(str));
                             System.out.println(endTime - startTime);
 
-                            JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 // Jsonのキーを指定すれば対応する値が入る
                                 profile_username.setText(jsnObject.getString("user_name"));
                                 profile_message.setText(jsnObject.getString("user_profile_message"));
-                                //profile_image.setText(jsnObject.getString("user_profile_image"));
+                                profile_image.setImageBitmap(imgBmp);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                         }
                     });
-                } catch (IOException e) {
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                     System.out.println(e);
                 }
