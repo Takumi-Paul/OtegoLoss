@@ -140,12 +140,11 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
             @Override
             public void run() {
 
-                for (int i = 1; i < imgURL.length+1; i++) {
+                for (int i = 0; i < imgURL.length; i++) {
                     // phpファイルまでのリンク
                     URL img_url = null;
                     try {
                         img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + imgURL[i]);
-                        //img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/image/g000000"+i+".jpg");
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
