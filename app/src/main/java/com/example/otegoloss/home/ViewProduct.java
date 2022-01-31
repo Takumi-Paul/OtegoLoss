@@ -75,7 +75,7 @@ public class ViewProduct extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
         LinearLayout background_view = view.findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(background_view);
+        ChangeBackgraund.changeBackGround(background_view, userID);
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");

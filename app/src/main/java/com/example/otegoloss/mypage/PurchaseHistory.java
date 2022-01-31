@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -54,6 +55,8 @@ public class PurchaseHistory extends Fragment {
 
     private List<Bitmap> imgList = new ArrayList<>();
 
+    String str;
+
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
     String userID;
@@ -95,7 +98,7 @@ public class PurchaseHistory extends Fragment {
                     // 処理開始時刻
                     startTime = System.currentTimeMillis();
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
+                    str = ConnectionJSON.InputStreamToString(con.getInputStream());
 
                     // 終了時刻
                     endTime = System.currentTimeMillis();
@@ -169,8 +172,12 @@ public class PurchaseHistory extends Fragment {
             System.out.println("start");
             t.join();
             System.out.println("join");
-            t_img.start();
-            t_img.join();
+            if (!str.equals("[]")) {
+                t_img.start();
+                t_img.join();
+            } else {
+                Toast.makeText(view.getContext(), "購入履歴がありません", Toast.LENGTH_LONG).show();
+            }
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
