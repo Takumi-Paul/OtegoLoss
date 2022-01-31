@@ -123,22 +123,22 @@ public class ViewInputShippingAddress extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 List<String> postalcodeList = ConnectionJSON.ChangeArrayJSON(str, "postal_code");
-                                postalCodes = postalcodeList.toArray(new String[postalcodeList.size()]);
-                                addressNumber1.setText(postalCodes[0]);
-                                addressNumber2.setText(postalCodes[1]);
-
                                 List<String> addressesList = ConnectionJSON.ChangeArrayJSON(str, "address");
-                                addresses = addressesList.toArray(new String[addressesList.size()]);
-                                shippingAddress1.setText(addresses[0]);
-                                shippingAddress2.setText(addresses[1]);
-
                                 List<String> realnameList = ConnectionJSON.ChangeArrayJSON(str, "real_name");
-                                realNames = realnameList.toArray(new String[realnameList.size()]);
-                                shippingName1.setText(realNames[0]);
-                                shippingName2.setText(realNames[1]);
-
                                 List<String> daddressList = ConnectionJSON.ChangeArrayJSON(str, "d_address_id");
+
+                                postalCodes = postalcodeList.toArray(new String[postalcodeList.size()]);
+                                addresses = addressesList.toArray(new String[addressesList.size()]);
+                                realNames = realnameList.toArray(new String[realnameList.size()]);
                                 daddressID = daddressList.toArray(new String[daddressList.size()]);
+
+                                addressNumber1.setText(postalCodes[0]);
+                                shippingAddress1.setText(addresses[0]);
+                                shippingName1.setText(realNames[0]);
+
+                                addressNumber2.setText(postalCodes[1]);
+                                shippingAddress2.setText(addresses[1]);
+                                shippingName2.setText(realNames[1]);
 
                             } catch (Exception e) {         //修正するかも　元はcatch (JSONException e) {e.printStackTrace();}
                                 e.printStackTrace();
@@ -204,20 +204,30 @@ public class ViewInputShippingAddress extends Fragment {
 
 
                 if (Choice1Button.isChecked() == true) {
+                    String addressNumber1s = addressNumber1.getText().toString();
+                    if(addressNumber1s.equals("郵便番号1")) {
+                        Toast.makeText(view.getContext() , "登録されていません", Toast.LENGTH_LONG).show();
+                    }else {
 
-                    //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
-                    nextbundle.putString("SHIPPING_ID", daddressID[0]);
+                        //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
+                        nextbundle.putString("SHIPPING_ID", daddressID[0]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
+                        Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
+                    }
 
                 }
 
                 if (Choice2Button.isChecked() == true) {
+                    String addressNumber2s = addressNumber2.getText().toString();
+                    if(addressNumber2s.equals("郵便番号2")) {
+                        Toast.makeText(view.getContext() , "登録されていません", Toast.LENGTH_LONG).show();
+                    }else {
 
-                    //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
-                    nextbundle.putString("SHIPPING_ID", daddressID[1]);
+                        //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
+                        nextbundle.putString("SHIPPING_ID", daddressID[1]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
+                        Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
+                    }
 
                 }
 
@@ -225,8 +235,8 @@ public class ViewInputShippingAddress extends Fragment {
         });
 
         return view;
-    }
 
+    }
 }
 
 

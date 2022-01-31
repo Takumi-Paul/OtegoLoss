@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.MainActivity;
@@ -45,6 +46,7 @@ public class PayInfoConfigFragment extends Fragment {
 
     private String[] creditcard_companies;
     private String[] creditcard_numbers;
+    private String[] cardID;
 
     // http通信の開始・終了時刻
     long startTime;
@@ -114,13 +116,12 @@ public class PayInfoConfigFragment extends Fragment {
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
                                 List<String> credit_companyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
-                                creditcard_companies = credit_companyList.toArray(new String[credit_companyList.size()]);
-                                creditcard_company1.setText(creditcard_companies[0]);
-                                creditcard_company2.setText(creditcard_companies[1]);
-
                                 List<String> creditcard_numberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
+                                creditcard_companies = credit_companyList.toArray(new String[credit_companyList.size()]);
                                 creditcard_numbers = creditcard_numberList.toArray(new String[creditcard_numberList.size()]);
+                                creditcard_company1.setText(creditcard_companies[0]);
                                 creditcard_number1.setText(creditcard_numbers[0]);
+                                creditcard_company2.setText(creditcard_companies[1]);
                                 creditcard_number2.setText(creditcard_numbers[1]);
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -145,7 +146,12 @@ public class PayInfoConfigFragment extends Fragment {
         addCreditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_payinfoconfig_to_creditcard_regist);
+                String creditcard_company2s = creditcard_company2.getText().toString();
+                if(creditcard_company2s.equals("NO DATA")) {
+                    Navigation.findNavController(view).navigate(R.id.action_payinfoconfig_to_creditcard_regist);
+                }else{
+                    Toast.makeText(view.getContext(), "登録の上限に達しています", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

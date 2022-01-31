@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -117,25 +118,24 @@ public class ViewInputPayment extends Fragment {
                             try {
 
                                 List<String> creditcompanyList = ConnectionJSON.ChangeArrayJSON(str, "card_comp");
-                                creditCompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
-                                creditCompany1.setText(creditCompanies[0]);
-                                //creditCompany2.setText(creditCompanies[1]);
-
                                 List<String> creditnumberList = ConnectionJSON.ChangeArrayJSON(str, "card_number");
-                                creditNumbers = creditnumberList.toArray(new String[creditnumberList.size()]);
-                                System.out.println(creditNumbers[0]);
-                                creditNumber1.setText(creditNumbers[0]);
-                                //creditNumber2.setText(creditNumbers[1]);
-
                                 List<String> nomineeList = ConnectionJSON.ChangeArrayJSON(str, "nominee");
-                                creditNominee = nomineeList.toArray(new String[nomineeList.size()]);
-                                creditNominee1.setText(creditNominee[0]);
-                                //creditNominee2.setText(creditNominee[1]);
-
                                 List<String> creditidList = ConnectionJSON.ChangeArrayJSON(str, "card_id");
+
+                                creditCompanies = creditcompanyList.toArray(new String[creditcompanyList.size()]);
+                                creditNumbers = creditnumberList.toArray(new String[creditnumberList.size()]);
+                                creditNominee = nomineeList.toArray(new String[nomineeList.size()]);
                                 creditCardid = creditidList.toArray(new String[creditidList.size()]);
+
+                                creditCompany1.setText(creditCompanies[0]);
+                                creditNumber1.setText(creditNumbers[0]);
+                                System.out.println(creditNumbers[0]);
+                                creditNominee1.setText(creditNominee[0]);
                                 System.out.println(creditCardid[0]);
 
+                                creditCompany2.setText(creditCompanies[1]);
+                                creditNumber2.setText(creditNumbers[1]);
+                                creditNominee2.setText(creditNominee[1]);
 
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -199,22 +199,30 @@ public class ViewInputPayment extends Fragment {
                 nextbundle.putString("PRODUCT_ID", productID);
 
                 if (paymentRadioButton1.isChecked() == true) {
+                    String creditCompany1s = creditCompany1.getText().toString();
+                    if(creditCompany1s.equals("クレカ会社1")) {
+                        Toast.makeText(view.getContext() , "登録されていません", Toast.LENGTH_LONG).show();
+                    }else {
 
-                    System.out.println(creditCardid[0]);
+                        System.out.println(creditCardid[0]);
 
-                    //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
-                    nextbundle.putString("CARD_ID", creditCardid[0]);
+                        //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
+                        nextbundle.putString("CARD_ID", creditCardid[0]);
 
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress, nextbundle);
+                        Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress, nextbundle);
+                    }
 
-                }
+                }else if (paymentRadioButton2.isChecked() == true) {
+                    String creditCompany2s = creditCompany2.getText().toString();
+                    if(creditCompany2s.equals("クレカ会社2")) {
+                        Toast.makeText(view.getContext() , "登録されていません", Toast.LENGTH_LONG).show();
+                    }else {
 
-                if (paymentRadioButton2.isChecked() == true) {
+                        //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
+                        nextbundle.putString("CARD_ID", creditCardid[1]);
 
-                    //ここにラジオボタン2に書かれている情報をバンドルに渡す処理を書く
-                    nextbundle.putString("CARD_ID", creditCardid[1]);
-
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress,nextbundle);
+                        Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputPayment_to_fragmentViewInputShippingAddress, nextbundle);
+                    }
 
                 }
 

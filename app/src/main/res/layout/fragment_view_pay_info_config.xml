@@ -60,10 +60,9 @@
         android:id="@+id/textView_creditcard_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="96dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view10"
         app:layout_constraintStart_toEndOf="@+id/texiview_creditcard_company"
         app:layout_constraintTop_toTopOf="@+id/view10" />
 
@@ -94,12 +93,10 @@
         android:id="@+id/textView_creditcard_number2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="96dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/view10"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toEndOf="@+id/texiview_creditcard_company"
+        app:layout_constraintStart_toEndOf="@+id/texiview_creditcard_company2"
         app:layout_constraintTop_toBottomOf="@+id/view10" />
 
     <TextView
