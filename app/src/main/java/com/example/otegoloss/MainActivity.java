@@ -20,7 +20,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.otegoloss.databinding.ActivityMainBinding;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -84,8 +86,15 @@ public class MainActivity extends AppCompatActivity {
 //        setupActionBarWithNavController(this, searchController, searchBarConfiguration);
 //        NavigationUI.setupWithNavController(binding.toolbar, searchController);
 
+        // ユーザデータが保存されている変数
+        SharedPreferences userIDData;
+        String userID;
+        userIDData = getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
+
         LinearLayout view = findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(view);
+        ChangeBackgraund.changeBackGround(view, userID);
     }
 
 

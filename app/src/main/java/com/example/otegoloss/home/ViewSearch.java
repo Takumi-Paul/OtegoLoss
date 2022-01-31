@@ -6,7 +6,9 @@ Kobayashi
 
 package com.example.otegoloss.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,14 +41,21 @@ public class ViewSearch extends Fragment {
     private String pName = "";
     private String sName = "";
 
+    // ユーザデータが保存されている変数
+    private SharedPreferences userIDData;
+    String userID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_view_search, container, false);
 
+        userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
+        userID = userIDData.getString("userID", "error");
+        System.out.println(userID);
+
         LinearLayout background_view = view.findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(background_view);
+        ChangeBackgraund.changeBackGround(background_view, userID);
 
         productName = (EditText)view.findViewById(R.id.kensaku_product_name);
         sellerName = (EditText)view.findViewById(R.id.kensaku_seller_name);

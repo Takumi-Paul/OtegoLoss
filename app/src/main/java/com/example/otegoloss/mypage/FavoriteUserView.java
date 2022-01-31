@@ -145,10 +145,7 @@ public class FavoriteUserView extends Fragment {
 
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
-                // 画像ID
-                bundle.putInt("PHOTO", photos[position]);
-                //
-                bundle.putString("USER_NAME", favoriteIDs[position]);
+                bundle.putString("USER_ID", favoriteIDs[position]);
                 // Navigation遷移
                 Navigation.findNavController(view).navigate(R.id.action_favoriteUserView_to_exhibitProfile, bundle);
             }

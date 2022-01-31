@@ -87,9 +87,8 @@ public class UserFragment extends Fragment {
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-        if (userID == "error") {
-            userID = "u0000003";
-        }
+        //userID = "u0000001";
+
         System.out.println(userID);
 
         Button nextSettingProfileButton = view.findViewById(R.id.nextSettingProfile_button);

@@ -80,7 +80,7 @@ public class ViewSearchResult extends Fragment {
         String delivery = bundle.getString("DELIVERY_METHOD", "");
         String seller = bundle.getString("SELLER_NAME", "");
 
-        if (area == "産地") {
+        if (area.equals("産地")) {
             area = "";
         }
 
@@ -91,6 +91,7 @@ public class ViewSearchResult extends Fragment {
             case "選択無し":
                 hPrice = "";
                 lPrice = "";
+                break;
             case "0 ~ 1000":
                 hPrice = "1000";
                 lPrice = "0";

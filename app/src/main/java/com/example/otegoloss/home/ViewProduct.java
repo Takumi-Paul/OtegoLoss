@@ -8,6 +8,7 @@ package com.example.otegoloss.home;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,7 @@ public class ViewProduct extends Fragment {
     TextView priceTextView;
     TextView regionTextView;
     TextView exhibitDayTextView;
+    ImageView productImage;
 
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
@@ -70,12 +72,16 @@ public class ViewProduct extends Fragment {
     // 出品者ID
     String sellerID;
 
+    // 画像関連
+    String user_image_url;
+    Bitmap imgBmp;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
         LinearLayout background_view = view.findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(background_view);
+        ChangeBackgraund.changeBackGround(background_view, userID);
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
@@ -93,8 +99,7 @@ public class ViewProduct extends Fragment {
         String productID = bundle.getString("PRODUCT_ID", "");
 
         // imageViewのIDを関連付けて画像を表示
-        ImageView imageView = view.findViewById(R.id.productImage_imageView);
-        //imageView.setImageResource(imageId);
+        productImage = view.findViewById(R.id.productImage_imageView);
 
         productNameTextView = view.findViewById(R.id.productName_textView);
         proNameTextView = view.findViewById(R.id.proName_textView);
@@ -131,13 +136,25 @@ public class ViewProduct extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
+                    JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
+                    user_image_url = jsnObject.getString("product_image");
+
+                    // phpファイルまでのリンク
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + user_image_url);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    imgBmp = ConnectionJSON.downloadImage(img_url);
+                    System.out.println("connect");
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             System.out.println(String.valueOf(str));
                             System.out.println(endTime - startTime);
-
-                            JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             try {
 
                                 // Jsonのキーを指定すれば対応する値が入る
@@ -147,6 +164,8 @@ public class ViewProduct extends Fragment {
                                 showWeightTextView.setText(jsnObject.getString("weight"));
                                 priceTextView.setText(jsnObject.getString("price"));
                                 regionTextView.setText(jsnObject.getString("prefecture"));
+                                productImage.setImageBitmap(imgBmp);
+
                                 //exhibitDayTextView.setText(jsnObject.getString("Listing_date"));
 
                             } catch (JSONException e) {
@@ -155,7 +174,7 @@ public class ViewProduct extends Fragment {
 
                         }
                     });
-                } catch (IOException e) {
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                     System.out.println(e);
                 }
@@ -191,16 +210,6 @@ public class ViewProduct extends Fragment {
             public void onClick(View v) {
 
                 Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_fragmentViewComment2);
-                //FragmentManager fm_ViewComment = getParentFragmentManager();
-                //FragmentTransaction t_ViewComment  =  fm_ViewComment.beginTransaction();
-                // 次のFragment
-                //Fragment secondFragment = new ViewComment();
-                // fragmentManagerに次のfragmentを追加
-                //t_ViewComment.replace(R.id.fragmentProduct, secondFragment);
-                // 画面遷移戻りを設定
-                //t_ViewComment.addToBackStack(null);
-                // 画面遷移
-                //t_ViewComment.commit();
             }
         });
 
@@ -209,7 +218,7 @@ public class ViewProduct extends Fragment {
             public void onClick(View v) {
                 Bundle nextBundle = new Bundle();
                 // 出品者ID
-                bundle.putString("USER_NAME", sellerID);
+                nextBundle.putString("USER_ID", sellerID);
                 Navigation.findNavController(view).navigate(R.id.action_fragmentProduct_to_exhibitProfile, nextBundle);
             }
         });

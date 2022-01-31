@@ -7,76 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/nextInformation_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/light_green"
-        android:text="インフォメーション"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextProcedureRegister_button" />
-
-    <Button
-        android:id="@+id/nextDeleteAccount_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/light_green"
-        android:text="アカウント削除"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextInformation_button" />
-
-    <Button
-        android:id="@+id/nextProcedureRegister_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/light_green"
-        android:text="生産者登録"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextSettingAddress_button" />
-
-    <Button
-        android:id="@+id/nextSettingAddress_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/light_green"
-        android:text="配送先情報設定"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextSettingCredit_button" />
-
-    <Button
-        android:id="@+id/nextSettingCredit_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/light_green"
-        android:text="決済情報設定"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextMeter_button" />
-
-    <Button
-        android:id="@+id/nextSettingProfile_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/light_green"
-        android:onClick="viewConfigProfile"
-        android:text="プロフィール設定"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="100dp"
@@ -120,15 +50,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileUserName_textView" />
 
+
     <Button
         android:id="@+id/nextMeter_button"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/light_green"
         android:text="ロス削減メーター"
         android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nextSettingProfile_button"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
+
+    <Button
+        android:id="@+id/nextSettingCredit_button"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_green"
+        android:text="決済情報設定"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nextSettingProfile_button" />
+
+    <Button
+        android:id="@+id/nextSettingAddress_button"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_green"
+        android:text="配送先情報設定"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nextSettingCredit_button"
+        app:layout_constraintTop_toBottomOf="@+id/nextMeter_button" />
+
+    <Button
+        android:id="@+id/nextProcedureRegister_button"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_green"
+        android:text="生産者登録"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextSettingCredit_button" />
+
+    <Button
+        android:id="@+id/nextInformation_button"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="210dp"
+        android:backgroundTint="@color/light_green"
+        android:text="インフォメーション"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
+
+    <Button
+        android:id="@+id/nextDeleteAccount_button"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_green"
+        android:text="アカウント削除"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nextProcedureRegister_button"
+        app:layout_constraintTop_toBottomOf="@+id/nextSettingAddress_button" />
+
+    <Button
+        android:id="@+id/nextSettingProfile_button"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/light_green"
+        android:onClick="viewConfigProfile"
+        android:text="プロフィール設定"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserMessage_textView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
