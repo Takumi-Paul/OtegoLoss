@@ -281,7 +281,7 @@ public class ShippingFragment extends Fragment {
                 bundle.putStringArray("PRODUCT_NAME", productNames_Y);
                 bundle.putIntArray("PRICE", prices_Y);
                 bundle.putStringArray("LISTING_DATE",listingDate_Y);
-                bundle.putStringArray("IMG_LIST",imgURL_Y);
+                bundle.putStringArray("IMG_URL",imgURL_Y);
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history);
             }
@@ -313,5 +313,6 @@ public class ShippingFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_sold_out_product, bundle);
             }
         });
+
     }
 }

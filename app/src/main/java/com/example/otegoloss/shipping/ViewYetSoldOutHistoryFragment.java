@@ -75,7 +75,7 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_view_yet_sold_out_history, container, false);
-        this.progressDialog   = NewAccountActivity.progressDialog;
+        this.progressDialog = NewAccountActivity.progressDialog;
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
@@ -84,57 +84,13 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
         }
         System.out.println(userID);
 
-        // http通信
-        Thread t = new Thread(new Runnable() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void run() {
-                try {
-                    // phpファイルまでのリンク
-                    String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/ListingList.php";
-
-                    // クエリ文字列を連想配列に入れる
-                    Map<String, String> map = new HashMap<String, String>();
-                    map.put("user_id", userID);
-                    // クエリ文字列組み立て・URL との連結
-                    StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
-                    for (Map.Entry<String, String> param: map.entrySet()) {
-                        stringUrl.add(param.getKey() + "=" + param.getValue());
-                    }
-                    URL url = new URL(stringUrl.toString());
-
-                    System.out.println(url);
-                    // 処理開始時刻
-                    startTime = System.currentTimeMillis();
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
-
-                    // 終了時刻
-                    endTime = System.currentTimeMillis();
-                    Log.d("HTTP", str);
-                    System.out.println(String.valueOf(str));
-                    System.out.println(endTime - startTime);
-
-                    // Jsonのキーを指定すれば対応する値が入る
-                    //配列の取得
-                    List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
-                    productNames = productNameList.toArray(new String[productNameList.size()]);
-                    List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
-                    String[] priceString = priceList.toArray(new String[priceList.size()]);
-                    prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
-                    List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
-                    productID = produceIDList.toArray(new String[produceIDList.size()]);
-                    List<String> listingDateList = ConnectionJSON.ChangeArrayJSON(str, "listing_date");
-                    listingDate= listingDateList.toArray(new String[produceIDList.size()]);
-                    List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
-                    imgURL = imgStrList.toArray(new String[imgStrList.size()]);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    System.out.println(e);
-                }
-            }
-        });
+        //bundleからデータ受け取り
+        Bundle bundle = getArguments();
+        productID = bundle.getStringArray("PRODUCT_ID");
+        productNames = bundle.getStringArray("PRODUCT_NAME");
+        prices = bundle.getIntArray("PRICE");
+        listingDate = bundle.getStringArray("LISTING_DATE");
+        imgURL = bundle.getStringArray("IMG_URL");
 
         Thread t_img = new Thread(new Runnable() {
             @Override
@@ -165,18 +121,15 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
 
         // ThreadTestクラスの処理が終了するまで待機の指示
         try {
-            t.start();
-            System.out.println("start");
-            t.join();
-            System.out.println("join");
             t_img.start();
             t_img.join();
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
         }
-            return view;
-        }
+
+        return view;
+    }
 
         public void settingUI(View view){
             // GridViewのインスタンスを生成
@@ -217,7 +170,10 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
                     Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_history_to_navigation_shipping);
                 }
             });
-    }
+
+        }
+
 }
+
 
 
