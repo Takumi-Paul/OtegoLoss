@@ -128,13 +128,6 @@ public class ExhibitProfile extends Fragment {
                     }
                     System.out.println(img_url);
                     Bitmap bmp = ConnectionJSON.downloadImage(img_url);
-                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.user);
-                    if (bmp != null) {
-                        imgBmp = bmp;
-                    } else {
-                        imgBmp = normalBmp;
-                    }
-                    System.out.println("connect");
 
                     URL fav_path = null;
                     try {
@@ -174,7 +167,16 @@ public class ExhibitProfile extends Fragment {
                                 profile_username.setText(jsnObject.getString("user_name"));
                                 profile_message.setText(jsnObject.getString("user_profile_message"));
                                 userId_textView.setText(sellerID);
-                                profile_image.setImageBitmap(imgBmp);
+
+                                if (bmp == null) {
+                                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.user);
+                                    imgBmp = normalBmp;
+                                } else {
+                                    imgBmp = bmp;
+                                }
+                                System.out.println(imgBmp);
+                                System.out.println("connect");
+                                profile_image.setImageBitmap(bmp);
 
                                 if (fav_bool.equals("true")) {
                                     heartImage.setImageResource(R.drawable.pink_heart);

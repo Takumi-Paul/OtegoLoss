@@ -31,8 +31,8 @@
         app:layout_constraintEnd_toEndOf="@+id/background"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toTopOf="@+id/background"
-        app:srcCompat="@drawable/user"
-        app:tint="@color/dark_green" />
+        android:src="@drawable/user"
+         />
 
     <TextView
         android:id="@+id/userNameTextView"
