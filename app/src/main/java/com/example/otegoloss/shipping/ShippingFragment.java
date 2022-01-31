@@ -67,11 +67,42 @@ public class ShippingFragment extends Fragment {
     // 画像のBitMap
     private Bitmap[] bmps = new Bitmap[7];
     private List<Bitmap> imgList = new ArrayList<>();
+
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
     // ユーザID
     String userID;
+    //購入済
+    private String[] purchase;
 
+    //以下Sort用配列
+    //SoldOut用配列
+    // 商品名配列
+    private String[] productNames_S;
+    // 価格配列
+    private int[] prices_S;
+    // 商品ID
+    private String[] productID_S;
+    //出品日
+    private String[]  listingDate_S;
+    // 画像URL
+    private String[] imgURL_S;
+    // 画像のBitMap
+    private List<Bitmap> imgList_S = new ArrayList<>();
+
+    //YetSoldOut用配列
+    // 商品名配列
+    private String[] productNames_Y;
+    // 価格配列
+    private int[] prices_Y;
+    // 商品ID
+    private String[] productID_Y;
+    //出品日
+    private String[]  listingDate_Y;
+    // 画像URL
+    private String[] imgURL_Y;
+    // 画像のBitMap
+    private List<Bitmap> imgList_Y = new ArrayList<>();
 
     //画面表示
     @Override
@@ -124,13 +155,66 @@ public class ShippingFragment extends Fragment {
                     productNames = productNameList.toArray(new String[productNameList.size()]);
                     List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
                     String[] priceString = priceList.toArray(new String[priceList.size()]);
-                    prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
-                    List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
-                    productID = produceIDList.toArray(new String[produceIDList.size()]);
+                    List<String> productIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
+                    productID = productIDList.toArray(new String[productIDList.size()]);
                     List<String> listingDateList = ConnectionJSON.ChangeArrayJSON(str, "listing_date");
-                    listingDate= listingDateList.toArray(new String[produceIDList.size()]);
+                    listingDate= listingDateList.toArray(new String[listingDateList.size()]);
                     List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
                     imgURL = imgStrList.toArray(new String[imgStrList.size()]);
+                    List<String> purchaseList = ConnectionJSON.ChangeArrayJSON(str, "purchased");
+                    purchase = purchaseList.toArray(new String[purchaseList.size()]);
+
+
+                    List<String> productNames_SList = null;
+                    List<String> price_SList = null;
+                    List<String> productID_SList = null;
+                    List<String> listingDate_SList = null;
+                    List<String> imgStr_SList = null;
+
+                    List<String> productNames_YList = null;
+                    List<String> price_YList = null;
+                    List<String> productID_YList = null;
+                    List<String> listingDate_YList = null;
+                    List<String> imgStr_YList = null;
+
+
+                    for (int i = 0; i< purchase.length; i++){
+                        if(purchase[i].equals("1")){
+                            productNames_SList.add(productNames[i]);
+                            // 価格配列
+                            price_SList.add(priceString[i]);
+                            // 商品ID
+                            productID_SList.add(productID[i]);
+                            //出品日
+                            listingDate_SList.add(listingDate[i]);
+                            // 画像URL
+                            imgStr_SList.add(imgURL[i]);
+                        } else {
+                            productNames_YList.add(productNames[i]);
+                            // 価格配列
+                            price_YList.add(priceString[i]);
+                            // 商品ID
+                            productID_YList.add(productID[i]);
+                            //出品日
+                            listingDate_YList.add(listingDate[i]);
+                            // 画像URL
+                            imgStr_YList.add(imgURL[i]);
+                        }
+                    }
+
+                    productNames_S = productNames_SList.toArray(new String[productNames_SList.size()]);
+                    String[] priceString_S = price_SList.toArray(new String[price_SList.size()]);
+                    prices_S = Stream.of(priceString_S).mapToInt(Integer::parseInt).toArray();
+                    productID_S = productID_SList.toArray(new String[productID_SList.size()]);
+                    listingDate_S = listingDate_SList.toArray(new String[listingDate_SList.size()]);
+                    imgURL_S = imgStr_SList.toArray(new String[imgStr_SList.size()]);
+
+                    productNames_Y = productNames_YList.toArray(new String[productNames_YList.size()]);
+                    String[] priceString_Y = price_YList.toArray(new String[price_YList.size()]);
+                    prices_Y = Stream.of(priceString_Y).mapToInt(Integer::parseInt).toArray();
+                    productID_Y = productID_YList.toArray(new String[productID_YList.size()]);
+                    listingDate_Y = listingDate_YList.toArray(new String[listingDate_YList.size()]);
+                    imgURL_Y = imgStr_YList.toArray(new String[imgStr_YList.size()]);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -185,12 +269,20 @@ public class ShippingFragment extends Fragment {
 
     public void settingUI(View view) {
         // ボタン要素を取得
-        Button buttonYetSoldOutHistory = view.findViewById(R.id.button_yetsoldout_sold_out_history);
+        Button buttonYetSoldOutHistory = (Button) view.findViewById(R.id.button_yetsoldout_sold_out_history);
         // 完売済みボタンをクリックした時の処理
         buttonYetSoldOutHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // fragment_view_yet_sold_out_historyに遷移させる
+                Bundle bundle =new Bundle();
+
+                bundle.putStringArray("PRODUCT_ID", productID_Y);
+                bundle.putStringArray("PRODUCT_NAME", productNames_Y);
+                bundle.putIntArray("PRICE", prices_Y);
+                bundle.putStringArray("LISTING_DATE",listingDate_Y);
+                bundle.putStringArray("IMG_LIST",imgURL_Y);
+
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history);
             }
         });
@@ -202,10 +294,10 @@ public class ShippingFragment extends Fragment {
         // fragment_home.xml に inflate するためにGridAdapterに引数として渡す
         GridAdapterOfShipping adapter = new GridAdapterOfShipping(getActivity().getApplicationContext(),
                 R.layout.grid_items_of_shipping,
-                imgList,
-                productNames,
-                prices,
-                listingDate
+                imgList_S,
+                productNames_S,
+                prices_S,
+                listingDate_S
         );
         // gridViewにadapterをセット
         gridview.setAdapter(adapter);
@@ -216,7 +308,7 @@ public class ShippingFragment extends Fragment {
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
                 // 商品ID
-                bundle.putString("PRODUCT_ID", productID[position]);
+                bundle.putString("PRODUCT_ID", productID_S[position]);
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_sold_out_product, bundle);
             }
