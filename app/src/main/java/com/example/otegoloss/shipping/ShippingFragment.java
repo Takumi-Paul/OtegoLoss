@@ -228,7 +228,7 @@ public class ShippingFragment extends Fragment {
             @Override
             public void run() {
 
-                for (int i = 0; i < imgURL.length; i++) {
+                for (int i = 0; i < imgURL_S.length; i++) {
                     // phpファイルまでのリンク
                     URL img_url = null;
                     try {
@@ -237,7 +237,7 @@ public class ShippingFragment extends Fragment {
                         e.printStackTrace();
                     }
                     System.out.println(img_url);
-                    imgList.add(ConnectionJSON.downloadImage(img_url));
+                    imgList_S.add(ConnectionJSON.downloadImage(img_url));
                     System.out.println("connect");
                 }
 

@@ -42,6 +42,8 @@ public class ViewYetSoldOutProductFragment extends Fragment {
     //出品日
     //private String listing_date = "20220107";
 
+    String productID;
+
     TextView productNameTextView;
     TextView productPriceTextView;
     TextView productAreaTextView;
@@ -60,7 +62,7 @@ public class ViewYetSoldOutProductFragment extends Fragment {
         // 画像ID
         //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
-        String productID = bundle.getString("PRODUCT_ID", "");
+        productID = bundle.getString("PRODUCT_ID", "");
 
         // imageViewのIDを関連付けて画像を表示
         ImageView imageView = view.findViewById(R.id.product_image_view_sold_out_product);
@@ -154,6 +156,9 @@ public class ViewYetSoldOutProductFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // fragmentDeleteProductに遷移させる
+                Bundle bundle = new Bundle();
+                bundle.putString("PRODUCT_ID", productID);
+
                 Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_product_to_navigation_delete_product);
             }
         });
