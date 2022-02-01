@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/accountImage_imageView"
             android:layout_width="match_parent"
-            android:layout_height="109dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/user" />
 

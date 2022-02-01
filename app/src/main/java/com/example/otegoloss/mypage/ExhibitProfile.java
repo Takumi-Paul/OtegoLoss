@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,7 +24,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.otegoloss.ConnectionJSON;
+import com.example.otegoloss.ListViewAdapter;
 import com.example.otegoloss.R;
+import com.example.otegoloss.ReviewListViewAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,8 +36,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
+import java.util.stream.Stream;
 
 public class ExhibitProfile extends Fragment {
 
@@ -61,6 +66,13 @@ public class ExhibitProfile extends Fragment {
     // お気に入りの判定値
     private String fav_bool;
     private Boolean heart_flag = false;
+
+    // レビュー
+    private String[] userArray;
+    private int[] assessmentArray;
+    private String[] commentArray;
+    private String review_str;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -156,6 +168,42 @@ public class ExhibitProfile extends Fragment {
                         e.printStackTrace();
                     }
 
+                    URL review_path = null;
+                    try {
+                        review_path = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/Review.php");
+                        // クエリ文字列を連想配列に入れる
+                        Map<String, String> review_map = new HashMap<String, String>();
+                        review_map.put("user_id", sellerID);
+                        // クエリ文字列組み立て・URL との連結
+                        StringJoiner review_stringUrl = new StringJoiner("&", review_path + "?", "");
+                        for (Map.Entry<String, String> param: review_map.entrySet()) {
+                            review_stringUrl.add(param.getKey() + "=" + param.getValue());
+                        }
+                        URL review_url = new URL(review_stringUrl.toString());
+                        System.out.println(review_url);
+                        // 処理開始時刻
+                        startTime = System.currentTimeMillis();
+                        //レビューの受信
+                        HttpURLConnection review_con =(HttpURLConnection)review_url.openConnection();
+                        review_str = ConnectionJSON.InputStreamToString(review_con.getInputStream());
+                        // Jsonのキーを指定すれば対応する値が入る
+                        //配列の取得
+                        List<String> userList = ConnectionJSON.ChangeArrayJSON(review_str, "user_name");
+                        userArray = userList.toArray(new String[userList.size()]);
+                        List<String> assList = ConnectionJSON.ChangeArrayJSON(review_str, "assessment");
+                        String[] assString = assList.toArray(new String[assList.size()]);
+                        assessmentArray = Stream.of(assString).mapToInt(Integer::parseInt).toArray();
+                        List<String> commentList = ConnectionJSON.ChangeArrayJSON(review_str, "comment");
+                        commentArray = commentList.toArray(new String[commentList.size()]);
+
+                        // 終了時刻
+                        endTime = System.currentTimeMillis();
+                        Log.d("HTTP", fav_bool);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -167,6 +215,12 @@ public class ExhibitProfile extends Fragment {
                                 profile_username.setText(jsnObject.getString("user_name"));
                                 profile_message.setText(jsnObject.getString("user_profile_message"));
                                 userId_textView.setText(sellerID);
+
+                                ListView reviewList = view.findViewById(R.id.reviewList);
+                                BaseAdapter arrayAdapter = new ReviewListViewAdapter(
+                                        getActivity().getApplicationContext(), R.layout.review_list, userArray, assessmentArray, commentArray);
+
+                                reviewList.setAdapter(arrayAdapter);
 
                                 if (bmp == null) {
                                     Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.user);
@@ -333,7 +387,10 @@ public class ExhibitProfile extends Fragment {
         ReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_exhibitProfile_to_reviewUser);
+                Bundle nbundle = new Bundle();
+                nbundle.putString("SELLER_ID", sellerID);
+
+                Navigation.findNavController(view).navigate(R.id.action_exhibitProfile_to_reviewUser, nbundle);
             }
         });
 

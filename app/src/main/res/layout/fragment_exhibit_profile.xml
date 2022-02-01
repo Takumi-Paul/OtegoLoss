@@ -21,18 +21,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/userImage"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userCard"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="157dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="157dp"
-        app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toTopOf="@+id/background"
-        android:src="@drawable/user"
-         />
+        app:cardCornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="@id/background"
+        app:layout_constraintStart_toStartOf="@id/background"
+        app:layout_constraintTop_toTopOf="@id/background">
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/userNameTextView"
@@ -45,7 +52,7 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/background"
         app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toBottomOf="@+id/userImage" />
+        app:layout_constraintTop_toBottomOf="@+id/userCard" />
 
     <TextView
         android:id="@+id/userIDTextView"
@@ -104,7 +111,7 @@
         android:layout_marginStart="25dp"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/reviewTextView"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/star_empty" />
 
     <ImageView
         android:id="@+id/star2"
@@ -112,7 +119,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/star1"
         app:layout_constraintTop_toBottomOf="@+id/reviewTextView"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/star_empty" />
 
     <ImageView
         android:id="@+id/star3"
@@ -120,7 +127,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/star2"
         app:layout_constraintTop_toBottomOf="@+id/reviewTextView"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/star_empty" />
 
     <ImageView
         android:id="@+id/star4"
@@ -128,7 +135,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/star3"
         app:layout_constraintTop_toBottomOf="@+id/reviewTextView"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/star_empty" />
 
     <ImageView
         android:id="@+id/star5"
@@ -136,9 +143,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/star4"
         app:layout_constraintTop_toBottomOf="@+id/reviewTextView"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/star_empty" />
 
     <ListView
+        android:id="@+id/reviewList"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -160,6 +168,6 @@
         android:background="@null"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/userNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/userImage" />
+        app:layout_constraintTop_toBottomOf="@+id/userCard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

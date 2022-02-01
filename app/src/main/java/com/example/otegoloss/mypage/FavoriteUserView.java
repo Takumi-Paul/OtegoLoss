@@ -2,6 +2,8 @@ package com.example.otegoloss.mypage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +34,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +59,10 @@ public class FavoriteUserView extends Fragment {
 
     private String[] favoriteIDs;
 
+    // 画像URL
+    private String[] imgURL;
+
+    private List<Bitmap> imgList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -97,12 +105,6 @@ public class FavoriteUserView extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println(String.valueOf(str));
-                            System.out.println(endTime - startTime);
-
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             // Jsonのキーを指定すれば対応する値が入る
                             // productNameTextView.setText(jsnObject.getString("product_name"));
@@ -110,10 +112,9 @@ public class FavoriteUserView extends Fragment {
                             favoriteIDs = favoriteIDList.toArray(new String[favoriteIDList.size()]);
                             List<String> favoriteList = ConnectionJSON.ChangeArrayJSON(str, "user_name");
                             favoriteUserNames = favoriteList.toArray(new String[favoriteList.size()]);
+                            List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "user_profile_image");
+                            imgURL = imgStrList.toArray(new String[imgStrList.size()]);
 
-                            settingUI(view);
-                        }
-                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                     System.out.println(e);
@@ -121,9 +122,44 @@ public class FavoriteUserView extends Fragment {
             }
         });
 
+        Thread t_img = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (int i = 0; i < imgURL.length; i++) {
+                    // phpファイルまでのリンク
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + imgURL[i]);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    Bitmap bmp = ConnectionJSON.downloadImage(img_url);
+                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.box);
+                    if (bmp != null) {
+                        imgList.add(bmp);
+                    } else {
+                        imgList.add(normalBmp);
+                    }
+                    System.out.println("connect");
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //progressDialog.dismiss();
+                        settingUI(view);
+                    }
+                });
+            }
+        });
+
         try {
             t.start();
             t.join();
+            t_img.start();
+            t_img.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -131,11 +167,10 @@ public class FavoriteUserView extends Fragment {
     }
 
     public void settingUI(View view) {
-        int[] photos = {R.drawable.user, R.drawable.user, R.drawable.user, R.drawable.user, R.drawable.user, R.drawable.user, R.drawable.user, R.drawable.user};
 
         ListView favoriteUserList = view.findViewById(R.id.favoriteUser_list);
-        BaseAdapter arrayAdapter = new ListViewAdapter(
-                getActivity().getApplicationContext(), R.layout.list, favoriteUserNames, photos);
+        BaseAdapter arrayAdapter = new com.example.otegoloss.ListViewAdapter(
+                getActivity().getApplicationContext(), R.layout.list, favoriteUserNames, imgList);
 
         favoriteUserList.setAdapter(arrayAdapter);
 
