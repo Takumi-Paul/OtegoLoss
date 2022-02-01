@@ -165,19 +165,20 @@ public class ShippingFragment extends Fragment {
                     purchase = purchaseList.toArray(new String[purchaseList.size()]);
 
 
-                    List<String> productNames_SList = null;
-                    List<String> price_SList = null;
-                    List<String> productID_SList = null;
-                    List<String> listingDate_SList = null;
-                    List<String> imgStr_SList = null;
+                    List<String> productNames_SList = new ArrayList<>();
+                    List<String> price_SList = new ArrayList<>();
+                    List<String> productID_SList = new ArrayList<>();
+                    List<String> listingDate_SList = new ArrayList<>();
+                    List<String> imgStr_SList = new ArrayList<>();
 
-                    List<String> productNames_YList = null;
-                    List<String> price_YList = null;
-                    List<String> productID_YList = null;
-                    List<String> listingDate_YList = null;
-                    List<String> imgStr_YList = null;
+                    List<String> productNames_YList = new ArrayList<>();
+                    List<String> price_YList = new ArrayList<>();
+                    List<String> productID_YList = new ArrayList<>();
+                    List<String> listingDate_YList = new ArrayList<>();
+                    List<String> imgStr_YList = new ArrayList<>();
 
-
+                    System.out.println(productNames.length);
+                    System.out.println(purchase.length);
                     for (int i = 0; i< purchase.length; i++){
                         if(purchase[i].equals("1")){
                             productNames_SList.add(productNames[i]);
@@ -283,7 +284,7 @@ public class ShippingFragment extends Fragment {
                 bundle.putStringArray("LISTING_DATE",listingDate_Y);
                 bundle.putStringArray("IMG_URL",imgURL_Y);
 
-                Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history, bundle);
             }
         });
 
