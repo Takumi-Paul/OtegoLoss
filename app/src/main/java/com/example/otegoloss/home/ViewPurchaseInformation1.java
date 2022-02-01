@@ -14,11 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 
@@ -60,6 +62,10 @@ public class ViewPurchaseInformation1 extends Fragment {
         String cardID = bundle.getString("CARD_ID", "");
 
         String daddressID = bundle.getString("SHIPPING_ID", "");
+
+//        //背景
+//        LinearLayout background_view = view.findViewById(R.id.background);
+//        ChangeBackgraund.changeBackGround(background_view, userID);
 
 
         //「購入確定」ボタンが押された時の処理

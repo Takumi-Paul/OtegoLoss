@@ -26,6 +26,7 @@ import com.example.otegoloss.GridAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -71,6 +72,7 @@ public class HomeFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+
         this.progressDialog = NewAccountActivity.progressDialog;
 
         // http通信
@@ -101,7 +103,7 @@ public class HomeFragment extends Fragment {
                     prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
                     List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
                     productID = produceIDList.toArray(new String[produceIDList.size()]);
-                    List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "seller_id");
+                    List<String> sellerIDList = ConnectionJSON.ChangeArrayJSON(str, "user_name");
                     producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
                     List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
                     imgURL = imgStrList.toArray(new String[imgStrList.size()]);

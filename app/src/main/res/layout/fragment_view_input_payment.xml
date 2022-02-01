@@ -5,17 +5,17 @@
     android:id="@+id/fragmentViewInputPayment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2E8CF" >
+    >
 
-<!--    このImageViewいらないかも(小林)-->
     <Button
         android:id="@+id/addCredit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/light_green"
+        android:textColor="@color/white"
         android:text="決済情報を追加"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
@@ -24,20 +24,26 @@
         android:id="@+id/deleteCredit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="68dp"
+        android:backgroundTint="@color/light_green"
+        android:textColor="@color/white"
         android:text="決済情報を削除"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCredit_button" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <Button
         android:id="@+id/review_finish_button"
-        android:layout_width="111dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/light_green"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:backgroundTint="@color/green"
         android:text="次へ"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteCredit_button" />
@@ -45,8 +51,8 @@
     <View
         android:id="@+id/view"
         android:layout_width="345dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="88dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="100dp"
         android:background="#92FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
@@ -56,8 +62,8 @@
     <View
         android:id="@+id/view3"
         android:layout_width="345dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="32dp"
         android:background="#92FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
@@ -66,99 +72,93 @@
 
 
     <RadioGroup
-        android:layout_width="135dp"
-        android:layout_height="266dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.061"
+        android:id="@+id/radioGroup3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/view">
 
         <RadioButton
             android:id="@+id/payment_radiobutton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp" />
+            android:layout_marginTop="50dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp" />
 
         <RadioButton
             android:id="@+id/payment_radiobutton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
-            />
+            android:layout_marginTop="130dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/credit_company1"
         android:layout_width="126dp"
         android:layout_height="26dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="クレカ会社1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
         android:id="@+id/credit_company2"
         android:layout_width="126dp"
         android:layout_height="26dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="クレカ会社2"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <TextView
         android:id="@+id/credit_number2"
         android:layout_width="123dp"
         android:layout_height="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="クレカ番号2"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/credit_company2" />
 
     <TextView
         android:id="@+id/credit_number1"
         android:layout_width="124dp"
         android:layout_height="27dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="クレカ番号1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/credit_company1" />
 
     <TextView
         android:id="@+id/credit_nominee1"
         android:layout_width="195dp"
         android:layout_height="31dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="名義人1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/credit_company1" />
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/credit_number1" />
 
     <TextView
         android:id="@+id/credit_nominee2"
         android:layout_width="186dp"
         android:layout_height="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="名義人2"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toBottomOf="@+id/credit_company2" />
+        app:layout_constraintStart_toEndOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/credit_number2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        //toolbar.setLogo(R.drawable.title);
         setSupportActionBar(toolbar);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

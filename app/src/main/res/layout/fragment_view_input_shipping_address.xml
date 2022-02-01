@@ -5,40 +5,50 @@
     android:id="@+id/fragmentViewInputShippingAddress"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2E8CF" >
+    >
 
     <Button
         android:id="@+id/next_button_shipping"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="12dp"
-        android:background="@color/light_green"
+        android:layout_marginEnd="68dp"
+        android:backgroundTint="@color/green"
         android:text="次へ"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteAddress_button" />
 
     <Button
         android:id="@+id/addAddress_button"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/light_green"
+        android:textColor="@color/white"
         android:text="住所を追加"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintEnd_toStartOf="@+id/deleteAddress_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shippingAddress2_view" />
 
     <Button
         android:id="@+id/deleteAddress_button"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="68dp"
         android:text="住所を削除"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addAddress_button"
         app:layout_constraintTop_toBottomOf="@+id/shippingAddress2_view" />
 
     <View

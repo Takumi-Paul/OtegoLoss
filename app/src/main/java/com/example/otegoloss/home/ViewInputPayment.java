@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 
@@ -69,6 +71,10 @@ public class ViewInputPayment extends Fragment {
         String userID = bundle.getString("USER_ID", "");
 
         String productID = bundle.getString("PRODUCT_ID", "");
+
+//        //背景
+//        LinearLayout background_view = view.findViewById(R.id.background);
+//        ChangeBackgraund.changeBackGround(background_view, userID);
 
 
         creditCompany1 = view.findViewById(R.id.credit_company1);

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentEntryOfExhibitInfo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/beige">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="0dp"
@@ -110,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="商品画像"
+                    android:layout_margin="8dp"
                     android:textSize="18sp" />
 
                 <ImageView

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +77,10 @@ public class ViewInputShippingAddress extends Fragment {
         String productID = bundle.getString("PRODUCT_ID", "");
 
         String cardID = bundle.getString("CARD_ID", "");
+
+        //背景
+//        LinearLayout background_view = view.findViewById(R.id.background);
+//        ChangeBackgraund.changeBackGround(background_view, userID);
 
         addressNumber1 = view.findViewById(R.id.ShippingAddressNumber1_textView);
         shippingAddress1 = view.findViewById(R.id.ShippingAddress1_textView);

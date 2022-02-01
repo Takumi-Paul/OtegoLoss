@@ -80,7 +80,7 @@ public class ViewSearchResult extends Fragment {
         String delivery = bundle.getString("DELIVERY_METHOD", "");
         String seller = bundle.getString("SELLER_NAME", "");
 
-        if (area.equals("産地")) {
+        if (area.equals("地域")) {
             area = "";
         }
 

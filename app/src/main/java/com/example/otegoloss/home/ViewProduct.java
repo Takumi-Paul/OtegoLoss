@@ -9,6 +9,7 @@ package com.example.otegoloss.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,6 +61,9 @@ public class ViewProduct extends Fragment {
     TextView regionTextView;
     TextView exhibitDayTextView;
     ImageView productImage;
+    TextView descriptionTextView;
+    TextView urlTextView;
+    TextView deliveryTextView;
 
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;
@@ -80,8 +84,8 @@ public class ViewProduct extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
-        LinearLayout background_view = view.findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(background_view, userID);
+//        LinearLayout background_view = view.findViewById(R.id.background);
+//        ChangeBackgraund.changeBackGround(background_view, userID);
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
@@ -103,10 +107,14 @@ public class ViewProduct extends Fragment {
 
         productNameTextView = view.findViewById(R.id.productName_textView);
         proNameTextView = view.findViewById(R.id.proName_textView);
+        proNameTextView.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
         showWeightTextView = view.findViewById(R.id.showWeight_textView);
         priceTextView = view.findViewById(R.id.price_textView);
         regionTextView = view.findViewById(R.id.region_textView);
-        //exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
+        exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
+        descriptionTextView = view.findViewById(R.id.description);
+        urlTextView = view.findViewById(R.id.recipe_URL);
+        deliveryTextView = view.findViewById(R.id.delivery);
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -159,11 +167,15 @@ public class ViewProduct extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
-                                sellerID = jsnObject.getString("seller_id");
+                                sellerID = jsnObject.getString("user_name");
                                 proNameTextView.setText(sellerID);
-                                showWeightTextView.setText(jsnObject.getString("weight"));
-                                priceTextView.setText(jsnObject.getString("price"));
-                                regionTextView.setText(jsnObject.getString("prefecture"));
+                                showWeightTextView.setText("重量: " + jsnObject.getString("weight") + "g");
+                                priceTextView.setText(jsnObject.getString("price") + "円");
+                                regionTextView.setText("地域: " + jsnObject.getString("prefecture"));
+                                exhibitDayTextView.setText("出品日: " + jsnObject.getString("listing_date"));
+                                descriptionTextView.setText(jsnObject.getString("product_desc"));
+                                urlTextView.setText(jsnObject.getString("recipe_url"));
+                                deliveryTextView.setText("配達方法: " + jsnObject.getString("delivery_meth"));
                                 productImage.setImageBitmap(imgBmp);
 
                                 //exhibitDayTextView.setText(jsnObject.getString("Listing_date"));

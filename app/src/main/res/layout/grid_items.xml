@@ -8,7 +8,11 @@
     <View
         android:id="@+id/product_view"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@color/white"
         android:scaleType="centerCrop" />
 
@@ -16,6 +20,12 @@
         android:id="@+id/image_view"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_alignStart="@+id/product_view"
+        android:layout_alignEnd="@+id/product_view"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="0dp"
         android:contentDescription="@string/product_name"
         android:scaleType="centerCrop" />
 
@@ -24,10 +34,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_view"
+        android:layout_alignStart="@+id/product_view"
+        android:layout_alignEnd="@+id/product_view"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
         android:gravity="left"
-        android:maxHeight="24dp"
+        android:maxHeight="36dp"
         android:textColor="@color/blue_black"
+        android:textStyle="bold"
         android:textSize="24sp" />
 
     <TextView
@@ -35,17 +50,22 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productHome_textView"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="110dp"
+        android:layout_alignEnd="@+id/product_view"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="right"
         android:textColor="@color/red_brown"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/producer_id_textView"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/productHome_textView"
+        android:layout_alignStart="@+id/product_view"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:gravity="left"
         android:textColor="@color/blue_black"
