@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -139,7 +140,13 @@ public class UserFragment extends Fragment {
                         e.printStackTrace();
                     }
                     System.out.println(img_url);
-                    imgBmp = ConnectionJSON.downloadImage(img_url);
+                    Bitmap bmp = ConnectionJSON.downloadImage(img_url);
+                    Bitmap normalBmp = BitmapFactory.decodeResource(getResources(), R.drawable.user);
+                    if (bmp != null) {
+                        imgBmp = bmp;
+                    } else {
+                       imgBmp = normalBmp;
+                    }
                     System.out.println("connect");
 
                     getActivity().runOnUiThread(new Runnable() {

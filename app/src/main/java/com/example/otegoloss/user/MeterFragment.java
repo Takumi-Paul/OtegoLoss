@@ -109,8 +109,12 @@ public class MeterFragment extends Fragment {
                             JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
                             //try {
                                 // Jsonのキーを指定すれば対応する値が入る
-                                //meter_weight.setText(jsnObject.getString("gross_weight"));
-                                meter_weight.setText("1000000");
+                            try {
+                                meter_weight.setText(jsnObject.getString("gross_weight"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            //meter_weight.setText("1000000");
                                 String meter_weights = meter_weight.getText().toString();
                                 if(meter_weights.equals("重さ")){
                                     //image_mater.setImageDrawable(meter0);

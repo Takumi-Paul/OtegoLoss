@@ -62,7 +62,6 @@ public class ViewYetSoldOutHistoryFragment extends Fragment {
     // 画像URL
     private String[] imgURL;
     // 画像のBitMap
-    private Bitmap[] bmps = new Bitmap[7];
     private List<Bitmap> imgList = new ArrayList<>();
     // ユーザデータが保存されている変数
     private SharedPreferences userIDData;

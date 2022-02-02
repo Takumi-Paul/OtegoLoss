@@ -249,7 +249,7 @@ public class ViewPurchaseInformation1 extends Fragment {
                             weight_map.put("product_id", productID);
                             weight_map.put("user_id", userID);
                             // クエリ文字列組み立て・URL との連結
-                            StringJoiner weight_stringUrl = new StringJoiner("&", path + "?", "");
+                            StringJoiner weight_stringUrl = new StringJoiner("&", weight_path + "?", "");
                             for (Map.Entry<String, String> param: weight_map.entrySet()) {
                                 weight_stringUrl.add(param.getKey() + "=" + param.getValue());
                             }
@@ -262,7 +262,7 @@ public class ViewPurchaseInformation1 extends Fragment {
 
                             // 終了時刻
                             endTime = System.currentTimeMillis();
-                            Log.d("HTTP", str);
+                            Log.d("HTTP", weight_str);
 
 
                             getActivity().runOnUiThread(new Runnable() {

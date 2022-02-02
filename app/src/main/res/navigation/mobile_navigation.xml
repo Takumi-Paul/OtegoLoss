@@ -87,11 +87,11 @@
     <fragment
         android:id="@+id/navigation_delete_product_completed"
         android:name="com.example.otegoloss.shipping.DeleteProductCompleted"
-        android:label="出品情報削除かんりょう"
+        android:label="出品情報削除完了"
         tools:layout="@layout/fragment_delete_product_completed">
         <action
             android:id="@+id/action_navigation_delete_product_completed_to_navigation_yet_sold_out_history"
-            app:destination="@id/navigation_yet_sold_out_history" />
+            app:destination="@id/navigation_shipping" />
     </fragment>
 
     <fragment

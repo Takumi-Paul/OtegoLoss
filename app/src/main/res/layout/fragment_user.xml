@@ -12,6 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="70dp"
+        app:cardBackgroundColor="@color/dark_green"
         app:cardCornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,7 @@
             android:id="@+id/accountImage_imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/user" />
 
     </androidx.cardview.widget.CardView>

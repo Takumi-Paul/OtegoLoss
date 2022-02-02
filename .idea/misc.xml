@@ -64,7 +64,7 @@
         <entry key="app/src/main/res/drawable/splash.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_new_account.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_new_account.xml" value="0.6613343394558786" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_toolbar.xml" value="0.1" />
@@ -75,7 +75,7 @@
         <entry key="app/src/main/res/layout/fragment_purchase_history.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_search_result.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_shipping.xml" value="0.1909917670601803" />
-        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_account_registration.xml" value="0.23428116820182004" />
         <entry key="app/src/main/res/layout/fragment_view_comment.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_creditcard_regist.xml" value="0.27404876174140164" />

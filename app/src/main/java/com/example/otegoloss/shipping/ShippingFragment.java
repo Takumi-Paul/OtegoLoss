@@ -114,7 +114,7 @@ public class ShippingFragment extends Fragment {
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
         if (userID == "error") {
-            userID = "u0000001";
+            userID = "u0000005";
         }
         System.out.println(userID);
 

@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:ems="10"
-                android:hint="量(kg単位、数値のみ)"
+                android:hint="量(g単位、数値のみ)"
                 android:inputType="number"
                 android:minHeight="50dp" />
 

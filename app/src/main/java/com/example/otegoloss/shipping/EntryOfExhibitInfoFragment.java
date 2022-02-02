@@ -153,14 +153,7 @@ public class EntryOfExhibitInfoFragment extends Fragment {
                 ) {
                     Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
 
-                } else if(pro_names.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
-                    && pro_descriptions.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
-                    && recipe_urls.matches("^[0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
-                   /*
-                    && (int_weight >= 0 && int_weight <= 30000)
-                    && (int_price >= 10 && int_price <= 99999)
-                    */
-                ) {
+                } else {
                     // 画像ファイル取得
                     Bitmap bitmap = ((BitmapDrawable)input_image.getDrawable()).getBitmap();
                     String strBase64 = encodeImage(bitmap);
@@ -184,8 +177,6 @@ public class EntryOfExhibitInfoFragment extends Fragment {
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
                     Navigation.findNavController(view).navigate(R.id.action_entry_to_confirmation, bundle);
-                } else {
-                    Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
             }
         });

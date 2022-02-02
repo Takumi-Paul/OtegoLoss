@@ -159,7 +159,7 @@ public class ViewYetSoldOutProductFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("PRODUCT_ID", productID);
 
-                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_product_to_navigation_delete_product);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_yet_sold_out_product_to_navigation_delete_product, bundle);
             }
         });
 
