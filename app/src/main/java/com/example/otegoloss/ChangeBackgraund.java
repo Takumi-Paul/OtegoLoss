@@ -51,12 +51,16 @@ public class ChangeBackgraund {
                     System.out.println("weight=" + weight);
                     Log.d("HTTP", str);
 
-                    if (weight < 10) {
+                    if (weight < 1000) {
                         view.setBackgroundResource(R.drawable.screen1);
-                    } else if (weight < 50) {
+                    } else if (weight < 3000) {
                         view.setBackgroundResource(R.drawable.screen2);
-                    } else if (weight < 100) {
-                        view.setBackgroundResource(R.drawable.background);
+                    } else if (weight < 6000) {
+                        view.setBackgroundResource(R.drawable.screen3);
+                    } else if (weight < 10000) {
+                        view.setBackgroundResource(R.drawable.screen4);
+                    } else {
+                        view.setBackgroundResource(R.drawable.screen4);
                     }
 
                 } catch (MalformedURLException e) {
