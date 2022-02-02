@@ -201,11 +201,11 @@ public class ViewInputShippingAddress extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Bundle nextbundle = new Bundle();
+                Bundle nextbundle = bundle;
 
-                nextbundle.putString("USER_ID", userID);
-                nextbundle.putString("PRODUCT_ID", productID);
-                nextbundle.putString("CARD_ID", cardID);
+//                nextbundle.putString("USER_ID", userID);
+//                nextbundle.putString("PRODUCT_ID", productID);
+//                nextbundle.putString("CARD_ID", cardID);
 
 
                 if (Choice1Button.isChecked() == true) {
@@ -216,6 +216,9 @@ public class ViewInputShippingAddress extends Fragment {
 
                         //ここにラジオボタン1に書かれている情報をバンドルに渡す処理を書く
                         nextbundle.putString("SHIPPING_ID", daddressID[0]);
+                        nextbundle.putString("POSTAL", postalCodes[0]);
+                        nextbundle.putString("ADDRESS", addresses[0]);
+                        nextbundle.putString("REAL", realNames[0]);
 
                         Navigation.findNavController(view).navigate(R.id.action_fragmentViewInputShippingAddress_to_purchase_information1, nextbundle);
                     }

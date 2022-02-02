@@ -39,7 +39,7 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(itemLayoutId, parent, false);
             // ViewHolder を生成
             holder = new com.example.otegoloss.ListViewAdapter.ViewHolder();
-            holder.textView = convertView.findViewById(R.id.textView);
+            holder.textView = convertView.findViewById(R.id.cProductName);
             holder.imageView = convertView.findViewById(R.id.userImageView);
             convertView.setTag(holder);
         }

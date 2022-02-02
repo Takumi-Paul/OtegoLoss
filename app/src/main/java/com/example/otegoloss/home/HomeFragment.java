@@ -200,6 +200,8 @@ public class HomeFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     // 商品ID
                     bundle.putString("PRODUCT_ID", productID[position]);
+                    // 購入からの遷移
+                    bundle.putBoolean("PURCHASE", true);
                     // Navigation遷移
                     Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_fragmentProduct, bundle);
                 }

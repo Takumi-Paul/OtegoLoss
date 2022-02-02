@@ -9,6 +9,7 @@ package com.example.otegoloss.home;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,7 @@ public class ViewSearch extends Fragment {
     private SharedPreferences userIDData;
     String userID;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +56,8 @@ public class ViewSearch extends Fragment {
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-        LinearLayout background_view = view.findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(background_view, userID);
+//        LinearLayout background_view = view.findViewById(R.id.background);
+//        ChangeBackgraund.changeBackGround(background_view, userID);
 
         productName = (EditText)view.findViewById(R.id.kensaku_product_name);
         sellerName = (EditText)view.findViewById(R.id.kensaku_seller_name);

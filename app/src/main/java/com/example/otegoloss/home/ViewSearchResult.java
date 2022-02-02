@@ -199,7 +199,7 @@ public class ViewSearchResult extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
-                    if (str != null) {
+                    if (!str.equals("[]")) {
                     // Jsonのキーを指定すれば対応する値が入る
                     //配列の取得
                     List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
@@ -250,7 +250,7 @@ public class ViewSearchResult extends Fragment {
                     @Override
                     public void run() {
                         //progressDialog.dismiss();
-                        if (str != null) {
+                        if (!str.equals("[]")) {
                             settingUI(view);
                         } else {
                             Toast.makeText(view.getContext(), "検索結果がありません", Toast.LENGTH_LONG).show();
@@ -266,8 +266,12 @@ public class ViewSearchResult extends Fragment {
             System.out.println("start");
             t.join();
             System.out.println("join");
-            t_img.start();
-            t_img.join();
+            if (!str.equals("[]")) {
+                t_img.start();
+                t_img.join();
+            } else {
+                Toast.makeText(view.getContext(), "検索結果がありません", Toast.LENGTH_LONG).show();
+            }
         } catch (InterruptedException e) {
             // 例外処理
             e.printStackTrace();
@@ -302,6 +306,8 @@ public class ViewSearchResult extends Fragment {
                 Bundle bundle = new Bundle();
                 // 商品ID
                 bundle.putString("PRODUCT_ID", productID[position]);
+                // 購入からの遷移
+                bundle.putBoolean("PURCHASE", true);
                 // Navigation遷移
                 Navigation.findNavController(view).navigate(R.id.action_result_to_fragmentProduct, bundle);
             }

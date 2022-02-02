@@ -26,7 +26,7 @@
                     android:layout_height="80dp" />
 
                 <ImageView
-                    android:id="@+id/productImage_imageView"
+                    android:id="@+id/cProductImage_imageView"
                     android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
@@ -66,7 +66,7 @@
                         tools:layout_editor_absoluteY="285dp" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/cProductName"
                         android:layout_width="220dp"
                         android:layout_height="50dp"
                         android:background="#92FFFFFF"
@@ -92,7 +92,7 @@
                         tools:layout_editor_absoluteY="328dp" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/cSellerName"
                         android:layout_width="220dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -119,7 +119,7 @@
                         tools:layout_editor_absoluteY="371dp" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/cPriceName"
                         android:layout_width="220dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -147,7 +147,7 @@
                         tools:layout_editor_absoluteY="414dp" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/cWeightName"
                         android:layout_width="220dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -174,7 +174,7 @@
                         tools:layout_editor_absoluteY="457dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/cRegionName"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -199,7 +199,7 @@
                     tools:layout_editor_absoluteY="41dp" />
 
                 <TextView
-                    android:id="@+id/addressNumber_textView"
+                    android:id="@+id/cAddressNumber_textView"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
                     android:text="郵便番号"
@@ -210,12 +210,22 @@
                     tools:layout_editor_absoluteY="101dp" />
 
                 <TextView
-                    android:id="@+id/address_textView"
+                    android:id="@+id/cAddress_textView"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:background="#92FFFFFF"
                     android:text="住所"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="61dp"
+                    tools:layout_editor_absoluteY="144dp" />
+                <TextView
+                    android:id="@+id/cAddressName_textView"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#92FFFFFF"
+                    android:text="氏名"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteX="61dp"
                     tools:layout_editor_absoluteY="144dp" />
@@ -236,7 +246,7 @@
                     tools:layout_editor_absoluteY="280dp" />
 
                 <TextView
-                    android:id="@+id/creditCompany_textView"
+                    android:id="@+id/cCreditCompany_textView"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
@@ -247,7 +257,7 @@
                     tools:layout_editor_absoluteY="351dp" />
 
                 <TextView
-                    android:id="@+id/creditNumber_textView"
+                    android:id="@+id/cCreditNumber_textView"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
@@ -258,7 +268,7 @@
                     tools:layout_editor_absoluteY="351dp" />
 
                 <TextView
-                    android:id="@+id/creditName_textView"
+                    android:id="@+id/cCreditName_textView"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"

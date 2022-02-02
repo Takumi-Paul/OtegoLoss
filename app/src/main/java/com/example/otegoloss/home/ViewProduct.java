@@ -101,6 +101,8 @@ public class ViewProduct extends Fragment {
         Bundle bundle = getArguments();
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
+        // 画面遷移
+        Boolean purchase = bundle.getBoolean("PURCHASE", true);
 
         // imageViewのIDを関連付けて画像を表示
         productImage = view.findViewById(R.id.productImage_imageView);
@@ -109,12 +111,12 @@ public class ViewProduct extends Fragment {
         proNameTextView = view.findViewById(R.id.proName_textView);
         proNameTextView.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
         showWeightTextView = view.findViewById(R.id.showWeight_textView);
-        priceTextView = view.findViewById(R.id.price_textView);
         regionTextView = view.findViewById(R.id.region_textView);
         exhibitDayTextView = view.findViewById(R.id.exhibitDay_textView);
         descriptionTextView = view.findViewById(R.id.description);
         urlTextView = view.findViewById(R.id.recipe_URL);
         deliveryTextView = view.findViewById(R.id.delivery);
+        priceTextView = view.findViewById(R.id.price_textView);
 
         // http通信
         Thread t = new Thread(new Runnable() {
@@ -170,12 +172,14 @@ public class ViewProduct extends Fragment {
                                 sellerID = jsnObject.getString("user_name");
                                 proNameTextView.setText(sellerID);
                                 showWeightTextView.setText("重量: " + jsnObject.getString("weight") + "g");
-                                priceTextView.setText(jsnObject.getString("price") + "円");
                                 regionTextView.setText("地域: " + jsnObject.getString("prefecture"));
                                 exhibitDayTextView.setText("出品日: " + jsnObject.getString("listing_date"));
                                 descriptionTextView.setText(jsnObject.getString("product_desc"));
                                 urlTextView.setText(jsnObject.getString("recipe_url"));
                                 deliveryTextView.setText("配達方法: " + jsnObject.getString("delivery_meth"));
+
+                                priceTextView.setText(jsnObject.getString("price") + "円");
+
                                 productImage.setImageBitmap(imgBmp);
 
                                 //exhibitDayTextView.setText(jsnObject.getString("Listing_date"));

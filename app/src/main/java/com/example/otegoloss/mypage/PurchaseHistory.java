@@ -211,10 +211,10 @@ public class PurchaseHistory extends Fragment {
 
                 // bundleに受け渡したい値を保存
                 Bundle bundle = new Bundle();
-                // 画像ID
-                //bundle.putInt("IMAGEID", imgList.get(position));
                 // 商品ID
                 bundle.putString("PRODUCT_ID", productID[position]);
+                // 購入履歴からの遷移
+                bundle.putBoolean("PURCHASE", false);
                 // Navigation遷移
                 Navigation.findNavController(view).navigate(R.id.action_purchaseHistory_to_fragmentProduct, bundle);
             }
