@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -63,7 +64,6 @@ public class MeterFragment extends Fragment {
 
         //userID = "u0000001";
 
-        System.out.println(userID);
 
         Resources res = getResources();
         Drawable meter0 = ResourcesCompat.getDrawable(res, R.drawable.meter0, null);

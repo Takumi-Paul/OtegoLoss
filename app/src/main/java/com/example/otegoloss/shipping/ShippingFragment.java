@@ -283,6 +283,7 @@ public class ShippingFragment extends Fragment {
                 bundle.putIntArray("PRICE", prices_Y);
                 bundle.putStringArray("LISTING_DATE",listingDate_Y);
                 bundle.putStringArray("IMG_URL",imgURL_Y);
+                System.out.println(imgURL_Y);
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_to_navigation_yet_sold_out_history, bundle);
             }

@@ -168,8 +168,8 @@ public class ViewProduct extends Fragment {
 
                                 // Jsonのキーを指定すれば対応する値が入る
                                 productNameTextView.setText(jsnObject.getString("product_name"));
-                                sellerID = jsnObject.getString("user_name");
-                                proNameTextView.setText(sellerID);
+                                proNameTextView.setText(jsnObject.getString("user_name"));
+                                sellerID = jsnObject.getString("seller_id");
                                 showWeightTextView.setText("重量: " + jsnObject.getString("weight") + "g");
                                 regionTextView.setText("地域: " + jsnObject.getString("prefecture"));
                                 exhibitDayTextView.setText("出品日: " + jsnObject.getString("listing_date"));

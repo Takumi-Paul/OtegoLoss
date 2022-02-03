@@ -259,6 +259,7 @@
         android:layout_width="127dp"
         android:layout_height="58dp"
         android:background="#386641"
+        android:textColor="@color/white"
         android:text="確認完了"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
