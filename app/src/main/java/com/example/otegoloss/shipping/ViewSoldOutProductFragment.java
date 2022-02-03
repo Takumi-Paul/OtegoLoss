@@ -1,6 +1,7 @@
 //出品商品詳細（完売済み）
 package com.example.otegoloss.shipping;
 
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -28,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,13 +37,7 @@ import java.util.StringJoiner;
 
 
 public class ViewSoldOutProductFragment extends Fragment {
-    /*//価格
-    private String price = "100";
-    //地域
-    private String product_area = "高知県";
-    //出品日
-    private String listing_date = "20220107";
-    */
+
     TextView productNameTextView;
     TextView productPriceTextView;
     TextView productAreaTextView;
@@ -51,6 +47,10 @@ public class ViewSoldOutProductFragment extends Fragment {
     long startTime;
     long endTime;
 
+    // 画像関連
+    String user_image_url;
+    Bitmap imgBmp;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
@@ -58,8 +58,6 @@ public class ViewSoldOutProductFragment extends Fragment {
 
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
-        // 画像ID
-        //int imageId = bundle.getInt("IMAGEID", 0);
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
 
@@ -76,8 +74,11 @@ public class ViewSoldOutProductFragment extends Fragment {
         //出品日を表示
         listingDateTextView = view.findViewById(R.id.listing_date_text_sold_out_product);
 
+        // ボタンを取得
+        Button nextButton = view.findViewById(R.id.delivery_procedure_button_view_sold_out_product);
+
         // http通信
-        new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
@@ -104,6 +105,20 @@ public class ViewSoldOutProductFragment extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
+                    JSONObject jsnObject = ConnectionJSON.ChangeJson(str);
+                    user_image_url = jsnObject.getString("product_image");
+
+                    // phpファイルまでのリンク
+                    URL img_url = null;
+                    try {
+                        img_url = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/" + user_image_url);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(img_url);
+                    imgBmp = ConnectionJSON.downloadImage(img_url);
+                    System.out.println("connect");
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -118,29 +133,44 @@ public class ViewSoldOutProductFragment extends Fragment {
                                 productPriceTextView.setText(jsnObject.getString("price")+"円");
                                 productAreaTextView.setText(jsnObject.getString("prefecture"));
                                 listingDateTextView.setText(jsnObject.getString("listing_date"));
+                                imageView.setImageBitmap(imgBmp);
+                                if (jsnObject.getString("delivery_status").equals("1")) {
+                                    nextButton.setVisibility(View.INVISIBLE);
+                                }
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                         }
                     });
-                } catch (IOException e) {
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                     System.out.println(e);
                 }
             }
-        }).start();
+        });
+
+        try{
+            t.start();
+            t.join();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
-
-        // ボタンを取得
-        Button nextButton = view.findViewById(R.id.delivery_procedure_button_view_sold_out_product);
         // 配達ボタンをクリックした時の処理
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // bundleに受け渡したい値を保存
+                Bundle bundle = new Bundle();
+                // 商品ID
+                bundle.putString("PRODUCT_ID", productID);
+
                 // fragmentDeriveryに遷移させる
-                Navigation.findNavController(view).navigate(R.id.action_navigation_sold_out_product_to_navigation_shipping_procedure);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_sold_out_product_to_navigation_shipping_procedure, bundle);
             }
         });
         return view;

@@ -31,7 +31,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 import com.example.otegoloss.shipping.ViewYetSoldOutHistoryFragment;

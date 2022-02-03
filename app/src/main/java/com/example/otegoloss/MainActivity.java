@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(userID);
 
         LinearLayout view = findViewById(R.id.background);
-        ChangeBackgraund.changeBackGround(view, userID);
+        ChangeBackground.changeBackGround(view, userID);
     }
 
 

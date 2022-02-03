@@ -74,7 +74,7 @@
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_purchase_history.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_search_result.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_shipping.xml" value="0.1909917670601803" />
+        <entry key="app/src/main/res/layout/fragment_shipping.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_account_registration.xml" value="0.23428116820182004" />
         <entry key="app/src/main/res/layout/fragment_view_comment.xml" value="0.1328125" />
@@ -105,13 +105,15 @@
         <entry key="app/src/main/res/layout/fragment_view_shipping_address_info_config.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_shipping_address_info_regist.xml" value="0.49221183800623053" />
         <entry key="app/src/main/res/layout/fragment_view_shipping_procedure.xml" value="0.2468568285094184" />
-        <entry key="app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.28915320463740024" />
+        <entry key="app/src/main/res/layout/fragment_view_sold_out_history.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_sold_out_product.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_terms_of_use.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_view_user.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/fragment_view_yet_sold_out_history.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_view_yet_sold_out_product.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/grid_items.xml" value="0.20321360314360012" />
+        <entry key="app/src/main/res/layout/grid_items_of_shipping.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/grid_items_of_yet_history.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list.xml" value="0.12563323201621074" />
         <entry key="app/src/main/res/layout/my_toolbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/review_list.xml" value="0.375" />

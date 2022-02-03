@@ -25,7 +25,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.MainActivity;
 import com.example.otegoloss.R;
 

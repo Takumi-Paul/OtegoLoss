@@ -104,9 +104,6 @@ public class PurchaseHistory extends Fragment {
                     endTime = System.currentTimeMillis();
                     Log.d("HTTP", str);
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
                             System.out.println(String.valueOf(str));
                             System.out.println(endTime - startTime);
 
@@ -114,7 +111,7 @@ public class PurchaseHistory extends Fragment {
                             //配列の取得
                             List<String> productNameList = ConnectionJSON.ChangeArrayJSON(str, "product_name");
                             productNames = productNameList.toArray(new String[productNameList.size()]);
-                            List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "price");
+                            List<String> priceList = ConnectionJSON.ChangeArrayJSON(str, "delivery_status");
                             String[] priceString = priceList.toArray(new String[priceList.size()]);
                             prices = Stream.of(priceString).mapToInt(Integer::parseInt).toArray();
                             List<String> produceIDList = ConnectionJSON.ChangeArrayJSON(str, "product_id");
@@ -123,9 +120,7 @@ public class PurchaseHistory extends Fragment {
                             producerID = sellerIDList.toArray(new String[sellerIDList.size()]);
                             List<String> imgStrList = ConnectionJSON.ChangeArrayJSON(str, "product_image");
                             imgURL = imgStrList.toArray(new String[imgStrList.size()]);
-
-                        }
-                    });
+                            System.out.println(imgURL);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -137,6 +132,7 @@ public class PurchaseHistory extends Fragment {
         Thread t_img = new Thread(new Runnable() {
             @Override
             public void run() {
+                System.out.println(imgURL);
                 for (int i = 0; i < imgURL.length; i++) {
                     // phpファイルまでのリンク
                     URL img_url = null;

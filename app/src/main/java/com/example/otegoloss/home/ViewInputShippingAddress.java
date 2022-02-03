@@ -24,7 +24,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
-import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 

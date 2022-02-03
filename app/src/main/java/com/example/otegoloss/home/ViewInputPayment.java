@@ -22,7 +22,6 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import com.example.otegoloss.ChangeBackgraund;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 

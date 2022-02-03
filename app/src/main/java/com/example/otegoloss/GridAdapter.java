@@ -95,7 +95,13 @@ public class GridAdapter extends BaseAdapter {
         holder.imageView.setImageBitmap(imageList.get(position));
         holder.pro_textView.setText(pro_names[position]);
         String pro_price = String.valueOf(price[position]);
-        holder.pri_textView.setText(pro_price+"円");
+        if (pro_price.equals("0")) {
+            holder.pri_textView.setText("未配達");
+        } else if (pro_price.equals("1")) {
+            holder.pri_textView.setText("配達済み");
+        } else {
+            holder.pri_textView.setText(pro_price + "円");
+        }
         holder.producerID_textView.setText(producerIDs[position]);
 
         return convertView;

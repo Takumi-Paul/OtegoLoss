@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 
-public class ChangeBackgraund {
+class ChangeBackground {
 
 
     public static void changeBackGround(LinearLayout view, String userID){

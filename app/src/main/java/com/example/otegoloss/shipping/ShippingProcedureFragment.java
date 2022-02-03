@@ -65,7 +65,13 @@ public class ShippingProcedureFragment extends Fragment {
         //住所を表示
         addressTextView = view.findViewById(R.id.address_view_shipping_product);
 
-        String productID = "g0000001";
+        // ボタン要素を取得
+        Button nextButton = view.findViewById(R.id.shipment_comp_button_view_shipping_product);
+
+        // BundleでHome画面の値を受け取り
+        Bundle bundle = getArguments();
+        // 商品ID
+        String productID = bundle.getString("PRODUCT_ID", "");
 
         // http通信
         new Thread(new Runnable() {
@@ -124,13 +130,46 @@ public class ShippingProcedureFragment extends Fragment {
 
 
 
-        // ボタン要素を取得
-        Button nextButton = view.findViewById(R.id.shipment_comp_button_view_shipping_product);
-
         // 完売済みボタンをクリックした時の処理
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // http通信
+                new Thread(new Runnable() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void run() {
+                        try {
+                            // phpファイルまでのリンク
+                            String path = "http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/UpdateDelistatus.php";
+
+                            // クエリ文字列を連想配列に入れる
+                            Map<String, String> map = new HashMap<String, String>();
+                            map.put("product_id", productID);
+                            // クエリ文字列組み立て・URL との連結
+                            StringJoiner stringUrl = new StringJoiner("&", path + "?", "");
+                            for (Map.Entry<String, String> param: map.entrySet()) {
+                                stringUrl.add(param.getKey() + "=" + param.getValue());
+                            }
+                            URL url = new URL(stringUrl.toString());
+                            System.out.println(url);
+                            // 処理開始時刻
+                            startTime = System.currentTimeMillis();
+                            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                            final String str = ConnectionJSON.InputStreamToString(con.getInputStream());
+
+                            // 終了時刻
+                            endTime = System.currentTimeMillis();
+                            Log.d("HTTP", str);
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            System.out.println(e);
+                        }
+                    }
+                }).start();
+
                 // HomeFragmentに遷移させる
                 Navigation.findNavController(view).navigate(R.id.action_navigation_shipping_procedure_to_navigation_delivery_completed);
             }
