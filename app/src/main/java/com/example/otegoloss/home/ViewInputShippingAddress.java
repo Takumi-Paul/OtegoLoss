@@ -67,19 +67,12 @@ public class ViewInputShippingAddress extends Fragment {
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
 
-        // ユーザID(仮定義)
-        //String userID = "u0000001";
-
         // ユーザID
         String userID = bundle.getString("USER_ID", "");
 
         String productID = bundle.getString("PRODUCT_ID", "");
 
         String cardID = bundle.getString("CARD_ID", "");
-
-        //背景
-//        LinearLayout background_view = view.findViewById(R.id.background);
-//        ChangeBackgraund.changeBackGround(background_view, userID);
 
         addressNumber1 = view.findViewById(R.id.ShippingAddressNumber1_textView);
         shippingAddress1 = view.findViewById(R.id.ShippingAddress1_textView);

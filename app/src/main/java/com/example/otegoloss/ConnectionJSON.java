@@ -86,8 +86,6 @@ public class ConnectionJSON {
 
             // 接続
             urlConnection.connect();
-
-
             int resp = urlConnection.getResponseCode();
 
             switch (resp){
@@ -112,7 +110,6 @@ public class ConnectionJSON {
             }
         }
 
-        System.out.println("aaa");
         return bmp;
     }
 

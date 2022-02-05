@@ -175,7 +175,6 @@ public class HomeFragment extends Fragment {
                 }
             });
 
-            System.out.println("product");
             //商品一覧画面
             // GridViewのインスタンスを生成
             GridView gridview = view.findViewById(R.id.product_gridView);

@@ -51,12 +51,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_home);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        searchBinding = ActivitySearchBinding.inflate(getLayoutInflater());
-//        setContentView(searchBinding.getRoot());
 
         ViewGroup root = (ViewGroup) findViewById(R.id.activity_main_container).getParent();
 // false=rootをmy_toolbarのルートにしない.
@@ -66,26 +63,17 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //toolbar.setLogo(R.drawable.title);
         setSupportActionBar(toolbar);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_mypage, R.id.navigation_shipping, R.id.navigation_user)
                 navController.getGraph())
                 .build();
         setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-//       searchBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.app_bar_search)
-//                .build();
-//        NavHostFragment searchFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_search);
-//        NavController searchController = searchFragment.getNavController();
-//        setupActionBarWithNavController(this, searchController, searchBarConfiguration);
-//        NavigationUI.setupWithNavController(binding.toolbar, searchController);
 
         // ユーザデータが保存されている変数
         SharedPreferences userIDData;
@@ -116,13 +104,6 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.onNavDestinationSelected(item, navController)
                 || super.onOptionsItemSelected(item);
 
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.app_bar_search) {
-//            Navigation.createNavigateOnClickListener(R.id.);
-//            return true;
-//        }
-
-//        return super.onOptionsItemSelected(item);
     }
 
     // Fragmentを表示させるメソッドを定義（表示したいFragmentを引数として渡す）

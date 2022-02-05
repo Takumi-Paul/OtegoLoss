@@ -83,8 +83,6 @@ public class ViewProduct extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_product, container, false);
-//        LinearLayout background_view = view.findViewById(R.id.background);
-//        ChangeBackgraund.changeBackGround(background_view, userID);
 
         userIDData = getActivity().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
         userID = userIDData.getString("userID", "error");
@@ -100,8 +98,6 @@ public class ViewProduct extends Fragment {
         Bundle bundle = getArguments();
         // 商品ID
         String productID = bundle.getString("PRODUCT_ID", "");
-        // 画面遷移
-        Boolean purchase = bundle.getBoolean("PURCHASE", true);
 
         // imageViewのIDを関連付けて画像を表示
         productImage = view.findViewById(R.id.productImage_imageView);

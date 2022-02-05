@@ -95,7 +95,7 @@ public class NewAccountActivity extends AppCompatActivity implements View.OnClic
                 public void run() {
                     try {
                         // phpファイルまでのリンク
-                        URL path = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/InsertAccount.php/");
+                        URL path = new URL("http://ec2-13-114-108-27.ap-northeast-1.compute.amazonaws.com/InsertAccount.php");
 
                         // POSTで送るStringデータ
                         String postData = "user_password=" + passwordString +

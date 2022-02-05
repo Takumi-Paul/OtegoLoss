@@ -36,16 +36,6 @@ public class ViewPurchaseCompleted extends Fragment {
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_fragmentViewPurchaseCompleted_to_navigation_home);
 
-                //FragmentManager fm_ViewPurchaseInformation1 = getParentFragmentManager();
-                //FragmentTransaction t_ViewPurchaseInformation1  =  fm_ViewPurchaseInformation1.beginTransaction();
-                // 次のFragment
-                //Fragment secondFragment = new ViewInputShippingAddress();
-                // fragmentManagerに次のfragmentを追加
-                //t_ViewPurchaseInformation1.replace(R.id.fragmentViewInputPayment, secondFragment);
-                // 画面遷移戻りを設定
-                //t_ViewPurchaseInformation1.addToBackStack(null);
-                // 画面遷移
-                //t_ViewPurchaseInformation1.commit();
             }
         });
 

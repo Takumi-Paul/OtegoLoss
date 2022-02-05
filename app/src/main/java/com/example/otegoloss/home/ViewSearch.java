@@ -55,9 +55,6 @@ public class ViewSearch extends Fragment {
         userID = userIDData.getString("userID", "error");
         System.out.println(userID);
 
-//        LinearLayout background_view = view.findViewById(R.id.background);
-//        ChangeBackgraund.changeBackGround(background_view, userID);
-
         productName = (EditText)view.findViewById(R.id.kensaku_product_name);
         sellerName = (EditText)view.findViewById(R.id.kensaku_seller_name);
 
@@ -146,12 +143,7 @@ public class ViewSearch extends Fragment {
 
 
                 if (productNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
-                        && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")
-                   /*
-                    && (int_weight >= 0 && int_weight <= 30000)
-                    && (int_price >= 10 && int_price <= 99999)
-                    */
-                ) {
+                        && sellerNames.matches("^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠0-9a-zA-Z!\"#$%&'()*+-.,\\/:;<=>?@[\\]^_`{|}~]]*$")) {
                     //次のフラグメントにBundleを使ってデータを渡す
                     Bundle bundle = new Bundle();
                     pName = productName.getText().toString();
@@ -162,25 +154,15 @@ public class ViewSearch extends Fragment {
                     bundle.putString("DELIVERY_METHOD", Delivery);
                     sName = sellerName.getText().toString();
                     bundle.putString("SELLER_NAME", sName);
-                    //bundle.putInt("PRODUCT_INT_WEIGHT", int_weight);
-                    //bundle.putInt("PRODUCT_INT_PRICE", int_price);
 
                     // fragmentViewExhibitInfoConfirmationに遷移させる
                     System.out.println("open");
                     Navigation.findNavController(view).navigate(R.id.action_search_to_result, bundle);
 
 
-
                 } else {
                     Toast.makeText(view.getContext(), "入力された情報が正しくありません。もう一度確認してください。", Toast.LENGTH_LONG).show();
                 }
-
-
-
-
-                //商品名と出品者名を取得
-                //String productNames = productName.getText().toString();
-                //String sellerNames =  sellerName.getText().toString();
 
             }
         });

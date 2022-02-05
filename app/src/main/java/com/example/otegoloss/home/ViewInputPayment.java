@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +24,6 @@ import androidx.navigation.Navigation;
 import com.example.otegoloss.ConnectionJSON;
 import com.example.otegoloss.R;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -63,17 +61,10 @@ public class ViewInputPayment extends Fragment {
         // BundleでHome画面の値を受け取り
         Bundle bundle = getArguments();
 
-        // ユーザID(仮定義)
-        //String userID = "u0000001";
-
         // ユーザID
         String userID = bundle.getString("USER_ID", "");
 
         String productID = bundle.getString("PRODUCT_ID", "");
-
-//        //背景
-//        LinearLayout background_view = view.findViewById(R.id.background);
-//        ChangeBackgraund.changeBackGround(background_view, userID);
 
 
         creditCompany1 = view.findViewById(R.id.credit_company1);
